@@ -1,0 +1,135 @@
+<div class="page-content-wrapper">
+        <div class="page-content clearfix ">
+            <div class="col-sm-12">
+                <div class="col-sm-1"></div>
+                <div class="col-sm-10 form">
+                    <!--Page Start -->
+                    <div class="col-sm-12 nopadding margin-top-10">
+                        <div class="row">
+                            <div class="col-sm-10">
+                                <h2 class="page-title">Add New Venue</h2>
+                            </div>
+                            <div class="col-sm-2">
+                                <a [routerLink]="['/manager/manage/venues']"
+                                    class="btn btn-default pull-right"> <i
+                                    class="fa fa-angle-left" style="margin-right:5px;"></i> Back
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Page process bars-->
+                    <div class="col-md-12 nopadding form-wizard" style="border: ridge;">
+                        <div class="form-body" id="form_wizard_1">
+                            <app-manager-add-venue></app-manager-add-venue>
+                            <div class="portlet-body form">
+                                <form action="#" class="form-horizontal" id="submit_form"
+                                    method="POST">
+                                    <div class="form-wizard">
+                                        <div class="form-body">
+                                            <!--Page details starts here-->
+                                            <div class="tab-pane active" id="tab1">
+                                                <h4 class="block">
+                                                    <b>Provide your venue basic details</b>
+                                                </h4>
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-3 add-member-label">
+                                                        Venue Name </label>
+                                                    <div class="col-md-5">
+                                                        <input type="text" class="form-control" name="venue name"
+                                                            value="Nareen Convention" />
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-3 add-member-label">
+                                                        Capacity: </label>
+                                                    <div class="col-md-5">
+                                                        <input type="text" class="form-control" name="" id=""
+                                                            value="20000" />
+    
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-3 add-member-label">
+                                                        Location </label>
+                                                    <div class="col-md-5">
+                                                        <textarea class="form-control" rows="4">Miyapur,Hyderabad</textarea>
+    
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-3 add-member-label"> Time
+                                                        Slots </label>
+                                                    <div class="col-md-5" style="margin-top: 8px;">
+                                                        <span style="float: left;margin-right: 20px;"><input type="radio" class="form-control" name="allday"
+                                                            id="alldayid" style="float: left;width: auto;height: auto;margin-right: 3px;margin-top:3px;" />All Day</span>
+                                                        <span style="float: left;"><input type="radio"
+                                                            class="form-control" name="allday" id="timeslots" style="float: left;width: auto;height: auto;margin-right: 3px;margin-top:3px;" />Time
+                                                        Slots</span>
+                                                    </div>
+                                                </div>
+                                                <!--Select slots for the venue timings-->
+                                                <div id="Timingsdiv1" class="hide">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-3 add-member-label">
+                                                            Select Slots </label>
+                                                        <div class="col-md-5">
+                                                            <div id="Picupload">
+                                                                <div class="col-md-12 nopadding">
+                                                                    <div class="col-sm-5 nopadding">
+                                                                        <div class='input-group date datetimepicker3'
+                                                                            id="FromDiv">
+                                                                            <input type='text'
+                                                                                class="form-control datetimepicker3"
+                                                                                placeholder="From" /> <span class="input-group-addon">
+                                                                                <span class="glyphicon glyphicon-time"
+                                                                                style="color: #49494e;"></span>
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-sm-1 nopadding"></div>
+                                                                    <div class="col-sm-5 nopadding">
+                                                                        <div class='input-group date datetimepicker3'
+                                                                            id="ToDiv">
+                                                                            <input type='text'
+                                                                                class="form-control datetimepicker3" placeholder="To" />
+                                                                            <span class="input-group-addon"> <span
+                                                                                class="glyphicon glyphicon-time"
+                                                                                style="color: #49494e;"></span>
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-sm-1 nopadding">
+                                                                        <a href="javascript:;" onclick="return AddEmptyRow()"
+                                                                            id="btnAddSlots" title="Add more slots"><i
+                                                                            style="line-height: 2" class="fa fa-plus pull-right"></i></a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!---Buttons to submit the data-->
+                                    <div class="form-actions">
+                                        <div class="row">
+                                            <div class="col-md-offset-3 col-md-9">
+                                                <a class="btn default button-cancel"
+                                                    data-toggle="modal" data-target="#cancelbutton"> Cancel <i
+                                                    class=""></i>
+                                                </a> <a [routerLink]="['/manager/manage/venues/contact-details']" class="btn green button-next" style="color: #fff !important;">
+                                                    Save &amp; Continue <i class="m-icon-swapright m-icon-white"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    

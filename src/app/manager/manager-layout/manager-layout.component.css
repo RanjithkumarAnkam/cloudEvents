@@ -1,0 +1,164 @@
+@media (min-width: 768px){
+    .navbar-nav.navbar-center {
+        position: absolute;
+        left: 18%;
+    }
+}
+.helpbtn {
+    background-color: white;
+    margin-top: 8px;
+    color: black;
+}
+.supportbutton {
+    background-color: yellow;
+    margin-top: 8px;
+    color: black;
+    margin-right: 6px;
+}
+.tour-step-backdrop > li {
+    background: inherit;
+    position: relative;
+    background-color: transparent;
+    color: transparent;
+}
+
+.form-control:focus {
+    border-color: #5cb85c;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
+.has-error .form-control:focus {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
+.modal-title {
+    text-align: left;
+}
+
+.tour-step-background {
+    background: inherit;
+    position: relative;
+    z-index: 1101;
+}
+
+.modal .modal-header {
+    border-bottom: 2px solid #c3bebe;
+}
+
+.card {
+    box-shadow: 0 20px 22px 0 rgba(0, 0, 0, 0.16), 0 -8px 30px 0 rgba(0, 0, 0, 0.12);
+}
+
+.card {
+    margin-top: 60px;
+    box-sizing: border-box;
+    border-radius: 2px;
+    background-clip: padding-box;
+    min-height: 200px;
+}
+
+    .card span.card-title {
+        color: #fff;
+        font-size: 24px;
+        font-weight: 300;
+        text-transform: uppercase;
+    }
+
+    .card .card-image {
+        position: relative;
+        overflow: hidden;
+    }
+
+        .card .card-image img {
+            border-radius: 2px 2px 0 0;
+            background-clip: padding-box;
+            position: relative;
+            /*z-index: -1;*/
+        }
+
+        .card .card-image span.card-title {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            padding: 16px;
+        }
+
+    .card .card-content {
+        padding: 16px;
+        border-radius: 0 0 2px 2px;
+        background-clip: padding-box;
+        box-sizing: border-box;
+    }
+
+        .card .card-content p {
+            margin: 0;
+            color: inherit;
+        }
+
+        .card .card-content span.card-title {
+            line-height: 48px;
+        }
+
+    .card .card-action {
+        border-top: 1px solid rgba(160, 160, 160, 0.2);
+        padding: 16px;
+    }
+
+        .card .card-action a {
+            /*color: #ffab40;*/
+            margin-right: 16px;
+            transition: color 0.3s ease;
+            text-transform: uppercase;
+        }
+
+            .card .card-action a:hover {
+                /*color: #ffd8a6;*/
+                text-decoration: none;
+            }
+
+.container {
+    overflow: hidden;
+    background-color: #333;
+    font-family: Arial;
+}
+
+    .container a {
+        float: left;
+        font-size: 16px;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+.padright0 {
+    padding-right: 0px !important;
+}
+
+.supportbutton {
+    background-color: yellow;
+    margin-top: 8px;
+    color: black;
+    margin-right: 6px;
+}
+
+.height18px {
+    height: 18px;
+}
+
+.helpbtn {
+    background-color: white;
+    margin-top: 8px;
+    color: black;
+}
+
+.imgcontent {
+    height: 50px;
+    margin-left: 30%;
+}
+
+.curspointer {
+    cursor: pointer;
+}

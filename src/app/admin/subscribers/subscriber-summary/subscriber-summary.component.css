@@ -1,0 +1,51 @@
+.panel-group .panel {
+    border-radius: 0;
+    box-shadow: none;
+    border-color: #EEEEEE;
+}
+
+.panel-default > .panel-heading {
+    padding: 0;
+    border-radius: 0;
+    color: #fff;
+    background-color: #FAFAFA;
+    border-color: #EEEEEE;
+}
+
+.panel-title {
+    font-size: 14px;
+    background: #10699e;
+    color: #fff;
+}
+
+panel-title:hover {
+    color: #fff;
+}
+
+.panel .panel-title > a:hover {
+    color: #97ecf1;
+}
+
+.panel-title > a {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+}
+
+.more-less {
+    float: right;
+    color: #ffffff;
+}
+
+.panel-default > .panel-heading + .panel-collapse > .panel-body {
+    border-top-color: #EEEEEE;
+}
+
+.demo {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+thead {
+    background: #10699e;
+    color: #fff;
+}

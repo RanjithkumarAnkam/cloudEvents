@@ -1,0 +1,128 @@
+<div class="page-content-wrapper">
+        <div class="page-content clearfix ">
+            <app-manager-manage-screens></app-manager-manage-screens>
+            <div class="col-sm-12 nopadding">
+                <div class="col-sm-1"></div>
+                <div class="col-sm-10 nopadding">
+                    <div class="col-sm-12 nopadding">
+                        <div class="col-sm-3 margin-top-20">
+                            <div class="panel panel-default panelcolor cursorpointer tbodycls">
+                                <div [ngClass]="(dashboardbody==true)?'panelcoloractive panel-body':'panel-body'"  class="panel-body" id="dashboardid" (click)="onClick($event)">
+                                    Dashboard<i class="fa fa-angle-right pull-right"></i>
+                                </div>
+                            </div>
+                            <div class="panel panel-default panelcolor cursorpointer tbodycls">
+                                <div [ngClass]="(calendarbody==true)?'panelcoloractive panel-body':'panel-body'" id="calendarid" (click)="onClick($event)">
+                                    Calendar<i class="fa fa-angle-right pull-right"></i>
+                                </div>
+                            </div>
+                            <div class="panel panel-default panelcolor cursorpointer tbodycls">
+                                <div [ngClass]="(customerbody==true)?'panelcoloractive panel-body':'panel-body'" id="customerid" (click)="onClick($event)">
+                                    Customers<i class="fa fa-angle-right pull-right"></i>
+                                </div>
+                            </div>
+                            <div class="panel panel-default panelcolor cursorpointer tbodycls">
+                                <div [ngClass]="(vendorbody==true)?'panelcoloractive panel-body':'panel-body'" id="vendorid" (click)="onClick($event)">
+                                    Vendors<i class="fa fa-angle-right pull-right"></i>
+                                </div>
+                            </div>
+                            <div class="panel panel-default panelcolor cursorpointer tbodycls">
+                                <div [ngClass]="(managebody==true)?'panelcoloractive panel-body':'panel-body'" id="manageid" (click)="onClick($event)">
+                                    Manage<i class="fa fa-angle-right pull-right"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-5 nopadding margin-top-20">
+                            <table
+                                class="table table-hover table-bordered table-responsive">
+                                <thead>
+                                    <tr>
+                                        <th>Screen Name</th>
+                                        <th class="text-center">Allow</th>
+                                    </tr>
+                                </thead>
+                                <tbody *ngIf="dashboardbody" id="dashboardidbody" class="">
+                                    <tr>
+                                        <td>Dashboard</td>
+                                        <td><input type="checkbox" class="form-control" style="height:auto;" /></td>
+                                    </tr>
+                                </tbody>
+                                <tbody *ngIf="calendarbody" id="calendaridbody" class="">
+                                    <tr>
+                                        <td>Bookings</td>
+                                        <td><input type="checkbox" class="form-control" style="height:auto;" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Enquiry</td>
+                                        <td><input type="checkbox" class="form-control" style="height:auto;" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Appointment</td>
+                                        <td><input type="checkbox" class="form-control"  style="height:auto;"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mark this as a Holiday</td>
+                                        <td><input type="checkbox" class="form-control" style="height:auto;" /></td>
+                                    </tr>
+    
+                                </tbody>
+                                <tbody *ngIf="customerbody" id="customeridbody" class="">
+                                    <tr>
+                                        <td>Customers</td>
+                                        <td><input type="checkbox" class="form-control" style="height:auto;" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Activity</td>
+                                        <td><input type="checkbox" class="form-control" style="height:auto;" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Receivables</td>
+                                        <td><input type="checkbox" class="form-control" style="height:auto;" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Payment log</td>
+                                        <td><input type="checkbox" class="form-control" style="height:auto;" /></td>
+                                    </tr>
+    
+                                </tbody>
+                                <tbody *ngIf="vendorbody" id="vendoridbody" class="">
+                                    <tr>
+                                        <td>Vendors</td>
+                                        <td><input type="checkbox" class="form-control" style="height:auto;" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Vendor Types</td>
+                                        <td><input type="checkbox" class="form-control" style="height:auto;" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Payables</td>
+                                        <td><input type="checkbox" class="form-control" style="height:auto;" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Paid</td>
+                                        <td><input type="checkbox" class="form-control" style="height:auto;" /></td>
+                                    </tr>
+    
+                                </tbody>
+                                <tbody *ngIf="managebody" id="manageidbody" class="">
+                                    <tr>
+                                        <td>Services &amp; Facilities</td>
+                                        <td><input type="checkbox" class="form-control" style="height:auto;" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Users</td>
+                                        <td><input type="checkbox" class="form-control" style="height:auto;" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Food menus &amp; Decorations</td>
+                                        <td><input type="checkbox" class="form-control" style="height:auto;" /></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

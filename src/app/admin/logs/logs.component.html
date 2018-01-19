@@ -1,0 +1,214 @@
+<div class="page-content-wrapper">
+	<div class="page-content clearfix ">
+		<!---Page content-->
+		<div class="row nopadding">
+			<div class="col-sm-1"></div>
+			<div class="col-sm-10  nopadding">
+				<div class="col-sm-12 nopadding">
+					<div class="col-sm-10 nopadding">
+						<h3 class="page-title">
+							Logs
+							<p>
+								<small>You can see all kinds of application related logs here.</small>
+							</p>
+						</h3>
+					</div>
+				</div>
+				<ul class="nav nav-tabs margin-top-10">
+					<!--Tab contents-->
+					<li class="active"><a data-toggle="tab" href="#menuuserslog"> Users
+							log </a></li>
+					<li><a data-toggle="tab" href="#menueventlog">Event log</a></li>
+					<li><a data-toggle="tab" href="#menuerrorlog">Error log</a></li>
+				</ul>
+				<!--divs for tab content-->
+				<div class="tab-content">
+					<div id="menuuserslog" class="tab-pane fade in active">
+						<div class="row">
+							<div class="col-md-12 nopadding">
+								<!-- Begin: life time stats -->
+								<div class="col-sm-12 margin-top-20">
+
+									<!--Users log-->
+									<table class="table table-hover table-bordered" [mfData]="data"
+										#mf="mfDataTable" [mfRowsOnPage]="5">
+										<thead>
+											<tr class="table-headers">
+												<th style="width: 25%"><mfDefaultSorter by="name">User Name</mfDefaultSorter></th>
+												<th style="width: 25%"><mfDefaultSorter by="datetime">Date
+													&amp; Time</mfDefaultSorter></th>
+												<th style="width: 25%"><mfDefaultSorter by="addedby">Added
+													By</mfDefaultSorter></th>
+												<th style="width: 25%"><mfDefaultSorter by="venue">Venue
+													Name</mfDefaultSorter></th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr *ngFor="let item of mf.data">
+												<td>{{item.name}}</td>
+												<td>{{item.datetime}}</td>
+												<td>{{item.addedby}}</td>
+												<td>{{item.venue}}</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--Event log-->
+					<div id="menueventlog" class="tab-pane fade">
+						<div class="row">
+							<div class="col-md-12 nopadding">
+								<!-- Begin: life time stats -->
+								<div class="col-sm-12 margin-top-20">
+									<table class="table table-hover table-bordered"
+										[mfData]="dataone" #one="mfDataTable" [mfRowsOnPage]="5">
+										<thead>
+											<tr class="table-headers">
+												<th style="width: 20%"><mfDefaultSorter by="eventname">Event
+													Name</mfDefaultSorter></th>
+												<th style="width: 20%"><mfDefaultSorter by="eventby">Event
+													By</mfDefaultSorter></th>
+												<th style="width: 20%"><mfDefaultSorter by="datetime">Date
+													&amp; Time</mfDefaultSorter></th>
+												<th style="width: 20%"><mfDefaultSorter by="type">Type</mfDefaultSorter></th>
+												<th style="width: 20%"><mfDefaultSorter by="description">Description</mfDefaultSorter></th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr *ngFor="let item of one.data">
+												<td>{{item.eventname}}</td>
+												<td>{{item.eventby}}</td>
+												<td>{{item.datetime}}</td>
+												<td>{{item.type}}</td>
+												<td>{{item.description}}</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--Error log-->
+					<div id="menuerrorlog" class="tab-pane fade">
+						<div class="row">
+							<div class="col-md-12 nopadding">
+								<!-- Begin: life time stats -->
+								<div class="col-sm-12 margin-top-20">
+									<table class="table table-hover table-bordered"
+										[mfData]="datatwo" #two="mfDataTable" [mfRowsOnPage]="5">
+										<thead>
+											<tr class="table-headers">
+												<th style="width: 30%"><mfDefaultSorter by="error">Error</mfDefaultSorter></th>
+												<th style="width: 20%"><mfDefaultSorter by="user">User</mfDefaultSorter></th>
+												<th style="width: 20%"><mfDefaultSorter by="datetime">Date
+													&amp; Time</mfDefaultSorter></th>
+												<th style="width: 30%"><mfDefaultSorter by="url">Url</mfDefaultSorter></th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr *ngFor="let item of two.data">
+												<td>{{item.error}}</td>
+												<td>{{item.user}}</td>
+												<td>{{item.datetime}}</td>
+												<td>{{item.url}}</td>
+											</tr>
+
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--Lookup optins add modal pop up-->
+<div class="modal fade" id="AddLookupOption" role="dialog">
+	<div class="modal-dialog modal-md">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">
+					<b>Add Lookup Option</b>
+				</h4>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+					<div class="col-sm-12 margin-top-10">
+						<div class="col-sm-4">
+							<label>Select Item&nbsp;: </label>
+						</div>
+						<div class="col-sm-6">
+							<select class="form-control">
+								<option>Select</option>
+								<option>Title</option>
+								<option>Payment Options</option>
+								<option>Package Types</option>
+							</select>
+						</div>
+					</div>
+					<div class="col-sm-12 margin-top-10">
+						<div class="col-sm-4">
+							<label>Value&nbsp;: </label>
+						</div>
+						<div class="col-sm-6">
+							<input type="text" class="form-control" />
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer padding20px">
+				<button type="button" class="btn btn-success" data-dismiss="modal"
+					onclick="toastr.success('Option added successfully');">Save</button>
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!--Lookup options update modal pop up-->
+<div class="modal fade" id="EditLookupOption" role="dialog">
+	<div class="modal-dialog modal-md">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">
+					<b>Update Lookup Option</b>
+				</h4>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+					<div class="col-sm-12 margin-top-10">
+						<div class="col-sm-4">
+							<label>Select Item&nbsp;: </label>
+						</div>
+						<div class="col-sm-6">
+							<select class="form-control">
+								<option>Select</option>
+								<option selected="selected">Title</option>
+								<option>Payment Types</option>
+								<option>Package Types</option>
+							</select>
+						</div>
+					</div>
+					<div class="col-sm-12 margin-top-10">
+						<div class="col-sm-4">
+							<label>Value&nbsp;: </label>
+						</div>
+						<div class="col-sm-6">
+							<input type="text" class="form-control" value="Mr,Mrs,Miss" />
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer padding20px">
+				<button type="button" class="btn btn-success" data-dismiss="modal">Update</button>
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+	</div>
+</div>

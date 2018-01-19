@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+html{background-color: #666;}
+.page-content{
+    margin:0 !important;
+}
+.table-headers{
+    background: #10699e !important;
+    color: #fff !important;
+}
+.table th a{
+    color: #fff !important;
+}
+.table th a:hover{
+    text-decoration: none;
+}
+.pagination{
+    float:right;
+}
+.padding-0{
+    padding:0px;
+}
+

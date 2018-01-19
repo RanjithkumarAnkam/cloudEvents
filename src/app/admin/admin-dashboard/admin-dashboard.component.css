@@ -1,0 +1,36 @@
+@@media (min-width: 768px) {
+    .navbar-nav.navbar-center {
+        position: absolute;
+        left: 50%;
+        transform: translatex(-50%);
+    }
+}
+
+.form-control:focus {
+    border-color: #5cb85c;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
+.has-error .form-control:focus {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
+.modal-title {
+    text-align: left;
+}
+
+thead {
+    background: #10699e;
+    color: #fff;
+}
+
+.padright0 {
+    padding-right: 0px !important;
+}
+
+.imgstyle {
+    height: 50px;
+    margin-left: 30%;
+}

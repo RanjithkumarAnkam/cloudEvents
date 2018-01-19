@@ -1,0 +1,71 @@
+<ul class="nav nav-pills nav-justified steps" style="margin-bottom:0px;">
+    <li [routerLinkActive]="['active']">
+        <a class="step" [routerLink]="['/manager/manage/venues/basic-details']">
+            <span class="number basic-done">
+                1
+            </span>
+            <span class="desc">
+                <i class="fa fa-check"></i> Basic Details
+            </span>
+        </a>
+    </li>
+    <li [routerLinkActive]="['active']">
+        <a class="step" [routerLink]="['/manager/manage/venues/contact-details']">
+            <span class="number contact-done">
+                2
+            </span>
+            <span class="desc">
+                <i class="fa fa-check"></i>  Contact Details
+            </span>
+        </a>
+    </li>
+    <li [routerLinkActive]="['active']">
+        <a class="step" [routerLink]="['/manager/manage/venues/media']">
+            <span class="number media-done">
+                3
+            </span>
+            <span class="desc">
+                <i class="fa fa-check"></i>Photos &amp; Videos
+            </span>
+        </a>
+    </li>
+    <li [routerLinkActive]="['active']">
+        <a class="step" [routerLink]="['/manager/manage/venues/summary']">
+            <span class="number summary-done">
+                4
+            </span>
+            <span class="desc">
+                <i class="fa fa-check"></i> Summary
+            </span>
+        </a>
+    </li>
+</ul>
+
+<!---Modal popup for cancel button-->
+<div class="modal fade" id="cancelbutton" role="dialog">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title"><b>Confirmation</b></h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <!-- BEGIN PROFILE SIDEBAR -->
+                            <!-- END BEGIN PROFILE SIDEBAR -->
+                            <!-- BEGIN PROFILE CONTENT -->
+    
+                            <label style="padding:15px;">Are you sure you want to Cancel?</label>
+    
+                            <!-- END PROFILE CONTENT -->
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer padding20px margin-top-20">
+                    <a type="button" class="btn btn-success" [routerLink]="['/manager/manage']">Yes</a>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                </div>
+            </div>
+        </div>
+    </div>

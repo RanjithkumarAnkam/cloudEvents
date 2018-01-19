@@ -1,0 +1,350 @@
+<div class="top-menu">
+	<nav class="navbar navbar-inverse" role="navigation">
+		<div class="navbar-header">
+			<a class="navbar-brand" [routerLink]="['/manager/dashboard']">Venue
+				Cloud</a>
+			<button type="button" class="navbar-toggle" data-toggle="collapse"
+				data-target=".navbar-collapse">
+				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+					class="icon-bar"></span>
+			</button>
+		</div>
+		<div class="collapse navbar-collapse"
+			id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav navbar-center">
+				<li id="menu1" [routerLinkActive]="['active']"><a [routerLink]="['/manager/dashboard']">Dashboard</a></li>
+				<li id="menu2" [routerLinkActive]="['active']"><a [routerLink]="['/manager/calendar']">Calendar</a></li>
+				<li id="menu4" [routerLinkActive]="['active']"><a [routerLink]="['/manager/customers']">Customers</a></li>
+				<li id="menu7" [routerLinkActive]="['active']"><a [routerLink]="['/manager/vendors']">Vendors</a></li>
+				<li id="menu5" [routerLinkActive]="['active']"><a [routerLink]="['/manager/manage']">Manage </a></li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li style="margin-right: 6px;"><button
+						class="btn btn-default helpbtn" id="btnquick"  data-toggle="modal" data-target="#mainmodalpop">
+						Settings&nbsp; <i class="fa fa-home"></i>
+					</button></li>
+				<li>
+					<button class="btn btn-default supportbutton" [routerLink]="['/manager/support/phone']">
+						<span> Support&nbsp; <img
+							src="/assets/images/Usersupport.PNG" height="18px" />
+						</span>
+					</button>
+				</li>
+				<li><button class="btn btn-default mhelp helpbtn" id="mhelp">
+						Help&nbsp; <i class="fa fa-question-circle"></i>
+					</button></li>
+                    <li class="dropdown dropdown-user">
+                            <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                                <span class="username username-hide-on-mobile"><b>My Account</b></span>
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-default">
+                                
+                                <li>
+                                    <a [routerLink]="['/manager/profile']">
+                                      <img height="35" src="/assets/images/Ans-.jpg" class="imgstyle" />
+                                        <i class="icon-user"></i>My Profile
+                                    </a>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <a data-toggle="modal" data-target="#myModal-change-pswd" class="curspointer">
+                                        <i class="icon-lock"></i>Change Password
+                                    </a>
+                                </li>
+                                <li>
+                                    <a [routerLink]="['/login']">
+                                        <i class="icon-key"></i>Log Out
+                                    </a>
+                                </li>
+                            </ul>
+  
+                        </li>
+			</ul>
+			<div class="collapse nav navbar-nav nav-collapse slide-down"
+				id="nav-collapse3">
+				<form class="navbar-form navbar-right">
+					<li class="dropdown dropdown-user"><a href="#"
+						class="dropdown-toggle" data-toggle="dropdown"
+						data-hover="dropdown" data-close-others="true"> <img alt=""
+							class="img-circle"
+							src="/assets/theme/assets/admin/layout/img/avatar3_small.jpg" />
+							<span class="username username-hide-on-mobile"><b>Roger</b></span>
+							<i class="fa fa-angle-down"></i>
+					</a>
+						<ul class="dropdown-menu dropdown-menu-default">
+							<li><a href=""> <i class="icon-user"></i>&nbsp;&nbsp;&nbsp;My
+									Profile
+							</a></li>
+							<li class="divider"></li>
+							<li><a data-toggle="modal" data-target="#myModal-change-pswd"
+								style="cursor: pointer;"> <i class="icon-lock"></i>&nbsp;&nbsp;&nbsp;Change
+									Password
+							</a></li>
+							<li><a [routerLink]="['/login']"> <i class="icon-key"></i>&nbsp;&nbsp;&nbsp;Log
+									Out
+							</a></li>
+						</ul></li>
+				</form>
+			</div>
+		</div>
+	</nav>
+</div>
+
+<router-outlet></router-outlet>
+
+<div class="col-sm-12 bg-white"
+	style="background-color: #116a9e; height: 50px;">
+	<p
+		style="margin-left: 0px; text-align: center; color: #FFF; margin-top: 20px;">
+		{{today | date:'yyyy'}} - Option Matrix ® All Rights Reserved</p>
+	<p></p>
+</div>
+<!-- main modal popup -->
+<div class="modal fade" id="mainmodalpop" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h1 class="modal-title text-center" style="height: 60px;font-weight: 300;font-size: 35px;text-align:center;"><b>Welcome to Venue Cloud</b></h1>
+                <label style="font-size:15px;margin-bottom:3px;margin-left:35%;margin-top: 18px;" class="modal-title"><b>Please help us setup your venue.</b></label>
+            </div>
+            <div class="modal-body" style="height:475px;background-color:#eee">
+                <div class="col-sm-12 nopadding margin-top-10" id="FirstDiv">
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-10 nopadding" style="margin-top:10px;">
+
+                        <div class="col-lg-6 col-md-6 text-center">
+                            <div class="col-sm-12">
+                                <div class="card">
+                                    <div class="card-image">
+                                        <img src="/assets/images/____9895307_orig.png" style="height:150px;width:150px;" />
+                                    </div>
+
+                                    <div class="card-content">
+                                        <p style="font-size:15px;">Click below to add your first venue to get started.</p>
+                                    </div>
+                                    <div class="card-action">
+                                        <a class="btn btn-success" data-dismiss="modal" id="btnCreateVenue" [routerLink]="['/manager/manage/venues/basic-details']">Setup Venue</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 text-center">
+                            <div class="col-sm-12">
+                                <div class="card">
+                                    <div class="card-image">
+                                        <img src="/assets/images/dT4LEEkTe.png" style="height:150px;width:170px;" />
+                                    </div>
+                                    <div class="card-content">
+                                        <p style="font-size:15px;">Click below for a guided tour of the application.</p>
+                                    </div>
+                                    <div class="card-action">
+                                        <a href="#" class="btn btn-success mhelp">Help Tour</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 nopadding margin-top-10 hide" id="FirstVenueDiv" style="background-color:#eee;">
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-10 nopadding" style="height:400px;overflow-y: auto;">
+                        <div class="col-md-12">
+                            <div class="col-sm-3">
+                                <label>Venue Name&nbsp;:</label>
+                            </div>
+                            <div class="col-sm-6 nopadding">
+                                <input type="text" class="form-control" placeholder="Enter Venue name" />
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 margin-top-10">
+                            <div class="col-sm-3 ">
+                                <label>Time Slots&nbsp;:</label>
+                            </div>
+                            <div class="col-md-6 nopadding">
+                                <select class="form-control" id="Selectdiv1">
+                                    <option value="1">Select</option>
+                                    <option value="2">All Day</option>
+                                    <option value="3">Slot Timings</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div id="Timingsdiv1" class="hide">
+                            <div class="col-md-12 margin-top-10">
+                                <div class="form-group">
+                                    <label class="control-label col-md-3">
+                                        Select Slots&nbsp;: <span class="required">
+                                            *
+                                        </span>
+                                    </label>
+                                    <div class="col-md-6 nopadding">
+                                        <div id="Picupload">
+                                            <div class="col-md-12 nopadding">
+                                                <div class="col-sm-5 nopadding">
+                                                    <div class='input-group date datetimepicker3' id="FromDiv">
+                                                        <input type='text' class="form-control datetimepicker3" placeholder="From" />
+                                                        <span class="input-group-addon">
+                                                            <span class="glyphicon glyphicon-time" style="color: #49494e;"></span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-1 nopadding"></div>
+                                                <div class="col-sm-5 nopadding">
+                                                    <div class='input-group date datetimepicker3' id="ToDiv">
+                                                        <input type='text' class="form-control datetimepicker3" placeholder="To" />
+                                                        <span class="input-group-addon">
+                                                            <span class="glyphicon glyphicon-time" style="color: #49494e;"></span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-1 nopadding">
+                                                    <a href="javascript:;" onclick="return AddEmptyRow()" id="btnAddSlots" title="Add more slots"><i style="line-height:2" class="fa fa-plus pull-right"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 margin-top-10">
+                            <div class="col-sm-3">
+                                <label>Venue Phone Number&nbsp;:</label>
+                            </div>
+                            <div class="col-sm-6 nopadding">
+                                <input type='text' class="form-control" placeholder="Venue phone number" />
+                            </div>
+                        </div>
+                        <div class="col-md-12 margin-top-10">
+                            <div class="col-sm-3">
+                                <label>Venue Capacity&nbsp;:</label>
+                            </div>
+                            <div class="col-sm-6 nopadding">
+                                <input type='text' class="form-control" placeholder="Venue capacity" />
+                            </div>
+                        </div>
+                        <div class="col-md-12 margin-top-10">
+                            <div class="col-sm-3">
+                                <label>Venue Address&nbsp;:</label>
+                            </div>
+                            <div class="col-sm-6 nopadding">
+                                <textarea class="form-control textareas" placeholder="Enter Address" rows="4"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-12 margin-top-10">
+                            <div class="col-sm-3">
+                                <label>Contact Person&nbsp;:</label>
+                            </div>
+                            <div class="col-sm-6 nopadding">
+                                <input type='text' class="form-control" placeholder="Contact Person Name" />
+                            </div>
+                        </div>
+                        <div class="col-md-12 margin-top-10">
+                            <div class="col-sm-3">
+                                <label>Contact Person Phone&nbsp;:</label>
+                            </div>
+                            <div class="col-sm-6 nopadding">
+                                <input type='text' class="form-control" placeholder="Contact Person Phone" />
+                            </div>
+                        </div>
+                        <div class="col-md-12 margin-top-10">
+                            <div class="col-sm-3">
+                                <label>Contact Person Email&nbsp;:</label>
+                            </div>
+                            <div class="col-sm-6 nopadding">
+                                <input type='text' class="form-control" placeholder="Contact Person Email" />
+                            </div>
+                        </div>
+                        <div class="col-md-12 margin-top-10">
+                            <div class="col-sm-3">
+                            </div>
+                            <div class="col-sm-6 nopadding">
+                                <a class="btn btn-success" data-dismiss="modal">Save</a>
+                                <a class="btn btn-default" id="btncancel">Cancel</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal-change-pswd" tabindex="-1"
+role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal-dialog pswd-pop">
+   <div class="modal-content">
+       <div class="modal-header">
+           <button type="button" class="close" data-dismiss="modal"
+                   style="color: #fff!important; opacity: 1;" aria-hidden="true">
+               &times;
+           </button>
+           <h4 class="modal-title" id="myModalLabel"><b>Change Password</b></h4>
+       </div>
+       <div class="modal-body" style="float: left;">
+           <div class="col-md-12" style="margin-top: 10px;">
+               <div class="col-sm-4 add-mem">
+                   <label class="add-member-label">Email</label>
+               </div>
+               <div class="col-sm-8">
+                   <input type="text" class="form-control add-member-input"
+                          value="manager@cloud.com" readonly="readonly" />
+               </div>
+           </div>
+           <div class="col-md-12" style="margin-top: 10px;">
+               <div class="col-sm-4 add-mem">
+                   <label class="add-member-label">Current Password</label>
+               </div>
+               <div class="col-sm-8">
+                   <input type="password" class="form-control add-member-input"
+                          placeholder="Current Password.." id="current-password" />
+                   <label class="error-msg" id="current-password-error">
+                   </label>
+               </div>
+           </div>
+           <div class="col-md-12">
+               <div class="col-sm-4 add-mem">
+                   <label class="add-member-label">New Password</label>
+               </div>
+               <div class="col-sm-8">
+                   <input type="password" class="form-control add-member-input"
+                          placeholder="New Password.." id="new-password" />
+                   <label class="error-msg" id="new-password-error">
+                   </label>
+               </div>
+           </div>
+           <div class="col-md-12">
+               <div class="col-sm-4 add-mem">
+                   <label class="add-member-label">Confirm Password</label>
+               </div>
+               <div class="col-sm-8">
+                   <input type="password" class="form-control add-member-input"
+                          placeholder="Confirm Password.." id="new-confirm-password" />
+                   <label class="error-msg" id="confirm-password-error">
+                   </label>
+                   <label class="error-msg" id="display-password-error">
+                   </label>
+               </div>
+           </div>
+       </div>
+       <div class="modal-footer" style="border-top: none;">
+           <div class="col-sm-6 nopadding">
+               &nbsp;&nbsp;
+               <button type="button" class="btn btn-success" data-dismiss="modal"
+                       onclick="toastr.success('New password updated successfully');">
+                   Save
+                   changes
+               </button>
+               <button type="button" class="btn btn-Clear" data-dismiss="modal"
+                       onclick="clearChangePasswordFields();">
+                   Close
+               </button>
+
+           </div>
+
+       </div>
+   </div>
+</div>
+</div>

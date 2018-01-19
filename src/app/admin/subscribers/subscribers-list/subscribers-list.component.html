@@ -1,0 +1,277 @@
+<div class="page-content-wrapper">
+	<div class="page-content clearfix ">
+		<!---Page content-->
+		<div class="row nopadding no-margin">
+			<div class="col-sm-1"></div>
+			<div class="col-sm-10 nopadding">
+
+				<div class="col-sm-12 nopadding">
+					<div class="col-sm-10 nopadding">
+						<h3 class="page-title">
+							Subscribers
+							<p>
+								<small>Subscribers to the cloud retail application can be
+									managed from here.</small>
+							</p>
+						</h3>
+					</div>
+
+				</div>
+				<!---Subscriber table and list of subscripbers -->
+				<div class="col-sm-12 nopadding margin-top-10">
+					<div class="col-sm-12 nopadding">
+						<div class="col-sm-12 nopadding" style="margin-top: 10px;">
+							<a class="btn btn-success  pull-right"
+								title="Click to add new subscriber details"
+								style="margin-bottom: 10px;" data-toggle="modal"
+								data-target="#Subscriberaddmodal"><i class="fa fa-plus"></i>
+								&nbsp;Add Subscriber</a>
+						</div>
+						<table class="table table-hover table-bordered margin-top-10"
+							[mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="5">
+							<thead>
+								<tr class="table-headers">
+									<th style="width: 14%"><mfDefaultSorter by="name">Property Name</mfDefaultSorter>
+									</th>
+									<th style="width: 14%"><mfDefaultSorter by="contact">Contact</mfDefaultSorter>
+									</th>
+									<th style="width: 16%"><mfDefaultSorter by="email">Email</mfDefaultSorter>
+									</th>
+									<th style="width: 14%"><mfDefaultSorter by="phone">Phone</mfDefaultSorter>
+									</th>
+									<th class="text-center" style="width: 14%"><mfDefaultSorter
+											by="status">Status</mfDefaultSorter></th>
+									<th class="text-center" style="width: 14%">Shadow login</th>
+									<th class="text-center" style="width: 14%">Actions</th>
+
+								</tr>
+							</thead>
+
+							<tbody>
+								<tr *ngFor="let item of mf.data">
+									<td class="cursor"><a title="Click to view subscriber summary"
+										[routerLink]="['/admin/subscribers/summary']" target="_blank">{{item.name}}</a></td>
+									<td class="cursor">{{item.contact}}</td>
+									<td class="cursor">{{item.email}}</td>
+									<td class="cursor">{{item.phone}}</td>
+									<td class="text-center cursor"><a>{{item.status}}</a></td>
+									<td class="text-center"><a
+										[routerLink]="['/manager/dashboard']"
+										title="Click to Shadow login"><i class="fa fa-user-secret"></i></a>&nbsp;&nbsp;</td>
+									<td class="text-center cursor"><a
+										title="Click to update subscriber" data-toggle="modal"
+										data-target="#UpdateSubscriber"><i class="fa fa-pencil"></i></a>&nbsp;&nbsp;<a
+										title="Click to delete subscriber"><i class="fa fa-trash red"></i></a>&nbsp;</td>
+								</tr>
+
+							</tbody>
+							<tfoot>
+								<tr>
+									<td colspan="7"><mfBootstrapPaginator></mfBootstrapPaginator></td>
+								</tr>
+							</tfoot>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--Modal pop up for update subscribers-->
+<div class="modal fade" id="UpdateSubscriber" role="dialog">
+	<div class="modal-dialog modal-md">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">
+					<b>Update Subscriber</b>
+				</h4>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+					<div class="col-md-12">
+						<!-- BEGIN PROFILE SIDEBAR -->
+						<!-- END BEGIN PROFILE SIDEBAR -->
+						<!-- BEGIN PROFILE CONTENT -->
+						<div class="profile-content">
+							<div class="portlet light">
+								<!-- PERSONAL INFO TAB -->
+								<form role="form" action="#">
+									<div class="form-group">
+										<div class="col-sm-12 nopadding margin-top-10">
+											<div class="col-sm-4">
+												<label class="control-label">Contact Name&nbsp;:</label>
+											</div>
+											<div class="col-sm-7">
+												<input type="text" class="form-control" value="Neeraj" />
+											</div>
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="col-sm-12 nopadding margin-top-10">
+											<div class="col-sm-4">
+												<label class="control-label">Mobile Number&nbsp;:</label>
+											</div>
+											<div class="col-sm-7">
+												<input type="text" class="form-control" value="9999999999" />
+											</div>
+										</div>
+									</div>
+
+									<div class="form-group">
+										<div class="col-sm-12 nopadding margin-top-10">
+											<div class="col-sm-4">
+												<label class="control-label">Email&nbsp;:</label>
+											</div>
+											<div class="col-sm-7">
+												<input type="text" class="form-control"
+													value="Neeraj@gmail.com" />
+											</div>
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="col-sm-12 nopadding margin-top-10">
+											<div class="col-sm-4">
+												<label class="control-label">No.of Venues&nbsp;:</label>
+											</div>
+											<div class="col-sm-7">
+												<input type="text" class="form-control" value="5" />
+											</div>
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="col-sm-12 nopadding margin-top-10">
+											<div class="col-sm-4">
+												<label class="control-label">Property Name&nbsp;:</label>
+											</div>
+											<div class="col-sm-7">
+												<input type="text" class="form-control"
+													value="Nareen Gardens" />
+											</div>
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="col-sm-12 nopadding margin-top-10">
+											<div class="col-sm-4">
+												<label class="control-label">Location&nbsp;:</label>
+											</div>
+											<div class="col-sm-7">
+												<textarea class="form-control" rows="4">Miyapur, Hyderabad,Telangana</textarea>
+											</div>
+										</div>
+									</div>
+
+								</form>
+							</div>
+						</div>
+						<!-- END PROFILE CONTENT -->
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer padding20px margin-top-20">
+				<button type="button" class="btn btn-success" data-dismiss="modal"
+					onclick="toastr.success('Updated subscriber details successfully');">Update</button>
+				&nbsp;
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!--Modal pop up for Add subscribers-->
+<div class="modal fade" id="Subscriberaddmodal" role="dialog">
+	<div class="modal-dialog modal-md">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">
+					<b>Add Subscriber</b>
+				</h4>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+					<div class="col-md-12">
+						<!-- BEGIN PROFILE SIDEBAR -->
+						<!-- END BEGIN PROFILE SIDEBAR -->
+						<!-- BEGIN PROFILE CONTENT -->
+						<div class="profile-content">
+							<div class="portlet light">
+								<!-- PERSONAL INFO TAB -->
+								<form role="form" action="#">
+									<div class="form-group">
+										<div class="col-sm-12 nopadding margin-top-10">
+											<div class="col-sm-4">
+												<label class="control-label">Contact Name&nbsp;:</label>
+											</div>
+											<div class="col-sm-7">
+												<input type="text" class="form-control" />
+											</div>
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="col-sm-12 nopadding margin-top-10">
+											<div class="col-sm-4">
+												<label class="control-label">Mobile Number&nbsp;:</label>
+											</div>
+											<div class="col-sm-7">
+												<input type="text" class="form-control" />
+											</div>
+										</div>
+									</div>
+
+									<div class="form-group">
+										<div class="col-sm-12 nopadding margin-top-10">
+											<div class="col-sm-4">
+												<label class="control-label">Email&nbsp;:</label>
+											</div>
+											<div class="col-sm-7">
+												<input type="text" class="form-control" />
+											</div>
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="col-sm-12 nopadding margin-top-10">
+											<div class="col-sm-4">
+												<label class="control-label">No.of Venues&nbsp;:</label>
+											</div>
+											<div class="col-sm-7">
+												<input type="text" class="form-control" />
+											</div>
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="col-sm-12 nopadding margin-top-10">
+											<div class="col-sm-4">
+												<label class="control-label">Property Name&nbsp;:</label>
+											</div>
+											<div class="col-sm-7">
+												<input type="text" class="form-control" />
+											</div>
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="col-sm-12 nopadding margin-top-10">
+											<div class="col-sm-4">
+												<label class="control-label">Location&nbsp;:</label>
+											</div>
+											<div class="col-sm-7">
+												<textarea class="form-control" rows="4"></textarea>
+											</div>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+						<!-- END PROFILE CONTENT -->
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer padding20px margin-top-20">
+				<button type="button" class="btn btn-success" data-dismiss="modal"
+					onclick="toastr.success('Saved subscriber details successfully');">Save</button>
+				&nbsp;
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+	</div>
+</div>

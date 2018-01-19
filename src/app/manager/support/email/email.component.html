@@ -1,0 +1,56 @@
+<div class="page-content-wrapper">
+        <div class="page-content clearfix ">
+            <div class="col-sm-12">
+                <div class="col-sm-12" style="margin-top: 4%;">
+                    <app-manager-support></app-manager-support>
+                    <!--Email support content-->
+                    <div class="col-sm-12 nopadding" style="margin-top: 30px;"
+                        id="email">
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-11" id="BEA">
+                            <div class="col-sm-12">
+                                <div class="col-sm-3">
+                                    <label style="font-size: 18px;"><b><u>Email</u></b></label>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 margin-top-10">
+                                <div class="col-sm-3">
+                                    <label>Mail To&nbsp;:</label>
+                                </div>
+                                <div class="col-sm-5">
+                                    <input type="text" class="form-control"
+                                        value="support@venuecloud.com" disabled />
+                                </div>
+                            </div>
+                            <div class="col-sm-12 margin-top-10">
+                                <div class="col-sm-3">
+                                    <label>CC&nbsp;:</label>
+                                </div>
+                                <div class="col-sm-5">
+                                    <input type="text" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="col-sm-12 margin-top-15">
+                                <div class="col-sm-3">
+                                    <label>Subject To&nbsp;:</label>
+                                </div>
+                                <div class="col-sm-9">
+                                    <div class="portlet-title">
+                                        <textarea class="wysihtml5 form-control" id="email_description" rows="6"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 margin-top-15">
+                                <div class="col-sm-3"></div>
+                                <div class="col-sm-9">
+                                    <a class="btn btn-success"
+                                        onclick="toastr.success('Email has been sent successfully');">Send</a>
+                                    <a class="btn btn-default">Cancel</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

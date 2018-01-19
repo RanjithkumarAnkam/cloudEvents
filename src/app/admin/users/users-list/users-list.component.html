@@ -1,0 +1,200 @@
+<div class="page-content-wrapper">
+	<div class="page-content clearfix ">
+		<!---Page content-->
+		<div class="row nopadding">
+			<div class="col-sm-1"></div>
+			<div class="col-sm-10 nopadding">
+				<div class="col-sm-12 nopadding">
+					<div class="col-sm-10 nopadding">
+						<h3 class="page-title">
+							Admin Users
+							<p>
+								<small>List of admin users can be managed here.</small>
+							</p>
+						</h3>
+					</div>
+				</div>
+				<div class="col-sm-12 nopadding">
+					<a class="btn btn-success pull-right" data-target="#AddUsersModal"
+						data-toggle="modal"> <i class="fa fa-plus"></i>&nbsp;Add User
+					</a>
+				</div>
+				<!--Table for users-->
+				<div class="col-sm-12 nopadding  margin-top-10">
+					<table class="table table-hover table-bordered margin-top-10"
+						[mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="5">
+						<thead>
+							<tr class="table-headers">
+								<th style="width: 25%"><mfDefaultSorter by="name">User Name</mfDefaultSorter></th>
+								<th style="width: 25%"><mfDefaultSorter by="email">Email</mfDefaultSorter></th>
+								<th style="width: 25%"><mfDefaultSorter by="phone">Phone</mfDefaultSorter></th>
+								<th class="text-center" style="width: 10%"><mfDefaultSorter
+										by="permissions">Permissions</mfDefaultSorter></th>
+								<th class="text-center" style="width: 15%"><mfDefaultSorter
+										by="name">Actions</mfDefaultSorter></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr *ngFor="let item of mf.data">
+								<td>{{item.name}}</td>
+								<td>{{item.email}}</td>
+								<td>{{item.phone}}</td>
+								<td class="text-center"><a>{{item.permissions}}</a> </td>
+								<td class="text-center"><a title="Click to update details"
+									data-toggle="modal" data-target="#EditUsersModal"> <i
+										class="fa fa-pencil"></i>
+								</a>&nbsp; <a title="Click to delete user" data-toggle="modal"
+									data-target="#DeleteModal"> <i class="fa fa-trash red"></i>
+								</a></td>
+							</tr>
+						</tbody>
+						<tfoot>
+							<tr>
+								<td colspan="5"><mfBootstrapPaginator></mfBootstrapPaginator></td>
+							</tr>
+						</tfoot>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!---Modal popup for Add users-->
+<div class="modal fade" id="AddUsersModal" role="dialog">
+	<div class="modal-dialog modal-md">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">
+					<b>Add User</b>
+				</h4>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+					<div class="col-sm-12 margin-top-10">
+						<div class="col-sm-4">
+							<label>User ID&nbsp;: </label>
+						</div>
+						<div class="col-sm-6">UID0005</div>
+					</div>
+					<div class="col-sm-12 margin-top-10">
+						<div class="col-sm-4">
+							<label>Full Name&nbsp;: </label>
+						</div>
+						<div class="col-sm-6">
+							<input type="text" class="form-control" />
+						</div>
+					</div>
+					<div class="col-sm-12 margin-top-10">
+						<div class="col-sm-4">
+							<label>User Email&nbsp;: </label>
+						</div>
+						<div class="col-sm-6">
+							<input type="text" class="form-control" />
+						</div>
+						<div class="col-sm-2" id="btnOTP">
+							<a>Generate OTP</a>
+						</div>
+					</div>
+					<div class="col-sm-12 margin-top-10">
+						<div class="col-sm-4">
+							<label>OTP&nbsp;: </label>
+						</div>
+						<div class="col-sm-6">
+							<input type="text" class="form-control" id="otpbox" disabled />
+						</div>
+					</div>
+					<div class="col-sm-12 margin-top-10">
+						<div class="col-sm-4">
+							<label>Phone Number&nbsp;: </label>
+						</div>
+						<div class="col-sm-6">
+							<input type="text" class="form-control" />
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer padding20px">
+				<button type="button" class="btn btn-success" data-dismiss="modal"
+					onclick="toastr.success('User added successfully');">Save</button>
+				<button type="button" class="btn btn-default" data-dismiss="modal"
+					data-target="#DeleteModal" data-toggle="modal">Close</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!--Edit user modal popup-->
+<div class="modal fade" id="EditUsersModal" role="dialog">
+	<div class="modal-dialog modal-md">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">
+					<b>Update User</b>
+				</h4>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+					<div class="col-sm-12 margin-top-10">
+						<div class="col-sm-4">
+							<label>User ID&nbsp;: </label>
+						</div>
+						<div class="col-sm-6">UID0002</div>
+					</div>
+					<div class="col-sm-12 margin-top-10">
+						<div class="col-sm-4">
+							<label>Full Name&nbsp;: </label>
+						</div>
+						<div class="col-sm-6">
+							<input type="text" class="form-control" value="Mahesh V" />
+						</div>
+					</div>
+					<div class="col-sm-12 margin-top-10">
+						<div class="col-sm-4">
+							<label>User Email&nbsp;: </label>
+						</div>
+						<div class="col-sm-6">
+							<input type="text" class="form-control"
+								value="Mahesh@outlook.com" />
+						</div>
+					</div>
+					<div class="col-sm-12 margin-top-10">
+						<div class="col-sm-4">
+							<label>Phone Number&nbsp;: </label>
+						</div>
+						<div class="col-sm-6">
+							<input type="text" class="form-control" value="9999999999" />
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer padding20px">
+				<button type="button" class="btn btn-success" data-dismiss="modal"
+					onclick="toastr.success('User updated successfully');">Update</button>
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!--Delete modal popup-->
+<div class="modal fade" id="DeleteModal" role="dialog">
+	<div class="modal-dialog modal-md">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">
+					<b>Delete Venue</b>
+				</h4>
+			</div>
+			<div class="modal-body">
+				<label style="padding: 16px;">Are you sure you would like to delete?</label>
+			</div>
+			<div class="modal-footer padding20px">
+				<button type="button" class="btn btn-success" data-dismiss="modal"
+					onclick="toastr.success('Deleted successfully');">Yes</button>
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,167 @@
+<div class="page-content-wrapper">
+	<div class="page-content clearfix ">
+		<!---Page content-->
+		<div class="row nopadding">
+			<div class="col-sm-1"></div>
+			<div class="col-sm-10 nopadding">
+				<!--Dashboard page title-->
+				<div class="col-sm-12 nopadding">
+					<div class="col-sm-10 nopadding">
+						<h3 class="page-title">
+							Dashboard
+							<p>
+								<small>Reports &amp; statistics.</small>
+							</p>
+						</h3>
+					</div>
+				</div>
+				<!--Filter section-->
+				<div class="col-sm-12 nopadding margin-top-10">
+					<div class="panel panel-default">
+						<div class="panel-body" style="background-color: #eee;">
+							<div class="col-sm-12 nopadding">
+								<div class="col-sm-7 nopadding">
+									<label style="font-size: 20px;"><b>Filters</b>&nbsp;
+										<p>
+											<small style="font-size: 13px;">Choose filters to refine data
+												statistics</small>
+										</p></label>
+								</div>
+								<div class="col-sm-5 nopadding">
+									<div class="col-sm-12 nopadding">
+										<div class="col-sm-6 margin-top-20">
+											<div class="col-sm-3 nopadding">
+												<label style="line-height: 30px;">Year&nbsp;:</label>
+											</div>
+											<div class="col-sm-9 nopadding">
+												<select class="form-control">
+													<option>2012</option>
+													<option>2013</option>
+													<option>2014</option>
+													<option>2015</option>
+													<option selected="selected">2016</option>
+													<option>2017</option>
+												</select>
+											</div>
+										</div>
+										<div class="col-sm-6 margin-top-20">
+											<div class="col-sm-4 nopadding">
+												<label style="line-height: 30px;">Month&nbsp;:</label>
+											</div>
+											<div class="col-sm-8 nopadding">
+												<select class="form-control">
+													<option>Jan</option>
+													<option>Feb</option>
+													<option>Mar</option>
+													<option>Apr</option>
+													<option>May</option>
+													<option selected="selected">Jun</option>
+													<option>Jul</option>
+													<option>Aug</option>
+													<option>Sep</option>
+													<option>Oct</option>
+													<option>Nov</option>
+													<option>Dec</option>
+												</select>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--page content-->
+				<div class="tab-content">
+					<div id="menua" class="tab-pane fade in active">
+						<div class="col-sm-12 nopadding  margin-top-20">
+							<div class="row">
+								<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+									<div class="dashboard-stat blue-madison">
+										<div class="visual">
+											<i class="fa fa-comments"></i>
+										</div>
+										<div class="details">
+											<div class="number">50</div>
+											<div class="desc">No.Of Subscribers</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+									<div class="dashboard-stat red-intense">
+										<div class="visual">
+											<i class="fa fa-bar-chart-o"></i>
+										</div>
+										<div class="details">
+											<div class="number">150</div>
+											<div class="desc">No.Of Venues</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+									<div class="dashboard-stat green-haze">
+										<div class="visual">
+											<i class="fa fa-shopping-cart"></i>
+										</div>
+										<div class="details">
+											<div class="number">
+												<i class="fa fa-rupee"></i>&nbsp;2,65,500
+											</div>
+											<div class="desc">Current Month Revenue</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+									<div class="dashboard-stat purple-plum">
+										<div class="visual">
+											<i class="fa fa-eye"></i>
+										</div>
+										<div class="details">
+											<div class="number">
+												<i class="fa fa-rupee"></i>&nbsp;2,10,00,000
+											</div>
+											<div class="desc">Total Revenue</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--Table for payments-->
+				<div class="col-md-12 nopadding">
+					<div class="col-sm-12 nopadding">
+						<h4 style="font-weight: 600;">Payment Dues</h4>
+					</div>
+					<table class="table table-hover table-bordered margin-top-10"
+						[mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="5">
+						<thead>
+							<tr class="table-headers">
+								<th style="width: 20%"><mfDefaultSorter by="name">Property Name</mfDefaultSorter>
+								</th>
+								<th style="width: 20%"><mfDefaultSorter by="amount">Amount</mfDefaultSorter>
+								</th>
+								<th style="width: 20%"><mfDefaultSorter by="duedate">Due Date</mfDefaultSorter>
+								</th>
+								<th style="width: 20%"><mfDefaultSorter by="email">Email</mfDefaultSorter>
+								</th>
+								<th style="width: 20%"><mfDefaultSorter by="phone">Phone</mfDefaultSorter>
+								</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr *ngFor="let item of mf.data">
+								<td>{{item.name}}</td>
+								<td>{{item.amount}}</td>
+								<td>{{item.duedate}}</td>
+								<td>{{item.email}}</td>
+								<td>{{item.phone}}</td>
+							</tr>
+						</tbody>
+						
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

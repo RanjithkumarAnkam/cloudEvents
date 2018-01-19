@@ -1,0 +1,84 @@
+<div class="page-content-wrapper">
+        <div class="page-content clearfix ">
+            <div class="col-sm-12">
+                <div class="col-sm-1"></div>
+                <div class="col-sm-10 form">
+                    <!--Page Start -->
+                    <div class="col-sm-12 nopadding margin-top-10">
+                        <div class="row">
+                            <div class="col-sm-10">
+                                <h2 class="page-title">Add New Venue</h2>
+                            </div>
+                            <div class="col-sm-2">
+                                <a [routerLink]="['/manager/manage/venues']"
+                                    class="btn btn-default pull-right"> <i
+                                    class="fa fa-angle-left" style="margin-right:5px;"></i> Back
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Page process bars-->
+                    <div class="col-md-12 nopadding form-wizard" style="border: ridge;">
+                        <div class="form-body" id="form_wizard_1">
+                            <app-manager-add-venue></app-manager-add-venue>
+                            <div class="portlet-body form">
+                                <form action="#" class="form-horizontal" id="submit_form"
+                                    method="POST">
+                                    <div class="form-wizard">
+                                        <div class="form-body">
+                                            <!--Page details starts here-->
+                                            <div class="tab-pane" id="tab2">
+                                                <h4 class="block">
+                                                    <b>Provide your venue contact person details</b>
+                                                </h4>
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-4 add-member-label">
+                                                        Contact Person Name </label>
+                                                    <div class="col-md-5">
+                                                        <input type="text" class="form-control" name=""
+                                                            value="Ravi" />
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-4 add-member-label">
+                                                        Email ID </label>
+                                                    <div class="col-md-5">
+                                                        <input type="text" class="form-control" name=""
+                                                            value="ravi@cloud.com" />
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-4 add-member-label">
+                                                        Phone Number </label>
+                                                    <div class="col-md-5">
+                                                        <input type="text" class="form-control" name=""
+                                                            value="9999999999" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!---Buttons to submit the data-->
+                                    <div class="form-actions">
+                                        <div class="row">
+                                            <div class="col-md-offset-3 col-md-9">
+                                                <a class="btn default button-cancel"
+                                                    data-toggle="modal" data-target="#cancelbutton"> Cancel <i
+                                                    class=""></i>
+                                                </a> <a [routerLink]="['/manager/manage/venues/basic-details']"
+                                                    class="btn default button-previous"> <i
+                                                    class="m-icon-swapleft"></i> Previous
+                                                </a> <a [routerLink]="['/manager/manage/venues/media']" class="btn green button-next" style="color: #fff !important;">
+                                                    Save &amp; Continue <i class="m-icon-swapright m-icon-white"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

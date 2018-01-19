@@ -1,0 +1,1410 @@
+<div class="page-content-wrapper">
+  <div class="page-content clearfix ">
+    <div class="row nopadding">
+      <div class="col-sm-1"></div>
+      <!---Page Starts-->
+      <div class="col-sm-10">
+        <div class="col-sm-12 nopadding">
+          <div class="col-sm-10 nopadding">
+            <h3 class="page-title">
+              Calendar
+              <p>
+                <small>All bookings, enquiries and appointments can be managed here. Click on any date to manage entries. </small>
+              </p>
+            </h3>
+          </div>
+          <div class="col-sm-12 nopadding " style="background: rgba(17, 106, 158, 0.23); padding-left: 10px; padding-bottom: 10px;">
+            <div class="col-lg-3 nopadding btm  ">
+
+              <div style="text-align: center;padding-top:10px;" id="loaderdiv">
+                <p-calendar formControlName="date11" [inline]="true" class="col-xs-12 padding-0"></p-calendar>
+              </div>
+
+
+              <div class="col-sm-12" style="padding: 28px;">
+                <div>
+                  <h4>
+                    <strong>Venues</strong>
+                  </h4>
+                  <ul id="example" class="myclass" style="list-style-type: none; padding-left: 0px; padding-bottom: 1px;">
+                    <li style="margin-top: 5px;">
+                      <input type="radio" class="radioclcik" name="venue1" checked="checked">
+                      <span style="font-size: 15px;">Naren Convention (34)</span>
+                      <ul id="activities" class="myclass" style="list-style-type: none; padding-left: 0px; padding-bottom: 1px; margin-left: 25px;">
+                        <li style="margin-top: 5px; position: relative;">
+                          <div style="width: 25px; height: 11px; box-shadow: rgb(158, 152, 152) -1px 1px 3px 1px; background: green; display: inline-table; color: #fff; text-align: center;">
+                            10</div>
+                          <input type="radio" class="radioclcik" name="venue">
+                          <span style="font-size: 15px;"> </span>
+                          Bookings &nbsp;
+                          <span title="Click to download bookings" class="curspointer" style="color: #10acd0;">
+                            <i class="fa fa-download"></i>
+
+                          </span>
+                        </li>
+                        <li style="margin-top: 5px; position: relative;">
+                          <div style="width: 25px; height: 11px; box-shadow: rgb(158, 152, 152) -1px 1px 3px 1px; background: red; display: inline-table; color: #fff; text-align: center;">
+                            10</div>
+                          <input type="radio" class="radioclcik" name="venue">
+                          <span style="font-size: 15px;"> Enquiries</span>
+                          &nbsp;
+                          <span title="Click to download enquiries" class="curspointer" style="color: #10acd0;">
+                            <i class="fa fa-download"></i>
+
+                          </span>
+                        </li>
+                        <li style="margin-top: 5px; position: relative;">
+                          <div style="width: 25px; height: 11px; box-shadow: rgb(158, 152, 152) -1px 1px 3px 1px; background: blue; display: inline-table; color: #fff; text-align: center;">
+                            14</div>
+                          <input type="radio" class="radioclcik" name="venue">
+                          <span style="font-size: 15px;"> Meetings </span>
+                          &nbsp;
+                          <span title="Click to download meetings" class="curspointer" style="color: #10acd0;">
+                            <i class="fa fa-download"></i>
+                          </span>
+                        </li>
+                      </ul>
+                    </li>
+                    <li style="margin-top: 5px;">
+                      <input type="radio" class="radioclcik" name="venue1">
+                      <span style="font-size: 15px;"> Naren Gardens (45)</span>
+                    </li>
+                    <li style="margin-top: 5px;">
+                      <input type="radio" class="radioclcik" name="venue1">
+                      <span style="font-size: 15px;"> Naren Platinum (57)</span>
+                    </li>
+                    <li style="margin-top: 5px;">
+                      <input type="radio" class="radioclcik" name="venue1">
+                      <span style="font-size: 15px;"> Naren Community (20)</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="margin-top-10">
+                  <h4>
+                    <strong>Statistics</strong>
+                  </h4>
+                  <ul style="list-style-type: none; padding-left: 0px;">
+                    <li style="margin-bottom: 5px;">
+                      <span style="font-size: 15px;">Utilisation (84%)
+                      </span>
+                    </li>
+                    <li style="margin-bottom: 5px;">
+                      <span style="font-size: 15px;">YoY (+15)&nbsp;
+                        <i class="fa fa-arrow-up" style="color: green;"></i>
+                      </span>
+                    </li>
+                    <li style="margin-bottom: 5px;">
+                      <span style="font-size: 15px;">MoM (-10)&nbsp;
+                        <i class="fa fa-arrow-down red"></i>
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-9 margin-top-10">
+              <div class="portlet-body">
+                <!--START CALENDAR-->
+                <div class="col-sm-12 nopadding">
+                  <p-schedule [events]="events" [header]="header" defaultDate="2018-01-11" [eventLimit]="4" [editable]="true" (onDayClick)="handleDayClick($event)"></p-schedule>
+                </div>
+              </div>
+              <!-- END CALENDAR PORTLET-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<button id="openPreviousModalButton" [hidden]="true" data-toggle="modal" data-target="#modalprevousdays">Open Modal</button>
+<!--Cancel POPUP-->
+<div class="modal fade" id="modalprevousdays" role="dialog">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">
+          <b>Confirmation</b>
+        </h4>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-12">
+            <!-- BEGIN PROFILE SIDEBAR -->
+            <!-- END BEGIN PROFILE SIDEBAR -->
+            <!-- BEGIN PROFILE CONTENT -->
+            <label style="padding:15px;">You can't add events to this date. Please select future date?</label>
+            <!-- END PROFILE CONTENT -->
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer padding20px margin-top-20">
+        <a type="button" class="btn btn-default" data-dismiss="modal">Ok</a>&nbsp;
+      </div>
+    </div>
+  </div>
+</div>
+
+<button id="openFutureModalButton" [hidden]="true" data-toggle="modal" data-target="#fullCalModal">Open Modal</button>
+<div id="fullCalModal" class="modal fade">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content" id="mdcontent">
+      <div class="fc-title header">
+        <button (click)="resetEverything()" id="btnClosebands" type="button" class="btn btn-default Close pull-right" data-dismiss="modal" style="margin-right: 20px;margin-top: 28px;border-radius: 35px !important;">
+          <span aria-hidden="true" style="font-size:20px">×</span>
+          <span class="sr-only">close</span>
+        </button>&nbsp;
+        <button type="button" *ngIf="new_creation" (click)="clickedBackButton()" class="btn btn-primary btnback pull-right" style="margin-right: 20px;margin-top: 28px;border-radius: 4px !important;">
+          <span title="Click to go back" aria-hidden="true">
+            <i class="fa fa-arrow-circle-o-left"></i>&nbsp;Back</span>
+          <span class="sr-only">Back</span>
+        </button>
+        <button type="button" class="btn btn-primary pull-right hide" id="addbtnbooking" style="margin-right: 11px;margin-top: 28px;border-radius: 4px !important;">
+          <span title="Click for venue booking" aria-hidden="true">&nbsp;Add New Booking</span>
+          <span class="sr-only">Add New Booking</span>
+        </button>
+        <button type="button" class="btn btn-primary pull-right hide" id="addbtnenquiry" style="margin-right: 11px;margin-top: 28px;border-radius: 4px !important;">
+          <span title="Click for venue enquiry" aria-hidden="true">&nbsp;Add New Enquiry</span>
+          <span class="sr-only">Add New Enquiry</span>
+        </button>
+        <button type="button" class="btn btn-primary pull-right hide" id="addbtnappointment" style="margin-right: 11px;margin-top: 28px;border-radius: 4px !important;">
+          <span title="Click for venue appointment" aria-hidden="true">&nbsp;Add New Appointment</span>
+          <span class="sr-only">Add New Appointment</span>
+        </button>
+        <h4 id="modalTitle" class="modal-Title" style="padding: 10px;font-weight: bold;padding-left: 15px;">-
+          <small>Hello</small>
+        </h4>
+      </div>
+
+      <div id="modalBody" class="modal-body">
+        <div *ngIf="no_new_creation" class="col-sm-12" style="margin-top:0px;background-color:#eee;padding:5px;" id="divcheckbox">
+          <span style="padding-left:9px;font-size: 18px;">
+            <input type="checkbox" class="" id="Holidaychckbox" (change)="clickedHoliday($event)"/> Mark this as a Holiday
+          </span>
+        </div>
+        <div *ngIf='no_new_creation' class="col-sm-12 nopadding" style="margin-top:30px;" id="Firstbands">
+          <div class="col-sm-12" style="margin-top:0px;margin-bottom: 12px;">
+            <label class="" style="font-size: 18px;">
+              <span id="txtpanel">
+                <b>Please select an Event type</b>
+              </span>
+            </label>
+          </div>         
+          <div id="BEA" [ngClass]='event_type_class'>
+            <div class="col-sm-4 text-center">
+              <div class="firstbandpanels" id="bookingpanel" style="display:inline-block;">
+                <div class="panel-body text-center" style="color:white;"  id="btnbooking" (click)="createBooking()">
+                  <i style="padding-top: 3px;" class="fa fa-book fa-3x"></i>
+                </div>
+              </div>
+              <span style="padding-left:4px;font-size: 18px;display:block;" id="txtbookingpanel">Booking</span>
+            </div>
+            <div class="col-sm-4 text-center">
+              <div class="firstbandpanels" id="enquirypanel" style="display:inline-block;">
+                <div class="panel-body text-center" id="btnenquiry" style="color:white" (click)="createEnquiry()">
+                  <i style="padding-top: 3px;" class="fa fa-info-circle fa-3x"></i>
+                </div>
+              </div>
+              <span style="padding-left:4px;font-size: 18px;display:block;" id="txtenquirypanel">Enquiry</span>
+            </div>
+            <div class="col-sm-4 text-center">
+              <div class="firstbandpanels" id="appointmentpanel" style="display:inline-block;">
+                <div class="panel-body text-center" id="btnappointment" style="color:white" (click)="createAppointment()">
+                  <i style="padding-top: 3px;" class="glyphicon glyphicon-calendar fa-2x "></i>
+                </div>
+              </div>
+              <span style="padding-left:4px;font-size: 18px;display:block;" id="txtappointmentpanel">Appointment</span>
+            </div>
+            
+          </div>
+        </div>
+        <div class="col-sm-12 nopadding hide" style="margin-top:30px;" id="secondband">
+          <label style="margin-left: 22%;font-size: 20px;">
+            No Bookings are allowed
+          </label>
+        </div>
+        <div class="col-sm-12" style="margin-top:10px;">
+          <div id="menubooking" *ngIf="new_booking">
+            <div class="col-sm-12">
+              <div class="portlet" id="form_wizard_1">
+                <div class="portlet-body form">
+                  <div class="col-sm-12 col-md-12 col-lg-12 col-xs-12">
+                    <ul id="progressbar" class="prbar" style="display:flex; text-align: center;padding:0;">
+                      <li class="active">Customer</li>
+                      <li>Event</li>
+                      <li>Payment</li>
+                      <li>Summary</li>
+                    </ul>
+                  </div>
+                  <form id="msform" class="form-horizontal">
+                    <fieldset>
+                      <h4 class="block">
+                        <b>
+                          <u>Customer Information</u>
+                        </b>
+                      </h4>
+                      <div id="field1" style="overflow-y:auto; overflow-x:hidden;padding: 27px;padding-top:0px;">
+                        <div class="form-group">
+                          <label class="control-label col-md-4  add-member-label" style="line-height:1px;">
+                            Exisiting Customer
+                          </label>
+                          <div class="col-md-7">
+                            <div class="col-sm-3 padding-0">
+                              <input type="radio" name="optradio" (change)="checkExistingCustomer(1)" class="radio radioclcik" id="yesradiobtn" style="float:left;min-height:22px;" />&nbsp;
+                              <label>Yes</label>
+                            </div>
+                            <div class="col-sm-3 padding-0">
+                              <input checked type="radio" name="optradio" (change)="checkExistingCustomer(2)" class="radio radioclcik" id="noradiobtn"  style="float:left;min-height:22px;"/>&nbsp;
+                              <label>No</label>
+                            </div>
+                          </div>
+                        </div>
+                        <div *ngIf="existing_cust" class="form-group" id="customerselectiondiv" style="margin-top:10px;">
+                          <label class="control-label col-md-4 add-member-label">
+                            Enter Customer Email
+                          </label>
+                          <div class="col-md-5">
+                            <input type="text" id="customeremailid" class="form-control" title="Click on search button" />
+                          </div>
+                          <div class="col-md-3">
+                            <label class="hide" id="spantiltle">
+                              <span style="color:red;">No records found</span>
+                            </label>
+                          </div>
+                        </div>
+                        <div id="newcustomerdiv" style="margin-top:0px;">
+                          <div class="form-group">
+                            <label class="control-label col-md-4 add-member-label">
+                              Full Name
+                            </label>
+                            <div class="col-md-5">
+                              <div class="input-group">
+
+                                <input type="text" class="form-control" id="cfname" />
+                                <span class="input-group-addon">
+                                  <i class="glyphicon glyphicon-user"></i>
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                          <div  *ngIf="new_cust" class="form-group" id="emaildiv">
+                            <label class="control-label col-md-4 add-member-label">
+                              Email ID
+                            </label>
+                            <div class="col-md-5">
+                              <div class="input-group">
+                                <input type="text" class="form-control" />
+                                <span class="input-group-addon">
+                                  <i class="glyphicon glyphicon-envelope"></i>
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label class="control-label col-md-4 add-member-label">
+                              Phone Number
+                            </label>
+                            <div class="col-md-5">
+                              <div class="input-group">
+
+                                <input type="text" class="form-control" id="phone1" />
+                                <span class="input-group-addon">
+                                  <i class="glyphicon glyphicon-book"></i>
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label class="control-label col-md-4 add-member-label">
+                              Address
+                            </label>
+                            <div class="col-md-5">
+                              <textarea class="form-control textareas" rows="4"></textarea>
+                            </div>
+                          </div>
+                        </div>
+
+                      </div>
+                      <button type="button" class="next btn btn-success pull-right" style="margin-right: 11px;border-radius: 4px !important;">
+                        <span title="Click for next screen" aria-hidden="true">&nbsp;
+                          <i class="fa fa-arrow-right"></i>Continue</span>
+                        <span class="sr-only">Continue</span>
+                      </button>
+                      <a data-target="#cancelmodal" data-toggle="modal" class="btn btn-default pull-right" style="margin-right: 11px;border-radius: 4px !important;">
+                        <span title="Click to cancel this booking" aria-hidden="true">&nbsp;
+                          <i class="fa fa-times"></i>Cancel</span>
+                        <span class="sr-only">Cancel</span>
+                      </a>
+                    </fieldset>
+                    <fieldset>
+                      <h4 class="block">
+                        <b>
+                          <u>Booking Details</u>
+                        </b>
+                      </h4>
+                      <div id="field2" style="min-height:280px;max-height:280px;overflow-y:auto; overflow-x:hidden;padding:27px;">
+                        <div class="form-group">
+                          <label class="control-label col-md-4  add-member-label">
+                            Venue
+                          </label>
+                          <div class="col-md-5">
+                            <input type="text" class="form-control" name="event name" value="Naren Convention" disabled="disabled" />
+                          </div>
+                          <div class="col-md-3">
+                            <a data-toggle="tooltip" onclick="return VenueDetails()">Click to View Details</a>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="control-label col-md-4 add-member-label">
+                            Event Name
+                          </label>
+                          <div class="col-md-5">
+                            <input type="text" class="form-control" name="event name" id="eventname" placeholder="Please Enter Event Name" />
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="control-label col-md-4  add-member-label">
+                            Event Type
+                          </label>
+                          <div class="col-md-5">
+                            <select class="form-control" id="selecteventtypeid">
+                              <option>
+                                Select
+                              </option>
+                              <option>
+                                Hall
+                              </option>
+                              <option>
+                                Hall + Decoration
+                              </option>
+                              <option>
+                                Hall + Food
+                              </option>
+                              <option>
+                                Total Event
+                              </option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="control-label col-md-4   add-member-label">
+                            Event Date
+                          </label>
+                          <div class="col-md-5">
+                            <div class="input-group">
+                              <input class="form-control" type="date" id="datepicker1">
+                              <span class="input-group-addon">
+                                <i class="fa fa-calendar"></i>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label class="control-label col-md-4 add-member-label">
+                            Timeslots
+                          </label>
+                          <div class="col-md-5">
+                            <select class="form-control" id="Selectdiv">
+                              <option value="1">Select</option>
+                              <option value="2">All Day</option>
+                              <option value="3">Timings</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div id="Timingsdiv" class="hide">
+                          <div class="form-group">
+                            <label class="control-label col-md-4 add-member-label">
+                              Select Timings
+                            </label>
+                            <div class="col-md-5">
+                              <div class="col-md-6">
+                                <div class='input-group date datetimepicker3' id="FromDiv">
+                                  <input type='text' class="form-control datetimepicker3" placeholder="From" />
+                                  <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-time" style="color: #49494e;"></span>
+                                  </span>
+                                </div>
+                              </div>
+                              <div class="col-md-6">
+                                <div class='input-group date datetimepicker3' id="ToDiv">
+                                  <input type='text' class="form-control datetimepicker3" placeholder="To" />
+                                  <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-time" style="color: #49494e;"></span>
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="control-label col-md-4 add-member-label">
+                            Vendor service required
+                          </label>
+                          <div class="col-md-8">
+                            <div class="col-sm-2">
+                              <input type="radio" name="optradio" class="radio radioclcik" id="yesVradiobtn" />&nbsp;
+                              <label>Yes</label>
+                            </div>
+                            <div class="col-sm-3">
+                              <input type="radio" name="optradio" class="radio radioclcik" id="noVradiobtn" />&nbsp;
+                              <label>No</label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group hide" id="btnVservicesdiv">
+                          <label class="control-label col-md-4 add-member-label">
+                            Select Services
+                          </label>
+                          <div class="col-md-8">
+                            <div id="newvendorselection">
+                              <div class="col-sm-4">
+                                <select class="form-control">
+                                  <option>Select Type</option>
+                                  <option>Photographer</option>
+                                  <option>Decoration</option>
+                                  <option>Food Suppliers</option>
+                                </select>
+                              </div>
+                              <div class="col-sm-4" style="margin-left:13px;">
+                                <select class="form-control">
+                                  <option>Select Name</option>
+                                  <option>Rakesh</option>
+                                  <option>Shankar</option>
+                                  <option>Raja</option>
+                                </select>
+                              </div>
+                              <div class="col-sm-2 nopadding">
+                                <a href="javascript:;" class="pull-right" onclick="return AddEmptyVendor()" title="Add more vendor services">
+                                  <i style="line-height:2" class="fa fa-plus"></i>&nbsp;Add</a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="control-label col-md-4 add-member-label">
+                            Select Decoration Type
+                          </label>
+                          <div class="col-md-5">
+                            <input type="file" class="form-control" />
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="control-label col-md-4 add-member-label">
+                            Select Food Menu
+                          </label>
+                          <div class="col-md-5">
+                            <input type="file" class="form-control" />
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="control-label col-md-4 add-member-label">
+                            Additional information
+                          </label>
+                          <div class="col-md-5">
+                            <textarea class="form-control textareas" rows="4"></textarea>
+                          </div>
+                        </div>
+                      </div>
+                      <button type="button" class="next btn btn-success pull-right" style="margin-right: 11px;margin-top: 28px;border-radius: 4px !important;">
+                        <span title="Click for next screen" aria-hidden="true">&nbsp;
+                          <i class="fa fa-arrow-right"></i>Continue</span>
+                        <span class="sr-only">Continue</span>
+                      </button>
+                      <button type="button" class="previous btn btn-default pull-right" style="margin-right: 11px;margin-top: 28px;border-radius: 4px !important;">
+                        <span title="Click to go back" aria-hidden="true">&nbsp;
+                          <i class="fa fa-arrow-left"></i>Previous</span>
+                        <span class="sr-only">Previous</span>
+                      </button>
+                      <a data-target="#cancelmodal" data-toggle="modal" class="btn btn-default pull-right" style="margin-right: 11px;margin-top: 28px;border-radius: 4px !important;">
+                        <span title="Click to cancel this booking" aria-hidden="true">&nbsp;
+                          <i class="fa fa-times"></i>Cancel</span>
+                        <span class="sr-only">Cancel</span>
+                      </a>
+                    </fieldset>
+                    <fieldset>
+                      <h4 class="block">
+                        <b>
+                          <u>Payment details</u>
+                        </b>
+                      </h4>
+                      <div id="field3" style="min-height:280px;max-height:280px;overflow-y:auto;overflow-x:hidden;padding:27px;">
+                        <div class="col-sm-12 nopadding" id="payments">
+                          <div class="col-lg-4 col-md-6 nopadding text-center">
+                            <div class="col-sm-12">
+                              <div style="background-color: #337ab7;height: 10px;"></div>
+                              <div style="border:ridge;height:280px;">
+                                <div class="col-sm-12 headband">
+                                  <h3>Advance</h3>
+                                </div>
+                                <div class="col-sm-12">
+                                  <h3>
+                                    <i class="fa fa-rupee"></i>&nbsp;
+                                    <b>2500</b>
+                                  </h3>
+                                </div>
+                                <div class="col-sm-12" style="margin-top:3px;">
+                                  <p>
+                                    <b>Paid Date</b>&nbsp;:&nbsp;7/12/17</p>
+                                  <p>
+                                    <b>Pay Mode</b>&nbsp;:&nbsp;Cash</p>
+                                  <p>
+                                    <b>Remarks</b>&nbsp;:&nbsp; Payment has been paid by customer...</p>
+                                </div>
+                                <div class="col-sm-12" style="margin-top:9%;">
+                                  <a class="btn btn-primary" id="btnUpdatepayment">Update</a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-lg-4 col-md-6 nopadding text-center">
+                            <div class="col-sm-12">
+                              <div style="background-color: #337ab7;height: 10px;"></div>
+                              <div style="border:ridge;height:280px;">
+                                <div class="col-sm-12 headband">
+                                  <h3>First Payment</h3>
+                                </div>
+                                <div class="col-sm-12">
+                                  <h3>
+                                    <i class="fa fa-rupee"></i>&nbsp;
+                                    <b>2500</b>
+                                  </h3>
+                                </div>
+                                <div class="col-sm-12" style="margin-top:3px;">
+                                  <p>
+                                    <b>Paid Date</b>&nbsp;:&nbsp;7/12/17</p>
+                                  <p>
+                                    <b>Pay Mode</b>&nbsp;:&nbsp;Cash</p>
+                                  <p>
+                                    <b>Remarks</b>&nbsp;:&nbsp; Payment has been paid by customer...</p>
+                                </div>
+                                <div class="col-sm-12" style="margin-top:9%;">
+                                  <a class="btn btn-primary" id="btnUpdatepayment">Update</a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-lg-4 col-md-6 nopadding text-center">
+                            <div class="col-sm-12">
+                              <div style="background-color: #337ab7;height: 10px;"></div>
+                              <div style="border:ridge;height:280px;">
+                                <div class="col-sm-12 headband">
+                                  <h3>Add Payment</h3>
+                                </div>
+                                <div class="col-sm-12" style="margin-top:30%;">
+                                  <a id="addpayment">
+                                    <i class="fa fa-plus fa-4x" style="background-color: #116a9e;"></i>
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-12 nopadding hide" id="addpaymentsdiv">
+                          <div class="col-sm-12 nopadding">
+                            <div class="col-sm-12">
+                              <div class="col-sm-3">
+                                <label>Description&nbsp;:</label>
+                              </div>
+                              <div class="col-sm-7">
+                                <input type="text" class="form-control" />
+                              </div>
+                            </div>
+                            <div class="col-sm-12 margin-top-10">
+                              <div class="col-sm-3">
+                                <label>Amount&nbsp;:</label>
+                              </div>
+                              <div class="col-sm-7">
+                                <input type="text" class="form-control" id="Amount" />
+                              </div>
+                            </div>
+                            <div class="col-sm-12 margin-top-10">
+                              <div class="col-sm-3">
+                                <label>Extra Payments&nbsp;:</label>
+                              </div>
+                              <div class="col-sm-7">
+                                <div class="col-sm-3 nopadding">
+                                  <input type="radio" name="optradio1" class="radio radioclcik" id="yesPayradiobtn" />&nbsp;
+                                  <span>Yes</span>
+                                </div>
+                                <div class="col-sm-3 nopadding">
+                                  <input type="radio" name="optradio1" class="radio radioclcik" id="noPayradiobtn" />&nbsp;
+                                  <span>No</span>
+                                </div>
+                              </div>
+                            </div>
+                            <div id="extrapaymentsdiv" class="hide">
+                              <div class="col-sm-12 margin-top-10">
+                                <div class="col-sm-3">
+                                  <label>Decoration&nbsp;:</label>
+                                </div>
+                                <div class="col-sm-7">
+                                  <input type="text" class="form-control" />
+                                </div>
+                              </div>
+                              <div class="col-sm-12 margin-top-10">
+                                <div class="col-sm-3">
+                                  <label>Land Scaping&nbsp;:</label>
+                                </div>
+                                <div class="col-sm-7">
+                                  <input type="text" class="form-control" />
+                                </div>
+                              </div>
+                              <div class="col-sm-12 margin-top-10">
+                                <div class="col-sm-3">
+                                  <label>Water&nbsp;:</label>
+                                </div>
+                                <div class="col-sm-7">
+                                  <input type="text" class="form-control" />
+                                </div>
+                              </div>
+                              <div class="col-sm-12 margin-top-10">
+                                <div class="col-sm-3">
+                                  <label>Electrical Royalty&nbsp;:</label>
+                                </div>
+                                <div class="col-sm-7">
+                                  <input type="text" class="form-control" />
+                                </div>
+                              </div>
+                              <div class="col-sm-12 margin-top-10">
+                                <div class="col-sm-3">
+                                  <label>Hari&nbsp;:</label>
+                                </div>
+                                <div class="col-sm-7">
+                                  <input type="text" class="form-control" />
+                                </div>
+                              </div>
+                              <div class="col-sm-12 margin-top-10">
+                                <div class="col-sm-3">
+                                  <label>Sannayi&nbsp;:</label>
+                                </div>
+                                <div class="col-sm-7">
+                                  <input type="text" class="form-control" />
+                                </div>
+                              </div>
+                              <div class="col-sm-12 margin-top-10">
+                                <div class="col-sm-3">
+                                  <label>Others&nbsp;:</label>
+                                </div>
+                                <div class="col-sm-7">
+                                  <input type="text" class="form-control" />
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="col-sm-12 margin-top-10">
+                              <div class="col-sm-3">
+                                <label>Payment Date&nbsp;:</label>
+                              </div>
+                              <div class="col-sm-7">
+                                <input type="date" class="form-control" id="PaymentDate" />
+                              </div>
+                            </div>
+                            <div class="col-sm-12 margin-top-10">
+                              <div class="col-sm-3">
+                                <label>Payment Mode&nbsp;:</label>
+                              </div>
+                              <div class="col-sm-7">
+                                <select class="form-control" id="SelectionPaydiv">
+                                  <option value="0">Select</option>
+                                  <option value="1">Cash</option>
+                                  <option value="2">DD</option>
+                                  <option value="3">Cheque</option>
+                                  <option value="4">Others</option>
+                                </select>
+                              </div>
+                            </div>
+                            <div class="col-sm-12 margin-top-10 hide" id="extrapaydiv">
+                              <div class="col-sm-3">
+                              </div>
+                              <div class="col-sm-7">
+                                <input type="text" class="form-control" id="extrachequebox" placeholder="Enter details" />
+                              </div>
+                            </div>
+                            <div class="col-sm-12 margin-top-10">
+                              <div class="col-sm-3">
+                                <label>Remarks&nbsp;:</label>
+                              </div>
+                              <div class="col-sm-7">
+                                <textarea class="form-control" id="remarks"></textarea>
+                              </div>
+                            </div>
+                            <div class="col-sm-12 margin-top-10">
+                              <div class="col-sm-3">
+                              </div>
+                              <div class="col-sm-7">
+                                <a class="btn btn-success pull-left" id="btnSavepayment">Save</a>
+                                <a class="btn btn-default pull-left" id="btnCancelpayment" style="margin-left:4px;">Cancel</a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <button type="button" class="next btn btn-success pull-right" style="margin-right: 11px;margin-top: 28px;border-radius: 4px !important;">
+                        <span title="Click for venue booking" aria-hidden="true">&nbsp;
+                          <i class="fa fa-arrow-right"></i>Continue</span>
+                        <span class="sr-only">Continue</span>
+                      </button>
+                      <button type="button" class="previous btn btn-default pull-right" style="margin-right: 11px;margin-top: 28px;border-radius: 4px !important;">
+                        <span title="Click for venue booking" aria-hidden="true">&nbsp;
+                          <i class="fa fa-arrow-left"></i>Previous</span>
+                        <span class="sr-only">Previous</span>
+                      </button>
+                      <a data-target="#cancelmodal" data-toggle="modal" class="btn btn-default pull-right" style="margin-right: 11px;margin-top: 28px;border-radius: 4px !important;">
+                        <span title="Click to cancel this booking" aria-hidden="true">&nbsp;
+                          <i class="fa fa-times"></i>Cancel</span>
+                        <span class="sr-only">Cancel</span>
+                      </a>
+                    </fieldset>
+                    <fieldset>
+                      <h4 class="block">
+                        <b>
+                          <u>Summary of Booking</u>
+                        </b>
+                      </h4>
+                      <div class="col-sm-12">
+                        <a class="btn btn-success pull-right">
+                          <i class="fa fa-download"></i>&nbsp;Download
+                        </a>
+                      </div>
+                      <div id="field4" style="min-height:280px;max-height:280px;overflow-y:auto;overflow-x:hidden;padding:27px">
+                        <div class="col-sm-12">
+                          <div class="col-md-12 col-sm-12">
+                            <div class="portlet  blue-hoki box">
+                              <div class="portlet-title">
+                                <div class="caption">
+                                  <i class="fa fa-building-o"></i>Event Details
+                                </div>
+                                <div class="actions">
+                                  <a href="#" class="btn btn-default btn-sm">
+                                    <i class="fa fa-pencil"></i> Edit
+                                  </a>
+                                </div>
+                              </div>
+                              <div class="portlet-body">
+                                <div class="row static-info">
+                                  <div class="col-md-5 name">
+                                    Venue Name&nbsp;:
+                                  </div>
+                                  <div class="col-md-7 value">
+                                    Nareen Gardens
+                                  </div>
+                                </div>
+                                <div class="row static-info">
+                                  <div class="col-md-5 name">
+                                    Event&nbsp;:
+                                  </div>
+                                  <div class="col-md-7 value">
+                                    Wedding
+                                  </div>
+                                </div>
+                                <div class="row static-info">
+                                  <div class="col-md-5 name">
+                                    Start Date&nbsp;:
+                                  </div>
+                                  <div class="col-md-7 value">
+                                    10/09/17
+                                  </div>
+                                </div>
+                                <div class="row static-info">
+                                  <div class="col-md-5 name">
+                                    End Date&nbsp;:
+                                  </div>
+                                  <div class="col-md-7 value">
+                                    11/09/17
+                                  </div>
+                                </div>
+                                <div class="row static-info">
+                                  <div class="col-md-5 name">
+                                    Time Slot&nbsp;:
+                                  </div>
+                                  <div class="col-md-7 value">
+                                    <label>
+                                      <b>All Day</b>
+                                    </label>
+                                  </div>
+                                </div>
+                                <div class="row static-info">
+                                  <div class="col-md-5 name">
+                                    Food Menu&nbsp;:
+                                  </div>
+                                  <div class="col-md-7 value">
+                                    <img src="/assets/images/foodmenu.jpg" style="height:100px;width:85px;" />
+                                  </div>
+                                </div>
+                                <div class="row static-info">
+                                  <div class="col-md-5 name">
+                                    Decoration Type&nbsp;:
+                                  </div>
+                                  <div class="col-md-7 value">
+                                    <img src="/assets/images/decoration.jpg" style="height:100px;width:150px;" />
+                                  </div>
+                                </div>
+                                <div class="row static-info">
+                                  <div class="col-md-5 name">
+                                    Additional Information&nbsp;:
+                                  </div>
+                                  <div class="col-md-7 value">
+                                    Will provide Decoration crew and food suppliers
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="col-md-12 col-sm-12">
+                            <div class="portlet  blue-hoki box">
+                              <div class="portlet-title">
+                                <div class="caption">
+                                  <i class="fa fa-rupee"></i>Payment Details
+                                </div>
+                                <div class="actions">
+                                  <a href="#" class="btn btn-default btn-sm">
+                                    <i class="fa fa-pencil"></i> Edit
+                                  </a>
+                                </div>
+                              </div>
+                              <div class="portlet-body">
+                                <div class="panel-group accordion" id="accordion1">
+                                  <div class="panel panel-default">
+                                    <div id="collapse_1" class="panel-collapse in">
+                                      <div class="panel-body">
+                                        <div class="col-sm-12 nopadding">
+                                          <table class="table table-hover table-bordered">
+                                            <thead>
+                                              <tr>
+                                                <th>Total Amount</th>
+                                                <th>Paid</th>
+                                                <th>Due</th>
+                                                <th>Pay Date</th>
+                                                <th>Payment Mode</th>
+                                                <th>Other Details</th>
+                                              </tr>
+                                            </thead>
+                                            <tbody>
+                                              <tr>
+                                                <td>50,000</td>
+                                                <td>30,000</td>
+                                                <td>20,000</td>
+                                                <td>12/12/17</td>
+                                                <td>Cash</td>
+                                                <td class="text-center">-</td>
+                                              </tr>
+                                              <tr>
+                                                <td>1,00,000</td>
+                                                <td>70,000</td>
+                                                <td>30,000</td>
+                                                <td>14/12/17</td>
+                                                <td>Cash</td>
+                                                <td class="text-center">-</td>
+                                              </tr>
+                                            </tbody>
+                                          </table>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-12 col-sm-12">
+                            <div class="portlet  blue-hoki box">
+                              <div class="portlet-title">
+                                <div class="caption">
+                                  <i class="fa fa-user"></i>Customer Details
+                                </div>
+                                <div class="actions">
+                                  <a href="#" class="btn btn-default btn-sm">
+                                    <i class="fa fa-pencil"></i> Edit
+                                  </a>
+                                </div>
+                              </div>
+                              <div class="portlet-body" style="height:188px;">
+                                <div class="row static-info">
+                                  <div class="col-md-5 name">
+                                    Contact Name&nbsp;:
+                                  </div>
+                                  <div class="col-md-7 value">
+                                    Ravi Marikala
+                                  </div>
+                                </div>
+                                <div class="row static-info">
+                                  <div class="col-md-5 name">
+                                    Email ID&nbsp;:
+                                  </div>
+                                  <div class="col-md-7 value">
+                                    ravi@nareen.com
+                                  </div>
+                                </div>
+                                <div class="row static-info">
+                                  <div class="col-md-5 name">
+                                    Phone Number&nbsp;:
+                                  </div>
+                                  <div class="col-md-7 value" style="margin-top:20px;">
+                                    999-999-9999
+                                  </div>
+                                </div>
+                                <div class="row static-info">
+                                  <div class="col-md-5 name">
+                                    Address&nbsp;:
+                                  </div>
+                                  <div class="col-md-7 value">
+                                    Miyapur,
+                                    <br />Hyderabad
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <button type="button" class="submit btn btn-success pull-right" data-dismiss="modal" style="margin-right: 11px;margin-top: 28px;border-radius: 4px !important;"
+                        onclick="toastr.success('Booking details added successfully');" id="btnbookingSubmit">
+                        <span title="Click for submit booking" aria-hidden="true">&nbsp;
+                          <i class="fa fa-floppy-o"></i>Submit</span>
+                        <span class="sr-only">Submit</span>
+                      </button>
+                      <button type="button" class="previous btn btn-default pull-right" style="margin-right: 11px;margin-top: 28px;border-radius: 4px !important;">
+                        <span title="Click to go back" aria-hidden="true">&nbsp;
+                          <i class="fa fa-arrow-left"></i>Previous</span>
+                        <span class="sr-only">Previous</span>
+                      </button>
+                      <a data-target="#cancelmodal" data-toggle="modal" class="btn btn-default pull-right" style="margin-right: 11px;margin-top: 28px;border-radius: 4px !important;">
+                        <span title="Click to cancel this booking" aria-hidden="true">&nbsp;
+                          <i class="fa fa-times"></i>Cancel</span>
+                        <span class="sr-only">Cancel</span>
+                      </a>
+                    </fieldset>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="menuenquiry" *ngIf="new_enquiry" style="padding-left: 23px;">
+            <div class="col-sm-12">
+              <div class="portlet" id="form_wizard_1">
+                <div class="portlet-body form">
+                  <div class="col-sm-12 col-md-12 col-lg-12 col-xs-12">
+                    <ul id="progressbar" class="prbar" style="display:flex; text-align: center">
+                      <li class="active">Customer</li>
+                      <li>Enquiry</li>
+                    </ul>
+                  </div>
+                  <form id="msform1" class="form-horizontal">
+                    <fieldset>
+                      <h4 class="block">
+                        <b>
+                          <u>Customer Information</u>
+                        </b>
+                      </h4>
+                      <div id="field1" style="min-height:280px;max-height:280px;overflow-y:auto; overflow-x:hidden;padding: 27px;">
+                        <div id="newcustomerdiv" style="margin-top:10px;">
+                          <div class="form-group">
+                            <label class="control-label col-md-4 add-member-label" style="line-height:1px;">
+                              Exisiting Customer
+                            </label>
+                            <div class="col-md-7">
+                              <div class="col-sm-2">
+                                <input type="radio" name="optradio" class="radio radioclcik" id="yesenqradiobtn" />&nbsp;
+                                <label>Yes</label>
+                              </div>
+                              <div class="col-sm-3">
+                                <input type="radio" name="optradio" class="radio radioclcik" id="noenqradiobtn" />&nbsp;
+                                <label>No</label>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-group hide" id="emaildiv_1">
+                            <label class="control-label col-md-4 add-member-label">
+                              Phone Number
+                            </label>
+                            <div class="col-md-6">
+                              <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Please enter Existing Phone number" />
+                                <span class="input-group-addon">
+                                  <i class="glyphicon glyphicon-envelope"></i>
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label class="control-label col-md-4 add-member-label">
+                              Name
+                            </label>
+                            <div class="col-md-6">
+                              <div class="input-group">
+                                <input type="text" class="form-control" id="cfname1" />
+                                <span class="input-group-addon">
+                                  <i class="glyphicon glyphicon-user"></i>
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-group" id="emaildiv1_2">
+                            <label class="control-label col-md-4 add-member-label">
+                              Email ID
+                            </label>
+                            <div class="col-md-6">
+                              <div class="input-group">
+                                <input type="text" class="form-control" />
+                                <span class="input-group-addon">
+                                  <i class="glyphicon glyphicon-envelope"></i>
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label class="control-label col-md-4 add-member-label">
+                              Phone Number
+                            </label>
+                            <div class="col-md-6">
+                              <div class="input-group">
+
+                                <input type="text" class="form-control" id="phone" />
+                                <span class="input-group-addon">
+                                  <i class="glyphicon glyphicon-book"></i>
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label class="control-label col-md-4 add-member-label">
+                              Address
+                            </label>
+                            <div class="col-md-6">
+                              <textarea class="form-control textareas" rows="4"></textarea>
+                            </div>
+                          </div>
+                        </div>
+
+                      </div>
+                      <button type="button" class="next btn btn-success pull-right" style="margin-right: 11px;margin-top: 28px;border-radius: 4px !important;">
+                        <span title="Click for next screen" aria-hidden="true">&nbsp;
+                          <i class="fa fa-arrow-right"></i>Continue</span>
+                        <span class="sr-only">Continue</span>
+                      </button>
+                      <a data-target="#cancelmodal" data-toggle="modal" class="btn btn-default pull-right" style="margin-right: 11px;margin-top: 28px;border-radius: 4px !important;">
+                        <span title="Click to cancel this booking" aria-hidden="true">&nbsp;
+                          <i class="fa fa-times"></i>Cancel</span>
+                        <span class="sr-only">Cancel</span>
+                      </a>
+                    </fieldset>
+                    <fieldset>
+                      <h4 class="block">
+                        <b>
+                          <u>Venue Information</u>
+                        </b>
+                      </h4>
+                      <div id="field2" style="min-height:280px;max-height:280px;overflow-y:auto; overflow-x:hidden;padding:27px;">
+                        <div class="form-group">
+                          <label class="control-label col-md-4 add-member-label">
+                            Venue
+                          </label>
+                          <div class="col-md-5">
+                            <input type="text" class="form-control" value="Nareen Convention" disabled="disabled" />
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label class="control-label col-md-4 add-member-label">
+                            Event Date
+                          </label>
+                          <div class="col-sm-5">
+                            <div class="input-group">
+                              <input class="form-control" id="modalenddate" type="date" />
+                              <span class="input-group-addon">
+                                <i class="fa fa-calendar"></i>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="control-label col-md-4 add-member-label">
+                            Pick time slot
+                          </label>
+                          <div class="col-md-7">
+                            <div class="col-sm-3">
+                              <input type="radio" name="optradio" class="radio radioclcik" id="yesVradiobtn1" />&nbsp;
+                              <label>All Day</label>
+                            </div>
+                            <div class="col-sm-4">
+                              <input type="radio" name="optradio" class="radio radioclcik" id="noVradiobtn1" />&nbsp;
+                              <label>Time Slots</label>
+                            </div>
+                          </div>
+                        </div>
+                        <div id="Timingsdiv11" class="hide">
+                          <div class="col-md-12 margin-top-10">
+                            <div class="form-group">
+                              <label class="control-label col-md-4 add-member-label">
+                                Select Slot *
+                              </label>
+                              <div class="col-md-5">
+                                <div id="Picupload">
+                                  <div class="col-md-12 nopadding">
+                                    <div class="col-sm-5 nopadding">
+                                      <div class='input-group date datetimepicker3' id="FromDiv">
+                                        <input type='text' class="form-control datetimepicker3" placeholder="From" />
+                                        <span class="input-group-addon">
+                                          <span class="glyphicon glyphicon-time" style="color: #49494e;"></span>
+                                        </span>
+                                      </div>
+                                    </div>
+                                    <div class="col-sm-1 nopadding"></div>
+                                    <div class="col-sm-5 nopadding">
+                                      <div class='input-group date datetimepicker3' id="ToDiv">
+                                        <input type='text' class="form-control datetimepicker3" placeholder="To" />
+                                        <span class="input-group-addon">
+                                          <span class="glyphicon glyphicon-time" style="color: #49494e;"></span>
+                                        </span>
+                                      </div>
+                                    </div>
+                                    <div class="col-sm-1 nopadding">
+                                      <a href="javascript:;" onclick="return AddEmptyRow()" id="btnAddSlots" title="Add more slots">
+                                        <i style="line-height:2" class="fa fa-plus pull-right"></i>
+                                      </a>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="control-label col-md-4  add-member-label">
+                            Additional information
+                          </label>
+                          <div class="col-md-5">
+                            <textarea class="form-control textareas" id="adinfo"></textarea>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="control-label col-md-4  add-member-label">
+                            Quoted Amount
+                          </label>
+                          <div class="col-md-5">
+                            <input type="text" class="form-control" />
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="control-label col-md-4  add-member-label">
+                            Notes
+                          </label>
+                          <div class="col-md-5">
+                            <textarea class="form-control textareas" rows="4"></textarea>
+                          </div>
+                        </div>
+                      </div>
+                      <button type="button" class="submit btn btn-success pull-right" data-dismiss="modal" style="margin-right: 11px;margin-top: 28px;border-radius: 4px !important;">
+                        <span title="Click for submit booking" aria-hidden="true" onclick="toastr.success('Enquiry added successfully');"
+                          id="btnEnquirysubmit">&nbsp;
+                          <i class="fa fa-floppy-o"></i>Submit</span>
+                        <span class="sr-only">Submit</span>
+                      </button>
+                      <button type="button" class="previous btn btn-default pull-right" style="margin-right: 11px;margin-top: 28px;border-radius: 4px !important;">
+                        <span title="Click to go back" aria-hidden="true">&nbsp;
+                          <i class="fa fa-arrow-left"></i>Previous</span>
+                        <span class="sr-only">Previous</span>
+                      </button>
+                      <a data-target="#cancelmodal" data-toggle="modal" class="btn btn-default pull-right" style="margin-right: 11px;margin-top: 28px;border-radius: 4px !important;">
+                        <span title="Click to cancel this booking" aria-hidden="true">&nbsp;
+                          <i class="fa fa-times"></i>Cancel</span>
+                        <span class="sr-only">Cancel</span>
+                      </a>
+                    </fieldset>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="menuappointment" *ngIf="new_appointment" style="padding-left: 23px;height:470px;overflow-y:auto;">
+            <div class="col-sm-12 nopadding" style="margin-top:20px;">
+              <div class="col-sm-3">
+                <label class="control-label">Meeting With :</label>
+              </div>
+              <div class="col-sm-6 nopadding">
+                <div class="col-sm-4">
+                  <input type="radio" name="optradio" class="radio radioclcik" id="customeroption" />&nbsp;
+                  <label>Customer</label>
+                </div>
+                <div class="col-sm-4">
+                  <input type="radio" name="optradio" class="radio radioclcik" id="vendoroption" />&nbsp;
+                  <label>Vendor</label>
+                </div>
+                <div class="col-sm-4">
+                  <input type="radio" name="optradio" class="radio radioclcik" id="otheroption" />&nbsp;
+                  <label>Other</label>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-12 nopadding hide" style="margin-top:20px;" id="existingappointmentdiv">
+              <label class="control-label col-md-3  add-member-label" style="line-height:1px;">
+                Exisiting
+              </label>
+              <div class="col-md-6 nopadding">
+                <div class="col-sm-4">
+                  <input type="radio" name="optradio1" class="radio radioclcik" id="yescustradiobtn" />&nbsp;
+                  <label>Yes</label>
+                </div>
+                <div class="col-sm-4">
+                  <input type="radio" name="optradio1" class="radio radioclcik" id="nocustradiobtn" />&nbsp;
+                  <label>No</label>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-12 nopadding hide" style="margin-top:20px;" id="Email_11">
+              <div class="col-sm-3">
+                <label class="control-label">Email ID:</label>
+              </div>
+              <div class="col-sm-6">
+                <input type="text" class="form-control" id="emailid" placeholder="Enter existing email id" />
+              </div>
+            </div>
+            <div class="col-sm-12 nopadding" style="margin-top:20px;">
+              <div class="col-sm-3">
+                <label class="control-label">Name :</label>
+              </div>
+              <div class="col-sm-6">
+                <input type="text" class="form-control" />
+              </div>
+            </div>
+            <div class="col-sm-12 nopadding" style="margin-top:20px;" id="Email_22">
+              <div class="col-sm-3">
+                <label class="control-label">Email ID:</label>
+              </div>
+              <div class="col-sm-6">
+                <input type="text" class="form-control" />
+              </div>
+            </div>
+            <div class="col-sm-12 nopadding" style="margin-top:20px;">
+              <div class="col-sm-3">
+                <label class="control-label">Phone:</label>
+              </div>
+              <div class="col-sm-6">
+                <input type="text" class="form-control" />
+              </div>
+            </div>
+            <div class="col-sm-12 nopadding" style="margin-top:20px;">
+              <div class="col-sm-3">
+                <label class="control-label">Subject :</label>
+              </div>
+              <div class="col-sm-6">
+                <textarea class="form-control textareas" id="subject"></textarea>
+              </div>
+            </div>
+            <div class="col-sm-12 nopadding" style="margin-top:20px;">
+              <div class="col-sm-3">
+                <label class="control-label">Location :</label>
+              </div>
+              <div class="col-sm-6">
+                <textarea class="form-control textareas" id="loc"></textarea>
+              </div>
+            </div>
+            <div class="col-sm-12 nopadding" style="margin-top:20px;">
+              <div class="col-sm-3">
+                <label class="control-label">Meeting Date & Time&nbsp;: </label>
+              </div>
+              <div class="col-sm-6">
+                <div class="input-group">
+                  <input class="form-control datetimepicker1" />
+                  <span class="input-group-addon">
+                    <i class="fa fa-calendar"></i>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-12 nopadding" style="margin-top:20px;">
+              <div class="col-sm-3">
+                <label class="control-label">Notes : </label>
+              </div>
+              <div class="col-sm-6">
+                <textarea class="form-control textareas"></textarea>
+              </div>
+            </div>
+            <div class="col-sm-12 nopadding" style="margin-top:20px;">
+              <div class="col-sm-3">
+
+              </div>
+              <div class="col-sm-6 ">
+                <a class="btn btn-success pull-center" data-dismiss="modal" style="border-radius: 4px !important;" onclick="toastr.success('Appointment saved successfully');"
+                  id="btnappointmentsubmit">
+                  <i class="fa fa-floppy-o"></i>Submit</a>
+                <a data-target="#cancelmodal" data-toggle="modal" class="btn btn-default" style="border-radius: 4px !important;">
+                  <span title="Click to cancel this booking" aria-hidden="true">&nbsp;
+                    <i class="fa fa-times"></i>Cancel</span>
+                  <span class="sr-only">Cancel</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer clearfix">
+          <div class="col-sm-12 nopadding" style="margin-top:20px;">
+            <div class="col-sm-6">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="downloadEvents" role="dialog">
+    <div class="modal-dialog modal-md">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">
+            <b>Download Events</b>
+          </h4>
+        </div>
+        <div class="modal-body">
+          <div id="modalBody" class="modal-body">
+            <div class="col-sm-12 nopadding" style="margin-top:20px;">
+              <div class="col-sm-4">
+                <label>
+                  <b>Select Date Range:</b>
+                </label>
+              </div>
+              <div class="col-sm-6">
+
+                <input type="text" class="form-control pull-right" name="daterange" placeholder="Date Range" />
+              </div>
+            </div>
+            <div class="col-sm-12 nopadding" style="margin-top:20px;">
+              <div class="col-sm-4">
+                <label>
+                  <b>Event Type :</b>
+                </label>
+              </div>
+              <div class="col-sm-6">
+                <select class="form-control" id="Selectiondiv">
+                  <option value="booking">All</option>
+                  <option value="booking">Bookings</option>
+                  <option value="enquiry">Enquiries</option>
+                  <option value="enquiry">Appointments</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-sm-12 nopadding" style="margin-top:20px;">
+              <div class="col-sm-4">
+                <label>
+                  <b>Enter your password :</b>
+                </label>
+              </div>
+              <div class="col-sm-6">
+                <input type="password" class="form-control" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer padding20px">
+          <button type="button" class="btn btn-success" data-dismiss="modal">Download</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
