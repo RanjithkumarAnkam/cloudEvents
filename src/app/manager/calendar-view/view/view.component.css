@@ -475,3 +475,7 @@ div[data-title]:hover:after {
     background-color: #33ae60;
     border-color: #33ae60;
 }
+#add_enquiry_second_list::after{
+    left: -45% !important;
+    width:90% !important;
+}

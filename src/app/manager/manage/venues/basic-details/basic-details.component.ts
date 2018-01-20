@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./basic-details.component.css']
 })
 export class BasicDetailsComponent implements OnInit {
-
+timeSlotSel:boolean=false;
   constructor() { }
 
   ngOnInit() {
   }
+ setRadio(e){
+   console.log(e);
+  this.timeSlotSel=e;
+ }
+
 
 }

@@ -8,13 +8,15 @@ import { SummaryComponent } from './summary/summary.component';
 import { VenuesRoutingModule } from './venues-routing.module';
 import { PartialViewsModule } from '../../../partial-views/partial-views.module';
 import { DataTableModule } from 'angular2-datatable/lib/DataTableModule';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
     VenuesRoutingModule,
     PartialViewsModule,
-    DataTableModule
+    DataTableModule,
+	FormsModule
   ],
   declarations: [VenueListComponent, BasicDetailsComponent, ContactDetailsComponent, MediaComponent, SummaryComponent]
 })

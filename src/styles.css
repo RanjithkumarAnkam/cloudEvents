@@ -19,4 +19,7 @@ html{background-color: #666;}
 .padding-0{
     padding:0px;
 }
+.btn i{
+    margin-right: 5px;
+}
 

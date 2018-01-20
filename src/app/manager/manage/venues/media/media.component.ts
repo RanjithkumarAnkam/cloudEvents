@@ -8,8 +8,10 @@ import { Component, OnInit } from '@angular/core';
 export class MediaComponent implements OnInit {
 
   constructor() { }
-
+  otherStatus:boolean=false;
   ngOnInit() {
   }
-
+  addProp(e) {
+    this.otherStatus=e;
+  }
 }

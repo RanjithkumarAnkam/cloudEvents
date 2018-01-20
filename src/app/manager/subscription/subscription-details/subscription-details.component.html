@@ -1,3 +1,193 @@
-<p>
-  subscription-details works!
-</p>
+<div class="page-content-wrapper">
+  <div class="page-content clearfix ">
+    <div class="row nopadding">
+      <div class="col-sm-1"></div>
+      <div class="col-sm-10">
+        <div class="col-sm-12 nopadding">
+          <div class="col-sm-10 nopadding">
+            <h3 class="page-title">
+              Manage Subscription
+              <p>
+                <small>Your subscription details can be managed here.</small>
+              </p>
+            </h3>
+          </div>
+          <div class="col-sm-2 nopadding">
+            <a [routerLink]="['/manager/profile']" class="btn btn-default  pull-right">
+              <i class="fa fa-arrow-left"></i>&nbsp;Back
+            </a>
+          </div>
+        </div>
+        <div class="col-sm-12 nopadding  margin-top-10">
+          <div class="panel panel-default">
+            <div class="panel-body cursor trstyle" style="font-size:16px;" id="btnpaytm">
+              <div class="col-sm-3 nopadding">
+                <label>
+                  Current Package&nbsp;:&nbsp;
+                  <b>Single Venue</b>
+                </label>
+              </div>
+              <div class="col-sm-2 nopadding">
+                  <label>
+                      No.of Venues&nbsp;:&nbsp;
+                    <b>1</b>
+                  </label>
+                </div>
+                <div class="col-sm-2 nopadding">
+                    <label>
+                      Price&nbsp;:&nbsp;
+                      <b>7,000 / User</b>
+                    </label>
+                  </div>
+              <div class="col-sm-2 nopadding">
+                <label>Renews On&nbsp;:&nbsp;
+                  <b>12/5/17</b>
+                </label>
+              </div>
+              <div class="col-sm-3 nopadding">
+                <a class="btn btn-default pull-right">
+                  Cancel Subscription
+                </a>
+                <a class="btn btn-primary disabled pull-right" style="margin-right:5px;" title="This button allows only one month before the subscription ends">
+                Purchase
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-12 nopadding margin-top-20">
+          <table class="table table-hover table-bordered" [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="5">
+            <thead>
+              <tr class="table-headers">
+                <th style="width: 20%">
+                  <mfDefaultSorter by="num">Package Name</mfDefaultSorter>
+                </th>
+                <th style="width: 10%">
+                  <mfDefaultSorter by="name">No.Of Venues</mfDefaultSorter>
+                </th>
+                <th style="width: 15%">
+                  <mfDefaultSorter by="price">Price</mfDefaultSorter>
+                </th>
+                <th class="text-center" style="width: 20%">
+                  Purchase Package
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of mf.data">
+                <td>{{item.name}}</td>
+                <td>{{item.numven}}</td>
+                <td>{{item.price}}</td>
+                <td class="text-center">
+                  <a class="btn btn-primary" data-toggle="modal" data-target="#purchasemodal">Upgrade</a>
+                </td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td colspan="5">
+                  <mfBootstrapPaginator [rowsOnPageSet]="[5,10,25]"></mfBootstrapPaginator>
+                </td>
+              </tr>
+            </tfoot>
+          </table>
+
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+
+<div class="modal fade" id="purchasemodal" role="dialog">
+  <div class="modal-dialog modal-md" style="width:1000px">
+    <div class="modal-content" style="padding:20px">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">
+          <b>Upgrade Subscription Package</b>
+        </h4>
+      </div>
+      <div class="modal-body">
+           <div class="col-sm-12 nopadding margin-top-20" id="div2">
+            <!---Page Starts-->
+            <div class="col-sm-5 margin-top-10" style="padding: 10px;">
+              <h4 class="subheading">
+                <b>Subscription Details</b>
+              </h4>
+              <div class="col-sm-12  margin-top-10">
+                  <div class="col-sm-5">
+                    <label>
+                      <b>Package Name&nbsp;:</b>
+                    </label>
+                  </div>
+                  <div class="col-sm-7">
+                    <label>Dual Venue</label>
+                  </div>
+                </div>
+              <div class="col-sm-12  margin-top-10">
+                <div class="col-sm-5">
+                  <label>
+                    <b>No.Of Venues&nbsp;:</b>
+                  </label>
+                </div>
+                <div class="col-sm-7">
+                  <label>2</label>
+                </div>
+              </div>
+              
+              <div class="col-sm-12  margin-top-10">
+                  <div class="col-sm-5">
+                    <label>
+                      <b>Price per User&nbsp;:</b>
+                    </label>
+                  </div>
+                  <div class="col-sm-7">
+                    <label>7,000</label>
+                  </div>
+                </div>
+              <div class="col-sm-12  margin-top-10">
+                <div class="col-sm-5">
+                  <label>
+                    <b>Total Amount&nbsp;:</b>
+                  </label>
+                </div>
+                <div class="col-sm-7">
+                  <label>14000</label>
+                </div>
+              </div>
+            </div>
+            <!--Payment screens for other details -->
+            <div class="col-sm-1 margin-top-10"></div>
+            <div class="col-sm-6 margin-top-10" style="padding: 10px;">
+              <div class="col-sm-12">
+                <img src="/assets/images/Paytm_logo.png" style="height:50px;">
+              </div>
+              <div class="col-sm-12 margin-top-10">
+                <div class="col-sm-5">
+                  <label style="line-height:29px;">
+                    <b>Mobile Number&nbsp;:</b>
+                  </label>
+                </div>
+                <div class="col-sm-7">
+                  <input type="text" class="form-control" placeholder="Enter mobile number">
+                </div>
+              </div>
+            </div>
+            <!--Button for payment screen-->
+            <div class="col-sm-12 margin-top-10">
+              <a class="btn btn-primary pull-right">Proceed to Pay&nbsp;
+                <i class="fa fa-caret-right pull-right" style="line-height:21px;"></i>
+              </a>
+            </div>
+          </div>
+        
+      </div>
+      <div class="modal-footer padding20px">
+       
+      </div>
+    </div>
+  </div>
+</div>
