@@ -254,12 +254,12 @@
                           </label>
                           <div class="col-md-7">
                             <div class="col-sm-3 padding-0">
-                              <input type="radio" name="optradio" (change)="checkExistingCustomer(1)" class="radio radioclcik" id="yesradiobtn" style="float:left;min-height:22px;"
+                              <input type="radio" name="optradio" (click)="checkExistingCustomer(true)" class="radio radioclcik" id="yesradiobtn" style="float:left;min-height:22px;"
                               />&nbsp;
                               <label>Yes</label>
                             </div>
                             <div class="col-sm-3 padding-0">
-                              <input checked type="radio" name="optradio" (change)="checkExistingCustomer(2)" class="radio radioclcik" id="noradiobtn"
+                              <input checked type="radio" name="optradio" (click)="checkExistingCustomer(false)" class="radio radioclcik" id="noradiobtn"
                                 style="float:left;min-height:22px;" />&nbsp;
                               <label>No</label>
                             </div>
@@ -348,123 +348,126 @@
                           <u>Booking Details</u>
                         </b>
                       </h4>
-                      <div id="field2" style="min-height:280px;max-height:280px;overflow-y:auto; overflow-x:hidden;padding:27px;">
-                        <div class="form-group">
-                          <label class="control-label col-md-4  add-member-label">
-                            Venue
-                          </label>
-                          <div class="col-md-5">
-                            <input type="text" class="form-control" name="event name" value="Naren Convention" disabled="disabled" />
-                          </div>
-                          <div class="col-md-3">
-                            <a data-toggle="tooltip" data-target="#venuedetailspopup" data-toggle="modal">Click to View Details</a>
-                          </div>
-                        </div>
-                        <div class="form-group">
-                          <label class="control-label col-md-4 add-member-label">
-                            Event Name
-                          </label>
-                          <div class="col-md-5">
-                            <input type="text" class="form-control" name="event name" id="eventname" placeholder="Please Enter Event Name" />
-                          </div>
-                        </div>
-                        <div class="form-group">
-                          <label class="control-label col-md-4  add-member-label">
-                            Event Type
-                          </label>
-                          <div class="col-md-5">
-                            <select class="form-control" id="selecteventtypeid">
-                              <option>
-                                Select
-                              </option>
-                              <option>
-                                Hall
-                              </option>
-                              <option>
-                                Hall + Decoration
-                              </option>
-                              <option>
-                                Hall + Food
-                              </option>
-                              <option>
-                                Total Event
-                              </option>
-                            </select>
-                          </div>
-                        </div>
-                        <div class="form-group">
-                          <label class="control-label col-md-4   add-member-label">
-                            Event Date
-                          </label>
-                          <div class="col-md-5">
-                            <div class="input-group">
-                              <input class="form-control" type="date" id="datepicker1">
-                              <span class="input-group-addon">
-                                <i class="fa fa-calendar"></i>
-                              </span>
+                      <div id="field2" style="min-height:280px;max-height:280px;overflow-y:auto; overflow-x:hidden;padding:0px;">
+                        <div class="col-md-6">
+                          <div class="form-group nopadding">
+                            <label class="control-label col-md-4  add-member-label">
+                              Venue
+                            </label>
+                            <div class="col-md-8">
+                              <input type="text" class="form-control" name="event name" value="Naren Convention" disabled="disabled" />
+                            </div>
+                            <div class="col-md-4"></div>
+                            <div class="col-md-8">
+                              <a data-toggle="tooltip" data-target="#venuedetailspopup" data-toggle="modal">Click to View Details</a>
                             </div>
                           </div>
-                        </div>
-
-                        <div class="form-group">
-                          <label class="control-label col-md-4 add-member-label">
-                            Timeslots
-                          </label>
-                          <div class="col-md-5">
-                            <select class="form-control" id="Selectdiv">
-                              <option value="1">Select</option>
-                              <option value="2">All Day</option>
-                              <option value="3">Timings</option>
-                            </select>
-                          </div>
-                        </div>
-                        <div id="Timingsdiv" class="hide">
-                          <div class="form-group">
+                          <div class="form-group nopadding">
                             <label class="control-label col-md-4 add-member-label">
-                              Select Timings
+                              Event Name
+                            </label>
+                            <div class="col-md-8">
+                              <input type="text" class="form-control" name="event name" id="eventname" placeholder="Please Enter Event Name" />
+                            </div>
+                          </div>
+                          <div class="form-group nopadding">
+                            <label class="control-label col-md-4  add-member-label">
+                              Event Type
+                            </label>
+                            <div class="col-md-8">
+                              <select class="form-control" id="selecteventtypeid">
+                                <option>
+                                  Select
+                                </option>
+                                <option>
+                                  Hall
+                                </option>
+                                <option>
+                                  Hall + Decoration
+                                </option>
+                                <option>
+                                  Hall + Food
+                                </option>
+                                <option>
+                                  Total Event
+                                </option>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="form-group nopadding">
+                            <label class="control-label col-md-4   add-member-label">
+                              Event Date
                             </label>
                             <div class="col-md-5">
-                              <div class="col-md-6">
-                                <div class='input-group date datetimepicker3' id="FromDiv">
-                                  <input type='text' class="form-control datetimepicker3" placeholder="From" />
-                                  <span class="input-group-addon">
-                                    <span class="glyphicon glyphicon-time" style="color: #49494e;"></span>
-                                  </span>
-                                </div>
+                              <div class="input-group">
+                                <input class="form-control" type="date" id="datepicker1">
+                                <span class="input-group-addon">
+                                  <i class="fa fa-calendar"></i>
+                                </span>
                               </div>
-                              <div class="col-md-6">
-                                <div class='input-group date datetimepicker3' id="ToDiv">
-                                  <input type='text' class="form-control datetimepicker3" placeholder="To" />
-                                  <span class="input-group-addon">
-                                    <span class="glyphicon glyphicon-time" style="color: #49494e;"></span>
-                                  </span>
+                            </div>
+                          </div>
+
+                          <div class="form-group nopadding">
+                            <label class="control-label col-md-4 add-member-label">
+                              Timeslots
+                            </label>
+                            <div class="col-md-8">
+                              <select class="form-control" id="Selectdiv">
+                                <option value="1">Select</option>
+                                <option value="2">All Day</option>
+                                <option value="3">Timings</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div id="Timingsdiv" class="hide">
+                            <div class="form-group nopadding">
+                              <label class="control-label col-md-4 add-member-label">
+                                Select Timings
+                              </label>
+                              <div class="col-md-8">
+                                <div class="col-md-6">
+                                  <div class='input-group date datetimepicker3' id="FromDiv">
+                                    <input type='text' class="form-control datetimepicker3" placeholder="From" />
+                                    <span class="input-group-addon">
+                                      <span class="glyphicon glyphicon-time" style="color: #49494e;"></span>
+                                    </span>
+                                  </div>
+                                </div>
+                                <div class="col-md-6">
+                                  <div class='input-group date datetimepicker3' id="ToDiv">
+                                    <input type='text' class="form-control datetimepicker3" placeholder="To" />
+                                    <span class="input-group-addon">
+                                      <span class="glyphicon glyphicon-time" style="color: #49494e;"></span>
+                                    </span>
+                                  </div>
                                 </div>
                               </div>
                             </div>
                           </div>
                         </div>
-                        <div class="form-group">
-                          <label class="control-label col-md-4 add-member-label">
-                            Vendor service required
-                          </label>
-                          <div class="col-md-8">
-                            <div class="col-sm-2">
-                              <input type="radio" name="optradio" class="radio radioclcik" id="yesVradiobtn" />&nbsp;
-                              <label>Yes</label>
-                            </div>
-                            <div class="col-sm-3">
-                              <input type="radio" name="optradio" class="radio radioclcik" id="noVradiobtn" />&nbsp;
-                              <label>No</label>
+                        <div class="col-md-6 nopadding">
+                          <div class="form-group nopadding">
+                            <label class="control-label col-md-6 add-member-label">
+                              Vendor service required
+                            </label>
+                            <div class="col-md-6" style="padding:7px 0 0 0;">
+                              <div class="col-sm-6 nopadding">
+                                <input type="radio" name="optradio" (click)="vendorServicereq(true)" class="radio radioclcik" style="margin:0 !important ;float: left; min-height:22px"
+                                  id="yesVradiobtn" /> Yes
+                              </div>
+                              <div class="col-sm-6 nopadding">
+                                <input type="radio" name="optradio" (click)="vendorServicereq(false)" class="radio radioclcik" id="noVradiobtn" style="margin:0 !important ;float: left; min-height:22px"
+                                /> No
+                              </div>
                             </div>
                           </div>
-                        </div>
-                        <div class="form-group hide" id="btnVservicesdiv">
-                          <label class="control-label col-md-4 add-member-label">
-                            Select Services
-                          </label>
-                          <div class="col-md-8">
-                            <div id="newvendorselection">
-                              <div class="col-sm-4">
+                          <div *ngIf="vendorEnable" class="form-group" id="btnVservicesdiv">
+                            <label class="control-label col-md-6 add-member-label">
+                              Select Services
+                            </label>
+                            <div class="col-md-6 nopadding">
+                              <div class="col-sm-8 nopadding">
                                 <select class="form-control">
                                   <option>Select Type</option>
                                   <option>Photographer</option>
@@ -472,7 +475,7 @@
                                   <option>Food Suppliers</option>
                                 </select>
                               </div>
-                              <div class="col-sm-4" style="margin-left:13px;">
+                              <div class="col-sm-8 nopadding" style="margin-top:5px">
                                 <select class="form-control">
                                   <option>Select Name</option>
                                   <option>Rakesh</option>
@@ -480,35 +483,35 @@
                                   <option>Raja</option>
                                 </select>
                               </div>
-                              <div class="col-sm-2 nopadding">
+                              <div class="col-sm-2 nopadding" style="margin-top: 10px">
                                 <a href="javascript:;" class="pull-right" onclick="return AddEmptyVendor()" title="Add more vendor services">
-                                  <i style="line-height:2" class="fa fa-plus"></i>&nbsp;Add</a>
+                                  <i style="line-height:2" class="fa fa-plus"></i>&nbsp;</a>
                               </div>
                             </div>
                           </div>
-                        </div>
-                        <div class="form-group">
-                          <label class="control-label col-md-4 add-member-label">
-                            Select Decoration Type
-                          </label>
-                          <div class="col-md-5">
-                            <input type="file" class="form-control" />
+                          <div class="form-group nopadding">
+                            <label class="control-label col-md-6  add-member-label">
+                              Select Decoration Type
+                            </label>
+                            <div class="col-md-5 nopadding">
+                              <input type="file" class="form-control" />
+                            </div>
                           </div>
-                        </div>
-                        <div class="form-group">
-                          <label class="control-label col-md-4 add-member-label">
-                            Select Food Menu
-                          </label>
-                          <div class="col-md-5">
-                            <input type="file" class="form-control" />
+                          <div class="form-group nopadding">
+                            <label class="control-label col-md-6  add-member-label">
+                              Select Food Menu
+                            </label>
+                            <div class="col-md-5 nopadding">
+                              <input type="file" class="form-control" />
+                            </div>
                           </div>
-                        </div>
-                        <div class="form-group">
-                          <label class="control-label col-md-4 add-member-label">
-                            Additional information
-                          </label>
-                          <div class="col-md-5">
-                            <textarea class="form-control textareas" rows="4"></textarea>
+                          <div class="form-group nopadding">
+                            <label class="control-label col-md-6  add-member-label">
+                              Additional information
+                            </label>
+                            <div class="col-md-5 nopadding">
+                              <textarea class="form-control textareas" rows="2"></textarea>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -534,8 +537,8 @@
                           <u>Payment details</u>
                         </b>
                       </h4>
-                      <div id="field3" style="min-height:280px;max-height:280px;overflow-y:auto;overflow-x:hidden;padding:27px;">
-                        <div class="col-sm-12 nopadding" id="payments">
+                      <div id="field3" style="min-height:340px;max-height:340px;overflow-y:auto;overflow-x:hidden;padding:0;">
+                        <div *ngIf="!payDivEnable " class="col-sm-12 nopadding" id="payments">
                           <div class="col-lg-4 col-md-6 nopadding text-center">
                             <div class="col-sm-12">
                               <div style="background-color: #337ab7;height: 10px;"></div>
@@ -598,7 +601,7 @@
                                   <h3>Add Payment</h3>
                                 </div>
                                 <div class="col-sm-12" style="margin-top:30%;">
-                                  <a id="addpayment">
+                                  <a (click)="addPaydivEnable(true)" id="addpayment">
                                     <i class="fa fa-plus fa-4x" style="background-color: #116a9e;"></i>
                                   </a>
                                 </div>
@@ -606,7 +609,7 @@
                             </div>
                           </div>
                         </div>
-                        <div class="col-sm-12 nopadding hide" id="addpaymentsdiv">
+                        <div *ngIf="payDivEnable" class="col-sm-12 nopadding" id="addpaymentsdiv">
                           <div class="col-sm-12 nopadding">
                             <div class="col-sm-12">
                               <div class="col-sm-3">
@@ -630,16 +633,16 @@
                               </div>
                               <div class="col-sm-7">
                                 <div class="col-sm-3 nopadding">
-                                  <input type="radio" name="optradio1" class="radio radioclcik" id="yesPayradiobtn" />&nbsp;
+                                  <input type="radio" style="float:left;min-height:22px;" (click)="extraPayhandle(true)" name="optradio1" class="radio radioclcik" id="yesPayradiobtn" />&nbsp;
                                   <span>Yes</span>
                                 </div>
                                 <div class="col-sm-3 nopadding">
-                                  <input type="radio" name="optradio1" class="radio radioclcik" id="noPayradiobtn" />&nbsp;
+                                  <input type="radio" style="float:left;min-height:22px;" (click)="extraPayhandle(false)" name="optradio1" class="radio radioclcik" id="noPayradiobtn" />&nbsp;
                                   <span>No</span>
                                 </div>
                               </div>
                             </div>
-                            <div id="extrapaymentsdiv" class="hide">
+                            <div *ngIf="extraPayEnable" id="extrapaymentsdiv">
                               <div class="col-sm-12 margin-top-10">
                                 <div class="col-sm-3">
                                   <label>Decoration&nbsp;:</label>
@@ -740,23 +743,23 @@
                               </div>
                               <div class="col-sm-7">
                                 <a class="btn btn-success pull-left" id="btnSavepayment">Save</a>
-                                <a class="btn btn-default pull-left" id="btnCancelpayment" style="margin-left:4px;">Cancel</a>
+                                <a class="btn btn-default pull-left" (click)="addPaydivEnable(false)" id="btnCancelpayment" style="margin-left:4px;">Cancel</a>
                               </div>
                             </div>
                           </div>
                         </div>
                       </div>
-                      <button type="button" (click)="addPaymentContinue()" class="next btn btn-success pull-right" style="margin-right: 11px;margin-top: 28px;border-radius: 4px !important;">
+                      <button type="button" (click)="addPaymentContinue()" class="next btn btn-success pull-right" style="margin-right: 11px;border-radius: 4px !important;">
                         <span title="Click for venue booking" aria-hidden="true">&nbsp;
                           <i class="fa fa-arrow-right"></i>Continue</span>
                         <span class="sr-only">Continue</span>
                       </button>
-                      <button type="button" (click)="addPaymentBack()" class="previous btn btn-default pull-right" style="margin-right: 11px;margin-top: 28px;border-radius: 4px !important;">
+                      <button type="button" (click)="addPaymentBack()" class="previous btn btn-default pull-right" style="margin-right: 11px;border-radius: 4px !important;">
                         <span title="Click for venue booking" aria-hidden="true">&nbsp;
                           <i class="fa fa-arrow-left"></i>Previous</span>
                         <span class="sr-only">Previous</span>
                       </button>
-                      <a data-target="#cancelmodal" data-toggle="modal" class="btn btn-default pull-right" style="margin-right: 11px;margin-top: 28px;border-radius: 4px !important;">
+                      <a data-target="#cancelmodal" data-toggle="modal" class="btn btn-default pull-right" style="margin-right: 11px;border-radius: 4px !important;">
                         <span title="Click to cancel this booking" aria-hidden="true">&nbsp;
                           <i class="fa fa-times"></i>Cancel</span>
                         <span class="sr-only">Cancel</span>
@@ -994,7 +997,7 @@
                   <div class="col-sm-12 col-md-12 col-lg-12 col-xs-12">
                     <ul id="progressbar" class="prbar" style="display:flex; text-align: center;padding-left:0;">
                       <li [ngClass]='add_enquiry_first_tab' style="width:50%;">Customer</li>
-                      <li [ngClass]='add_enquiry_second_tab' style="width:50%;" id="add_enquiry_second_list">Enquiry</li>
+                      <li [ngClass]='add_enquiry_second_tab' style="width:50%;" id="add_enquiry_second_list">Enquiry Details</li>
                     </ul>
                   </div>
                   <form id="msform1" class="form-horizontal">
@@ -1006,22 +1009,25 @@
                       </h4>
                       <div id="field1" style="min-height:280px;max-height:280px;overflow-y:auto; overflow-x:hidden;padding: 27px;padding-top:0px;">
                         <div id="newcustomerdiv" style="margin-top:10px;">
+
                           <div class="form-group">
                             <label class="control-label col-md-4 add-member-label" style="line-height:1px;">
                               Exisiting Customer
                             </label>
                             <div class="col-md-7">
                               <div class="col-sm-3 padding-0">
-                                <input type="radio" name="optradio" class="radio radioclcik" id="yesenqradiobtn" style="float: left;min-height: 22px;" />&nbsp;
+                                <input type="radio" name="optradio" (click)="checkExistingCustomer(true)" class="radio radioclcik" id="yesenqradiobtn" style="float: left;min-height: 22px;"
+                                />&nbsp;
                                 <label>Yes</label>
                               </div>
                               <div class="col-sm-3 padding-0">
-                                <input type="radio" name="optradio" class="radio radioclcik" id="noenqradiobtn" style="float: left;min-height: 22px;"  />&nbsp;
+                                <input type="radio" name="optradio" (click)="checkExistingCustomer(false)" class="radio radioclcik" id="noenqradiobtn" style="float: left;min-height: 22px;"
+                                />&nbsp;
                                 <label>No</label>
                               </div>
                             </div>
                           </div>
-                          <div class="form-group hide" id="emaildiv_1">
+                          <div *ngIf="existing_cust" class="form-group" id="emaildiv_1">
                             <label class="control-label col-md-4 add-member-label">
                               Phone Number
                             </label>
@@ -1034,7 +1040,7 @@
                               </div>
                             </div>
                           </div>
-                          <div class="form-group">
+                          <div *ngIf="new_cust" class="form-group">
                             <label class="control-label col-md-4 add-member-label">
                               Name
                             </label>
@@ -1079,7 +1085,7 @@
                               Address
                             </label>
                             <div class="col-md-6">
-                              <textarea class="form-control textareas" rows="4"></textarea>
+                              <textarea class="form-control textareas" rows="1"></textarea>
                             </div>
                           </div>
                         </div>
@@ -1102,7 +1108,7 @@
                           <u>Venue Information</u>
                         </b>
                       </h4>
-                      <div id="field2" style="min-height:280px;max-height:280px;overflow-y:auto; overflow-x:hidden;padding:27px;">
+                      <div id="field2" style="min-height:280px;max-height:280px;overflow-y:auto; overflow-x:hidden;">
                         <div class="form-group">
                           <label class="control-label col-md-4 add-member-label">
                             Venue
@@ -1130,21 +1136,23 @@
                             Pick time slot
                           </label>
                           <div class="col-md-7">
-                            <div class="col-sm-3">
-                              <input type="radio" name="optradio" class="radio radioclcik" id="yesVradiobtn1" />&nbsp;
+                            <div class="col-sm-3 nopadding">
+                              <input type="radio" (click)="enqTimingsDivHandler(false)" name="optradio" class="radio radioclcik" id="yesVradiobtn1" style="float:left;min-height:22px"
+                                checked/>
                               <label>All Day</label>
                             </div>
-                            <div class="col-sm-4">
-                              <input type="radio" name="optradio" class="radio radioclcik" id="noVradiobtn1" />&nbsp;
+                            <div class="col-sm-4 nopadding">
+                              <input type="radio" (click)="enqTimingsDivHandler(true)" name="optradio" class="radio radioclcik" style="float:left;min-height:22px"
+                                id="noVradiobtn1" />
                               <label>Time Slots</label>
                             </div>
                           </div>
                         </div>
-                        <div id="Timingsdiv11" class="hide">
+                        <div *ngIf="enqTimingsDivEnable" id="Timingsdiv11">
                           <div class="col-md-12 margin-top-10">
                             <div class="form-group">
-                              <label class="control-label col-md-4 add-member-label">
-                                Select Slot *
+                              <label class="control-label col-md-4 nopadding add-member-label">
+                                Select Slot 
                               </label>
                               <div class="col-md-5">
                                 <div id="Picupload">
@@ -1179,14 +1187,6 @@
                         </div>
                         <div class="form-group">
                           <label class="control-label col-md-4  add-member-label">
-                            Additional information
-                          </label>
-                          <div class="col-md-5">
-                            <textarea class="form-control textareas" id="adinfo"></textarea>
-                          </div>
-                        </div>
-                        <div class="form-group">
-                          <label class="control-label col-md-4  add-member-label">
                             Quoted Amount
                           </label>
                           <div class="col-md-5">
@@ -1195,10 +1195,10 @@
                         </div>
                         <div class="form-group">
                           <label class="control-label col-md-4  add-member-label">
-                            Notes
+                            Additional information
                           </label>
                           <div class="col-md-5">
-                            <textarea class="form-control textareas" rows="4"></textarea>
+                            <textarea class="form-control textareas" rows="1" id="adinfo"></textarea>
                           </div>
                         </div>
                       </div>
@@ -1231,35 +1231,38 @@
               </div>
               <div class="col-sm-8 nopadding">
                 <div class="col-sm-4">
-                  <input type="radio" name="optradio" class="radio radioclcik" id="customeroption" style="float:left;line-height:22px;" />&nbsp;
+                  <input type="radio" name="optradio" (click)="meetingWithHandler(true)" class="radio radioclcik" id="customeroption" style="float:left;line-height:22px;"
+                  />&nbsp;
                   <label>Customer</label>
                 </div>
                 <div class="col-sm-4">
-                  <input type="radio" name="optradio" class="radio radioclcik" id="vendoroption" style="float:left;line-height:22px;" />&nbsp;
+                  <input type="radio" name="optradio" (click)="meetingWithHandler(true)" class="radio radioclcik" id="vendoroption" style="float:left;line-height:22px;"
+                  />&nbsp;
                   <label>Vendor</label>
                 </div>
                 <div class="col-sm-4">
-                  <input type="radio" name="optradio" class="radio radioclcik" id="otheroption" style="float:left;line-height:22px;" />&nbsp;
+                  <input type="radio" name="optradio" (click)="meetingWithHandler(false)" class="radio radioclcik" id="otheroption" style="float:left;line-height:22px;"
+                    checked />&nbsp;
                   <label>Other</label>
                 </div>
               </div>
             </div>
-            <div class="col-sm-12 nopadding hide" style="margin-top:20px;" id="existingappointmentdiv">
+            <div *ngIf="meetWithEnable" class="col-sm-12 nopadding" style="margin-top:20px;" id="existingappointmentdiv">
               <label class="control-label col-md-3  add-member-label" style="line-height:1px;">
                 Exisiting
               </label>
               <div class="col-md-6 nopadding">
                 <div class="col-sm-4">
-                  <input type="radio" name="optradio1" class="radio radioclcik" id="yescustradiobtn" />&nbsp;
+                  <input type="radio" name="optradio1" (click)="existPerHandler(true)" class="radio radioclcik" style="float:left;line-height:22px;" id="yescustradiobtn" />&nbsp;
                   <label>Yes</label>
                 </div>
                 <div class="col-sm-4">
-                  <input type="radio" name="optradio1" class="radio radioclcik" id="nocustradiobtn" />&nbsp;
+                  <input type="radio" name="optradio1" (click)="existPerHandler(false)" class="radio radioclcik" style="float:left;line-height:22px;" id="nocustradiobtn" checked/>&nbsp;
                   <label>No</label>
                 </div>
               </div>
             </div>
-            <div class="col-sm-12 nopadding hide" style="margin-top:20px;" id="Email_11">
+            <div *ngIf="existPerEnable" class="col-sm-12 nopadding" style="margin-top:20px;" id="Email_11">
               <div class="col-sm-3">
                 <label class="control-label">Email ID:</label>
               </div>
@@ -1267,7 +1270,7 @@
                 <input type="text" class="form-control" id="emailid" placeholder="Enter existing email id" />
               </div>
             </div>
-            <div class="col-sm-12 nopadding" style="margin-top:20px;">
+            <div class="col-sm-12 nopadding" style="margin-top:10px;">
               <div class="col-sm-3">
                 <label class="control-label">Name :</label>
               </div>
@@ -1296,7 +1299,7 @@
                 <label class="control-label">Subject :</label>
               </div>
               <div class="col-sm-6">
-                <textarea class="form-control textareas" id="subject"></textarea>
+                <input type="text" class="form-control" id="subject" />
               </div>
             </div>
             <div class="col-sm-12 nopadding" style="margin-top:20px;">
@@ -1304,20 +1307,21 @@
                 <label class="control-label">Location :</label>
               </div>
               <div class="col-sm-6">
-                <textarea class="form-control textareas" id="loc"></textarea>
+                <textarea class="form-control textareas" rows="1" id="loc"></textarea>
               </div>
             </div>
             <div class="col-sm-12 nopadding" style="margin-top:20px;">
               <div class="col-sm-3">
-                <label class="control-label">Meeting Date & Time&nbsp;: </label>
+                <label class="control-label">Date & Time&nbsp;: </label>
               </div>
               <div class="col-sm-6">
-                <div class="input-group">
-                  <input class="form-control datetimepicker1" />
+                  <div class="input-group">
+                  <input class="form-control" type="date" id="datepicker1" />
                   <span class="input-group-addon">
                     <i class="fa fa-calendar"></i>
                   </span>
-                </div>
+                  </div>
+
               </div>
             </div>
             <div class="col-sm-12 nopadding" style="margin-top:20px;">
@@ -1325,7 +1329,7 @@
                 <label class="control-label">Notes : </label>
               </div>
               <div class="col-sm-6">
-                <textarea class="form-control textareas"></textarea>
+                <textarea class="form-control textareas" rows="1"></textarea>
               </div>
             </div>
             <div class="col-sm-12 nopadding" style="margin-top:20px;">
@@ -1457,17 +1461,17 @@
         <button id="btnDelete" class="btn btn-default btn-sm pull-right">
           <span class="glyphicon glyphicon-remove"></span> Remove
         </button>
-        <button id="btnEditbooking" class="btn btn-default btn-sm pull-right" style="margin-right:5px;">
+        <button data-dismiss="modal" (click)="OpenEditBooking()" id="btnEditbooking" class="btn btn-default btn-sm pull-right" style="margin-right:5px;">
           <span class="glyphicon glyphicon-pencil"></span> Edit
         </button>
-          <div>
-            <p>
-              <b>Date &amp; Time &nbsp;:</b>&nbsp;08-Dec-2017 01:00 am</p>
-            <p>
-              <b>Venue Name&nbsp;:</b>&nbsp;Narenn Garden</p>
-            <p>
-              <b>Additional Information&nbsp;:</b>&nbsp;Checking for vendors availability</p>
-          </div>
+        <div>
+          <p>
+            <b>Date &amp; Time &nbsp;:</b>&nbsp;08-Dec-2017 01:00 am</p>
+          <p>
+            <b>Venue Name&nbsp;:</b>&nbsp;Narenn Garden</p>
+          <p>
+            <b>Additional Information&nbsp;:</b>&nbsp;Checking for vendors availability</p>
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal" (click)="closeAllPopups()">Close</button>
@@ -1491,18 +1495,18 @@
         <button id="btnDelete" class="btn btn-default btn-sm pull-right">
           <span class="glyphicon glyphicon-remove"></span> Remove
         </button>
-        <button id="btnEditbooking" class="btn btn-default btn-sm pull-right" style="margin-right:5px;">
+        <button (click)="OpenEditEnquiry()"  id="btnEditbooking" class="btn btn-default btn-sm pull-right" style="margin-right:5px;">
           <span class="glyphicon glyphicon-pencil"></span> Edit
         </button>
 
-          <div>
-            <p>
-              <b>Date &amp; Time &nbsp;:</b>&nbsp;08-Dec-2017 01:00 am</p>
-            <p>
-              <b>Venue Name&nbsp;:</b>&nbsp;Narenn Garden</p>
-            <p>
-              <b>Additional Information&nbsp;:</b>&nbsp;Checking for vendors availability</p>
-          </div>
+        <div>
+          <p>
+            <b>Date &amp; Time &nbsp;:</b>&nbsp;08-Dec-2017 01:00 am</p>
+          <p>
+            <b>Venue Name&nbsp;:</b>&nbsp;Narenn Garden</p>
+          <p>
+            <b>Additional Information&nbsp;:</b>&nbsp;Checking for vendors availability</p>
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal" (click)="closeAllPopups()">Close</button>
@@ -1526,15 +1530,15 @@
         <button id="btnDelete" class="btn btn-default btn-sm pull-right">
           <span class="glyphicon glyphicon-remove"></span> Remove
         </button>
-        <button id="btnEditbooking" class="btn btn-default btn-sm pull-right" style="margin-right:5px;">
+        <button (click)="OpenEditAppointment()" id="btnEditbooking" class="btn btn-default btn-sm pull-right" style="margin-right:5px;">
           <span class="glyphicon glyphicon-pencil"></span> Edit
         </button>
-          <div>
-            <p>
-              <b>Date &amp; Time:</b>&nbsp;27-Dec-2017 05:06 am</p>
-            <p>
-              <b>Meeting with:</b>&nbsp;flower vendor</p>
-          </div>
+        <div>
+          <p>
+            <b>Date &amp; Time:</b>&nbsp;27-Dec-2017 05:06 am</p>
+          <p>
+            <b>Meeting with:</b>&nbsp;flower vendor</p>
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal" (click)="closeAllPopups()">Close</button>
@@ -1546,66 +1550,68 @@
 <!--Venue Details POPUP-->
 <div class="modal fade" id="venuedetailspopup" role="dialog">
   <div class="modal-dialog modal-md">
-      <div class="modal-content">
-          <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal">&times;</button>
-              <h4 class="modal-title"><b>Venue Basic Details</b></h4>
-          </div>
-          <div class="modal-body">
-              <div class="row">
-                  <div class="col-sm-12 margin-top-10">
-                      <div class="col-sm-4">
-                          <label>Capacity&nbsp;: </label>
-                      </div>
-                      <div class="col-sm-6">
-                          <label>10,000</label>
-                      </div>
-                  </div>
-                  <div class="col-sm-12 margin-top-10">
-                      <div class="col-sm-4">
-                          <label>Venue Timings&nbsp;: </label>
-                      </div>
-                      <div class="col-sm-6">
-                          <label>24 Hours</label>
-                      </div>
-                  </div>
-                  <div class="col-sm-12 margin-top-10">
-                      <div class="col-sm-4">
-                          <label>Contact Person&nbsp;: </label>
-                      </div>
-                      <div class="col-sm-6">
-                          <label>Ravi</label>
-                      </div>
-                  </div>
-                  <div class="col-sm-12 margin-top-10">
-                      <div class="col-sm-4">
-                          <label>Contact Person Email&nbsp;: </label>
-                      </div>
-                      <div class="col-sm-6">
-                          <label>Ravi@cloud.com</label>
-                      </div>
-                  </div>
-                  <div class="col-sm-12 margin-top-10">
-                      <div class="col-sm-4">
-                          <label>Contact Person Phone&nbsp;: </label>
-                      </div>
-                      <div class="col-sm-6">
-                          <label>999-999-9999</label>
-                      </div>
-                  </div>
-                  <div class="col-sm-12 margin-top-10">
-                      <div class="col-sm-4">
-                          <label>Venue Location&nbsp;: </label>
-                      </div>
-                      <div class="col-sm-6">
-                          <label>Miyapur,Near shopping mall,Hyderabad</label>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <div class="modal-footer padding20px" style="margin-top:30px;">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          </div>
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">
+          <b>Venue Basic Details</b>
+        </h4>
       </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-sm-12 margin-top-10">
+            <div class="col-sm-4">
+              <label>Capacity&nbsp;: </label>
+            </div>
+            <div class="col-sm-6">
+              <label>10,000</label>
+            </div>
+          </div>
+          <div class="col-sm-12 margin-top-10">
+            <div class="col-sm-4">
+              <label>Venue Timings&nbsp;: </label>
+            </div>
+            <div class="col-sm-6">
+              <label>24 Hours</label>
+            </div>
+          </div>
+          <div class="col-sm-12 margin-top-10">
+            <div class="col-sm-4">
+              <label>Contact Person&nbsp;: </label>
+            </div>
+            <div class="col-sm-6">
+              <label>Ravi</label>
+            </div>
+          </div>
+          <div class="col-sm-12 margin-top-10">
+            <div class="col-sm-4">
+              <label>Contact Person Email&nbsp;: </label>
+            </div>
+            <div class="col-sm-6">
+              <label>Ravi@cloud.com</label>
+            </div>
+          </div>
+          <div class="col-sm-12 margin-top-10">
+            <div class="col-sm-4">
+              <label>Contact Person Phone&nbsp;: </label>
+            </div>
+            <div class="col-sm-6">
+              <label>999-999-9999</label>
+            </div>
+          </div>
+          <div class="col-sm-12 margin-top-10">
+            <div class="col-sm-4">
+              <label>Venue Location&nbsp;: </label>
+            </div>
+            <div class="col-sm-6">
+              <label>Miyapur,Near shopping mall,Hyderabad</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer padding20px" style="margin-top:30px;">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
   </div>
 </div>
