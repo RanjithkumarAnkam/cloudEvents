@@ -3,12 +3,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { ManagerDashboardComponent } from './manager-dashboard/manager-dashboard.component';
 import { ManagerProfileComponent } from './manager-profile/manager-profile.component';
 import { PermissionsComponent } from './permissions/permissions.component';
+import { GalleryComponent } from './gallery/gallery.component';
 
 const routes: Routes = [
   { path: '', component: ManagerDashboardComponent},
   { path: 'dashboard', component: ManagerDashboardComponent},
   { path: 'profile', component: ManagerProfileComponent},
   { path: 'permissions', component: PermissionsComponent},
+  { path: 'gallery', component: GalleryComponent},
   { path: 'calendar', loadChildren: 'app/manager/calendar-view/calendar-view.module#CalendarViewModule'},
   { path: 'customers', loadChildren: 'app/manager/customers/customers.module#CustomersModule'},
   { path: 'manage', loadChildren: 'app/manager/manage/manage.module#ManageModule'},

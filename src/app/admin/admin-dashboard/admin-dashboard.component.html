@@ -21,11 +21,13 @@
 						<div class="panel-body" style="background-color: #eee;">
 							<div class="col-sm-12 nopadding">
 								<div class="col-sm-7 nopadding">
-									<label style="font-size: 20px;"><b>Filters</b>&nbsp;
+									<label style="font-size: 20px;">
+										<b>Filters</b>&nbsp;
 										<p>
-											<small style="font-size: 13px;">Choose filters to refine data
-												statistics</small>
-										</p></label>
+											<small style="font-size: 13px;">Choose filters to refine data statistics
+											</small>
+										</p>
+									</label>
 								</div>
 								<div class="col-sm-5 nopadding">
 									<div class="col-sm-12 nopadding">
@@ -133,32 +135,38 @@
 					<div class="col-sm-12 nopadding">
 						<h4 style="font-weight: 600;">Payment Dues</h4>
 					</div>
-					<table class="table table-hover table-bordered margin-top-10"
-						[mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="5">
+					<table class="table table-hover table-bordered margin-top-10" [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="5">
 						<thead>
 							<tr class="table-headers">
-								<th style="width: 20%"><mfDefaultSorter by="name">Property Name</mfDefaultSorter>
+								<th style="width: 20%">
+									<mfDefaultSorter by="name">Property Name</mfDefaultSorter>
 								</th>
-								<th style="width: 20%"><mfDefaultSorter by="amount">Amount</mfDefaultSorter>
+								<th style="width: 20%">
+									<mfDefaultSorter by="phone">Phone</mfDefaultSorter>
 								</th>
-								<th style="width: 20%"><mfDefaultSorter by="duedate">Due Date</mfDefaultSorter>
+								<th style="width: 20%">
+									<mfDefaultSorter by="email">Email</mfDefaultSorter>
 								</th>
-								<th style="width: 20%"><mfDefaultSorter by="email">Email</mfDefaultSorter>
+								<th style="width: 20%">
+									<mfDefaultSorter by="amount">Amount</mfDefaultSorter>
 								</th>
-								<th style="width: 20%"><mfDefaultSorter by="phone">Phone</mfDefaultSorter>
+								<th style="width: 20%">
+									<mfDefaultSorter by="duedate">Due Date</mfDefaultSorter>
 								</th>
+
+
 							</tr>
 						</thead>
 						<tbody>
 							<tr *ngFor="let item of mf.data">
 								<td>{{item.name}}</td>
+								<td>{{item.phone}}</td>
+								<td>{{item.email}}</td>
 								<td>{{item.amount}}</td>
 								<td>{{item.duedate}}</td>
-								<td>{{item.email}}</td>
-								<td>{{item.phone}}</td>
 							</tr>
 						</tbody>
-						
+
 					</table>
 				</div>
 			</div>

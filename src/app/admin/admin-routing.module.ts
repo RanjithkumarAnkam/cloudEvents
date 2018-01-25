@@ -4,6 +4,7 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { AdminProfileComponent } from './admin-profile/admin-profile.component';
 import { LogsComponent } from './logs/logs.component';
 import { SettingsComponent } from './settings/settings.component';
+import { SubscriptionsListComponent } from './subscriptions-list/subscriptions-list.component';
 
 const routes: Routes = [
   { path: '', component: AdminDashboardComponent },
@@ -11,6 +12,7 @@ const routes: Routes = [
   { path: 'profile', component: AdminProfileComponent },
   { path: 'logs', component: LogsComponent },
   { path: 'settings', component: SettingsComponent},
+  { path: 'subscriptions', component: SubscriptionsListComponent},
   { path: 'subscribers', loadChildren: 'app/admin/subscribers/subscribers.module#SubscribersModule'},
   { path: 'users', loadChildren: 'app/admin/users/users.module#UsersModule'}
 ];

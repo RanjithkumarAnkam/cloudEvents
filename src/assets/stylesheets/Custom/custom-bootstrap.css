@@ -150,3 +150,20 @@
     font-size: 14px !important;
     font-weight: 400 !important;
 }
+.modal-footer{
+    text-align:right;
+}
+.modal .modal-header .close{
+    color:#fff;
+}
+.modal-header{
+    background-color: #116a9e !important;
+    color:#fff !important;
+}
+.modal-title {
+    text-align: center !important;
+}
+.tile{
+    height:250px !important;
+    text-align: center !important;
+}

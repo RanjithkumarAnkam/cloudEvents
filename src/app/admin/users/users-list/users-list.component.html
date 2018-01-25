@@ -15,42 +15,64 @@
 					</div>
 				</div>
 				<div class="col-sm-12 nopadding">
-					<a class="btn btn-success pull-right" data-target="#AddUsersModal"
-						data-toggle="modal"> <i class="fa fa-plus"></i>&nbsp;Add User
+					<a class="btn btn-success pull-right" data-target="#AddUsersModal" data-toggle="modal">
+						<i class="fa fa-plus"></i>&nbsp;Add User
 					</a>
 				</div>
 				<!--Table for users-->
 				<div class="col-sm-12 nopadding  margin-top-10">
-					<table class="table table-hover table-bordered margin-top-10"
-						[mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="5">
+					<table class="table table-hover table-bordered margin-top-10" [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="5">
 						<thead>
 							<tr class="table-headers">
-								<th style="width: 25%"><mfDefaultSorter by="name">User Name</mfDefaultSorter></th>
-								<th style="width: 25%"><mfDefaultSorter by="email">Email</mfDefaultSorter></th>
-								<th style="width: 25%"><mfDefaultSorter by="phone">Phone</mfDefaultSorter></th>
-								<th class="text-center" style="width: 10%"><mfDefaultSorter
-										by="permissions">Permissions</mfDefaultSorter></th>
-								<th class="text-center" style="width: 15%"><mfDefaultSorter
-										by="name">Actions</mfDefaultSorter></th>
+								<th style="width: 25%">
+									<mfDefaultSorter by="name">First Name</mfDefaultSorter>
+								</th>
+								<th style="width: 25%">
+									<mfDefaultSorter by="lastname">Last Name</mfDefaultSorter>
+								</th>
+								<th style="width: 25%">
+									<mfDefaultSorter by="email">Email</mfDefaultSorter>
+								</th>
+								<th style="width: 25%">
+									<mfDefaultSorter by="phone">Phone</mfDefaultSorter>
+								</th>
+								<th class="text-center" style="width: 10%">
+									<mfDefaultSorter by="permissions">Permissions</mfDefaultSorter>
+								</th>
+								<th class="text-center" style="width: 15%">
+									<mfDefaultSorter by="name">Actions</mfDefaultSorter>
+								</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr *ngFor="let item of mf.data">
-								<td>{{item.name}}</td>
-								<td>{{item.email}}</td>
-								<td>{{item.phone}}</td>
-								<td class="text-center"><a>{{item.permissions}}</a> </td>
-								<td class="text-center"><a title="Click to update details"
-									data-toggle="modal" data-target="#EditUsersModal"> <i
-										class="fa fa-pencil"></i>
-								</a>&nbsp; <a title="Click to delete user" data-toggle="modal"
-									data-target="#DeleteModal"> <i class="fa fa-trash red"></i>
-								</a></td>
+								<td>
+									<a title="Click to update details" data-toggle="modal" data-target="#EditUsersModal" style="color:#000">{{item.name}}</a>
+								</td>
+								<td>
+									<a title="Click to update details" data-toggle="modal" data-target="#EditUsersModal" style="color:#000">{{item.lastname}}</a>
+								</td>
+								<td>
+									<a title="Click to update details" data-toggle="modal" data-target="#EditUsersModal" style="color:#000">{{item.email}}</a>
+								</td>
+								<td>
+									<a title="Click to update details" data-toggle="modal" data-target="#EditUsersModal" style="color:#000">{{item.phone}}</a>
+								</td>
+								<td class="text-center">
+									<a>{{item.permissions}}</a>
+								</td>
+								<td class="text-center">
+									<a title="Click to delete user" data-toggle="modal" data-target="#DeleteModal">
+										<i class="fa fa-trash red"></i>
+									</a>
+								</td>
 							</tr>
 						</tbody>
 						<tfoot>
 							<tr>
-								<td colspan="5"><mfBootstrapPaginator></mfBootstrapPaginator></td>
+								<td colspan="5">
+									<mfBootstrapPaginator></mfBootstrapPaginator>
+								</td>
 							</tr>
 						</tfoot>
 					</table>
@@ -80,10 +102,28 @@
 					</div>
 					<div class="col-sm-12 margin-top-10">
 						<div class="col-sm-4">
-							<label>Full Name&nbsp;: </label>
+							<label>First Name&nbsp;: </label>
 						</div>
 						<div class="col-sm-6">
-							<input type="text" class="form-control" />
+							<div class="input-group">
+								<input type="text" class="form-control" />
+								<span class="input-group-addon">
+									<i class="glyphicon glyphicon-user"></i>
+								</span>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-12 margin-top-10">
+						<div class="col-sm-4">
+							<label>Last Name&nbsp;: </label>
+						</div>
+						<div class="col-sm-6">
+							<div class="input-group">
+								<input type="text" class="form-control" />
+								<span class="input-group-addon">
+									<i class="glyphicon glyphicon-user"></i>
+								</span>
+							</div>
 						</div>
 					</div>
 					<div class="col-sm-12 margin-top-10">
@@ -91,7 +131,12 @@
 							<label>User Email&nbsp;: </label>
 						</div>
 						<div class="col-sm-6">
-							<input type="text" class="form-control" />
+							<div class="input-group">
+								<input type="text" class="form-control" />
+								<span class="input-group-addon">
+									<i class="glyphicon glyphicon-envelope"></i>
+								</span>
+							</div>
 						</div>
 						<div class="col-sm-2" id="btnOTP">
 							<a>Generate OTP</a>
@@ -110,14 +155,18 @@
 							<label>Phone Number&nbsp;: </label>
 						</div>
 						<div class="col-sm-6">
-							<input type="text" class="form-control" />
+							<div class="input-group">
+								<input type="text" class="form-control" />
+								<span class="input-group-addon">
+									<i class="glyphicon glyphicon-book"></i>
+								</span>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="modal-footer padding20px">
-				<button type="button" class="btn btn-success" data-dismiss="modal"
-					onclick="toastr.success('User added successfully');">Save</button>
+				<button type="button" class="btn btn-success" data-dismiss="modal" onclick="toastr.success('User added successfully');">Save</button>
 				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 			</div>
 		</div>
@@ -143,10 +192,28 @@
 					</div>
 					<div class="col-sm-12 margin-top-10">
 						<div class="col-sm-4">
-							<label>Full Name&nbsp;: </label>
+							<label>First Name&nbsp;: </label>
 						</div>
 						<div class="col-sm-6">
-							<input type="text" class="form-control" value="Mahesh V" />
+							<div class="input-group">
+								<input type="text" class="form-control" value="Nagarjuna" />
+								<span class="input-group-addon">
+									<i class="glyphicon glyphicon-user"></i>
+								</span>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-12 margin-top-10">
+						<div class="col-sm-4">
+							<label>Last Name&nbsp;: </label>
+						</div>
+						<div class="col-sm-6">
+							<div class="input-group">
+								<input type="text" class="form-control" value="reddy" />
+								<span class="input-group-addon">
+									<i class="glyphicon glyphicon-user"></i>
+								</span>
+							</div>
 						</div>
 					</div>
 					<div class="col-sm-12 margin-top-10">
@@ -154,8 +221,12 @@
 							<label>User Email&nbsp;: </label>
 						</div>
 						<div class="col-sm-6">
-							<input type="text" class="form-control"
-								value="Mahesh@outlook.com" />
+							<div class="input-group">
+								<input type="text" class="form-control" value="nag@outlook.com" />
+								<span class="input-group-addon">
+									<i class="glyphicon glyphicon-envelope"></i>
+								</span>
+							</div>
 						</div>
 					</div>
 					<div class="col-sm-12 margin-top-10">
@@ -163,14 +234,18 @@
 							<label>Phone Number&nbsp;: </label>
 						</div>
 						<div class="col-sm-6">
-							<input type="text" class="form-control" value="9999999999" />
+							<div class="input-group">
+								<input type="text" class="form-control" value="999-999-5482" />
+								<span class="input-group-addon">
+									<i class="glyphicon glyphicon-book"></i>
+								</span>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="modal-footer padding20px">
-				<button type="button" class="btn btn-success" data-dismiss="modal"
-					onclick="toastr.success('User updated successfully');">Update</button>
+				<button type="button" class="btn btn-success" data-dismiss="modal" onclick="toastr.success('User updated successfully');">Update</button>
 				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 			</div>
 		</div>
@@ -190,8 +265,7 @@
 				<label style="padding: 16px;">Are you sure you would like to delete?</label>
 			</div>
 			<div class="modal-footer padding20px">
-				<button type="button" class="btn btn-success" data-dismiss="modal"
-					onclick="toastr.success('Deleted successfully');">Yes</button>
+				<button type="button" class="btn btn-success" data-dismiss="modal" onclick="toastr.success('Deleted successfully');">Yes</button>
 				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 			</div>
 		</div>

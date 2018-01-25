@@ -6,10 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./services-facilities.component.css']
 })
 export class ServicesFacilitiesComponent implements OnInit {
-  data : any[] = [
-    {service: 'Wifi'},
-    {service: 'Catering Services'}
-    
+  data: any[] = [
+    { service: 'Wifi' },
+    { service: 'Catering Services' }
+
   ];
   constructor() { }
 

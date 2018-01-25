@@ -5,51 +5,69 @@
 			<div class="col-sm-1"></div>
 			<div class="col-sm-10 nopadding">
 				<div class="col-sm-12 nopadding">
-					<a class="btn btn-success pull-right"
-						[routerLink]="['/manager/manage/venues/basic-details']"><i
-						class="fa fa-plus"></i>&nbsp;&nbsp;Add New Venue</a>
+					<a class="btn btn-success pull-right" [routerLink]="['/manager/manage/venues/basic-details']">
+						<i class="fa fa-plus"></i>&nbsp;&nbsp;Add New Venue</a>
 				</div>
 				<div class="row">
 					<div class="col-md-12 nopadding">
 						<!-- Begin: life time stats -->
 						<div class="col-sm-12 margin-top-20">
-							<table class="table table-hover table-bordered" [mfData]="data"
-								#mf="mfDataTable" [mfRowsOnPage]="5">
+							<table class="table table-hover table-bordered" [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="5">
 								<thead>
 									<tr class="table-headers">
-										<th style="width: 14%"><mfDefaultSorter by="name">Venue Name</mfDefaultSorter>
+										<th style="width: 14%">
+											<mfDefaultSorter by="name">Venue Name</mfDefaultSorter>
 										</th>
-										<th style="width: 14%"><mfDefaultSorter by="capacity">Capacity</mfDefaultSorter>
+										<th style="width: 14%">
+											<mfDefaultSorter by="capacity">Capacity</mfDefaultSorter>
 										</th>
-										<th style="width: 14%"><mfDefaultSorter by="location">Location</mfDefaultSorter>
+										<th style="width: 14%">
+											<mfDefaultSorter by="location">Location</mfDefaultSorter>
 										</th>
-										<th style="width: 14%"><mfDefaultSorter by="contact">Contact</mfDefaultSorter>
+										<th style="width: 14%">
+											<mfDefaultSorter by="contact">Contact</mfDefaultSorter>
 										</th>
-										<th style="width: 16%"><mfDefaultSorter by="email">Email</mfDefaultSorter>
+										<th style="width: 16%">
+											<mfDefaultSorter by="email">Email</mfDefaultSorter>
 										</th>
-										<th style="width: 14%"><mfDefaultSorter by="phone">Phone</mfDefaultSorter>
+										<th style="width: 14%">
+											<mfDefaultSorter by="phone">Phone</mfDefaultSorter>
 										</th>
 										<th class="text-center" style="width: 14%">Actions</th>
 									</tr>
 								</thead>
 								<tbody>
 									<tr *ngFor="let item of mf.data">
-										<td>{{item.name}}</td>
-										<td>{{item.capacity}}</td>
-										<td>{{item.location}}</td>
-										<td>{{item.contact}}</td>
-										<td>{{item.email}}</td>
-										<td>{{item.phone}}</td>
-										<td class="text-center"><a title="Click to edit details"
-											[routerLink]="['/manager/manage/venues/basic-details']"><i
-												class="fa fa-pencil"></i></a>&nbsp;&nbsp;<a
-											data-toggle="modal" data-target="#DeleteModal"
-											title="Click to delete"><i class="fa fa-trash red"></i></a></td>
+										<td>
+											<a title="Click to edit details" [routerLink]="['/manager/manage/venues/basic-details']" style="color:#000">{{item.name}}</a>
+										</td>
+										<td>
+											<a title="Click to edit details" [routerLink]="['/manager/manage/venues/basic-details']" style="color:#000">{{item.capacity}}</a>
+										</td>
+										<td>
+											<a title="Click to edit details" [routerLink]="['/manager/manage/venues/basic-details']" style="color:#000">{{item.location}}</a>
+										</td>
+										<td>
+											<a title="Click to edit details" [routerLink]="['/manager/manage/venues/basic-details']" style="color:#000">{{item.contact}}</a>
+										</td>
+										<td>
+											<a title="Click to edit details" [routerLink]="['/manager/manage/venues/basic-details']" style="color:#000">{{item.email}}</a>
+										</td>
+										<td>
+											<a title="Click to edit details" [routerLink]="['/manager/manage/venues/basic-details']" style="color:#000">{{item.phone}}</a>
+										</td>
+										<td class="text-center">
+											<a data-toggle="modal" data-target="#DeleteModal" title="Click to delete">
+												<i class="fa fa-trash red"></i>
+											</a>
+										</td>
 									</tr>
 								</tbody>
 								<tfoot>
 									<tr>
-										<td colspan="7"><mfBootstrapPaginator></mfBootstrapPaginator></td>
+										<td colspan="7">
+											<mfBootstrapPaginator></mfBootstrapPaginator>
+										</td>
 									</tr>
 								</tfoot>
 							</table>

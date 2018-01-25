@@ -1,7 +1,8 @@
 <div class="top-menu">
     <nav class="navbar navbar-inverse" role="navigation">
         <div class="navbar-header">
-            <a class="navbar-brand" [routerLink]="['/manager/dashboard']">Venue Cloud
+            <a class="navbar-brand" [routerLink]="['/manager/dashboard']">
+                <img src="/assets/images/VC_Dashboard_White_Logo.png" height=30px/>
             </a>
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                 <span class="icon-bar"></span>
@@ -17,6 +18,9 @@
                 </li>
                 <li id="menu2" tourAnchor="Calendar.id" [routerLinkActive]="['active']">
                     <a [routerLink]="['/manager/calendar']">Calendar</a>
+                </li>
+                <li id="menu2" tourAnchor="Gallery.id" [routerLinkActive]="['active']">
+                    <a [routerLink]="['/manager/gallery']">Gallery</a>
                 </li>
                 <li id="menu4" tourAnchor="Customers.id" [routerLinkActive]="['active']">
                     <a [routerLink]="['/manager/customers']">Customers</a>
@@ -170,7 +174,7 @@
                                         <p style="font-size:15px;">Click below for a guided tour of the application.</p>
                                     </div>
                                     <div class="card-action">
-                                        <a data-dismiss="modal"  (click)="startTour()" class="btn btn-success mhelp">Help Tour</a>
+                                        <a data-dismiss="modal" (click)="startTour()" class="btn btn-success mhelp">Help Tour</a>
                                     </div>
                                 </div>
                             </div>
@@ -291,7 +295,7 @@
                         </div>
                         <div class="col-md-12 margin-top-10">
                             <div class="col-sm-3">
-                            </div> 
+                            </div>
                             <div class="col-sm-6 nopadding">
                                 <a class="btn btn-success" data-dismiss="modal">Save</a>
                                 <a class="btn btn-default" id="btncancel">Cancel</a>
@@ -358,7 +362,7 @@
                     </div>
                 </div>
             </div>
-            <div class="modal-footer" style="border-top: none;">
+            <div class="modal-footer mFooter" style="border-top: none;">
                 <div class="col-sm-6 nopadding">
                     &nbsp;&nbsp;
                     <button type="button" class="btn btn-success" data-dismiss="modal" onclick="toastr.success('New password updated successfully');">

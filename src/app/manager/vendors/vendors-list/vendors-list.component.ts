@@ -6,12 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./vendors-list.component.css']
 })
 export class VendorsListComponent implements OnInit {
-  data : any[] = [
-    {name:'Ranjith', vendortype: 'Photographer', email: 'ranjith@photo.com', phone: '9594220125', company: 'RJ Photography'},
-    {name:'Rakesh', vendortype: 'Decoration', email: 'rakesh@vc.com', phone: '9785552520', company: 'Deccan Decorators'},
-    {name:'Shankar', vendortype: 'Photographer', email: 'Shankar@dec.com', phone: '8995856100', company: 'RJ Photography'},
-    {name:'Raja', vendortype: 'Food Suppliers', email: 'Raja@food.com', phone: '7589658588', company: 'Delicious'},
-    
+  data: any[] = [
+    { fname: 'Ranjith', lname: 'Kumar', vendortype: 'Photographer', email: 'ranjith@photo.com', phone: '9594220125', company: 'RJ Photography' },
+    { fname: 'Rakesh', lname: 'Babu', vendortype: 'Decoration', email: 'rakesh@vc.com', phone: '9785552520', company: 'Deccan Decorators' },
+    { fname: 'Shankar', lname: 'Rao', vendortype: 'Photographer', email: 'Shankar@dec.com', phone: '8995856100', company: 'RJ Photography' },
+    { fname: 'Raja', lname: 'Babu', vendortype: 'Food Suppliers', email: 'Raja@food.com', phone: '7589658588', company: 'Delicious' },
+
   ];
   constructor() { }
 

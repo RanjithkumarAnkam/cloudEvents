@@ -6,34 +6,42 @@
 			<div class="col-sm-1"></div>
 			<div class="col-sm-10 nopadding">
 				<div class="col-sm-12 nopadding margin-top-20">
-					<table class="table table-hover table-bordered" [mfData]="data"
-						#mf="mfDataTable" [mfRowsOnPage]="5">
+					<table class="table table-hover table-bordered" [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="5">
 						<thead>
 							<tr class="table-headers">
-								<th style="width: 12.5%"><mfDefaultSorter by="num">Booking ID</mfDefaultSorter>
+								<th style="width: 12.5%">
+									<mfDefaultSorter by="num">Booking ID</mfDefaultSorter>
 								</th>
-								<th style="width: 12.5%"><mfDefaultSorter by="cus">Customer ID</mfDefaultSorter>
+								<th style="width: 12.5%">
+									<mfDefaultSorter by="fname">First Name</mfDefaultSorter>
 								</th>
-								<th class="text-center" style="width: 12.5%"><mfDefaultSorter
-										by="name">Name</mfDefaultSorter></th>
-								<th class="text-center" style="width: 12.5%"><mfDefaultSorter
-										by="event">Event</mfDefaultSorter></th>
-								<th class="text-center" style="width: 12.5%"><mfDefaultSorter
-										by="eventdate">Event Date</mfDefaultSorter></th>
-								<th class="text-center" style="width: 12.5%"><mfDefaultSorter
-										by="venue">Venue</mfDefaultSorter></th>
-								<th class="text-center" style="width: 12.5%"><mfDefaultSorter
-										by="totalamount">Total Amount</mfDefaultSorter></th>
-								<th class="text-center" style="width: 12.5%"><mfDefaultSorter
-										by="reveivable">Receivable</mfDefaultSorter></th>
+								<th style="width: 12.5%">
+									<mfDefaultSorter by="lname">Last Name</mfDefaultSorter>
+								</th>
+								<th style="width: 12.5%">
+									<mfDefaultSorter by="event">Event</mfDefaultSorter>
+								</th>
+								<th style="width: 12.5%">
+									<mfDefaultSorter by="eventdate">Event Date</mfDefaultSorter>
+								</th>
+								<th style="width: 12.5%">
+									<mfDefaultSorter by="venue">Venue</mfDefaultSorter>
+								</th>
+								<th style="width: 12.5%">
+									<mfDefaultSorter by="totalamount">Total Amount</mfDefaultSorter>
+								</th>
+								<th style="width: 12.5%">
+									<mfDefaultSorter by="reveivable">Receivable</mfDefaultSorter>
+								</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr *ngFor="let item of mf.data">
-								<td><a data-toggle="modal" data-target="#bookingdetails"
-									title="Click to view payment details">{{item.num}}</a></td>
-								<td>{{item.cus}}</td>
-								<td>{{item.name}}</td>
+								<td>
+									<a data-toggle="modal" data-target="#bookingdetails" title="Click to view payment details">{{item.num}}</a>
+								</td>
+								<td>{{item.fname}}</td>
+								<td>{{item.lname}}</td>
 								<td>{{item.event}}</td>
 								<td>{{item.eventdate}}</td>
 								<td>{{item.venue}}</td>
@@ -44,8 +52,9 @@
 						</tbody>
 						<tfoot>
 							<tr>
-								<td colspan="8"><mfBootstrapPaginator
-										></mfBootstrapPaginator></td>
+								<td colspan="9">
+									<mfBootstrapPaginator></mfBootstrapPaginator>
+								</td>
 							</tr>
 						</tfoot>
 					</table>
@@ -69,15 +78,17 @@
 			</div>
 			<div class="modal-body">
 				<div class="col-sm-12 margin-top-10">
-					<a class="btn btn-success pull-right" id="addnewpayment"> <i
-						class="fa fa-plus"></i> &nbsp;Add New Payment
+					<a class="btn btn-success pull-right" id="addnewpayment">
+						<i class="fa fa-plus"></i> &nbsp;Add New Payment
 					</a>
 				</div>
 				<div class="col-sm-12 margin-top-10">
-					<label><b>Total Amount</b>:&nbsp;50000</label>
+					<label>
+						<b>Total Amount</b>:&nbsp;50000</label>
 				</div>
 				<div class="col-sm-12 margin-top-10">
-					<label><b>Due Amount</b>:&nbsp;10000</label>
+					<label>
+						<b>Due Amount</b>:&nbsp;10000</label>
 				</div>
 				<div class="col-sm-12 margin-top-10">
 					<table class="table table-responsive table-bordered" id="tablediv">
@@ -103,12 +114,19 @@
 								<td>20000</td>
 								<td>30000</td>
 								<td>20/09/17</td>
-								<td class="text-center"><a class=""> <input type="checkbox"
-										class="form-control" style="height:auto;" />
-								</a></td>
-								<td class="text-center"><a class="editdiv"> <i
-										class="fa fa-pencil"></i>
-								</a></td>
+								<td class="text-center">
+									<a class="">
+										<label class="switch" style="border-radius: 30px !important;">
+											<input type="checkbox">
+											<span class="slider round"></span>
+										</label>
+									</a>
+								</td>
+								<td class="text-center">
+									<a class="editdiv">
+										<i class="fa fa-pencil"></i>
+									</a>
+								</td>
 							</tr>
 							<tr>
 
@@ -118,12 +136,19 @@
 								<td>10000</td>
 								<td>20000</td>
 								<td>18/09/17</td>
-								<td class="text-center"><a class=""> <input type="checkbox"
-										class="form-control" style="height:auto;" />
-								</a></td>
-								<td class="text-center"><a class="editdiv"> <i
-										class="fa fa-pencil"></i>
-								</a></td>
+								<td class="text-center">
+									<a class="">
+										<label class="switch" style="border-radius: 30px !important;">
+											<input type="checkbox">
+											<span class="slider round"></span>
+										</label>
+									</a>
+								</td>
+								<td class="text-center">
+									<a class="editdiv">
+										<i class="fa fa-pencil"></i>
+									</a>
+								</td>
 							</tr>
 						</tbody>
 					</table>
@@ -137,7 +162,7 @@
 									<label>Description&nbsp;:</label>
 								</div>
 								<div class="col-sm-8">
-									<input type="text" class="form-control" id="Description" />
+									<input type="text" class="form-control" id="Description1" />
 								</div>
 							</div>
 							<div class="col-sm-12 margin-top-10">
@@ -183,8 +208,7 @@
 									<label></label>
 								</div>
 								<div class="col-sm-8">
-									<input type="text" class="form-control"
-										placeholder="Enter details of payment mode" />
+									<input type="text" class="form-control" placeholder="Enter details of payment mode" />
 								</div>
 							</div>
 							<div class="col-sm-12 margin-top-10">
@@ -200,8 +224,7 @@
 									<label></label>
 								</div>
 								<div class="col-sm-8">
-									<a class="btn btn-success" id="savebutton"
-										onclick="toastr.success('Payment from customer added successfully');">Save</a>
+									<a class="btn btn-success" id="savebutton" onclick="toastr.success('Payment from customer added successfully');">Save</a>
 									<a class="btn btn-default" id="cancelbutton">Cancel</a>
 								</div>
 							</div>
@@ -217,8 +240,7 @@
 									<label>Description&nbsp;:</label>
 								</div>
 								<div class="col-sm-8">
-									<input type="text" class="form-control" id="Description"
-										value="First Payment" />
+									<input type="text" class="form-control" id="Description" value="First Payment" />
 								</div>
 							</div>
 							<div class="col-sm-12 margin-top-10">
@@ -226,8 +248,7 @@
 									<label>Amount&nbsp;:</label>
 								</div>
 								<div class="col-sm-8">
-									<input type="text" class="form-control" id="Amount"
-										value="10000" />
+									<input type="text" class="form-control" id="Amount1" value="10000" />
 								</div>
 							</div>
 							<div class="col-sm-12 margin-top-10">
@@ -235,8 +256,7 @@
 									<label>Payment Date&nbsp;:</label>
 								</div>
 								<div class="col-sm-8">
-									<input type="date" class="form-control" id="PaymentDate"
-										value="18/08/17" />
+									<input type="date" class="form-control" id="PaymentDate" value="18/08/17" />
 								</div>
 							</div>
 							<div class="col-sm-12 margin-top-10">
@@ -274,8 +294,7 @@
 									<label></label>
 								</div>
 								<div class="col-sm-8">
-									<a class="btn btn-success" id="updatebutton"
-										onclick="toastr.success('Payment from customer updated successfully');">Update</a>
+									<a class="btn btn-success" id="updatebutton" onclick="toastr.success('Payment from customer updated successfully');">Update</a>
 									<a class="btn btn-default" id="cancelbutton1">Cancel</a>
 								</div>
 							</div>
@@ -283,7 +302,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="modal-footer padding20px"></div>
+			<div class="modal-footer mFooter padding20px"></div>
 		</div>
 	</div>
 </div>

@@ -44,8 +44,12 @@ export class ViewComponent implements OnInit {
     extraPayEnable: boolean = false;
     enqTimingsDivEnable: boolean = false;
     meetWithEnable: boolean = false;
-    existPerEnable:boolean=false;
-    date3:Date;
+    existPerEnable: boolean = false;
+    boDetTimEnable: boolean = false;
+    singleEvent: boolean = true;
+    longEvent: boolean = false;
+    date3: Date;
+
     ngOnInit() {
         this.events = [
             {
@@ -102,7 +106,8 @@ export class ViewComponent implements OnInit {
         this.vendorEnable = e;
     }
     addPaydivEnable(e) {
-        console.log(2)
+        this.payDivEnable = false;
+        this.extraPayEnable = false;
         this.payDivEnable = e;
     }
     extraPayhandle(e) {
@@ -121,8 +126,26 @@ export class ViewComponent implements OnInit {
     meetingWithHandler(e) {
         this.meetWithEnable = e;
     }
-    existPerHandler(e){
-        this.existPerEnable=e
+    existPerHandler(e) {
+
+        this.existPerEnable = e;
+    }
+    onTimeSlotChange(e) {
+        if (e == 2) {
+            this.boDetTimEnable = true;
+        } else {
+            this.boDetTimEnable = false;
+        }
+    }
+
+    onEventSpanChange(e) {
+        if (e == 2) {
+            this.longEvent = true;
+            this.singleEvent = false;
+        } else {
+            this.singleEvent = true;
+            this.longEvent = false;
+        }
     }
     handleDayClick(e) {
         //clicked date in timestamp
@@ -220,6 +243,8 @@ export class ViewComponent implements OnInit {
         this.add_enquiry_second_tab = '';
         this.new_enquiry_customer_block = true;
         this.new_enquiry_enquiry_block = false;
+        this.existing_cust = false;
+        this.new_cust = true;
     }
 
     createAppointment() {
@@ -228,6 +253,8 @@ export class ViewComponent implements OnInit {
         document.getElementById("modalTitle").innerHTML = 'Naren Gardens - Add New Appointment';
         this.new_appointment = true;
         this.new_creation = true;
+        this.meetWithEnable = false;
+        this.existPerEnable = false;
     }
 
     clickedBackButton() {
@@ -255,6 +282,10 @@ export class ViewComponent implements OnInit {
         this.add_booking_second_tab = 'active';
         this.new_booking_customer_block = false;
         this.new_booking_event_block = true;
+        this.boDetTimEnable = false;
+        this.vendorEnable = false;
+        this.singleEvent = true;
+        this.longEvent = false;
     }
     addEventBack() {
         this.add_booking_second_tab = '';
@@ -265,6 +296,7 @@ export class ViewComponent implements OnInit {
         this.add_booking_third_tab = 'active';
         this.new_booking_event_block = false;
         this.new_booking_payment_block = true;
+        this.payDivEnable = false;
     }
     addPaymentBack() {
         this.add_booking_third_tab = '';
@@ -285,37 +317,39 @@ export class ViewComponent implements OnInit {
         this.add_enquiry_second_tab = 'active';
         this.new_enquiry_customer_block = false;
         this.new_enquiry_enquiry_block = true;
+        this.enqTimingsDivEnable = false;
     }
     addEnquiryEnquiryBack() {
         this.add_enquiry_second_tab = '';
         this.new_enquiry_customer_block = true;
         this.new_enquiry_enquiry_block = false;
+        this.enqTimingsDivEnable = false;
     }
 
-    OpenEditBooking(){
+    OpenEditBooking() {
         this.showBookingsModal = false;
         document.getElementById("openFutureModalButton").click();
         document.getElementById("modalTitle").innerHTML = "<b>Edit Booking</b>";
         this.no_new_creation_holiday = true;
-        this.no_new_creation = false;       
+        this.no_new_creation = false;
         this.new_creation = true;
         this.new_booking = true;
     }
-    OpenEditEnquiry(){
+    OpenEditEnquiry() {
         this.showEnquiryModal = false;
         document.getElementById("openFutureModalButton").click();
         document.getElementById("modalTitle").innerHTML = "Edit Enquiry";
-        this.no_new_creation_holiday = true;  
-        this.no_new_creation = false;       
+        this.no_new_creation_holiday = true;
+        this.no_new_creation = false;
         this.new_creation = true;
-        this.new_enquiry = true;              
+        this.new_enquiry = true;
     }
-    OpenEditAppointment(){
+    OpenEditAppointment() {
         this.showAppointmentModal = false;
         document.getElementById("openFutureModalButton").click();
         document.getElementById("modalTitle").innerHTML = "Edit Appointment";
-        this.no_new_creation_holiday = true;        
-        this.no_new_creation = false;       
+        this.no_new_creation_holiday = true;
+        this.no_new_creation = false;
         this.new_creation = true;
         this.new_appointment = true;
     }

@@ -1,73 +1,95 @@
 <div class="top-menu">
 	<nav class="navbar navbar-inverse" role="navigation">
 		<div class="navbar-header">
-			<a class="navbar-brand" [routerLink]="['/admin/dashboard']">Venue
-				Cloud</a>
-			<button type="button" class="navbar-toggle" data-toggle="collapse"
-				data-target=".navbar-collapse">
-				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
-					class="icon-bar"></span>
+			<a class="navbar-brand" [routerLink]="['/admin/dashboard']">
+				<img src="/assets/images/VC_Dashboard_White_Logo.png" height="30px" />
+			</a>
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
 			</button>
 		</div>
-		<div class="collapse navbar-collapse"
-			id="bs-example-navbar-collapse-1">
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav navbar-center">
-				<li id="menu1" [routerLinkActive]="['active']"><a
-					[routerLink]="['/admin/dashboard']">Dashboard</a></li>
-				<li id="menu2" [routerLinkActive]="['active']"><a
-					[routerLink]="['/admin/subscribers']">Subscribers</a></li>
-				<li id="menu6" [routerLinkActive]="['active']"><a
-					[routerLink]="['/admin/users']">Users</a></li>
-				<li id="menu3" [routerLinkActive]="['active']"><a
-					[routerLink]="['/admin/settings']">Settings</a></li>
-				<li id="menu5" [routerLinkActive]="['active']"><a
-					[routerLink]="['/admin/logs']">Logs</a></li>
+				<li id="menu1" [routerLinkActive]="['active']">
+					<a [routerLink]="['/admin/dashboard']">Dashboard</a>
+				</li>
+				<li id="menu2" [routerLinkActive]="['active']">
+					<a [routerLink]="['/admin/subscribers']">Subscribers</a>
+				</li>
+				<li id="menu6" [routerLinkActive]="['active']">
+					<a [routerLink]="['/admin/subscriptions']">Manage Subscriptions</a>
+				</li>
+				<li id="menu6" [routerLinkActive]="['active']">
+					<a [routerLink]="['/admin/users']">Users</a>
+				</li>
+				<li id="menu3" [routerLinkActive]="['active']">
+					<a [routerLink]="['/admin/settings']">Settings</a>
+				</li>
+				<li id="menu5" [routerLinkActive]="['active']">
+					<a [routerLink]="['/admin/logs']">Logs</a>
+				</li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-				<li class="dropdown dropdown-user"><a class="dropdown-toggle"
-					data-toggle="dropdown" data-hover="dropdown"
-					data-close-others="true"> <span
-						class="username username-hide-on-mobile"><b>My Account</b></span>
+				<li class="dropdown dropdown-user">
+					<a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+						<span class="username username-hide-on-mobile">
+							<b>My Account</b>
+						</span>
 						<i class="fa fa-angle-down"></i>
-				</a>
-					<ul class="dropdown-menu dropdown-menu-default">
-
-						<li><a [routerLink]="['/admin/profile']"> <img height="35"
-								src="/assets/images/Ans-.jpg" class="imgstyle" /> <i
-								class="icon-user"></i>My Profile
-						</a></li>
-						<li class="divider"></li>
-						<li><a data-toggle="modal" data-target="#myModal-change-pswd"
-							class="curspointer"> <i class="icon-lock"></i>Change Password
-						</a></li>
-						<li><a [routerLink]="['/login']"> <i class="icon-key"></i>Log Out
-						</a></li>
-					</ul></li>
-			</ul>
-			<div class="collapse nav navbar-nav nav-collapse slide-down"
-				id="nav-collapse3">
-				<form class="navbar-form navbar-right">
-					<li class="dropdown dropdown-user"><a href="#"
-						class="dropdown-toggle" data-toggle="dropdown"
-						data-hover="dropdown" data-close-others="true"> <img alt=""
-							class="img-circle"
-							src="/assets/theme/assets/admin/layout/img/avatar3_small.jpg" />
-							<span class="username username-hide-on-mobile"><b>Roger</b></span>
-							<i class="fa fa-angle-down"></i>
 					</a>
+					<ul class="dropdown-menu dropdown-menu-default">
+						<li style="text-align:center">
+							<img height="70" src="/assets/images/Ans-.jpg" class="imgstyle" />
+						</li>
+						<li>
+							<a [routerLink]="['/admin/profile']">
+								<i class="icon-user" style="margin-right:10px"></i>My Profile
+							</a>
+						</li>
+						<li>
+							<a data-toggle="modal" data-target="#myModal-change-pswd" class="curspointer">
+								<i class="icon-lock" style="margin-right:10px"></i>Change Password
+							</a>
+						</li>
+						<li>
+							<a [routerLink]="['/login']">
+								<i class="icon-key" style="margin-right:10px"></i>Log Out
+							</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+			<div class="collapse nav navbar-nav nav-collapse slide-down" id="nav-collapse3">
+				<form class="navbar-form navbar-right">
+					<li class="dropdown dropdown-user">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+							<img alt="" class="img-circle" src="/assets/theme/assets/admin/layout/img/avatar3_small.jpg" />
+							<span class="username username-hide-on-mobile">
+								<b>Roger</b>
+							</span>
+							<i class="fa fa-angle-down"></i>
+						</a>
 						<ul class="dropdown-menu dropdown-menu-default">
-							<li><a href=""> <i class="icon-user"></i>&nbsp;&nbsp;&nbsp;My
-									Profile
-							</a></li>
+							<li>
+								<a href="">
+									<i class="icon-user"></i>&nbsp;&nbsp;&nbsp;My Profile
+								</a>
+							</li>
 							<li class="divider"></li>
-							<li><a data-toggle="modal" data-target="#myModal-change-pswd"
-								class="curspointer"> <i class="icon-lock"></i>&nbsp;&nbsp;&nbsp;Change
-									Password
-							</a></li>
-							<li><a [routerLink]="['/login']"> <i class="icon-key"></i>&nbsp;&nbsp;&nbsp;Log
-									Out
-							</a></li>
-						</ul></li>
+							<li>
+								<a data-toggle="modal" data-target="#myModal-change-pswd" class="curspointer">
+									<i class="icon-lock"></i>&nbsp;&nbsp;&nbsp;Change Password
+								</a>
+							</li>
+							<li>
+								<a [routerLink]="['/login']">
+									<i class="icon-key"></i>&nbsp;&nbsp;&nbsp;Log Out
+								</a>
+							</li>
+						</ul>
+					</li>
 				</form>
 			</div>
 		</div>
@@ -75,22 +97,18 @@
 </div>
 <router-outlet></router-outlet>
 
-<div class="col-sm-12 bg-white"
-	style="background-color: #116a9e; height: 50px;">
-	<p
-		style="margin-left: 0px; text-align: center; color: #FFF; margin-top: 20px;">
+<div class="col-sm-12 bg-white" style="background-color: #116a9e; height: 50px;">
+	<p style="margin-left: 0px; text-align: center; color: #FFF; margin-top: 20px;">
 		&copy; {{today | date:'yyyy'}} - Option Matrix ® All Rights Reserved</p>
 	<p></p>
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="myModal-change-pswd" tabindex="-1"
-	role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="myModal-change-pswd" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-dialog pswd-pop">
 		<div class="modal-content">
 			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal"
-					style="color: #fff !important; opacity: 1;" aria-hidden="true">
+				<button type="button" class="close" data-dismiss="modal" style="color: #fff !important; opacity: 1;" aria-hidden="true">
 					&times;</button>
 				<h4 class="modal-title" id="myModalLabel">
 					<b>Change Password</b>
@@ -102,8 +120,7 @@
 						<label class="add-member-label">Email</label>
 					</div>
 					<div class="col-sm-8">
-						<input type="text" class="form-control add-member-input"
-							value="admin@cloud.com" readonly="readonly" />
+						<input type="text" class="form-control add-member-input" value="admin@cloud.com" readonly="readonly" />
 					</div>
 				</div>
 				<div class="col-md-12" style="margin-top: 10px;">
@@ -111,9 +128,8 @@
 						<label class="add-member-label">Current Password</label>
 					</div>
 					<div class="col-sm-8">
-						<input type="password" class="form-control add-member-input"
-							placeholder="Current Password.." id="current-password" /> <label
-							class="error-msg" id="current-password-error"> </label>
+						<input type="password" class="form-control add-member-input" placeholder="Current Password.." id="current-password" />
+						<label class="error-msg" id="current-password-error"> </label>
 					</div>
 				</div>
 				<div class="col-md-12">
@@ -121,9 +137,8 @@
 						<label class="add-member-label">New Password</label>
 					</div>
 					<div class="col-sm-8">
-						<input type="password" class="form-control add-member-input"
-							placeholder="New Password.." id="new-password" /> <label
-							class="error-msg" id="new-password-error"> </label>
+						<input type="password" class="form-control add-member-input" placeholder="New Password.." id="new-password" />
+						<label class="error-msg" id="new-password-error"> </label>
 					</div>
 				</div>
 				<div class="col-md-12">
@@ -131,20 +146,18 @@
 						<label class="add-member-label">Confirm Password</label>
 					</div>
 					<div class="col-sm-8">
-						<input type="password" class="form-control add-member-input"
-							placeholder="Confirm Password.." id="new-confirm-password" /> <label
-							class="error-msg" id="confirm-password-error"> </label> <label
-							class="error-msg" id="display-password-error"> </label>
+						<input type="password" class="form-control add-member-input" placeholder="Confirm Password.." id="new-confirm-password" />
+						<label class="error-msg" id="confirm-password-error"> </label>
+						<label class="error-msg" id="display-password-error"> </label>
 					</div>
 				</div>
 			</div>
 			<div class="modal-footer" style="border-top: none;">
 				<div class="col-sm-6 nopadding">
 					&nbsp;&nbsp;
-					<button type="button" class="btn btn-success" onclick="">Save
-						changes</button>
-					<button type="button" class="btn btn-Clear" data-dismiss="modal"
-						onclick="clearChangePasswordFields();">Close</button>
+					<button type="button" class="btn btn-success" onclick="">Save changes
+					</button>
+					<button type="button" class="btn btn-Clear" data-dismiss="modal" onclick="clearChangePasswordFields();">Close</button>
 
 				</div>
 

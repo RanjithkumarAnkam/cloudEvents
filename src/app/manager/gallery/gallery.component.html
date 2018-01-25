@@ -1,0 +1,62 @@
+<div class="page-content-wrapper">
+  <div class="page-content clearfix ">
+    <div class="row nopadding">
+      <div class="col-sm-1"></div>
+      <div class="col-sm-10 ">
+        <h3 class="page-title">
+          Gallery
+          <p>
+            <small> Venues related gallery of images along with videos are shown in this page.</small>
+          </p>
+        </h3>
+        <div class="col-sm-12 nopadding" style="border: 1px solid #e2e2e2 !important; padding: 20px;    background-color: #eee;">
+          <div class="form-group nopadding">
+            <div class="col-md-2"></div>
+            <label class="control-label col-md-2  nopadding" style="margin-top: 5px;">
+              Select Venue :
+            </label>
+            <div class="col-md-4 nopadding">
+              <select class="form-control" (change)="onVenueChange()">
+                <option value="0">All</option>
+                <option value="1">Naren Convention</option>
+                <option value="2">Naren Gardens</option>
+                <option value="3">Naren Platinum</option>
+                <option value="4">Naren Community</option>
+              </select>
+            </div>
+            <div class="col-md-2 nopadding">
+              <a (click)="searchImgs()" class="btn btn-success pull-right" title="Click to Fetch Images">
+                Filter</a>
+            </div>
+            <div class="col-md-2"></div>
+          </div>
+        </div>
+        <div class="col-sm-12 nopadding" style="margin-top:40px;border: 1px solid #e2e2e2 !important;">
+          <h3 style="text-align: center;font-weight: 600;">Images</h3>
+          <div class="col-sm-12" style="text-align: center !important">
+            <ngx-gallery [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
+          </div>
+        </div>
+        <div class="col-sm-12" style="margin-top:40px;border: 1px solid #e2e2e2 !important;">
+          <h3 style="text-align: center;font-weight: 600;">Videos</h3>
+          <ngx-carousel
+          [inputs]="carouselTile"
+          (carouselLoad)="carouselTileLoad($event)">
+      
+                <ngx-tile NgxCarouselItem *ngFor="let Tile of carouselTileItems">
+                  <iframe [src]='sanitizer.bypassSecurityTrustResourceUrl(Tile.videoUrl)' height=220 width=320 frameborder="0" style="margin:5px" allowfullscreen></iframe>
+                </ngx-tile>
+      
+              <button NgxCarouselPrev class='leftRs'>&lt;</button>
+              <button NgxCarouselNext class='rightRs'>&gt;</button>
+        </ngx-carousel>
+        </div>
+
+
+      </div>
+      <div class="col-sm-1"></div>
+    </div>
+
+  </div>
+
+</div>

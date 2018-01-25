@@ -5,46 +5,72 @@
 			<div class="col-sm-1"></div>
 			<div class="col-sm-10 nopadding">
 				<div class="col-sm-12 nopadding">
-					<a class="btn btn-success pull-right" data-toggle="modal"
-						data-target="#AddVendorModal"><i class="fa fa-plus"></i>&nbsp;&nbsp;Add
-						Vendor</a>
+					<a class="btn btn-success pull-right" data-toggle="modal" data-target="#AddVendorModal">
+						<i class="fa fa-plus"></i>&nbsp;&nbsp;Add Vendor
+					</a>
 				</div>
 				<div class="col-md-12 nopadding"></div>
 				<div class="col-sm-12 nopadding  margin-top-10">
-					<table class="table table-hover table-bordered" [mfData]="data"
-						#mf="mfDataTable" [mfRowsOnPage]="5">
+					<table class="table table-hover table-bordered" [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="5">
 						<thead>
 							<tr class="table-headers">
-								<th style="width: 16.66%"><mfDefaultSorter by="name">Vendor Name</mfDefaultSorter>
+								<th style="width: 16.66%">
+									<mfDefaultSorter by="fname">First Name</mfDefaultSorter>
 								</th>
-								<th style="width: 16.66%"><mfDefaultSorter by="vendortype">Vendor
-									Type</mfDefaultSorter></th>
-								<th style="width: 16.66%"><mfDefaultSorter by="email">Email ID</mfDefaultSorter></th>
-								<th style="width: 16.66%"><mfDefaultSorter by="phone">Phone
-									Number</mfDefaultSorter></th>
-								<th style="width: 16.66%"><mfDefaultSorter by="company">Company</mfDefaultSorter></th>
+								<th style="width: 16.66%">
+									<mfDefaultSorter by="lname">Last Name</mfDefaultSorter>
+								</th>
+								<th style="width: 16.66%">
+									<mfDefaultSorter by="vendortype">Vendor Type
+									</mfDefaultSorter>
+								</th>
+								<th style="width: 16.66%">
+									<mfDefaultSorter by="email">Email ID</mfDefaultSorter>
+								</th>
+								<th style="width: 16.66%">
+									<mfDefaultSorter by="phone">Phone Number
+									</mfDefaultSorter>
+								</th>
+								<th style="width: 16.66%">
+									<mfDefaultSorter by="company">Company</mfDefaultSorter>
+								</th>
 								<th class="text-center" style="width: 16.66%">Actions</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr *ngFor="let item of mf.data">
-								<td>{{item.name}}</td>
-								<td>{{item.vendortype}}</td>
-								<td>{{item.email}}</td>
-								<td>{{item.phone}}</td>
-								<td>{{item.company}}</td>
-								<td class="text-center"><a title="Click to update values"
-									data-toggle="modal" data-target="#EditVendorModal"> <i
-										class="fa fa-pencil"></i>
-								</a>&nbsp; <a title="Click to delete values"> <i
-										class="fa fa-trash red"></i>
-								</a></td>
+								<td>
+									<a title="Click to update values" data-toggle="modal" data-target="#EditVendorModal" style="color:#000">{{item.fname}}</a>
+								</td>
+								<td>
+									<a title="Click to update values" data-toggle="modal" data-target="#EditVendorModal" style="color:#000">{{item.lname}}</a>
+								</td>
+								<td>
+									<a title="Click to update values" data-toggle="modal" data-target="#EditVendorModal" style="color:#000">{{item.vendortype}}</a>
+								</td>
+								<td>
+									<a title="Click to update values" data-toggle="modal" data-target="#EditVendorModal" style="color:#000">{{item.email}}</a>
+								</td>
+								<td>
+									<a title="Click to update values" data-toggle="modal" data-target="#EditVendorModal" style="color:#000">{{item.phone}}</a>
+								</td>
+								<td>
+									<a title="Click to update values" data-toggle="modal" data-target="#EditVendorModal" style="color:#000">{{item.company}}</a>
+								</td>
+
+								<td>
+									<a title="Click to delete values">
+										<i class="fa fa-trash red"></i>
+									</a>
+								</td>
 
 							</tr>
 						</tbody>
 						<tfoot>
 							<tr>
-								<td colspan="7"><mfBootstrapPaginator></mfBootstrapPaginator></td>
+								<td colspan="7">
+									<mfBootstrapPaginator></mfBootstrapPaginator>
+								</td>
 							</tr>
 						</tfoot>
 					</table>
@@ -72,25 +98,44 @@
 				<div class="row">
 					<div class="col-sm-12 margin-top-10">
 						<div class="col-sm-4">
-							<label>Vendor ID&nbsp;: </label>
+							<label class="control-label add-member-label">Vendor ID&nbsp;: </label>
 						</div>
 						<div class="col-sm-6">
 							<input type="text" class="form-control" value="V00006" disabled />
 						</div>
+
 					</div>
 
 					<div class="col-sm-12 margin-top-10">
 						<div class="col-sm-4">
-							<label> Name&nbsp;: </label>
+							<label class="control-label add-member-label">First Name&nbsp;: </label>
 						</div>
 						<div class="col-sm-6">
-							<input type="text" class="form-control" />
+							<div class="input-group">
+								<input type="text" class="form-control" />
+								<span class="input-group-addon">
+									<i class="glyphicon glyphicon-user"></i>
+								</span>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-12 margin-top-10">
+						<div class="col-sm-4">
+							<label class="control-label add-member-label">Last Name&nbsp;: </label>
+						</div>
+						<div class="col-sm-6">
+							<div class="input-group">
+								<input type="text" class="form-control" />
+								<span class="input-group-addon">
+									<i class="glyphicon glyphicon-user"></i>
+								</span>
+							</div>
 						</div>
 					</div>
 
 					<div class="col-sm-12 margin-top-10">
 						<div class="col-sm-4">
-							<label> Type&nbsp;: </label>
+							<label class="control-label add-member-label"> Type&nbsp;: </label>
 						</div>
 						<div class="col-sm-6">
 							<select class="form-control">
@@ -103,7 +148,7 @@
 					</div>
 					<div class="col-sm-12 margin-top-10">
 						<div class="col-sm-4">
-							<label> Company&nbsp;: </label>
+							<label class="control-label add-member-label"> Company&nbsp;: </label>
 						</div>
 						<div class="col-sm-6">
 							<input type="text" class="form-control" />
@@ -111,23 +156,33 @@
 					</div>
 					<div class="col-sm-12 margin-top-10">
 						<div class="col-sm-4">
-							<label> Email&nbsp;: </label>
+							<label class="control-label add-member-label"> Email&nbsp;: </label>
 						</div>
 						<div class="col-sm-6">
-							<input type="text" class="form-control" />
+							<div class="input-group">
+								<input type="text" class="form-control" />
+								<span class="input-group-addon">
+									<i class="glyphicon glyphicon-envelope"></i>
+								</span>
+							</div>
 						</div>
 					</div>
 					<div class="col-sm-12 margin-top-10">
 						<div class="col-sm-4">
-							<label> Phone&nbsp;: </label>
+							<label class="control-label add-member-label"> Phone&nbsp;: </label>
 						</div>
 						<div class="col-sm-6">
-							<input type="text" class="form-control" />
+							<div class="input-group">
+								<input type="text" class="form-control" />
+								<span class="input-group-addon">
+									<i class="glyphicon glyphicon-book"></i>
+								</span>
+							</div>
 						</div>
 					</div>
 					<div class="col-sm-12 margin-top-10">
 						<div class="col-sm-4">
-							<label> Address&nbsp;: </label>
+							<label class="control-label add-member-label"> Address&nbsp;: </label>
 						</div>
 						<div class="col-sm-6">
 							<textarea class="form-control" rows="4"></textarea>
@@ -136,9 +191,8 @@
 
 				</div>
 			</div>
-			<div class="modal-footer padding20px">
-				<button type="button" class="btn btn-success" data-dismiss="modal"
-					onclick="toastr.success('Vendor added successfully');">Save</button>
+			<div class="modal-footer mFooter padding20px">
+				<button type="button" class="btn btn-success" data-dismiss="modal" onclick="toastr.success('Vendor added successfully');">Save</button>
 				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 			</div>
 		</div>
@@ -159,7 +213,7 @@
 				<div class="row">
 					<div class="col-sm-12 margin-top-10">
 						<div class="col-sm-4">
-							<label>Vendor ID&nbsp;: </label>
+							<label class="control-label add-member-label">Vendor ID&nbsp;: </label>
 						</div>
 						<div class="col-sm-6">
 							<input type="text" class="form-control" value="V00006" disabled />
@@ -168,16 +222,34 @@
 
 					<div class="col-sm-12 margin-top-10">
 						<div class="col-sm-4">
-							<label> Name&nbsp;: </label>
+							<label class="control-label add-member-label">First Name&nbsp;: </label>
 						</div>
 						<div class="col-sm-6">
-							<input type="text" class="form-control" value="Test Vendor" />
+							<div class="input-group">
+								<input type="text" class="form-control" value="Test" />
+								<span class="input-group-addon">
+									<i class="glyphicon glyphicon-user"></i>
+								</span>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-12 margin-top-10">
+						<div class="col-sm-4">
+							<label class="control-label add-member-label">Last Name&nbsp;: </label>
+						</div>
+						<div class="col-sm-6">
+							<div class="input-group">
+								<input type="text" class="form-control" value="Vendor" />
+								<span class="input-group-addon">
+									<i class="glyphicon glyphicon-user"></i>
+								</span>
+							</div>
 						</div>
 					</div>
 
 					<div class="col-sm-12 margin-top-10">
 						<div class="col-sm-4">
-							<label> Type&nbsp;: </label>
+							<label class="control-label add-member-label"> Type&nbsp;: </label>
 						</div>
 						<div class="col-sm-6">
 							<select class="form-control">
@@ -190,7 +262,7 @@
 					</div>
 					<div class="col-sm-12 margin-top-10">
 						<div class="col-sm-4">
-							<label> Company &nbsp;: </label>
+							<label class="control-label add-member-label"> Company &nbsp;: </label>
 						</div>
 						<div class="col-sm-6">
 							<input type="text" class="form-control" value="RJ Photography" />
@@ -198,23 +270,33 @@
 					</div>
 					<div class="col-sm-12 margin-top-10">
 						<div class="col-sm-4">
-							<label> Email&nbsp;: </label>
+							<label class="control-label add-member-label"> Email&nbsp;: </label>
 						</div>
 						<div class="col-sm-6">
-							<input type="text" class="form-control" value="vendor@cloud.com" />
+							<div class="input-group">
+								<input type="text" class="form-control" value="vendor@cloud.com" />
+								<span class="input-group-addon">
+									<i class="glyphicon glyphicon-envelope"></i>
+								</span>
+							</div>
 						</div>
 					</div>
 					<div class="col-sm-12 margin-top-10">
 						<div class="col-sm-4">
-							<label> Phone&nbsp;: </label>
+							<label class="control-label add-member-label"> Phone&nbsp;: </label>
 						</div>
 						<div class="col-sm-6">
-							<input type="text" class="form-control" value="9999999999" />
+							<div class="input-group">
+								<input type="text" class="form-control" value="9999999999" />
+								<span class="input-group-addon">
+									<i class="glyphicon glyphicon-book"></i>
+								</span>
+							</div>
 						</div>
 					</div>
 					<div class="col-sm-12 margin-top-10">
 						<div class="col-sm-4">
-							<label> Address&nbsp;: </label>
+							<label class="control-label add-member-label"> Address&nbsp;: </label>
 						</div>
 						<div class="col-sm-6">
 							<textarea class="form-control" rows="4"></textarea>
@@ -223,9 +305,8 @@
 
 				</div>
 			</div>
-			<div class="modal-footer padding20px">
-				<button type="button" class="btn btn-success" data-dismiss="modal"
-					onclick="toastr.success('Vendor updated successfully');">Update</button>
+			<div class="modal-footer mFooter padding20px">
+				<button type="button" class="btn btn-success" data-dismiss="modal" onclick="toastr.success('Vendor updated successfully');">Update</button>
 				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 			</div>
 		</div>

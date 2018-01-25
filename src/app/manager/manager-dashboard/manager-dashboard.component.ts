@@ -6,11 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./manager-dashboard.component.css']
 })
 export class ManagerDashboardComponent implements OnInit {
-  data : any[] = [
-    {customername: 'Suresh', duedate:'20/12/2017', eventdate: '26/12/20117', totalamount: '25000', due: '5000'},
-    {customername: 'Ramesh', duedate:'19/11/2017', eventdate: '30/11/20117', totalamount: '100000', due: '25000'},
-    {customername: 'Rajesh', duedate:'06/12/2017', eventdate: '15/12/20117', totalamount: '78000', due: '30000'}
-  ];
+    data : any[] = [
+        {fname: 'Suresh', lname:'babu',duedate:'20/12/2017', eventdate: '26/12/20117',phonenum:'9955886633',email:'suresh@facebook.com',eventname:'marriage', totalamount: '25000', due: '5000'},
+        {fname: 'Ramesh', lname:'Kumar',duedate:'19/11/2017', eventdate: '30/11/20117',phonenum:'9955886633',email:'ramesh@facebook.com',eventname:'birthday', totalamount: '100000', due: '25000'},
+        {fname: 'Rajesh', lname:'Sarma',duedate:'06/12/2017', eventdate: '15/12/20117',phonenum:'9955886633',email:'rajesh@facebook.com',eventname:'marriage', totalamount: '78000', due: '30000'}
+      ];
   options: Object;
   options_second: Object;
   options_three: Object;

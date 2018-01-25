@@ -11,8 +11,8 @@ export class SubscriptionDetailsComponent implements OnInit {
 
   ngOnInit() {
   }
-  
-  
+
+
   data: any[] = [
     { name: 'Dual Venue', numven: '2', price: 'Rs. 7,000/User' },
     { name: 'Multiple Venue', numven: '3 - 5', price: 'Rs. 10,000/User' },

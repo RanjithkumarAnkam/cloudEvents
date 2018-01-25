@@ -15,7 +15,9 @@
         text-align: left !important;
     }
 }
-
+.modal-dialog{
+    margin: 10px !important;
+}
 
 .checkbox1 {
     margin-left: 0px !important;

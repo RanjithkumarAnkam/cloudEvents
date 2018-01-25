@@ -6,6 +6,7 @@ import { LogsComponent } from './logs/logs.component';
 import { AdminProfileComponent } from './admin-profile/admin-profile.component';
 import { AdminRoutingModule } from './/admin-routing.module';
 import { DataTableModule } from 'angular2-datatable/lib/DataTableModule';
+import { SubscriptionsListComponent } from './subscriptions-list/subscriptions-list.component';
 
 @NgModule({
   imports: [
@@ -13,6 +14,6 @@ import { DataTableModule } from 'angular2-datatable/lib/DataTableModule';
     AdminRoutingModule,
     DataTableModule
   ],
-  declarations: [AdminDashboardComponent, SettingsComponent, LogsComponent, AdminProfileComponent]
+  declarations: [AdminDashboardComponent, SettingsComponent, LogsComponent, AdminProfileComponent, SubscriptionsListComponent]
 })
 export class AdminModule { }
