@@ -67,7 +67,7 @@
 										<a>{{item.status}}</a>
 									</td>
 									<td class="text-center">
-										<a [routerLink]="['/manager/dashboard']" title="Click to Shadow login">
+										<a data-toggle="modal" data-target="#ShowOtp" title="Click to Shadow login">
 											<i class="fa fa-user-secret"></i>
 										</a>&nbsp;&nbsp;</td>
 									<td class="text-center cursor">
@@ -115,7 +115,7 @@
 									<div class="form-group">
 										<div class="col-sm-12 nopadding margin-top-10">
 											<div class="col-sm-4">
-												<label class="control-label">First Name&nbsp;:</label>
+												<label class="control-label add-member-label">First Name&nbsp;:</label>
 											</div>
 											<div class="col-sm-7">
 												<div class="input-group">
@@ -130,7 +130,7 @@
 									<div class="form-group">
 										<div class="col-sm-12 nopadding margin-top-10">
 											<div class="col-sm-4">
-												<label class="control-label">Last Name&nbsp;:</label>
+												<label class="control-label add-member-label">Last Name&nbsp;:</label>
 											</div>
 											<div class="col-sm-7">
 												<div class="input-group">
@@ -145,7 +145,7 @@
 									<div class="form-group">
 										<div class="col-sm-12 nopadding margin-top-10">
 											<div class="col-sm-4">
-												<label class="control-label">Mobile Number&nbsp;:</label>
+												<label class="control-label add-member-label">Mobile Number&nbsp;:</label>
 											</div>
 											<div class="col-sm-7">
 												<div class="input-group">
@@ -161,7 +161,7 @@
 									<div class="form-group">
 										<div class="col-sm-12 nopadding margin-top-10">
 											<div class="col-sm-4">
-												<label class="control-label">Email&nbsp;:</label>
+												<label class="control-label add-member-label">Email&nbsp;:</label>
 											</div>
 											<div class="col-sm-7">
 												<div class="input-group">
@@ -176,7 +176,7 @@
 									<div class="form-group">
 										<div class="col-sm-12 nopadding margin-top-10">
 											<div class="col-sm-4">
-												<label class="control-label">No.of Venues&nbsp;:</label>
+												<label class="control-label add-member-label">No.of Venues&nbsp;:</label>
 											</div>
 											<div class="col-sm-7">
 												<input type="text" class="form-control" value="5" />
@@ -186,7 +186,7 @@
 									<div class="form-group">
 										<div class="col-sm-12 nopadding margin-top-10">
 											<div class="col-sm-4">
-												<label class="control-label">Property Name&nbsp;:</label>
+												<label class="control-label add-member-label">Property Name&nbsp;:</label>
 											</div>
 											<div class="col-sm-7">
 												<input type="text" class="form-control" value="Nareen Gardens" />
@@ -196,7 +196,7 @@
 									<div class="form-group">
 										<div class="col-sm-12 nopadding margin-top-10">
 											<div class="col-sm-4">
-												<label class="control-label">Location&nbsp;:</label>
+												<label class="control-label add-member-label">Location&nbsp;:</label>
 											</div>
 											<div class="col-sm-7">
 												<textarea class="form-control" rows="4">Miyapur, Hyderabad,Telangana</textarea>
@@ -242,7 +242,7 @@
 									<div class="form-group">
 										<div class="col-sm-12 nopadding margin-top-10">
 											<div class="col-sm-4">
-												<label class="control-label">First Name&nbsp;:</label>
+												<label class="control-label add-member-label">First Name&nbsp;:</label>
 											</div>
 											<div class="col-sm-7">
 												<div class="input-group">
@@ -257,7 +257,7 @@
 									<div class="form-group">
 										<div class="col-sm-12 nopadding margin-top-10">
 											<div class="col-sm-4">
-												<label class="control-label">Last Name&nbsp;:</label>
+												<label class="control-label add-member-label">Last Name&nbsp;:</label>
 											</div>
 											<div class="col-sm-7">
 												<div class="input-group">
@@ -272,7 +272,7 @@
 									<div class="form-group">
 										<div class="col-sm-12 nopadding margin-top-10">
 											<div class="col-sm-4">
-												<label class="control-label">Mobile Number&nbsp;:</label>
+												<label class="control-label add-member-label">Mobile Number&nbsp;:</label>
 											</div>
 											<div class="col-sm-7">
 												<div class="input-group">
@@ -288,7 +288,7 @@
 									<div class="form-group">
 										<div class="col-sm-12 nopadding margin-top-10">
 											<div class="col-sm-4">
-												<label class="control-label">Email&nbsp;:</label>
+												<label class="control-label add-member-label">Email&nbsp;:</label>
 											</div>
 											<div class="col-sm-7">
 												<div class="input-group">
@@ -303,7 +303,7 @@
 									<div class="form-group">
 										<div class="col-sm-12 nopadding margin-top-10">
 											<div class="col-sm-4">
-												<label class="control-label">No.of Venues&nbsp;:</label>
+												<label class="control-label add-member-label">No.of Venues&nbsp;:</label>
 											</div>
 											<div class="col-sm-7">
 												<input type="text" class="form-control" />
@@ -313,7 +313,7 @@
 									<div class="form-group">
 										<div class="col-sm-12 nopadding margin-top-10">
 											<div class="col-sm-4">
-												<label class="control-label">Property Name&nbsp;:</label>
+												<label class="control-label add-member-label">Property Name&nbsp;:</label>
 											</div>
 											<div class="col-sm-7">
 												<input type="text" class="form-control" />
@@ -323,7 +323,7 @@
 									<div class="form-group">
 										<div class="col-sm-12 nopadding margin-top-10">
 											<div class="col-sm-4">
-												<label class="control-label">Location&nbsp;:</label>
+												<label class="control-label add-member-label">Location&nbsp;:</label>
 											</div>
 											<div class="col-sm-7">
 												<textarea class="form-control" rows="4"></textarea>
@@ -341,6 +341,40 @@
 				<button type="button" class="btn btn-success" data-dismiss="modal" onclick="toastr.success('Saved subscriber details successfully');">Save</button>
 				&nbsp;
 				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--Modal pop up for shadow login-->
+<div class="modal fade" id="ShowOtp" role="dialog">
+	<div class="modal-dialog modal-md">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">
+					<b>Shadow Login</b>
+				</h4>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+					<div class="col-md-12">
+						<p class="col-md-12">OTP has been sent to user's registered mobile number.</p>
+						<div class="col-sm-12 nopadding margin-top-10">
+							<div class="col-sm-3">
+								<label class="control-label">Enter OTP&nbsp;:</label>
+							</div>
+							<div class="col-sm-7">
+								<input type="text" class="form-control" />
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer padding20px margin-top-20">
+				<button type="button" [routerLink]="['/manager/dashboard']" class="btn btn-success">Login</button>
+				&nbsp;
+				<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
 			</div>
 		</div>
 	</div>

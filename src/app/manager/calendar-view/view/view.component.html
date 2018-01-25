@@ -1031,7 +1031,7 @@
                         </div>
                       </div>
                       <div style="border-top:1px solid #dcd9d9;height: 50px;">
-                        <button type="button" class="submit btn btn-success pull-right" data-dismiss="modal" style="margin: 10px 10px 0 0;border-radius: 4px !important;"
+                        <button (click)="clickedBackButton()" type="button" class="submit btn btn-success pull-right" data-dismiss="modal" style="margin: 10px 10px 0 0;border-radius: 4px !important;"
                           id="btnbookingSubmit">
                           <span title="Click for submit booking" aria-hidden="true">&nbsp;
                             <i class="fa fa-floppy-o"></i>Submit</span>
@@ -1099,12 +1099,12 @@
                               <div class="input-group">
                                 <input type="text" class="form-control" placeholder="Please enter Existing Phone number" />
                                 <span class="input-group-addon">
-                                  <i class="glyphicon glyphicon-envelope"></i>
+                                  <i class="glyphicon glyphicon-book"></i>
                                 </span>
                               </div>
                             </div>
                           </div>
-                          <div *ngIf="new_cust" class="form-group">
+                          <div class="form-group">
                             <label class="control-label col-md-4 add-member-label">
                               First Name
                             </label>
@@ -1279,7 +1279,7 @@
                         </div>
                       </div>
                       <div style="border-top:1px solid #dcd9d9;height: 50px;">
-                        <button type="button" class="submit btn btn-success pull-right" data-dismiss="modal" style="margin:10px 10px 0 0;border-radius: 4px !important;">
+                        <button (click)="clickedBackButton()" type="button" class="submit btn btn-success pull-right" data-dismiss="modal" style="margin:10px 10px 0 0;border-radius: 4px !important;">
                           <span title="Click for submit booking" aria-hidden="true" id="btnEnquirysubmit">&nbsp;
                             <i class="fa fa-floppy-o"></i>Submit</span>
                           <span class="sr-only">Submit</span>
@@ -1450,7 +1450,7 @@
           </div>
           <div *ngIf="new_appointment" class="col-sm-12 nopadding" style="margin-top:10px;">
             <div class="col-sm-12" style="border-top:1px solid #dcd9d9;padding-top: 5px;">
-              <a class="btn btn-success pull-right" data-dismiss="modal" style="border-radius: 4px !important;margin-right:9px !important;"
+              <a (click)="clickedBackButton()" class="btn btn-success pull-right" data-dismiss="modal" style="border-radius: 4px !important;margin-right:9px !important;"
                 id="btnappointmentsubmit">
                 <i class="fa fa-floppy-o"></i>Submit</a>
               <a data-target="#cancelmodal" data-toggle="modal" class="btn btn-default pull-right" style="border-radius: 4px !important;margin-right:11px;">
@@ -1553,7 +1553,7 @@
         </div>
       </div>
       <div class="modal-footer padding20px margin-top-20">
-        <a type="button" class="btn btn-success" data-dismiss="modal">Yes</a>&nbsp;
+        <a type="button" class="btn btn-success" data-dismiss="modal" (click)="CloseAllModals();">Yes</a>&nbsp;
         <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
       </div>
     </div>

@@ -22,6 +22,12 @@ export class ManagerLayoutComponent implements OnInit {
       placement: 'bottom',
     }, 
     {
+      anchorId: 'Gallery.id',
+      content: "Here you can see the related images and videos of the venues. You can select any venue to view it's images and videos",
+      title: 'Gallery',
+      placement: 'bottom',
+    }, 
+    {
       anchorId: 'Customers.id',
       content: 'This is where a venue manager can view and manage customer information. Bookings of each customer can be glanced from the grid provided.',
       title: 'Customers',

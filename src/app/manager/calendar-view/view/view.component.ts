@@ -231,6 +231,7 @@ export class ViewComponent implements OnInit {
         this.add_booking_second_tab = '';
         this.add_booking_third_tab = '';
         this.add_booking_fourth_tab = '';
+        this.no_new_creation_holiday = false;
     }
 
     createEnquiry() {
@@ -245,6 +246,7 @@ export class ViewComponent implements OnInit {
         this.new_enquiry_enquiry_block = false;
         this.existing_cust = false;
         this.new_cust = true;
+        this.no_new_creation_holiday = false;
     }
 
     createAppointment() {
@@ -255,6 +257,7 @@ export class ViewComponent implements OnInit {
         this.new_creation = true;
         this.meetWithEnable = false;
         this.existPerEnable = false;
+        this.no_new_creation_holiday = false;
     }
 
     clickedBackButton() {
@@ -265,6 +268,7 @@ export class ViewComponent implements OnInit {
         this.new_enquiry = false;
         this.new_booking = false;
         this.new_creation = false;
+        this.no_new_creation_holiday = true;
     }
 
     resetEverything() {
@@ -334,6 +338,7 @@ export class ViewComponent implements OnInit {
         this.no_new_creation = false;
         this.new_creation = true;
         this.new_booking = true;
+        this.no_new_creation_holiday = false;
     }
     OpenEditEnquiry() {
         this.showEnquiryModal = false;
@@ -343,6 +348,7 @@ export class ViewComponent implements OnInit {
         this.no_new_creation = false;
         this.new_creation = true;
         this.new_enquiry = true;
+        this.no_new_creation_holiday = false;
     }
     OpenEditAppointment() {
         this.showAppointmentModal = false;
@@ -352,10 +358,36 @@ export class ViewComponent implements OnInit {
         this.no_new_creation = false;
         this.new_creation = true;
         this.new_appointment = true;
+        this.no_new_creation_holiday = false;
     }
 
-    /*private _isValid(field) {
-        return true;
-    }*/
+    CloseAllModals(){
+        this.event_type_class = 'col-xs-12';
+        this.add_booking_first_tab = 'active';
+        this.add_booking_second_tab = '';
+        this.add_booking_third_tab = '';
+        this.add_booking_fourth_tab = '';
+        this.add_enquiry_first_tab = 'active';
+        this.add_enquiry_second_tab = '';
+        document.getElementById("modalTitle").innerHTML = 'Naren Gardens - Add an Event';
+        this.no_new_creation = true;
+        this.no_new_creation_holiday = true;
+        this.new_creation = false;
+        this.new_booking = false;
+        this.new_enquiry = false;
+        this.new_appointment = false;
+        this.existing_cust = false;
+        this.new_cust = true;
+        this.new_booking_customer_block = true;
+        this.new_booking_event_block = false;
+        this.new_booking_payment_block = false;
+        this.new_booking_summary_block = false;
+        this.new_enquiry_customer_block = true;
+        this.new_enquiry_enquiry_block = false;
+        this.showBookingsModal = false;
+        this.showEnquiryModal = false;
+        this.showAppointmentModal = false;
+        document.getElementById("btnClosebands").click();
+    }
 
 }
