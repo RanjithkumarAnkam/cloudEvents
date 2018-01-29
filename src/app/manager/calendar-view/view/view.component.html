@@ -1571,20 +1571,191 @@
           Narenn Garden - Mahesh Wedding
         </h4>
       </div>
-      <div class="modal-body" style="padding:15px">
-        <button id="btnDelete" class="btn btn-default btn-sm pull-right">
-          <span class="glyphicon glyphicon-remove"></span> Remove
-        </button>
-        <button data-dismiss="modal" (click)="OpenEditBooking()" id="btnEditbooking" class="btn btn-default btn-sm pull-right" style="margin-right:5px;">
-          <span class="glyphicon glyphicon-pencil"></span> Edit
-        </button>
+      <div class="modal-body" style="padding:0 15px ;height: 450px;overflow-y: scroll;">
+        <div class="col-md-12 col-sm-12" style="margin: 10px 0;">
+          <button id="btnDelete" class="btn btn-default btn-sm pull-right">
+            <span class="glyphicon glyphicon-remove"></span> Remove
+          </button>
+          <button data-dismiss="modal" (click)="OpenEditBooking()" id="btnEditbooking" class="btn btn-default btn-sm pull-right" style="margin-right:5px;">
+            <span class="glyphicon glyphicon-pencil"></span> Edit
+          </button>
+        </div>
         <div>
-          <p>
-            <b>Date &amp; Time &nbsp;:</b>&nbsp;08-Dec-2017 01:00 am</p>
-          <p>
-            <b>Venue Name&nbsp;:</b>&nbsp;Narenn Garden</p>
-          <p>
-            <b>Additional Information&nbsp;:</b>&nbsp;Checking for vendors availability</p>
+          <div class="col-md-12 col-sm-12">
+            <div class="portlet  blue-hoki box">
+              <div class="portlet-title">
+                <div class="caption">
+                  <i class="fa fa-building-o"></i>Event Details
+                </div>
+              </div>
+              <div class="portlet-body">
+                <div class="row static-info">
+                  <div class="col-md-5 name">
+                    Venue Name&nbsp;:
+                  </div>
+                  <div class="col-md-7 value">
+                    Nareen Gardens
+                  </div>
+                </div>
+                <div class="row static-info">
+                  <div class="col-md-5 name">
+                    Event&nbsp;:
+                  </div>
+                  <div class="col-md-7 value">
+                    Wedding
+                  </div>
+                </div>
+                <div class="row static-info">
+                  <div class="col-md-5 name">
+                    Start Date&nbsp;:
+                  </div>
+                  <div class="col-md-7 value">
+                    10/09/17
+                  </div>
+                </div>
+                <div class="row static-info">
+                  <div class="col-md-5 name">
+                    End Date&nbsp;:
+                  </div>
+                  <div class="col-md-7 value">
+                    11/09/17
+                  </div>
+                </div>
+                <div class="row static-info">
+                  <div class="col-md-5 name">
+                    Time Slot&nbsp;:
+                  </div>
+                  <div class="col-md-7 value">
+                    <label>
+                      <b>All Day</b>
+                    </label>
+                  </div>
+                </div>
+                <div class="row static-info">
+                  <div class="col-md-5 name">
+                    Food Menu&nbsp;:
+                  </div>
+                  <div class="col-md-7 value">
+                    <img src="/assets/images/foodmenu.jpg" style="height:100px;width:85px;" />
+                  </div>
+                </div>
+                <div class="row static-info">
+                  <div class="col-md-5 name">
+                    Decoration Type&nbsp;:
+                  </div>
+                  <div class="col-md-7 value">
+                    <img src="/assets/images/decoration.jpg" style="height:100px;width:150px;" />
+                  </div>
+                </div>
+                <div class="row static-info">
+                  <div class="col-md-5 name">
+                    Additional Information&nbsp;:
+                  </div>
+                  <div class="col-md-7 value">
+                    Will provide Decoration crew and food suppliers
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12 col-sm-12">
+            <div class="portlet  blue-hoki box">
+              <div class="portlet-title">
+                <div class="caption">
+                  <i class="fa fa-rupee"></i>Payment Details
+                </div>
+              </div>
+              <div class="portlet-body">
+                <div class="panel-group accordion" id="accordion1">
+                  <div class="panel panel-default">
+                    <div id="collapse_1" class="panel-collapse in">
+                      <div class="panel-body">
+                        <div class="col-sm-12 nopadding">
+                          <table class="table table-hover table-bordered">
+                            <thead>
+                              <tr>
+                                <th>Total Amount</th>
+                                <th>Paid</th>
+                                <th>Due</th>
+                                <th>Pay Date</th>
+                                <th>Payment Mode</th>
+                                <th>Other Details</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>50,000</td>
+                                <td>30,000</td>
+                                <td>20,000</td>
+                                <td>12/12/17</td>
+                                <td>Cash</td>
+                                <td class="text-center">-</td>
+                              </tr>
+                              <tr>
+                                <td>1,00,000</td>
+                                <td>70,000</td>
+                                <td>30,000</td>
+                                <td>14/12/17</td>
+                                <td>Cash</td>
+                                <td class="text-center">-</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 col-sm-12">
+            <div class="portlet  blue-hoki box">
+              <div class="portlet-title">
+                <div class="caption">
+                  <i class="fa fa-user"></i>Customer Details
+                </div>
+              </div>
+              <div class="portlet-body" style="height:188px;">
+                <div class="row static-info">
+                  <div class="col-md-5 name">
+                    Contact Name&nbsp;:
+                  </div>
+                  <div class="col-md-7 value">
+                    Ravi Marikala
+                  </div>
+                </div>
+                <div class="row static-info">
+                  <div class="col-md-5 name">
+                    Email ID&nbsp;:
+                  </div>
+                  <div class="col-md-7 value">
+                    ravi@nareen.com
+                  </div>
+                </div>
+                <div class="row static-info">
+                  <div class="col-md-5 name">
+                    Phone Number&nbsp;:
+                  </div>
+                  <div class="col-md-7 value" style="margin-top:20px;">
+                    999-999-9999
+                  </div>
+                </div>
+                <div class="row static-info">
+                  <div class="col-md-5 name">
+                    Address&nbsp;:
+                  </div>
+                  <div class="col-md-7 value">
+                    Miyapur,
+                    <br />Hyderabad
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
         </div>
       </div>
       <div class="modal-footer mFooter">
@@ -1605,21 +1776,106 @@
           Enquiry
         </h4>
       </div>
-      <div class="modal-body" style="padding:15px">
-        <button id="btnDelete" class="btn btn-default btn-sm pull-right">
-          <span class="glyphicon glyphicon-remove"></span> Remove
-        </button>
-        <button (click)="OpenEditEnquiry()" id="btnEditbooking" class="btn btn-default btn-sm pull-right" style="margin-right:5px;">
-          <span class="glyphicon glyphicon-pencil"></span> Edit
-        </button>
-
+      <div class="modal-body" style="padding:0 15px;height: 450px;overflow-y: scroll;">
+        <div class="col-md-12 col-sm-12" style="margin: 10px 0;">
+          <button id="btnDelete" class="btn btn-default btn-sm pull-right">
+            <span class="glyphicon glyphicon-remove"></span> Remove
+          </button>
+          <button (click)="OpenEditEnquiry()" id="btnEditbooking" class="btn btn-default btn-sm pull-right" style="margin-right:5px;">
+            <span class="glyphicon glyphicon-pencil"></span> Edit
+          </button>
+        </div>
         <div>
-          <p>
-            <b>Date &amp; Time &nbsp;:</b>&nbsp;08-Dec-2017 01:00 am</p>
-          <p>
-            <b>Venue Name&nbsp;:</b>&nbsp;Narenn Garden</p>
-          <p>
-            <b>Additional Information&nbsp;:</b>&nbsp;Checking for vendors availability</p>
+          <div class="col-md-12 col-sm-12">
+            <div class="portlet  blue-hoki box">
+              <div class="portlet-title">
+                <div class="caption">
+                  <i class="fa fa-user"></i>Customer Information
+                </div>
+
+              </div>
+              <div class="portlet-body" style="height:188px;">
+                <div class="row static-info">
+                  <div class="col-md-5 name">
+                    Contact Name&nbsp;:
+                  </div>
+                  <div class="col-md-7 value">
+                    Ravi Marikala
+                  </div>
+                </div>
+                <div class="row static-info">
+                  <div class="col-md-5 name">
+                    Email ID&nbsp;:
+                  </div>
+                  <div class="col-md-7 value">
+                    ravi@nareen.com
+                  </div>
+                </div>
+                <div class="row static-info">
+                  <div class="col-md-5 name">
+                    Phone Number&nbsp;:
+                  </div>
+                  <div class="col-md-7 value" style="margin-top:20px;">
+                    999-999-9999
+                  </div>
+                </div>
+                <div class="row static-info">
+                  <div class="col-md-5 name">
+                    Address&nbsp;:
+                  </div>
+                  <div class="col-md-7 value">
+                    Miyapur,
+                    <br />Hyderabad
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12 col-sm-12">
+            <div class="portlet  blue-hoki box">
+              <div class="portlet-title">
+                <div class="caption">
+                  <i class="fa fa-user"></i>venue Information
+                </div>
+
+              </div>
+              <div class="portlet-body" style="height:188px;">
+                <div class="row static-info">
+                  <div class="col-md-5 name">
+                    Venue Name&nbsp;:
+                  </div>
+                  <div class="col-md-7 value">
+                    Naren Gardens
+                  </div>
+                </div>
+                <div class="row static-info">
+                  <div class="col-md-5 name">
+                    Date &amp; Time &nbsp;:
+                  </div>
+                  <div class="col-md-7 value">
+                    08-Dec-2017 01:00 am
+                  </div>
+                </div>
+                <div class="row static-info">
+                  <div class="col-md-5 name">
+                    Quoted Amount&nbsp;:
+                  </div>
+                  <div class="col-md-7 value" style="margin-top:20px;">
+                    27,000
+                  </div>
+                </div>
+                <div class="row static-info">
+                  <div class="col-md-5 name">
+                    Additional Information &nbsp;:
+                  </div>
+                  <div class="col-md-7 value">
+                    Check with customer
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div class="modal-footer mFooter">
@@ -1641,18 +1897,94 @@
           Meeting
         </h4>
       </div>
-      <div class="modal-body" style="padding:15px">
-        <button id="btnDelete" class="btn btn-default btn-sm pull-right">
-          <span class="glyphicon glyphicon-remove"></span> Remove
-        </button>
-        <button (click)="OpenEditAppointment()" id="btnEditbooking" class="btn btn-default btn-sm pull-right" style="margin-right:5px;">
-          <span class="glyphicon glyphicon-pencil"></span> Edit
-        </button>
+      <div class="modal-body" style="padding:0 15px">
+        <div class="col-md-12 col-sm-12" style="margin: 10px 0;">
+          <button id="btnDelete" class="btn btn-default btn-sm pull-right">
+            <span class="glyphicon glyphicon-remove"></span> Remove
+          </button>
+          <button (click)="OpenEditAppointment()" id="btnEditbooking" class="btn btn-default btn-sm pull-right" style="margin-right:5px;">
+            <span class="glyphicon glyphicon-pencil"></span> Edit
+          </button>
+        </div>
         <div>
-          <p>
-            <b>Date &amp; Time:</b>&nbsp;27-Dec-2017 05:06 am</p>
-          <p>
-            <b>Meeting with:</b>&nbsp;flower vendor</p>
+          <div class="col-md-12 col-sm-12">
+            <div class="portlet  blue-hoki box">
+              <div class="portlet-title">
+                <div class="caption">
+                  <i class="fa fa-user"></i>Appointment Details
+                </div>
+              </div>
+              <div class="portlet-body" style="height:350px;">
+                <div class="row static-info">
+                  <div class="col-md-5 name">
+                    Meeting with:&nbsp;:
+                  </div>
+                  <div class="col-md-7 value">
+                    flower vendor
+                  </div>
+                </div>
+                <div class="row static-info">
+                  <div class="col-md-5 name">
+                    Date &amp; Time:
+                  </div>
+                  <div class="col-md-7 value">
+                    27-Dec-2017 05:06 am
+                  </div>
+                </div>
+                <div class="row static-info">
+                  <div class="col-md-5 name">
+                    Contact Name &nbsp;:
+                  </div>
+                  <div class="col-md-7 value">
+                    Pavan Gill
+                  </div>
+                </div>
+                <div class="row static-info">
+                  <div class="col-md-5 name">
+                    Email Id &nbsp;:
+                  </div>
+                  <div class="col-md-7 value">
+                    fv@outlook.com
+                  </div>
+                </div>
+                <div class="row static-info">
+                  <div class="col-md-5 name">
+                    Phone Number&nbsp;:
+                  </div>
+                  <div class="col-md-7 value">
+                    999-999-9999
+                  </div>
+                </div>
+                <div class="row static-info">
+                  <div class="col-md-5 name">
+                    Subject &nbsp;:
+                  </div>
+                  <div class="col-md-7 value">
+                    test subject
+                  </div>
+                </div>
+                <div class="row static-info">
+                  <div class="col-md-5 name">
+                    Location&nbsp;:
+                  </div>
+                  <div class="col-md-7 value">
+                    Miyapur,
+                    <br />Hyderabad
+                  </div>
+                </div>
+                <div class="row static-info">
+                  <div class="col-md-5 name">
+                    Notes&nbsp;:
+                  </div>
+                  <div class="col-md-7 value">
+                    This is important.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
         </div>
       </div>
       <div class="modal-footer mFooter">
