@@ -32,6 +32,9 @@
 										<mfDefaultSorter by="name">Property Name</mfDefaultSorter>
 									</th>
 									<th style="width: 14%">
+										<mfDefaultSorter by="name">Package Name</mfDefaultSorter>
+									</th>
+									<th style="width: 14%">
 										<mfDefaultSorter by="contact">Contact</mfDefaultSorter>
 									</th>
 									<th style="width: 16%">
@@ -53,6 +56,9 @@
 								<tr *ngFor="let item of mf.data">
 									<td class="cursor">
 										<a title="Click to view subscriber summary" [routerLink]="['/admin/subscribers/summary']">{{item.name}}</a>
+									</td>
+									<td class="cursor">
+										<a title="Click to update subscriber"  data-toggle="modal"data-target="#UpdateSubscriber" style="color:#000">{{item.packagename}}</a>
 									</td>
 									<td class="cursor">
 										<a title="Click to update subscriber" data-toggle="modal" data-target="#UpdateSubscriber" style="color:#000">{{item.contact}}</a>
@@ -79,7 +85,7 @@
 							</tbody>
 							<tfoot>
 								<tr>
-									<td colspan="7">
+									<td colspan="8">
 										<mfBootstrapPaginator></mfBootstrapPaginator>
 									</td>
 								</tr>

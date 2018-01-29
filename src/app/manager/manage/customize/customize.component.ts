@@ -11,6 +11,7 @@ export class CustomizeComponent implements OnInit {
   public customerbody = false;
   public vendorbody = false;
   public managebody = false;
+  public gallerybody = false;
   public my_Class = '';
 
   onClick(event){
@@ -21,6 +22,7 @@ export class CustomizeComponent implements OnInit {
       this.customerbody = false;
       this.vendorbody = false;
       this.managebody = false;
+      this.gallerybody=false;
     }
     else if(id=='calendarid'){
       this.dashboardbody = false;
@@ -28,8 +30,18 @@ export class CustomizeComponent implements OnInit {
       this.customerbody = false;
       this.vendorbody = false;
       this.managebody = false;
+      this.gallerybody=false;
+    }
+    else if(id=='galleryid'){
+      this.gallerybody=true;
+      this.dashboardbody = false;
+      this.calendarbody = false;
+      this.customerbody = false;
+      this.vendorbody = false;
+      this.managebody = false;
     }
     else if(id=='customerid'){
+      this.gallerybody=false;
       this.dashboardbody = false;
       this.calendarbody = false;
       this.customerbody = true;
@@ -37,6 +49,7 @@ export class CustomizeComponent implements OnInit {
       this.managebody = false;
     }
     else if(id=='vendorid'){
+      this.gallerybody=false;
       this.dashboardbody = false;
       this.calendarbody = false;
       this.customerbody = false;
@@ -44,6 +57,7 @@ export class CustomizeComponent implements OnInit {
       this.managebody = false;
     }
     else if(id=='manageid'){
+      this.gallerybody=false;
       this.dashboardbody = false;
       this.calendarbody = false;
       this.customerbody = false;

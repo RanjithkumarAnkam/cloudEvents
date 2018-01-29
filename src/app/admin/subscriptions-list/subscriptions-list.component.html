@@ -23,18 +23,45 @@
                         <div style="background-color: #337ab7;height: 10px;"></div>
                         <div style="border:ridge;height:300px;">
                             <div class="col-sm-12 headband">
-                                <h3>Basic</h3>
+                                <h3>Single Venue</h3>
                             </div>
                             <div class="col-sm-12">
                                 <h3>
                                     <i class="fa fa-rupee"></i>&nbsp;
-                                    <b>2500</b>
+                                    <b>7,000 / User</b>
                                 </h3>
                             </div>
                             <div class="col-sm-12" style="margin-top:3px;">
-                                <p>Complete venue management for 1 Venue</p>
-                                <p>Add only 1 Venue</p>
-                                <p>Add up to 5 staff users</p>
+                                <p>No of Venues :
+                                    <b>1</b>
+                                </p>
+                            </div>
+                            <div class="col-sm-12" style="margin-top:20%;">
+                                <button class="btn btn-primary" data-toggle="modal" data-target="#editpackage">Update</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 nopadding text-center">
+                    <div class="col-sm-12">
+                        <div style="background-color: #337ab7;height: 10px;"></div>
+                        <div style="border:ridge;height:300px;">
+                            <div class="col-sm-12 headband">
+                                <h3>Dual Venues</h3>
+                            </div>
+                            <div class="col-sm-12">
+                                <h3>
+                                    <i class="fa fa-rupee"></i>&nbsp;
+                                    <b>7,000 / User</b>
+                                </h3>
+                            </div>
+                            <div class="col-sm-12" style="margin-top:3px;">
+                                <p>Min No of Venues :
+                                    <b>1</b>
+                                </p>
+                                <p>Max No of Venues :
+                                    <b>2</b>
+                                </p>
                             </div>
                             <div class="col-sm-12" style="margin-top:9%;">
                                 <button class="btn btn-primary" data-toggle="modal" data-target="#editpackage">Update</button>
@@ -47,43 +74,21 @@
                         <div style="background-color: #337ab7;height: 10px;"></div>
                         <div style="border:ridge;height:300px;">
                             <div class="col-sm-12 headband">
-                                <h3>Venue Multiplier</h3>
+                                <h3>Multiple Venues</h3>
                             </div>
                             <div class="col-sm-12">
                                 <h3>
                                     <i class="fa fa-rupee"></i>&nbsp;
-                                    <b>5000</b>
+                                    <b>10,000 / User</b>
                                 </h3>
                             </div>
                             <div class="col-sm-12" style="margin-top:3px;">
-                                <p>Complete venue management for 1 Venue</p>
-                                <p>Add up to 10 Venues</p>
-                                <p>Add up to 50 staff users</p>
-                            </div>
-                            <div class="col-sm-12" style="margin-top:9%;">
-                                <button class="btn btn-primary" data-toggle="modal" data-target="#editpackage">Update</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 nopadding text-center">
-                    <div class="col-sm-12">
-                        <div style="background-color: #337ab7;height: 10px;"></div>
-                        <div style="border:ridge;height:300px;">
-                            <div class="col-sm-12 headband">
-                                <h3>Custom</h3>
-                            </div>
-                            <div class="col-sm-12">
-                                <h3>
-                                    <i class="fa fa-rupee"></i>&nbsp;
-                                    <b>1500</b>
-                                </h3>
-                            </div>
-                            <div class="col-sm-12" style="margin-top:3px;">
-                                <p>Complete venue management for 1 Venue</p>
-                                <p>1000 for 5 users</p>
-                                <p>1000 for 1 venue</p>
-                                <p></p>
+                                <p>Min No of Venues :
+                                    <b>3</b>
+                                </p>
+                                <p>Max No of Venues :
+                                    <b>5</b>
+                                </p>
                             </div>
                             <div class="col-sm-12" style="margin-top:9%;">
                                 <button class="btn btn-primary" data-toggle="modal" data-target="#editpackage">Update</button>
@@ -156,7 +161,7 @@
                         </div>
 
 
-                        
+
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-success" data-dismiss="modal" style="margin-top: 10px;">Save</button>
@@ -187,14 +192,14 @@
                             </div>
                         </div>
                         <div class="col-sm-12 margin-top-10">
-                                <div class="col-sm-4">
-                                    <label class="add-member-label">Min No. Of Venues&nbsp;:</label>
-                                </div>
-                                <div class="col-sm-7">
-                                    <input type="text" class="col-sm-7 form-control" value="Basic" />
-                                </div>
+                            <div class="col-sm-4">
+                                <label class="add-member-label">Min No. Of Venues&nbsp;:</label>
                             </div>
-                        
+                            <div class="col-sm-7">
+                                <input type="text" class="col-sm-7 form-control" value="Basic" />
+                            </div>
+                        </div>
+
                         <div id="venuediv" class="">
                             <div class="col-sm-12 margin-top-10">
                                 <div class="col-sm-4">
@@ -208,17 +213,18 @@
                         <div id="userdiv" class="">
                             <div class="col-sm-12 margin-top-10">
                                 <div class="col-sm-4">
-                                    <label class="add-member-label">Per Capita Billing  :&nbsp;:</label>
+                                    <label class="add-member-label">Per Capita Billing :&nbsp;:</label>
                                 </div>
                                 <div class="col-sm-7">
                                     <input type="text" class="col-sm-7 form-control" />
                                 </div>
                             </div>
                         </div>
-                       
+
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-success" data-dismiss="modal" onclick="toastr.success('Package updated successfully');" style="margin-top: 10px;">Update</button>
+                        <button type="button" class="btn btn-success" data-dismiss="modal" onclick="toastr.success('Package updated successfully');"
+                            style="margin-top: 10px;">Update</button>
                         <button type="button" class="btn btn-default" data-dismiss="modal" style="margin-top: 10px;">Close</button>
                     </div>
                 </div>
