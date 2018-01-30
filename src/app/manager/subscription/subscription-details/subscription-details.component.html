@@ -13,81 +13,146 @@
             </h3>
           </div>
         </div>
-        <div class="col-sm-12 nopadding  margin-top-10">
-          <div class="panel panel-default">
-            <div class="panel-body cursor trstyle" style="font-size:16px;" id="btnpaytm">
-              <div class="col-sm-3 nopadding">
-                <label>
-                  Current Package&nbsp;:&nbsp;
-                  <b>Single Venue</b>
-                </label>
-              </div>
-              <div class="col-sm-2 nopadding">
-                <label>
-                  No.of Venues&nbsp;:&nbsp;
-                  <b>1</b>
-                </label>
-              </div>
-              <div class="col-sm-2 nopadding">
-                <label>
-                  Price&nbsp;:&nbsp;
-                  <b>7,000 / User</b>
-                </label>
-              </div>
-              <div class="col-sm-2 nopadding">
-                <label>Renews On&nbsp;:&nbsp;
-                  <b>12/5/17</b>
-                </label>
-              </div>
-              <div class="col-sm-3 nopadding">
-                <a class="btn btn-default pull-right">
-                  Cancel Subscription
-                </a>
-                <a class="btn btn-primary disabled pull-right" style="margin-right:5px;" title="This button allows only one month before the subscription ends">
-                  Purchase
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
+
 
         <div class="col-sm-12 nopadding margin-top-20">
-          <table class="table table-hover table-bordered" [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="5">
-            <thead>
-              <tr class="table-headers">
-                <th style="width: 20%">
-                  <mfDefaultSorter by="num">Package Name</mfDefaultSorter>
-                </th>
-                <th style="width: 10%">
-                  <mfDefaultSorter by="name">No.Of Venues</mfDefaultSorter>
-                </th>
-                <th style="width: 15%">
-                  <mfDefaultSorter by="price">Price</mfDefaultSorter>
-                </th>
-                <th class="text-center" style="width: 20%">
-                  Purchase Package
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let item of mf.data">
-                <td>{{item.name}}</td>
-                <td>{{item.numven}}</td>
-                <td>{{item.price}}</td>
-                <td class="text-center">
-                  <a class="btn btn-primary" data-toggle="modal" data-target="#purchasemodal">Upgrade</a>
-                </td>
-              </tr>
-            </tbody>
-            <tfoot>
-              <tr>
-                <td colspan="5">
-                  <mfBootstrapPaginator [rowsOnPageSet]="[5,10,25]"></mfBootstrapPaginator>
-                </td>
-              </tr>
-            </tfoot>
-          </table>
 
+          <ul class="nav nav-tabs">
+            <li class="active">
+              <a data-toggle="tab" href="#packageTable">Renewals/Upgrades</a>
+            </li>
+            <li>
+              <a data-toggle="tab" href="#paymentLogTable">Payment Log</a>
+            </li>
+          </ul>
+          <div class="tab-content">
+            <div id="packageTable" class="tab-pane fade in active">
+              <div class="col-sm-12 nopadding  margin-top-10">
+                <div class="panel panel-default">
+                  <div class="panel-body cursor trstyle" style="font-size:16px;" id="btnpaytm">
+                    <div class="col-sm-2 nopadding">
+                      <label class="col-sm-12">
+                        Current Package&nbsp;</label>
+                      <p class="col-sm-12">
+                        <b>Single Venue</b>
+                      </p>
+
+                    </div>
+                    <div class="col-sm-2 nopadding">
+                      <label class="col-sm-12">
+                        No.of Venues&nbsp;:&nbsp;
+                      </label>
+                      <p class="col-sm-12">
+                        <b>1</b>
+                      </p>
+                    </div>
+                    <div class="col-sm-2 nopadding">
+                      <label class="col-sm-12">
+                        Price&nbsp; </label>
+                      <p class="col-sm-12">
+                        <b>7,000 / User</b>
+                      </p>
+                    </div>
+                    <div class="col-sm-2 nopadding">
+                      <label class="col-sm-12">Auto Renewal</label>
+                      <a class="col-sm-12 ">
+                        <label class="switch" style="border-radius: 30px !important;margin-top:10px;">
+                          <input type="checkbox">
+                          <span class="slider round"></span>
+                        </label>
+                      </a>
+                    </div>
+                    <div class="col-sm-2 nopadding">
+                      <label class="col-sm-12">Renews On&nbsp; </label>
+                      <p class="col-sm-12">
+                        <b>12/5/17</b>
+                      </p>
+
+                    </div>
+                    <div class="col-sm-2 nopadding">
+                      <a class="btn btn-default pull-right">
+                        Cancel
+                      </a>
+                      <a class="btn btn-primary disabled pull-right" style="margin-right:5px;" title="This button allows only one month before the subscription ends">
+                        Renew
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <h3>Packages</h3>
+              <table class="table table-hover table-bordered" [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="5">
+                <thead>
+                  <tr class="table-headers">
+                    <th style="width: 20%">
+                      <mfDefaultSorter by="num">Package Name</mfDefaultSorter>
+                    </th>
+                    <th style="width: 10%">
+                      <mfDefaultSorter by="name">No.Of Venues</mfDefaultSorter>
+                    </th>
+                    <th style="width: 15%">
+                      <mfDefaultSorter by="price">Price</mfDefaultSorter>
+                    </th>
+
+                    <th class="text-center" style="width: 20%">
+                      Purchase Package
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of mf.data">
+                    <td>{{item.name}}</td>
+                    <td>{{item.numven}}</td>
+                    <td>{{item.price}}</td>
+                    <td class="text-center">
+                      <a class="btn btn-primary" data-toggle="modal" data-target="#purchasemodal">Upgrade</a>
+                    </td>
+                  </tr>
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <td colspan="5">
+                      <mfBootstrapPaginator [rowsOnPageSet]="[5,10,25]"></mfBootstrapPaginator>
+                    </td>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+            <div id="paymentLogTable" class="tab-pane fade">
+              <h3>Payment Logs</h3>
+              <table class="table table-hover table-bordered margin-top-10" [mfData]="data2" #one="mfDataTable" [mfRowsOnPage]="5">
+                <thead>
+                  <tr class="table-headers">
+                    <th style="width: 33.33%">
+                      <mfDefaultSorter by="paymentId">Payment Id
+                      </mfDefaultSorter>
+                    </th>
+                    <th style="width: 33.33%">
+                      <mfDefaultSorter by="time">Date &amp; Time</mfDefaultSorter>
+                    </th>
+                    <th style="width: 33.33%">
+                      <mfDefaultSorter by="packagename">Package Name</mfDefaultSorter>
+                    </th>
+                    <th style="width: 33.33%">
+                      <mfDefaultSorter by="amount">Amount</mfDefaultSorter>
+                    </th>
+                    <th style="width: 33.33%">
+                      <mfDefaultSorter by="status">Status</mfDefaultSorter>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let items of one.data">
+                    <td>{{items.paymentId}}</td>
+                    <td>{{items.time}}</td>
+                    <td>{{items.packagename}}</td>
+                    <td>{{items.amount}}</td>
+                    <td>{{items.status}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
       </div>
     </div>

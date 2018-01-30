@@ -5,10 +5,29 @@
 			<div class="col-sm-1"></div>
 			<div class="col-sm-10 nopadding">
 				<div class="col-sm-12 nopadding">
-					<a class="btn btn-success pull-right" data-toggle="modal" data-target="#AddUsersModal">
-						<i class="fa fa-plus"></i>&nbsp;&nbsp;Add Staff User
-					</a>
+					<div class="col-sm-8 margin-top-10 nopadding">
+						<div class="col-sm-4">
+							<label class="add-member-label">Venue&nbsp;: </label>
+						</div>
+						<div class="col-sm-6 nopadding">
+							<div class="input-group col-sm-12">
+								<select class="form-control">
+									<option>All Venues</option>
+									<option>Naren Convention</option>
+									<option>Naren Gardens</option>
+									<option>Naren Platinum</option>
+									<option>Naren Community</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-4 margin-top-10">
+						<a class="btn btn-success pull-right" data-toggle="modal" data-target="#AddUsersModal">
+							<i class="fa fa-plus"></i>&nbsp;&nbsp;Add Staff User
+						</a>
+					</div>
 				</div>
+
 				<div class="col-sm-12 nopadding margin-top-10">
 					<table class="table table-hover table-bordered" [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="5">
 						<thead>
@@ -88,6 +107,23 @@
 				<div class="row">
 					<div class="col-sm-12 margin-top-10">
 						<div class="col-sm-4">
+							<label class="add-member-label">Venue&nbsp;: </label>
+						</div>
+						<div class="col-sm-6">
+							<div class="input-group col-sm-12">
+								<select class="form-control">
+									<option>Selct venue</option>
+									<option>Naren Convention</option>
+									<option>Naren Gardens</option>
+									<option>Naren Platinum</option>
+									<option>Naren Community</option>
+								</select>
+							</div>
+						</div>
+
+					</div>
+					<div class="col-sm-12 margin-top-10">
+						<div class="col-sm-4">
 							<label class="add-member-label">Staff User ID&nbsp;: </label>
 						</div>
 						<div class="col-sm-6">UID0005</div>
@@ -134,6 +170,7 @@
 							<a>Generate OTP</a>
 						</div>
 					</div>
+
 					<div class="col-sm-12 margin-top-10">
 						<div class="col-sm-4">
 							<label class="add-member-label">OTP&nbsp;: </label>
@@ -184,6 +221,23 @@
 			</div>
 			<div class="modal-body">
 				<div class="row">
+					<div class="col-sm-12 margin-top-10">
+						<div class="col-sm-4">
+							<label class="add-member-label">Venue&nbsp;: </label>
+						</div>
+						<div class="col-sm-6">
+							<div class="input-group col-sm-12">
+								<select class="form-control">
+									<option>Selct venue</option>
+									<option>Naren Convention</option>
+									<option>Naren Gardens</option>
+									<option>Naren Platinum</option>
+									<option>Naren Community</option>
+								</select>
+							</div>
+						</div>
+
+					</div>
 					<div class="col-sm-12 margin-top-10">
 						<div class="col-sm-4">
 							<label class="add-member-label">Staff User ID&nbsp;: </label>

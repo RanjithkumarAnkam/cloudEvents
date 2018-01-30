@@ -154,7 +154,7 @@ export class ViewComponent implements OnInit {
         //today date in timestamp
         var today_date = this.today;
 
-        if (today_date < clicked_date) {
+        if (today_date < clicked_date || (today_date - clicked_date) < 86400001) {
             // u can add
             document.getElementById("openFutureModalButton").click();
             document.getElementById("modalTitle").innerHTML = 'Naren Gardens - Add an Event: ' + e.date.format('DD-MM-YYYY') + '';
@@ -361,7 +361,7 @@ export class ViewComponent implements OnInit {
         this.no_new_creation_holiday = false;
     }
 
-    CloseAllModals(){
+    CloseAllModals() {
         this.event_type_class = 'col-xs-12';
         this.add_booking_first_tab = 'active';
         this.add_booking_second_tab = '';

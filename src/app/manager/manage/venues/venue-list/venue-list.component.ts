@@ -17,5 +17,75 @@ export class VenueListComponent implements OnInit {
 
   ngOnInit() {
   }
+  timeSlotSel: boolean = false;
+  add_venue_first_tab = 'active';
+  add_venue_second_tab = '';
+  add_venue_third_tab = '';
+  add_venue_fourth_tab = '';
 
+  new_venue_customer_block = true;
+  new_venue_event_block = false;
+  new_venue_payment_block = false;
+  new_venue_summary_block = false;
+
+  boDetTimEnable: boolean = false;
+
+  onTimeSlotChange(e) {
+    if (e == 2) {
+      this.boDetTimEnable = true;
+    } else {
+      this.boDetTimEnable = false;
+    }
+  }
+  resetEveryThing(){
+    this.timeSlotSel = false;
+    this.add_venue_first_tab = 'active';
+    this.add_venue_second_tab = '';
+    this.add_venue_third_tab = '';
+    this.add_venue_fourth_tab = '';
+  
+    this.new_venue_customer_block = true;
+    this.new_venue_event_block = false;
+    this.new_venue_payment_block = false;
+    this.new_venue_summary_block = false;
+
+    this.timeSlotSel=false;
+  
+  }
+  addVenueContinue() {
+    this.add_venue_second_tab = 'active';
+    this.new_venue_customer_block = false;
+    this.new_venue_event_block = true;
+    this.boDetTimEnable = false;
+  }
+  addCpBack() {
+    this.add_venue_second_tab = '';
+    this.new_venue_customer_block = true;
+    this.new_venue_event_block = false;
+  }
+  addCpContinue() {
+    this.add_venue_third_tab = 'active';
+    this.new_venue_event_block = false;
+    this.new_venue_payment_block = true;
+
+  }
+  addPaymentBack() {
+    this.add_venue_third_tab = '';
+    this.new_venue_event_block = true;
+    this.new_venue_payment_block = false;
+  }
+  addPaymentContinue() {
+    this.add_venue_fourth_tab = 'active';
+    this.new_venue_payment_block = false;
+    this.new_venue_summary_block = true;
+  }
+  addSummaryBack() {
+    this.add_venue_fourth_tab = '';
+    this.new_venue_payment_block = true;
+    this.new_venue_summary_block = false;
+  }
+  setRadio(e) {
+    console.log(e);
+    this.timeSlotSel = e;
+  }
 }
