@@ -167,3 +167,24 @@
     height:250px !important;
     text-align: center !important;
 }
+.ui-multiselect{  
+    width: 200px !important;
+}
+.ui-multiselect-trigger{
+    width: 35px !important;
+    text-align:center !important;
+}
+.ui-multiselect-label-container{
+    height:30px;
+    padding:3px;
+}
+.page-content{
+    background-color:#eee;
+}
+.table{
+    background-color:#fff;
+}
+.highcharts-title{
+    color:#116A91 !important;
+    font-weight:400 !important;
+}

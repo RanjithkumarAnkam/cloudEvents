@@ -11,7 +11,8 @@ import { HighchartsStatic } from 'angular2-highcharts/dist/HighchartsService';
 import { GalleryComponent } from './gallery/gallery.component';
 import { NgxGalleryModule } from 'ngx-gallery';
 import { NgxCarouselModule } from 'ngx-carousel';
-
+import { FormsModule } from '@angular/forms';
+import {MultiSelectModule} from 'primeng/primeng';
 declare var require: any;
 
 
@@ -30,7 +31,9 @@ export function highchartsFactory() {
 	  NgxGalleryModule,
     DataTableModule,
     ChartModule,
-    NgxCarouselModule
+    NgxCarouselModule,
+    MultiSelectModule,
+    FormsModule
   ],
   declarations: [ManagerProfileComponent, ManagerDashboardComponent, PermissionsComponent, GalleryComponent],
    providers: [{

@@ -18,7 +18,7 @@
                 </li>
                 <li id="menu2" tourAnchor="Calendar.id" [routerLinkActive]="['active']">
                     <a [routerLink]="['/manager/calendar']">Calendar</a>
-                </li>                
+                </li>
                 <li id="menu4" tourAnchor="Customers.id" [routerLinkActive]="['active']">
                     <a [routerLink]="['/manager/customers']">Customers</a>
                 </li>
@@ -26,7 +26,7 @@
                     <a [routerLink]="['/manager/vendors']">Vendors</a>
                 </li>
                 <li id="menu5" tourAnchor="Manage.id" [routerLinkActive]="['active']">
-                    <a [routerLink]="['/manager/manage']">Manage </a>
+                    <a [routerLink]="['/manager/manage']">Admin </a>
                 </li>
                 <li id="menu8" tourAnchor="Gallery.id" [routerLinkActive]="['active']">
                     <a [routerLink]="['/manager/gallery']">Gallery</a>
@@ -67,11 +67,6 @@
                             <a [routerLink]="['/manager/profile']">
 
                                 <i class="icon-user" style="margin-right:3px"></i>My Profile
-                            </a>
-                        </li>
-                        <li>
-                            <a [routerLink]="['/manager/subscription']" class="curspointer">
-                                <i class="icon-briefcase" style="margin-right:3px"></i>Manage Subscription
                             </a>
                         </li>
                         <li>
@@ -125,368 +120,370 @@
 
 <router-outlet></router-outlet>
 
-<div class="col-sm-12" style="margin-top:10px;">
-        <div id="addVenueModal" class="modal fade">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content" id="mdcontent">
-                    <div class="fc-title header" style="height:77px;border-bottom: 1px solid #e8e6e6;">
-                        <span style="    font-size: 20px;
+
+<div id="addVenueModal" class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content" id="mdcontent">
+            <div class="fc-title header" style="height:77px;border-bottom: 1px solid #e8e6e6;">
+                <span style="    font-size: 20px;
                             font-weight: 600;
                             line-height: 77px;
                             margin-left: 20px;">Add New Venue</span>
-                        <button id="btnClosebands" type="button" class="btn btn-default Close pull-right" data-dismiss="modal" style="margin-right: 20px;margin-top: 28px;border-radius: 35px !important;">
-                            <span aria-hidden="true" style="font-size:20px">×</span>
-                            <span class="sr-only">close</span>
-                        </button>&nbsp;
-                    </div>
-                    <div id="modalBody" class="modal-body" style="height:750px">
-                        <div class="col-sm-12" style="margin-top:50px">
-                            <div id="menubooking">
-                                <div class="portlet" id="form_wizard_1">
-                                    <div class="portlet-body form">
-                                        <div class="col-sm-12 col-md-12 col-lg-12 col-xs-12">
-                                            <ul id="progressbar" class="prbar" style="display:flex; text-align: center;padding:0;">
-                                                <li [ngClass]='add_venue_first_tab'>Basic Details</li>
-                                                <li [ngClass]='add_venue_second_tab'>Contact Details</li>
-                                                <li [ngClass]='add_venue_third_tab'>Photos &amp; Videos</li>
-                                                <li [ngClass]='add_venue_fourth_tab'>Summary</li>
-                                            </ul>
-                                        </div>
-                                        <form id="msform" class="form-horizontal">
-                                            <fieldset *ngIf="new_venue_customer_block">
+                <button id="btnClosebands" type="button" class="btn btn-default Close pull-right" data-dismiss="modal" style="margin-right: 20px;margin-top: 28px;border-radius: 35px !important;">
+                    <span aria-hidden="true" style="font-size:20px">×</span>
+                    <span class="sr-only">close</span>
+                </button>&nbsp;
+            </div>
+            <div id="modalBody" class="modal-body" style="height:750px">
+                <div class="col-sm-12" style="margin-top:50px">
+                    <div id="menubooking">
+                        <div class="portlet" id="form_wizard_1">
+                            <div class="portlet-body form">
+                                <div class="col-sm-12 col-md-12 col-lg-12 col-xs-12">
+                                    <ul id="progressbar" class="prbar" style="display:flex; text-align: center;padding:0;">
+                                        <li [ngClass]='add_venue_first_tab'>Basic Details</li>
+                                        <li [ngClass]='add_venue_second_tab'>Contact Details</li>
+                                        <li [ngClass]='add_venue_third_tab'>Photos &amp; Videos</li>
+                                        <li [ngClass]='add_venue_fourth_tab'>Summary</li>
+                                    </ul>
+                                </div>
+                                <form id="msform" class="form-horizontal">
+                                    <fieldset *ngIf="new_venue_customer_block">
 
-                                                <div class="col-md-2"></div>
-                                                <div class="col-md-8" id="field1" style="height:320px;overflow-y:auto; overflow-x:hidden;margin-top:50px">
-                                                    <div class="form-group">
-                                                        <label class="control-label col-md-4 add-member-label">
-                                                            Venue Name: </label>
-                                                        <div class="col-md-8">
-                                                            <input type="text" class="form-control" name="venue name" value="Nareen Convention" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label class="control-label col-md-4 add-member-label">
-                                                            Capacity: </label>
-                                                        <div class="col-md-8">
-                                                            <input type="text" class="form-control" name="" id="" value="20000" />
+                                        <div class="col-md-2"></div>
+                                        <div class="col-md-8" id="field1" style="height:320px;overflow-y:auto; overflow-x:hidden;margin-top:50px">
+                                            <div class="form-group">
+                                                <label class="control-label col-md-4 add-member-label">
+                                                    Venue Name: </label>
+                                                <div class="col-md-8">
+                                                    <input type="text" class="form-control" name="venue name" value="Nareen Convention" />
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label col-md-4 add-member-label">
+                                                    Capacity: </label>
+                                                <div class="col-md-8">
+                                                    <input type="text" class="form-control" name="" id="" value="20000" />
 
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label class="control-label col-md-4 add-member-label">
-                                                            Location: </label>
-                                                        <div class="col-md-8">
-                                                            <textarea class="form-control" rows="4">Miyapur,Hyderabad</textarea>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label col-md-4 add-member-label">
+                                                    Location: </label>
+                                                <div class="col-md-8">
+                                                    <textarea class="form-control" rows="4">Miyapur,Hyderabad</textarea>
 
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label class="control-label col-md-4 add-member-label"> Time Slots: </label>
-                                                        <div class="col-md-8" style="margin-top: 8px;">
-                                                            <span style="float: left;margin-right: 20px;">
-                                                                <input type="radio" class="form-control" (click)="setRadio(false)" name="allday" [checked]='true' id="alldayid" style="float: left;width: auto;height: auto;margin-right: 3px;margin-top:3px;"
-                                                                />All Day</span>
-                                                            <span style="float: left;">
-                                                                <input type="radio" class="form-control" (click)="setRadio(true)" name="allday" id="timeslots" style="float: left;width: auto;height: auto;margin-right: 3px;margin-top:3px;"
-                                                                />Time Slots
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                    <!--Select slots for the venue timings-->
-                                                    <div *ngIf="timeSlotSel" id="Timingsdiv1" class="">
-                                                        <div class="form-group">
-                                                            <label class="control-label col-md-4 add-member-label">
-                                                                Select Slots: </label>
-                                                            <div class="col-md-8">
-                                                                <div id="Picupload">
-                                                                    <div class="col-md-12 nopadding">
-                                                                        <div class="col-sm-5 nopadding">
-                                                                            <div class='input-group date datetimepicker3' id="FromDiv">
-                                                                                <input type='text' class="form-control datetimepicker3" placeholder="From" />
-                                                                                <span class="input-group-addon">
-                                                                                    <span class="glyphicon glyphicon-time" style="color: #49494e;"></span>
-                                                                                </span>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="col-sm-1 nopadding"></div>
-                                                                        <div class="col-sm-5 nopadding">
-                                                                            <div class='input-group date datetimepicker3' id="ToDiv">
-                                                                                <input type='text' class="form-control datetimepicker3" placeholder="To" />
-                                                                                <span class="input-group-addon">
-                                                                                    <span class="glyphicon glyphicon-time" style="color: #49494e;"></span>
-                                                                                </span>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="col-sm-1 nopadding">
-                                                                            <a href="javascript:;" onclick="return AddEmptyRow()" id="btnAddSlots" title="Add more slots">
-                                                                                <i style="line-height: 2" class="fa fa-plus pull-right"></i>
-                                                                            </a>
-                                                                        </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label col-md-4 add-member-label"> Time Slots: </label>
+                                                <div class="col-md-8" style="margin-top: 8px;">
+                                                    <span style="float: left;margin-right: 20px;">
+                                                        <input type="radio" class="form-control" (click)="setRadio(false)" name="allday" [checked]='true' id="alldayid" style="float: left;width: auto;height: auto;margin-right: 3px;margin-top:3px;"
+                                                        />All Day</span>
+                                                    <span style="float: left;">
+                                                        <input type="radio" class="form-control" (click)="setRadio(true)" name="allday" id="timeslots" style="float: left;width: auto;height: auto;margin-right: 3px;margin-top:3px;"
+                                                        />Time Slots
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <!--Select slots for the venue timings-->
+                                            <div *ngIf="timeSlotSel" id="Timingsdiv1" class="">
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-4 add-member-label">
+                                                        Select Slots: </label>
+                                                    <div class="col-md-8">
+                                                        <div id="Picupload">
+                                                            <div class="col-md-12 nopadding">
+                                                                <div class="col-sm-5 nopadding">
+                                                                    <div class='input-group date datetimepicker3' id="FromDiv">
+                                                                        <input type='text' class="form-control datetimepicker3" placeholder="From" />
+                                                                        <span class="input-group-addon">
+                                                                            <span class="glyphicon glyphicon-time" style="color: #49494e;"></span>
+                                                                        </span>
                                                                     </div>
                                                                 </div>
+                                                                <div class="col-sm-1 nopadding"></div>
+                                                                <div class="col-sm-5 nopadding">
+                                                                    <div class='input-group date datetimepicker3' id="ToDiv">
+                                                                        <input type='text' class="form-control datetimepicker3" placeholder="To" />
+                                                                        <span class="input-group-addon">
+                                                                            <span class="glyphicon glyphicon-time" style="color: #49494e;"></span>
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-1 nopadding">
+                                                                    <a href="javascript:;" onclick="return AddEmptyRow()" id="btnAddSlots" title="Add more slots">
+                                                                        <i style="line-height: 2" class="fa fa-plus pull-right"></i>
+                                                                    </a>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-2"></div>
-                                                <div class="col-md-12" style="border-top:1px solid #dcd9d9;height: 50px;">
-                                                    <button type="button" (click)="addVenueContinue()" class="next btn btn-success pull-right" style="margin:10px 10px 0 0;border-radius: 4px !important;">
-                                                        <span title="Click for next screen" aria-hidden="true">&nbsp;
-                                                            <i class="fa fa-arrow-right"></i>Continue</span>
-                                                        <span class="sr-only">Continue</span>
-                                                    </button>
-                                                    <a data-target="#cancelmodal" data-dismiss="modal" class="btn btn-default pull-right" style="margin:10px 10px 0 0;margin-right: 11px;border-radius: 4px !important;">
-                                                        <span title="Click to cancel " aria-hidden="true">&nbsp;
-                                                            <i class="fa fa-times"></i>Cancel</span>
-                                                        <span class="sr-only">Cancel</span>
-                                                    </a>
-                                                </div>
-                                            </fieldset>
-                                            <fieldset *ngIf="new_venue_event_block">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2"></div>
+                                        <div class="col-md-12" style="border-top:1px solid #dcd9d9;height: 50px;">
+                                            <button type="button" (click)="addVenueContinue()" class="next btn btn-success pull-right" style="margin:10px 10px 0 0;border-radius: 4px !important;">
+                                                <span title="Click for next screen" aria-hidden="true">&nbsp;
+                                                    <i class="fa fa-arrow-right"></i>Continue</span>
+                                                <span class="sr-only">Continue</span>
+                                            </button>
+                                            <a data-target="#cancelmodal" data-dismiss="modal" class="btn btn-default pull-right" style="margin:10px 10px 0 0;margin-right: 11px;border-radius: 4px !important;">
+                                                <span title="Click to cancel " aria-hidden="true">&nbsp;
+                                                    <i class="fa fa-times"></i>Cancel</span>
+                                                <span class="sr-only">Cancel</span>
+                                            </a>
+                                        </div>
+                                    </fieldset>
+                                    <fieldset *ngIf="new_venue_event_block">
 
-                                                <div class="col-md-2"></div>
-                                                <div class="col-md-8" id="field2" style="height:320px;overflow-y:auto; overflow-x:hidden;padding:0px;margin-top:50px">
-                                                    <div class="col-md-12">
-                                                        <div class="form-group">
-                                                            <label class="control-label col-md-5 add-member-label">
-                                                                Contact Person Name: </label>
-                                                            <div class="col-md-7">
-                                                                <input type="text" class="form-control" name="" value="Ravi" />
-                                                            </div>
+                                        <div class="col-md-2"></div>
+                                        <div class="col-md-8" id="field2" style="height:320px;overflow-y:auto; overflow-x:hidden;padding:0px;margin-top:50px">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-5 add-member-label">
+                                                        Contact Person Name: </label>
+                                                    <div class="col-md-7">
+                                                        <input type="text" class="form-control" name="" value="Ravi" />
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-5 add-member-label">
+                                                        Email ID: </label>
+                                                    <div class="col-md-7">
+                                                        <input type="text" class="form-control" name="" value="ravi@cloud.com" />
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-5 add-member-label">
+                                                        Phone Number: </label>
+                                                    <div class="col-md-7">
+                                                        <input type="text" class="form-control" name="" value="9999999999" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2"></div>
+                                        <div class="col-md-12" style="border-top:1px solid #dcd9d9;height: 50px;">
+                                            <button type="button" (click)="addCpContinue()" class="next btn btn-success pull-right" style="margin: 10px 10px 0 0;border-radius: 4px !important;">
+                                                <span title="Click for next screen" aria-hidden="true">&nbsp;
+                                                    <i class="fa fa-arrow-right"></i>Continue</span>
+                                                <span class="sr-only">Continue</span>
+                                            </button>
+                                            <button type="button" (click)="addCpBack()" class="previous btn btn-default pull-right" style="margin: 10px 10px 0 0;border-radius: 4px !important;">
+                                                <span title="Click to go back" aria-hidden="true">&nbsp;
+                                                    <i class="fa fa-arrow-left"></i>Previous</span>
+                                                <span class="sr-only">Previous</span>
+                                            </button>
+                                            <a data-target="#cancelmodal" data-dismiss="modal" class="btn btn-default pull-right" style="margin:10px 10px 0 0;margin-right: 11px;border-radius: 4px !important;">
+                                                <span title="Click to cancel " aria-hidden="true">&nbsp;
+                                                    <i class="fa fa-times"></i>Cancel</span>
+                                                <span class="sr-only">Cancel</span>
+                                            </a>
+                                        </div>
+                                    </fieldset>
+                                    <fieldset *ngIf="new_venue_payment_block">
+                                        <div class="col-md-2"></div>
+                                        <div class="col-md-8" id="field3" style="height:320px;overflow-y:auto;overflow-x:hidden;padding:0;margin-top:50px">
+                                            <div class="form-group">
+                                                <label class="control-label col-md-4 add-member-label">
+                                                    Services &amp; Facilities: </label>
+                                                <div class="col-md-8">
+                                                    <div class="col-sm-12 nopadding">
+                                                        <input type="checkbox" class="" style="float: left; width: auto; height: auto;margin-right: 4px; margin-top: 3px;" />Wifi
+                                                    </div>
+                                                    <div class="col-sm-12 nopadding">
+                                                        <input type="checkbox" class="" style="float: left; width: auto; height: auto;margin-right: 4px; margin-top: 3px;" />Catering Services
+                                                    </div>
+                                                    <div class="col-sm-12 nopadding">
+                                                        <input type="checkbox" class="" [ngModel]="" (ngModelChange)="addProp($event)" [ngModelOptions]="{standalone: true}" style="float: left; width: auto; height: auto;margin-right: 4px; margin-top: 3px;"
+                                                            id="btnOtherservices" />Other
+                                                    </div>
+                                                    <div *ngIf="otherStatus" class="col-sm-12 margin-top-10" id="addextraservicediv">
+                                                        <div class="col-sm-8">
+                                                            <input type="text" class="form-control" placeholder="Enter Service Name" />
                                                         </div>
-                                                        <div class="form-group">
-                                                            <label class="control-label col-md-5 add-member-label">
-                                                                Email ID: </label>
-                                                            <div class="col-md-7">
-                                                                <input type="text" class="form-control" name="" value="ravi@cloud.com" />
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label class="control-label col-md-5 add-member-label">
-                                                                Phone Number: </label>
-                                                            <div class="col-md-7">
-                                                                <input type="text" class="form-control" name="" value="9999999999" />
-                                                            </div>
+                                                        <div class="col-sm-4">
+                                                            <a href="javascript:;" class="" id="" title="Add more Services" style="margin-left: 40px; line-height: 30px;">
+                                                                <i class="fa fa-plus"></i>Add</a>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-2"></div>
-                                                <div class="col-md-12" style="border-top:1px solid #dcd9d9;height: 50px;">
-                                                    <button type="button" (click)="addCpContinue()" class="next btn btn-success pull-right" style="margin: 10px 10px 0 0;border-radius: 4px !important;">
-                                                        <span title="Click for next screen" aria-hidden="true">&nbsp;
-                                                            <i class="fa fa-arrow-right"></i>Continue</span>
-                                                        <span class="sr-only">Continue</span>
-                                                    </button>
-                                                    <button type="button" (click)="addCpBack()" class="previous btn btn-default pull-right" style="margin: 10px 10px 0 0;border-radius: 4px !important;">
-                                                        <span title="Click to go back" aria-hidden="true">&nbsp;
-                                                            <i class="fa fa-arrow-left"></i>Previous</span>
-                                                        <span class="sr-only">Previous</span>
-                                                    </button>
-                                                    <a data-target="#cancelmodal" data-dismiss="modal" class="btn btn-default pull-right" style="margin:10px 10px 0 0;margin-right: 11px;border-radius: 4px !important;">
-                                                        <span title="Click to cancel " aria-hidden="true">&nbsp;
-                                                            <i class="fa fa-times"></i>Cancel</span>
-                                                        <span class="sr-only">Cancel</span>
-                                                    </a>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label col-md-4 add-member-label">
+                                                    Photos: </label>
+                                                <div class="col-md-8">
+                                                    <input type="file" class="form-control" />
+
                                                 </div>
-                                            </fieldset>
-                                            <fieldset *ngIf="new_venue_payment_block">
-                                                <div class="col-md-2"></div>
-                                                <div class="col-md-8" id="field3" style="height:320px;overflow-y:auto;overflow-x:hidden;padding:0;margin-top:50px">
+                                                <div class="col-sm-1"></div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label col-md-4 add-member-label">
+                                                    Videos: </label>
+                                                <div class="col-md-8">
+                                                    <input type="file" class="form-control" />
+
+                                                </div>
+                                                <div class="col-sm-1"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2"></div>
+                                        <div class="col-md-12" style="border-top:1px solid #dcd9d9;height: 50px;">
+                                            <button type="button" (click)="addPaymentContinue()" class="next btn btn-success pull-right" style="margin: 10px 10px 0 0;border-radius: 4px !important;">
+                                                <span title="Click for venue booking" aria-hidden="true">&nbsp;
+                                                    <i class="fa fa-arrow-right"></i>Continue</span>
+                                                <span class="sr-only">Continue</span>
+                                            </button>
+                                            <button type="button" (click)="addPaymentBack()" class="previous btn btn-default pull-right" style="margin: 10px 10px 0 0;border-radius: 4px !important;">
+                                                <span title="Click for venue booking" aria-hidden="true">&nbsp;
+                                                    <i class="fa fa-arrow-left"></i>Previous</span>
+                                                <span class="sr-only">Previous</span>
+                                            </button>
+                                            <a data-target="#cancelmodal" data-dismiss="modal" class="btn btn-default pull-right" style="margin:10px 10px 0 0;margin-right: 11px;border-radius: 4px !important;">
+                                                <span title="Click to cancel " aria-hidden="true">&nbsp;
+                                                    <i class="fa fa-times"></i>Cancel</span>
+                                                <span class="sr-only">Cancel</span>
+                                            </a>
+                                        </div>
+                                    </fieldset>
+                                    <fieldset *ngIf="new_venue_summary_block">
+                                        <div id="field4" style="height:320px;overflow-y:auto;overflow-x:hidden;margin-top:50px">
+                                            <div class="col-sm-12">
+                                                <div class="col-md-12 col-sm-12">
+                                                    <h4 class="form-section">
+                                                        <b>Basic Details</b>
+                                                    </h4>
                                                     <div class="form-group">
-                                                        <label class="control-label col-md-4 add-member-label">
-                                                            Services &amp; Facilities: </label>
-                                                        <div class="col-md-8">
-                                                            <div class="col-sm-12 nopadding">
-                                                                <input type="checkbox" class="" style="float: left; width: auto; height: auto;margin-right: 4px; margin-top: 3px;" />Wifi
-                                                            </div>
-                                                            <div class="col-sm-12 nopadding">
-                                                                <input type="checkbox" class="" style="float: left; width: auto; height: auto;margin-right: 4px; margin-top: 3px;" />Catering Services
-                                                            </div>
-                                                            <div class="col-sm-12 nopadding">
-                                                                <input type="checkbox" class="" [ngModel]="" (ngModelChange)="addProp($event)" [ngModelOptions]="{standalone: true}" style="float: left; width: auto; height: auto;margin-right: 4px; margin-top: 3px;"
-                                                                 id="btnOtherservices" />Other
-                                                            </div>
-                                                            <div *ngIf="otherStatus" class="col-sm-12 margin-top-10" id="addextraservicediv">
-                                                                <div class="col-sm-8">
-                                                                    <input type="text" class="form-control" placeholder="Enter Service Name" />
-                                                                </div>
-                                                                <div class="col-sm-4">
-                                                                    <a href="javascript:;" class="" id="" title="Add more Services" style="margin-left: 40px; line-height: 30px;">
-                                                                        <i class="fa fa-plus"></i>Add</a>
-                                                                </div>
-                                                            </div>
+                                                        <label class="control-label col-md-3">Venue Name:</label>
+                                                        <div class="col-md-4">
+                                                            <p class="form-control-static" data-display="username">
+                                                                Nareen Convention</p>
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label class="control-label col-md-4 add-member-label">
-                                                            Photos: </label>
-                                                        <div class="col-md-8">
-                                                            <input type="file" class="form-control" />
-
+                                                        <label class="control-label col-md-3">Capacity:</label>
+                                                        <div class="col-md-4">
+                                                            <p class="form-control-static" data-display="email">10,000
+                                                            </p>
                                                         </div>
-                                                        <div class="col-sm-1"></div>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label class="control-label col-md-4 add-member-label">
-                                                            Videos: </label>
-                                                        <div class="col-md-8">
-                                                            <input type="file" class="form-control" />
-
+                                                        <label class="control-label col-md-3">Location:</label>
+                                                        <div class="col-md-4">
+                                                            <p class="form-control-static" data-display="email">
+                                                                Miyapur, Hyderabad</p>
                                                         </div>
-                                                        <div class="col-sm-1"></div>
                                                     </div>
-                                                </div>
-                                                <div class="col-md-2"></div>
-                                                <div class="col-md-12" style="border-top:1px solid #dcd9d9;height: 50px;">
-                                                    <button type="button" (click)="addPaymentContinue()" class="next btn btn-success pull-right" style="margin: 10px 10px 0 0;border-radius: 4px !important;">
-                                                        <span title="Click for venue booking" aria-hidden="true">&nbsp;
-                                                            <i class="fa fa-arrow-right"></i>Continue</span>
-                                                        <span class="sr-only">Continue</span>
-                                                    </button>
-                                                    <button type="button" (click)="addPaymentBack()" class="previous btn btn-default pull-right" style="margin: 10px 10px 0 0;border-radius: 4px !important;">
-                                                        <span title="Click for venue booking" aria-hidden="true">&nbsp;
-                                                            <i class="fa fa-arrow-left"></i>Previous</span>
-                                                        <span class="sr-only">Previous</span>
-                                                    </button>
-                                                    <a data-target="#cancelmodal" data-dismiss="modal" class="btn btn-default pull-right" style="margin:10px 10px 0 0;margin-right: 11px;border-radius: 4px !important;">
-                                                        <span title="Click to cancel " aria-hidden="true">&nbsp;
-                                                            <i class="fa fa-times"></i>Cancel</span>
-                                                        <span class="sr-only">Cancel</span>
-                                                    </a>
-                                                </div>
-                                            </fieldset>
-                                            <fieldset *ngIf="new_venue_summary_block">
-                                                <div id="field4" style="height:320px;overflow-y:auto;overflow-x:hidden;margin-top:50px">
-                                                    <div class="col-sm-12">
-                                                        <div class="col-md-12 col-sm-12">
-                                                            <h4 class="form-section">
-                                                                <b>Basic Details</b>
-                                                            </h4>
-                                                            <div class="form-group">
-                                                                <label class="control-label col-md-3">Venue Name:</label>
-                                                                <div class="col-md-4">
-                                                                    <p class="form-control-static" data-display="username">
-                                                                        Nareen Convention</p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label class="control-label col-md-3">Capacity:</label>
-                                                                <div class="col-md-4">
-                                                                    <p class="form-control-static" data-display="email">10,000
-                                                                    </p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label class="control-label col-md-3">Location:</label>
-                                                                <div class="col-md-4">
-                                                                    <p class="form-control-static" data-display="email">
-                                                                        Miyapur, Hyderabad</p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label class="control-label col-md-3">Time Slots:</label>
-                                                                <div class="col-md-4">
-                                                                    <p class="form-control-static" data-display="email">All Day
-                                                                    </p>
-                                                                </div>
-                                                            </div>
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-3">Time Slots:</label>
+                                                        <div class="col-md-4">
+                                                            <p class="form-control-static" data-display="email">All Day
+                                                            </p>
+                                                        </div>
+                                                    </div>
 
-                                                            <h4 class="form-section">
-                                                                <b>Contact Details</b>
-                                                            </h4>
-                                                            <div class="form-group">
-                                                                <label class="control-label col-md-3">Contact Person:</label>
-                                                                <div class="col-md-4">
-                                                                    <p class="form-control-static" data-display="card_name">
-                                                                        Ravi</p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label class="control-label col-md-3">Email ID:</label>
-                                                                <div class="col-md-4">
-                                                                    <p class="form-control-static" data-display="card_number">
-                                                                        ravi@nareen.com</p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label class="control-label col-md-3">Phone NUmber:</label>
-                                                                <div class="col-md-4">
-                                                                    <p class="form-control-static" data-display="card_cvc">
-                                                                        999-999-9999</p>
-                                                                </div>
-                                                            </div>
-                                                            <h4 class="form-section">
-                                                                <b>Photos &amp; Videos:</b>
-                                                            </h4>
-                                                            <div class="form-group">
-                                                                <label class="control-label col-md-3">Services &amp; Facilities:
-                                                                </label>
-                                                                <div class="col-md-9">
-                                                                    <p class="form-control-static" data-display="fullname">
-                                                                        <b>Room No 1</b>
-                                                                        <br />
-                                                                        <span style="text-align: justify">
-                                                                            The meeting room located at the 9th floor of the building has a seating capacity of 25 persons with board room setup. The
-                                                                            room is ideal for small gatherings. It also has pre function area in front of it. The meeting room is
-                                                                            available from 10 a.m to 6 p.m on weekdays and 10 a.m to 5 p.m on Saturday’s &amp; Holidays. Other facilities
-                                                                            like lunch, tea, etc may be arranged against separate payment to the vendors enlisted with ICC</span>
-                                                                        <br />
-                                                                        <br />
-                                                                        <b> Room No 2 </b>
-                                                                        <br />
-                                                                        <span style="text-align: justify"> The meeting room located at the 9th floor of the building has a seating capacity of 20 persons with board
-                                                                            room style seating arrangement. The meeting room is available from 10 a.m to 6 p.m on weekdays and 10
-                                                                            a.m to 5 p.m on Saturday’s &amp; Holidays. Other facilities like lunch, tea, etc may be arranged against
-                                                                            separate payment to the vendors enlisted with ICC</span>
-                                                                    </p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label class="control-label col-md-3">Photos:</label>
-                                                                <div class="col-md-4">
-                                                                    <img src="/assets/images/____9895307_orig.png" height="50" width="50" />
-                                                                    <img src="/assets/images/____9895307_orig.png" height="50" width="50" />
-                                                                    <img src="/assets/images/____9895307_orig.png" height="50" width="50" />
-                                                                </div>
-                                                            </div>
+                                                    <h4 class="form-section">
+                                                        <b>Contact Details</b>
+                                                    </h4>
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-3">Contact Person:</label>
+                                                        <div class="col-md-4">
+                                                            <p class="form-control-static" data-display="card_name">
+                                                                Ravi</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-3">Email ID:</label>
+                                                        <div class="col-md-4">
+                                                            <p class="form-control-static" data-display="card_number">
+                                                                ravi@nareen.com</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-3">Phone NUmber:</label>
+                                                        <div class="col-md-4">
+                                                            <p class="form-control-static" data-display="card_cvc">
+                                                                999-999-9999</p>
+                                                        </div>
+                                                    </div>
+                                                    <h4 class="form-section">
+                                                        <b>Photos &amp; Videos:</b>
+                                                    </h4>
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-3">Services &amp; Facilities:
+                                                        </label>
+                                                        <div class="col-md-9">
+                                                            <p class="form-control-static" data-display="fullname">
+                                                                <b>Room No 1</b>
+                                                                <br />
+                                                                <span style="text-align: justify">
+                                                                    The meeting room located at the 9th floor of the building has a seating capacity of 25 persons with board room setup. The
+                                                                    room is ideal for small gatherings. It also has pre function
+                                                                    area in front of it. The meeting room is available from
+                                                                    10 a.m to 6 p.m on weekdays and 10 a.m to 5 p.m on Saturday’s
+                                                                    &amp; Holidays. Other facilities like lunch, tea, etc
+                                                                    may be arranged against separate payment to the vendors
+                                                                    enlisted with ICC</span>
+                                                                <br />
+                                                                <br />
+                                                                <b> Room No 2 </b>
+                                                                <br />
+                                                                <span style="text-align: justify"> The meeting room located at the 9th floor of the building
+                                                                    has a seating capacity of 20 persons with board room
+                                                                    style seating arrangement. The meeting room is available
+                                                                    from 10 a.m to 6 p.m on weekdays and 10 a.m to 5 p.m
+                                                                    on Saturday’s &amp; Holidays. Other facilities like lunch,
+                                                                    tea, etc may be arranged against separate payment to
+                                                                    the vendors enlisted with ICC</span>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-3">Photos:</label>
+                                                        <div class="col-md-4">
+                                                            <img src="/assets/images/____9895307_orig.png" height="50" width="50" />
+                                                            <img src="/assets/images/____9895307_orig.png" height="50" width="50" />
+                                                            <img src="/assets/images/____9895307_orig.png" height="50" width="50" />
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div style="border-top:1px solid #dcd9d9;height: 50px;">
-                                                    <button (click)="clickedBackButton()" type="button" class="submit btn btn-success pull-right" data-dismiss="modal" style="margin: 10px 10px 0 0;border-radius: 4px !important;"
-                                                     id="btnbookingSubmit">
-                                                        <span title="Click for submit booking" aria-hidden="true">&nbsp;
-                                                            <i class="fa fa-floppy-o"></i>Submit</span>
-                                                        <span class="sr-only">Submit</span>
-                                                    </button>
-                                                    <button type="button" (click)="addSummaryBack()" class="previous btn btn-default pull-right" style="margin: 10px 10px 0 0;border-radius: 4px !important;">
-                                                        <span title="Click to go back" aria-hidden="true">&nbsp;
-                                                            <i class="fa fa-arrow-left"></i>Previous</span>
-                                                        <span class="sr-only">Previous</span>
-                                                    </button>
-                                                    <a data-target="#cancelmodal" data-dismiss="modal" class="btn btn-default pull-right" style="margin:10px 10px 0 0;margin-right: 11px;border-radius: 4px !important;">
-                                                        <span title="Click to cancel " aria-hidden="true">&nbsp;
-                                                            <i class="fa fa-times"></i>Cancel</span>
-                                                        <span class="sr-only">Cancel</span>
-                                                    </a>
-                                                </div>
-                                            </fieldset>
-                                        </form>
-                                    </div>
-                                </div>
+                                            </div>
+                                        </div>
+                                        <div style="border-top:1px solid #dcd9d9;height: 50px;">
+                                            <button (click)="clickedBackButton()" type="button" class="submit btn btn-success pull-right" data-dismiss="modal" style="margin: 10px 10px 0 0;border-radius: 4px !important;"
+                                                id="btnbookingSubmit">
+                                                <span title="Click for submit booking" aria-hidden="true">&nbsp;
+                                                    <i class="fa fa-floppy-o"></i>Submit</span>
+                                                <span class="sr-only">Submit</span>
+                                            </button>
+                                            <button type="button" (click)="addSummaryBack()" class="previous btn btn-default pull-right" style="margin: 10px 10px 0 0;border-radius: 4px !important;">
+                                                <span title="Click to go back" aria-hidden="true">&nbsp;
+                                                    <i class="fa fa-arrow-left"></i>Previous</span>
+                                                <span class="sr-only">Previous</span>
+                                            </button>
+                                            <a data-target="#cancelmodal" data-dismiss="modal" class="btn btn-default pull-right" style="margin:10px 10px 0 0;margin-right: 11px;border-radius: 4px !important;">
+                                                <span title="Click to cancel " aria-hidden="true">&nbsp;
+                                                    <i class="fa fa-times"></i>Cancel</span>
+                                                <span class="sr-only">Cancel</span>
+                                            </a>
+                                        </div>
+                                    </fieldset>
+                                </form>
                             </div>
                         </div>
-
                     </div>
                 </div>
+
             </div>
         </div>
-
-<div class="col-sm-12 bg-white" style="background-color: #116a9e; height: 50px;">
-    <p style="margin-left: 0px; text-align: center; color: #FFF; margin-top: 20px;">
-        {{today | date:'yyyy'}} - Option Matrix ® All Rights Reserved</p>
-    <p></p>
+    </div>
 </div>
+
+
 <!-- main modal popup -->
 <div class="modal fade" id="mainmodalpop" role="dialog">
     <div class="modal-dialog modal-lg">
@@ -516,7 +513,7 @@
                                         <p style="font-size:15px;">Click below to add your first venue to get started.</p>
                                     </div>
                                     <div class="card-action">
-                                        <a  class="btn btn-success" data-dismiss="modal" id="btnCreateVenue" data-toggle="modal" data-target="#addVenueModal" (click)="resetEveryThing()" >Setup Venue</a>
+                                        <a class="btn btn-success" data-dismiss="modal" id="btnCreateVenue" data-toggle="modal" data-target="#addVenueModal" (click)="resetEveryThing()">Setup Venue</a>
                                     </div>
                                 </div>
                             </div>
@@ -734,4 +731,10 @@
             </div>
         </div>
     </div>
+</div>
+
+<div class="col-sm-12 bg-white" style="background-color: #116a9e; height: 50px;">
+    <p style="margin-left: 0px; text-align: center; color: #FFF; margin-top: 20px;">
+        {{today | date:'yyyy'}} - Option Matrix Infotech ® All Rights Reserved</p>
+    <p></p>
 </div>

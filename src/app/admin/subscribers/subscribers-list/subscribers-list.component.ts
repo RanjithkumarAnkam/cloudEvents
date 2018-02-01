@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { SelectItem } from 'primeng/primeng';
 @Component({
   selector: 'app-subscribers-list',
   templateUrl: './subscribers-list.component.html',
@@ -16,7 +16,29 @@ export class SubscribersListComponent implements OnInit {
   ];
   constructor() { }
 
+  
+  statusList: SelectItem[];
+  selectedStatus: Array<any>;
+  packageList: SelectItem[];
+  selectedPackage: Array<any>;
   ngOnInit() {
+    this.statusList = [
+      { label: 'Active', value: { id: 1, name: 'Active', code: 'AT' } },
+      { label: 'In Active', value: { id: 2, name: 'In Active', code: 'IT' } },
+   
+    ];
+    this.packageList = [
+      { label: 'Single', value: { id: 1, name: 'Single', code: 'SI' } },
+      { label: 'Dual', value: { id: 2, name: 'Dual', code: 'DU' } },
+      { label: 'Multiple', value: { id: 3, name: 'Multiple', code: 'MP' } }
+   
+    ];
+  }
+  selectStatusChange() {
+    console.log(this.selectedStatus);
+  }
+  selectPackageChange() {
+    console.log(this.selectedStatus);
   }
 
 }

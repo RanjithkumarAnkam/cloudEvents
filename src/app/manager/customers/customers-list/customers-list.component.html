@@ -5,8 +5,21 @@
 			<div class="col-sm-1"></div>
 			<div class="col-sm-10 nopadding">
 				<div class="col-sm-12 nopadding">
-					<a class="btn btn-success pull-right" data-toggle="modal" data-target="#AddCustomerModal" title="Click to add new customer">
-						<i class="fa fa-plus"></i>&nbsp;Add Customer</a>
+					<div class="col-sm-3 nopadding">
+						<div class="col-sm-10 nopadding">
+							<input type="text" class="col-sm-5 form-control" placeholder="search keyword" />
+						</div>
+						<div class="col-sm-2 nopadding">
+							<button class="form-control" style="background-color:#eee">
+								<i class="glyphicon glyphicon-search"></i>
+							</button>
+						</div>
+					</div>
+
+					<div class="col-sm-9 nopadding">
+						<a class="btn btn-success pull-right" data-toggle="modal" data-target="#AddCustomerModal" title="Click to add new customer">
+							<i class="fa fa-plus"></i>&nbsp;Add Customer</a>
+					</div>
 				</div>
 				<!--Table forCustomers-->
 				<div class="col-sm-12 nopadding margin-top-20">
@@ -14,11 +27,9 @@
 						<thead>
 							<tr class="table-headers">
 								<th style="width: 30%">
-									<mfDefaultSorter by="fname">First Name</mfDefaultSorter>
+									<mfDefaultSorter by="fname"> Name</mfDefaultSorter>
 								</th>
-								<th style="width: 30%">
-									<mfDefaultSorter by="lname">Last Name</mfDefaultSorter>
-								</th>
+
 								<th style="width: 30%">
 									<mfDefaultSorter by="email">Email</mfDefaultSorter>
 								</th>
@@ -35,32 +46,29 @@
 									<mfDefaultSorter>Appointments</mfDefaultSorter>
 								</th>
 								<th class="text-center" style="width: 15%">
-									<mfDefaultSorter by="appointments">Actions</mfDefaultSorter>
+									<mfDefaultSorter by="appointments">Delete</mfDefaultSorter>
 								</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr *ngFor="let item of mf.data">
-								<td>
+								<td title="click to edit customer details">
 									<a data-toggle="modal" data-target="#EditCustomerModal" style="color:#000">
-										{{item.fname}}</a>
+										{{item.fname}} &nbsp;{{item.lname}}</a>
 								</td>
-								<td>
-									<a data-toggle="modal" data-target="#EditCustomerModal" style="color:#000">{{item.lname}}</a>
-								</td>
-								<td>
+								<td title="click to edit customer details">
 									<a data-toggle="modal" data-target="#EditCustomerModal" style="color:#000">{{item.email}}</a>
 								</td>
-								<td>
+								<td title="click to edit customer details">
 									<a data-toggle="modal" data-target="#EditCustomerModal" style="color:#000">{{item.phone}}</a>
 								</td>
-								<td class="text-center">
+								<td title="click to view booking details" class="text-center">
 									<a data-toggle="modal" data-target="#ModalMultipleBookingsView" style="color:#000">{{item.bookings}}</a>
 								</td>
-								<td class="text-center">
+								<td title="click to view enquiry details" class="text-center">
 									<a data-toggle="modal" data-target="#ModalMultipleEnquiryView" style="color:#000">{{item.enquiries}}</a>
 								</td>
-								<td class="text-center">
+								<td title="click to view appointment details" class="text-center">
 									<a data-toggle="modal" data-target="#ModalMultipleAppointmentView" style="color:#000">{{item.appointments}}</a>
 								</td>
 								<td class="text-center">
@@ -105,6 +113,7 @@
 										<th>Date</th>
 										<th>Time</th>
 										<th>Status</th>
+										<th>View</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -115,6 +124,11 @@
 										<td>18/08/17</td>
 										<td>09.00AM - 05.00PM</td>
 										<td>Completed</td>
+										<td>
+											<a data-dismiss="modal" (click)="handleEventClick(1)">
+												<span class="glyphicon glyphicon-eye-open"></span>
+											</a>
+										</td>
 									</tr>
 									<tr>
 										<td>B0002</td>
@@ -123,6 +137,11 @@
 										<td>10/09/17</td>
 										<td>09.00AM - 12.00PM</td>
 										<td>In Complete</td>
+										<td>
+											<a data-dismiss="modal" (click)="handleEventClick(1)">
+												<span class="glyphicon glyphicon-eye-open"></span>
+											</a>
+										</td>
 									</tr>
 								</tbody>
 							</table>
@@ -154,6 +173,7 @@
 										<th>Venue</th>
 										<th>Date</th>
 										<th>Time</th>
+										<th>Details</th>
 
 									</tr>
 								</thead>
@@ -164,6 +184,11 @@
 										<td>Nareen Gardens</td>
 										<td>18/08/17</td>
 										<td>09.00AM - 05.00PM</td>
+										<td>
+											<a data-dismiss="modal" (click)="handleEventClick(2)">
+												<span class="glyphicon glyphicon-eye-open"></span>
+											</a>
+										</td>
 									</tr>
 									<tr>
 										<td>B0002</td>
@@ -171,6 +196,11 @@
 										<td>RK Gardens</td>
 										<td>10/09/17</td>
 										<td>09.00AM - 12.00PM</td>
+										<td>
+											<a data-dismiss="modal" (click)="handleEventClick(2)">
+												<span class="glyphicon glyphicon-eye-open"></span>
+											</a>
+										</td>
 									</tr>
 								</tbody>
 							</table>
@@ -202,6 +232,7 @@
 										<th>Venue</th>
 										<th>Date</th>
 										<th>Time</th>
+										<th>View</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -211,6 +242,11 @@
 										<td>Nareen Gardens</td>
 										<td>18/08/17</td>
 										<td>09.00AM - 05.00PM</td>
+										<td>
+											<a data-dismiss="modal" (click)="handleEventClick(3)">
+												<span class="glyphicon glyphicon-eye-open"></span>
+											</a>
+										</td>
 									</tr>
 									<tr>
 										<td>B0002</td>
@@ -218,6 +254,11 @@
 										<td>RK Gardens</td>
 										<td>10/09/17</td>
 										<td>09.00AM - 12.00PM</td>
+										<td>
+											<a data-dismiss="modal" (click)="handleEventClick(3)">
+												<span class="glyphicon glyphicon-eye-open"></span>
+											</a>
+										</td>
 									</tr>
 								</tbody>
 							</table>
@@ -395,5 +436,417 @@
 				</div>
 			</div>
 		</div>
+
+		<div class="modal-backdrop fade in" [style.display]="showBookingsModal ? 'block' : 'none'"></div>
+		<div id="bookings_popup" class="modal fade in" role="dialog" style="display: block" [style.display]="showBookingsModal ? 'block' : 'none'">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" (click)="closeAllPopups()">&times;</button>
+						<h4 class="modal-title">
+							Narenn Garden - Mahesh Wedding
+						</h4>
+					</div>
+					<div class="modal-body" style="padding:0 15px ;height: 450px;overflow-y: scroll;">
+						<div>
+							<div class="col-md-12 col-sm-12">
+								<div class="portlet  blue-hoki box">
+									<div class="portlet-title">
+										<div class="caption">
+											<i class="fa fa-building-o"></i>Event Details
+										</div>
+									</div>
+									<div class="portlet-body">
+										<div class="row static-info">
+											<div class="col-md-5 name">
+												Venue Name&nbsp;:
+											</div>
+											<div class="col-md-7 value">
+												Nareen Gardens
+											</div>
+										</div>
+										<div class="row static-info">
+											<div class="col-md-5 name">
+												Event&nbsp;:
+											</div>
+											<div class="col-md-7 value">
+												Wedding
+											</div>
+										</div>
+										<div class="row static-info">
+											<div class="col-md-5 name">
+												Start Date&nbsp;:
+											</div>
+											<div class="col-md-7 value">
+												10/09/17
+											</div>
+										</div>
+										<div class="row static-info">
+											<div class="col-md-5 name">
+												End Date&nbsp;:
+											</div>
+											<div class="col-md-7 value">
+												11/09/17
+											</div>
+										</div>
+										<div class="row static-info">
+											<div class="col-md-5 name">
+												Time Slot&nbsp;:
+											</div>
+											<div class="col-md-7 value">
+												<label>
+													<b>All Day</b>
+												</label>
+											</div>
+										</div>
+										<div class="row static-info">
+											<div class="col-md-5 name">
+												Food Menu&nbsp;:
+											</div>
+											<div class="col-md-7 value">
+												<img src="/assets/images/foodmenu.jpg" style="height:100px;width:85px;" />
+											</div>
+										</div>
+										<div class="row static-info">
+											<div class="col-md-5 name">
+												Decoration Type&nbsp;:
+											</div>
+											<div class="col-md-7 value">
+												<img src="/assets/images/decoration.jpg" style="height:100px;width:150px;" />
+											</div>
+										</div>
+										<div class="row static-info">
+											<div class="col-md-5 name">
+												Additional Information&nbsp;:
+											</div>
+											<div class="col-md-7 value">
+												Will provide Decoration crew and food suppliers
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-md-12 col-sm-12">
+								<div class="portlet  blue-hoki box">
+									<div class="portlet-title">
+										<div class="caption">
+											<i class="fa fa-rupee"></i>Payment Details
+										</div>
+									</div>
+									<div class="portlet-body">
+										<div class="panel-group accordion" id="accordion1">
+											<div class="panel panel-default">
+												<div id="collapse_1" class="panel-collapse in">
+													<div class="panel-body">
+														<div class="col-sm-12 nopadding">
+															<table class="table table-hover table-bordered">
+																<thead>
+																	<tr>
+																		<th>Total Amount</th>
+																		<th>Paid</th>
+																		<th>Due</th>
+																		<th>Pay Date</th>
+																		<th>Payment Mode</th>
+																		<th>Other Details</th>
+																	</tr>
+																</thead>
+																<tbody>
+																	<tr>
+																		<td>50,000</td>
+																		<td>30,000</td>
+																		<td>20,000</td>
+																		<td>12/12/17</td>
+																		<td>Cash</td>
+																		<td class="text-center">-</td>
+																	</tr>
+																	<tr>
+																		<td>1,00,000</td>
+																		<td>70,000</td>
+																		<td>30,000</td>
+																		<td>14/12/17</td>
+																		<td>Cash</td>
+																		<td class="text-center">-</td>
+																	</tr>
+																</tbody>
+															</table>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-12 col-sm-12">
+								<div class="portlet  blue-hoki box">
+									<div class="portlet-title">
+										<div class="caption">
+											<i class="fa fa-user"></i>Customer Details
+										</div>
+									</div>
+									<div class="portlet-body" style="height:188px;">
+										<div class="row static-info">
+											<div class="col-md-5 name">
+												Contact Name&nbsp;:
+											</div>
+											<div class="col-md-7 value">
+												Ravi Marikala
+											</div>
+										</div>
+										<div class="row static-info">
+											<div class="col-md-5 name">
+												Email ID&nbsp;:
+											</div>
+											<div class="col-md-7 value">
+												ravi@nareen.com
+											</div>
+										</div>
+										<div class="row static-info">
+											<div class="col-md-5 name">
+												Phone Number&nbsp;:
+											</div>
+											<div class="col-md-7 value" style="margin-top:20px;">
+												999-999-9999
+											</div>
+										</div>
+										<div class="row static-info">
+											<div class="col-md-5 name">
+												Address&nbsp;:
+											</div>
+											<div class="col-md-7 value">
+												Miyapur,
+												<br />Hyderabad
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+
+						</div>
+					</div>
+					<div class="modal-footer mFooter">
+						<button type="button" class="btn btn-default" data-dismiss="modal" (click)="closeAllPopups()">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--Enquiry POPUP-->
+		<div class="modal-backdrop fade in" [style.display]="showEnquiryModal ? 'block' : 'none'"></div>
+		<div id="enquiry_popup" class="modal fade in" role="dialog" style="display: block" [style.display]="showEnquiryModal ? 'block' : 'none'">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" (click)="closeAllPopups()">&times;</button>
+						<h4 class="modal-title">
+							Enquiry
+						</h4>
+					</div>
+					<div class="modal-body" style="padding:0 15px;height: 450px;overflow-y: scroll;">
+						<div>
+							<div class="col-md-12 col-sm-12">
+								<div class="portlet  blue-hoki box">
+									<div class="portlet-title">
+										<div class="caption">
+											<i class="fa fa-user"></i>Customer Information
+										</div>
+
+									</div>
+									<div class="portlet-body" style="height:188px;">
+										<div class="row static-info">
+											<div class="col-md-5 name">
+												Contact Name&nbsp;:
+											</div>
+											<div class="col-md-7 value">
+												Ravi Marikala
+											</div>
+										</div>
+										<div class="row static-info">
+											<div class="col-md-5 name">
+												Email ID&nbsp;:
+											</div>
+											<div class="col-md-7 value">
+												ravi@nareen.com
+											</div>
+										</div>
+										<div class="row static-info">
+											<div class="col-md-5 name">
+												Phone Number&nbsp;:
+											</div>
+											<div class="col-md-7 value" style="margin-top:20px;">
+												999-999-9999
+											</div>
+										</div>
+										<div class="row static-info">
+											<div class="col-md-5 name">
+												Address&nbsp;:
+											</div>
+											<div class="col-md-7 value">
+												Miyapur,
+												<br />Hyderabad
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-md-12 col-sm-12">
+								<div class="portlet  blue-hoki box">
+									<div class="portlet-title">
+										<div class="caption">
+											<i class="fa fa-user"></i>venue Information
+										</div>
+
+									</div>
+									<div class="portlet-body" style="height:188px;">
+										<div class="row static-info">
+											<div class="col-md-5 name">
+												Venue Name&nbsp;:
+											</div>
+											<div class="col-md-7 value">
+												Naren Gardens
+											</div>
+										</div>
+										<div class="row static-info">
+											<div class="col-md-5 name">
+												Date &amp; Time &nbsp;:
+											</div>
+											<div class="col-md-7 value">
+												08-Dec-2017 01:00 am
+											</div>
+										</div>
+										<div class="row static-info">
+											<div class="col-md-5 name">
+												Quoted Amount&nbsp;:
+											</div>
+											<div class="col-md-7 value" style="margin-top:20px;">
+												27,000
+											</div>
+										</div>
+										<div class="row static-info">
+											<div class="col-md-5 name">
+												Additional Information &nbsp;:
+											</div>
+											<div class="col-md-7 value">
+												Check with customer
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer mFooter">
+						<button type="button" class="btn btn-default" data-dismiss="modal" (click)="closeAllPopups()">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<!--Appointment POPUP-->
+		<div class="modal-backdrop fade in" [style.display]="showAppointmentModal ? 'block' : 'none'"></div>
+		<div id="appointment_popup" class="modal fade in" role="dialog" style="display: block" [style.display]="showAppointmentModal ? 'block' : 'none'">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" (click)="closeAllPopups()">&times;</button>
+						<h4 class="modal-title">
+							Meeting
+						</h4>
+					</div>
+					<div class="modal-body" style="padding:0 15px">
+						<div>
+							<div class="col-md-12 col-sm-12">
+								<div class="portlet  blue-hoki box">
+									<div class="portlet-title">
+										<div class="caption">
+											<i class="fa fa-user"></i>Appointment Details
+										</div>
+									</div>
+									<div class="portlet-body" style="height:350px;">
+										<div class="row static-info">
+											<div class="col-md-5 name">
+												Meeting with:&nbsp;:
+											</div>
+											<div class="col-md-7 value">
+												flower vendor
+											</div>
+										</div>
+										<div class="row static-info">
+											<div class="col-md-5 name">
+												Date &amp; Time:
+											</div>
+											<div class="col-md-7 value">
+												27-Dec-2017 05:06 am
+											</div>
+										</div>
+										<div class="row static-info">
+											<div class="col-md-5 name">
+												Contact Name &nbsp;:
+											</div>
+											<div class="col-md-7 value">
+												Pavan Gill
+											</div>
+										</div>
+										<div class="row static-info">
+											<div class="col-md-5 name">
+												Email Id &nbsp;:
+											</div>
+											<div class="col-md-7 value">
+												fv@outlook.com
+											</div>
+										</div>
+										<div class="row static-info">
+											<div class="col-md-5 name">
+												Phone Number&nbsp;:
+											</div>
+											<div class="col-md-7 value">
+												999-999-9999
+											</div>
+										</div>
+										<div class="row static-info">
+											<div class="col-md-5 name">
+												Subject &nbsp;:
+											</div>
+											<div class="col-md-7 value">
+												test subject
+											</div>
+										</div>
+										<div class="row static-info">
+											<div class="col-md-5 name">
+												Location&nbsp;:
+											</div>
+											<div class="col-md-7 value">
+												Miyapur,
+												<br />Hyderabad
+											</div>
+										</div>
+										<div class="row static-info">
+											<div class="col-md-5 name">
+												Notes&nbsp;:
+											</div>
+											<div class="col-md-7 value">
+												This is important.
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+
+						</div>
+					</div>
+					<div class="modal-footer mFooter">
+						<button type="button" class="btn btn-default" data-dismiss="modal" (click)="closeAllPopups()">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
 	</div>
 </div>

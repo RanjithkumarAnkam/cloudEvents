@@ -4,49 +4,88 @@
 		<div class="col-sm-12 nopadding">
 			<div class="col-sm-1"></div>
 			<div class="col-sm-10 nopadding">
-				<table class="table table-hover table-bordered" [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="5">
+
+					<div class="col-sm-12 nopadding">
+							<div class="col-sm-3 nopadding">
+								<div class="col-sm-10 nopadding">
+									<input type="text" class="col-sm-5 form-control" placeholder="search keyword" />
+								</div>
+								<div class="col-sm-2 nopadding">
+									<button class="form-control" style="background-color:#eee">
+										<i class="glyphicon glyphicon-search"></i>
+									</button>
+								</div>
+							</div>
+							<div class="col-sm-3">
+								
+							</div>
+							<div class="col-sm-6 nopadding">
+								<div class="col-sm-6">
+									<div class="col-sm-3 nopadding">
+										<label class="control-label">From&nbsp;:</label>
+									</div>
+									<div class="col-sm-9 nopadding">
+										<input class="form-control" type="date" />
+									</div>
+								</div>
+								<div class="col-sm-6">
+									<div class="col-sm-3 nopadding">
+										<label class="control-label">To&nbsp;:</label>
+									</div>
+									<div class="col-sm-9 nopadding">
+										<input class="form-control" type="date" />
+									</div>
+								</div>
+							</div>
+						</div>
+				<table class="table table-hover table-bordered" [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="5" style='margin-top:50px'>
 					<thead>
 						<tr class="table-headers">
-							<th style="width: 16.66%">
-								<mfDefaultSorter by="num">Booking ID</mfDefaultSorter>
+							<th style="width: 10%">
+								<mfDefaultSorter by="fname">Vendor Name</mfDefaultSorter>
 							</th>
 
-							<th style="width: 16.66%">
-								<mfDefaultSorter by="fname">First Name</mfDefaultSorter>
-							</th>
-							<th style="width: 16.66%">
-								<mfDefaultSorter by="lname">Last Name</mfDefaultSorter>
-							</th>
-							<th style="width: 16.66%">
-								<mfDefaultSorter by="paid">Paid</mfDefaultSorter>
-							</th>
-							<th style="width: 16.66%">
+							<th style="width: 10%">
 								<mfDefaultSorter by="paymentdate">Payment Date
 								</mfDefaultSorter>
 							</th>
-							<th style="width: 16.66%">
+							<th style="width: 10%">
+								<mfDefaultSorter by="paid">Paid Amount</mfDefaultSorter>
+							</th>
+							<th style="width: 10%">
 								<mfDefaultSorter by="paymentmode">Payment Mode
+								</mfDefaultSorter>
+							</th>
+							<th style="width: 14%">
+								<mfDefaultSorter by="paymentmode">Invoice Num
+								</mfDefaultSorter>
+							</th>
+							<th style="width: 14%">
+								<mfDefaultSorter by="paymentmode">Reference Number
+								</mfDefaultSorter>
+							</th>
+							<th style="width: 10%">
+								<mfDefaultSorter by="paymentmode">Status
 								</mfDefaultSorter>
 							</th>
 						</tr>
 					</thead>
 					<tbody>
 						<tr *ngFor="let item of mf.data">
-							<td>
-								<a data-toggle="modal" data-target="#Eventdetailslog" title="Click to view payment details">{{item.num}}</a>
-							</td>
 
-							<td>{{item.fname}}</td>
-							<td>{{item.lname}}</td>
-							<td>{{item.paid}}</td>
+							<td>{{item.fname}} &nbsp; {{item.lname}}</td>
 							<td>{{item.paymentdate}}</td>
+							<td>{{item.paid}}</td>
 							<td>{{item.paymentmode}}</td>
+							<td>{{item.invoicenum}}</td>
+							<td>{{item.refnum}}</td>
+							<td>{{item.status}}</td>
 
 						</tr>
 					</tbody>
 					<tfoot>
 						<tr>
-							<td colspan="6">
+							<td colspan="7">
 								<mfBootstrapPaginator></mfBootstrapPaginator>
 							</td>
 						</tr>

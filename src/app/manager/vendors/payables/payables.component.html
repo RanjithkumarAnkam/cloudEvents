@@ -4,27 +4,49 @@
 		<div class="col-sm-12 nopadding">
 			<div class="col-sm-1"></div>
 			<div class="col-sm-10 nopadding">
-				<table class="table table-hover table-bordered" [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="5">
+				<div class="col-sm-12 nopadding">
+					<div class="col-sm-3 nopadding">
+						<div class="col-sm-10 nopadding">
+							<input type="text" class="col-sm-5 form-control" placeholder="search keyword" />
+						</div>
+						<div class="col-sm-2 nopadding">
+							<button class="form-control" style="background-color:#eee">
+								<i class="glyphicon glyphicon-search"></i>
+							</button>
+						</div>
+					</div>
+
+					<div class="col-sm-6 nopadding">
+						<div class="col-sm-6">
+							<div class="col-sm-3 nopadding">
+								<label class="control-label">From&nbsp;:</label>
+							</div>
+							<div class="col-sm-9 nopadding">
+								<input class="form-control" type="date" />
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="col-sm-3 nopadding">
+								<label class="control-label">To&nbsp;:</label>
+							</div>
+							<div class="col-sm-9 nopadding">
+								<input class="form-control" type="date" />
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<a class="btn btn-success pull-right" title="Click to add new customer" data-toggle="modal" data-target="#AddVendorPaymentModal">
+							<i class="fa fa-plus"></i>&nbsp;Add Vendor Payment</a>
+					</div>
+				</div>
+				<table class="table table-hover table-bordered" [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="5" style='margin-top:50px'>
 					<thead>
 						<tr class="table-headers">
 							<th style="width: 12.5%">
-								<mfDefaultSorter by="num">Booking ID</mfDefaultSorter>
-							</th>
-
-							<th style="width: 12.5%">
-								<mfDefaultSorter by="fname">First Name</mfDefaultSorter>
+								<mfDefaultSorter by="fname">Vendor Name</mfDefaultSorter>
 							</th>
 							<th style="width: 12.5%">
-								<mfDefaultSorter by="lname">Last Name</mfDefaultSorter>
-							</th>
-							<th style="width: 12.5%">
-								<mfDefaultSorter by="event">Event</mfDefaultSorter>
-							</th>
-							<th style="width: 12.5%">
-								<mfDefaultSorter by="eventdate">Event Date</mfDefaultSorter>
-							</th>
-							<th style="width: 12.5%">
-								<mfDefaultSorter by="venue">Venue</mfDefaultSorter>
+								<mfDefaultSorter by="eventdate">Due Date</mfDefaultSorter>
 							</th>
 							<th style="width: 12.5%">
 								<mfDefaultSorter by="totalamount">Total Amount</mfDefaultSorter>
@@ -33,21 +55,25 @@
 								<mfDefaultSorter by="pendingamount">Pending Amount
 								</mfDefaultSorter>
 							</th>
+							<th style="width: 6.5%">
+								<mfDefaultSorter by="pendingamount">View
+								</mfDefaultSorter>
+							</th>
 
 						</tr>
 					</thead>
 					<tbody>
 						<tr *ngFor="let item of mf.data">
-							<td>
-								<a class="" data-toggle="modal" data-target="#Eventdetails" title="Click to view event details">{{item.num}}</a>
-							</td>
-							<td>{{item.fname}}</td>
-							<td>{{item.lname}}</td>
-							<td>{{item.event}}</td>
+
+							<td>{{item.fname}}&nbsp;{{item.lname}}</td>
 							<td>{{item.eventdate}}</td>
-							<td>{{item.venue}}</td>
 							<td>{{item.totalamount}}</td>
 							<td>{{item.pendingamount}}</td>
+							<td class="text-center">
+								<a [routerLink]="['/manager/vendors/vendor-payment']">
+									<span class="glyphicon glyphicon-eye-open"></span>
+								</a>
+							</td>
 						</tr>
 
 					</tbody>
@@ -59,6 +85,69 @@
 						</tr>
 					</tfoot>
 				</table>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--Add new vendor payment popup-->
+
+<div class="modal fade" id="AddVendorPaymentModal" role="dialog">
+	<div class="modal-dialog modal-md">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">
+					<b>Add Vendor Payment</b>
+				</h4>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+					<div class="col-sm-12 margin-top-10">
+						<div class="col-sm-4">
+							<label class="add-member-label">Vendor Name&nbsp;: </label>
+						</div>
+						<div class="col-sm-6">
+							<input type="text" class="form-control" value="" />
+						</div>
+					</div>
+					<div class="col-sm-12 margin-top-10">
+						<div class="col-sm-4">
+							<label class="add-member-label">Amount&nbsp;: </label>
+						</div>
+						<div class="col-sm-6">
+							<input type="text" class="form-control" value="" />
+						</div>
+					</div>
+					<div class="col-sm-12 margin-top-10">
+						<div class="col-sm-4">
+							<label class="add-member-label">Due Date&nbsp;: </label>
+						</div>
+						<div class="col-sm-6">
+							<input type="date" class="form-control" value="" />
+						</div>
+					</div>
+					<div class="col-sm-12 margin-top-10">
+						<div class="col-sm-4">
+							<label class="add-member-label">Invoice Upload&nbsp;: </label>
+						</div>
+						<div class="col-sm-6">
+							<input type="file" class="form-control" value="" />
+						</div>
+					</div>
+					<div class="col-sm-12 margin-top-10">
+						<div class="col-sm-4">
+							<label class="add-member-label">Remarks&nbsp;: </label>
+						</div>
+						<div class="col-sm-6">
+							<input type="text" class="form-control" value="" />
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer mFooter padding20px">
+				<button type="button" class="btn btn-success" data-dismiss="modal" onclick="toastr.success('Vendor type added successfully');">Save</button>
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 			</div>
 		</div>
 	</div>
@@ -105,12 +194,24 @@
 						<tbody>
 							<tr>
 
-								<td><a style="color:#000">Advance</a></td>
-								<td><a style="color:#000">12/09/17</a></td>
-								<td><a style="color:#000">Cash</a></td>
-								<td><a style="color:#000">20000</a></td>
-								<td><a style="color:#000">30000</a></td>
-								<td><a style="color:#000">20/09/17</a></td>
+								<td>
+									<a style="color:#000">Advance</a>
+								</td>
+								<td>
+									<a style="color:#000">12/09/17</a>
+								</td>
+								<td>
+									<a style="color:#000">Cash</a>
+								</td>
+								<td>
+									<a style="color:#000">20000</a>
+								</td>
+								<td>
+									<a style="color:#000">30000</a>
+								</td>
+								<td>
+									<a style="color:#000">20/09/17</a>
+								</td>
 								<td class="text-center">
 									<a class="">
 										<label class="switch" style="border-radius: 30px !important;">
@@ -122,12 +223,24 @@
 							</tr>
 							<tr>
 
-								<td><a style="color:#000">First Payment</a></td>
-								<td><a style="color:#000">18/08/17</a></td>
-								<td><a style="color:#000">Cash</a></td>
-								<td><a style="color:#000">10000</a></td>
-								<td><a style="color:#000">20000</a></td>
-								<td><a style="color:#000">18/09/17</a></td>
+								<td>
+									<a style="color:#000">First Payment</a>
+								</td>
+								<td>
+									<a style="color:#000">18/08/17</a>
+								</td>
+								<td>
+									<a style="color:#000">Cash</a>
+								</td>
+								<td>
+									<a style="color:#000">10000</a>
+								</td>
+								<td>
+									<a style="color:#000">20000</a>
+								</td>
+								<td>
+									<a style="color:#000">18/09/17</a>
+								</td>
 								<td class="text-center">
 									<a class="">
 										<label class="switch" style="border-radius: 30px !important;">
