@@ -5,6 +5,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { AppRoutingModule } from './/app-routing.module';
 import { TourNgBootstrapModule } from 'ngx-tour-ng-bootstrap';
+import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -26,6 +27,7 @@ import { ManagerLayoutComponent } from './manager/manager-layout/manager-layout.
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpModule,
 	TourNgBootstrapModule.forRoot()
     
   ],

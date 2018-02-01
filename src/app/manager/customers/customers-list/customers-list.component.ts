@@ -7,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CustomersListComponent implements OnInit {
 
-
+  showBookingsModal = false;
+  showEnquiryModal = false;
+  showAppointmentModal = false; 
   data: any[] = [
     { num: 'C0001', fname: 'Ranjith', lname: 'Kumar', email: 'ranjith@optionmatrix.com', phone: '9492913218', city: 'Hyderabad', bookings: '2', enquiries: '2', appointments: '2' },
     { num: 'C0002', fname: 'Vishal', lname: 'Babu', email: 'Vishal@optionmatrix.com', phone: '9701234565', city: 'Pune', bookings: '2', enquiries: '2', appointments: '2' },
@@ -23,6 +25,23 @@ export class CustomersListComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+  handleEventClick(e) {
+    console.log(e)
+    if (e == 1) {
+      this.showBookingsModal = true;
+    }
+    else if (e == 2) {
+      this.showEnquiryModal = true;
+    }
+    else if (e == 3) {
+      this.showAppointmentModal = true;
+    }
+  }
+  closeAllPopups() {
+    this.showBookingsModal = false;
+    this.showEnquiryModal = false;
+    this.showAppointmentModal = false;
   }
 
 }

@@ -5,9 +5,22 @@
 			<div class="col-sm-1"></div>
 			<div class="col-sm-10 nopadding">
 				<div class="col-sm-12 nopadding">
-					<a class="btn btn-success pull-right" data-toggle="modal" data-target="#AddVendorModal">
-						<i class="fa fa-plus"></i>&nbsp;&nbsp;Add Vendor
-					</a>
+					<div class="col-sm-3 nopadding">
+						<div class="col-sm-10 nopadding">
+							<input type="text" class="col-sm-5 form-control" placeholder="search keyword" />
+						</div>
+						<div class="col-sm-2 nopadding">
+							<button class="form-control" style="background-color:#eee">
+								<i class="glyphicon glyphicon-search"></i>
+							</button>
+						</div>
+					</div>
+
+					<div class="col-sm-9 nopadding">
+						<a class="btn btn-success pull-right" data-toggle="modal" data-target="#AddVendorModal">
+							<i class="fa fa-plus"></i>&nbsp;&nbsp;Add Vendor
+						</a>
+					</div>
 				</div>
 				<div class="col-md-12 nopadding"></div>
 				<div class="col-sm-12 nopadding  margin-top-10">
@@ -15,10 +28,7 @@
 						<thead>
 							<tr class="table-headers">
 								<th style="width: 16.66%">
-									<mfDefaultSorter by="fname">First Name</mfDefaultSorter>
-								</th>
-								<th style="width: 16.66%">
-									<mfDefaultSorter by="lname">Last Name</mfDefaultSorter>
+									<mfDefaultSorter by="fname">Name</mfDefaultSorter>
 								</th>
 								<th style="width: 16.66%">
 									<mfDefaultSorter by="vendortype">Vendor Type
@@ -34,16 +44,13 @@
 								<th style="width: 16.66%">
 									<mfDefaultSorter by="company">Company</mfDefaultSorter>
 								</th>
-								<th class="text-center" style="width: 16.66%">Actions</th>
+								<th class="text-center" style="width: 16.66%">Delete</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr *ngFor="let item of mf.data">
 								<td>
-									<a title="Click to update values" data-toggle="modal" data-target="#EditVendorModal" style="color:#000">{{item.fname}}</a>
-								</td>
-								<td>
-									<a title="Click to update values" data-toggle="modal" data-target="#EditVendorModal" style="color:#000">{{item.lname}}</a>
+									<a title="Click to update values" data-toggle="modal" data-target="#EditVendorModal" style="color:#000">{{item.fname}}&nbsp;{{item.lname}}</a>
 								</td>
 								<td>
 									<a title="Click to update values" data-toggle="modal" data-target="#EditVendorModal" style="color:#000">{{item.vendortype}}</a>
