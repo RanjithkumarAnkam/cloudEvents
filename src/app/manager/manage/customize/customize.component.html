@@ -3,190 +3,376 @@
         <app-manager-manage-screens></app-manager-manage-screens>
         <div class="col-sm-12 nopadding">
             <div class="col-sm-1"></div>
-            <div class="col-sm-10 nopadding">
+            <div class="col-sm-10 margin-top-20 nopadding">
                 <div class="col-sm-12 nopadding">
-                    <div class="col-sm-3 margin-top-20">
-                        <div class="panel panel-default panelcolor cursorpointer tbodycls">
-                            <div [ngClass]="(dashboardbody==true)?'panelcoloractive panel-body':'panel-body'" class="panel-body" id="dashboardid" (click)="onClick($event)">
-                                Dashboard
-                                <i class="fa fa-angle-right pull-right"></i>
-                            </div>
-                        </div>
-                        <div class="panel panel-default panelcolor cursorpointer tbodycls">
-                            <div [ngClass]="(calendarbody==true)?'panelcoloractive panel-body':'panel-body'" id="calendarid" (click)="onClick($event)">
-                                Calendar
-                                <i class="fa fa-angle-right pull-right"></i>
-                            </div>
-                        </div>
-                        <div class="panel panel-default panelcolor cursorpointer tbodycls">
-                            <div [ngClass]="(customerbody==true)?'panelcoloractive panel-body':'panel-body'" id="customerid" (click)="onClick($event)">
-                                Customers
-                                <i class="fa fa-angle-right pull-right"></i>
-                            </div>
-                        </div>
-                        <div class="panel panel-default panelcolor cursorpointer tbodycls">
-                            <div [ngClass]="(vendorbody==true)?'panelcoloractive panel-body':'panel-body'" id="vendorid" (click)="onClick($event)">
-                                Vendors
-                                <i class="fa fa-angle-right pull-right"></i>
-                            </div>
-                        </div>
-                        <div class="panel panel-default panelcolor cursorpointer tbodycls">
-                            <div [ngClass]="(managebody==true)?'panelcoloractive panel-body':'panel-body'" id="manageid" (click)="onClick($event)">
-                                Manage
-                                <i class="fa fa-angle-right pull-right"></i>
-                            </div>
-                        </div>
-                        <div class="panel panel-default panelcolor cursorpointer tbodycls">
-                            <div [ngClass]="(gallerybody==true)?'panelcoloractive panel-body':'panel-body'" id="galleryid" (click)="onClick($event)">
-                                Gallery
-                                <i class="fa fa-angle-right pull-right"></i>
-                            </div>
-                        </div>
+
+                    <div class="col-sm-12">
+                        <h2 class="page-title">Customize Screens</h2>
                     </div>
-                    <div class="col-sm-1"></div>
-                    <div class="col-sm-5 nopadding margin-top-20">
-                        <table class="table table-hover table-bordered table-responsive">
+
+                </div>
+                <!-- All permissions table -->
+                <div class="col-sm-6 nopadding margin-top-20">
+
+                    <div class="col-sm-12">
+                        <table class="table table-bordered table-hover table-responsive">
                             <thead>
                                 <tr>
-                                    <th>Screen Name</th>
-                                    <th class="text-center">Visibility</th>
+                                    <th style="width: 10%;text-align:center;">Select</th>
+                                    <th>Permission</th>
                                 </tr>
                             </thead>
-                            <tbody *ngIf="dashboardbody" id="dashboardidbody" class="">
+                            <!---List of permissions-->
+                            <tbody>
                                 <tr>
-                                    <td>Dashboard</td>
                                     <td>
                                         <input type="checkbox" class="form-control" style="height:auto;" />
                                     </td>
-                                </tr>
-                            </tbody>
-                            <tbody *ngIf="calendarbody" id="calendaridbody" class="">
-                                <tr>
-                                    <td>Bookings</td>
                                     <td>
-                                        <input type="checkbox" class="form-control" style="height:auto;" />
+                                        <b>View Dashboard</b>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>Enquiry</td>
                                     <td>
-                                        <input type="checkbox" class="form-control" style="height:auto;" />
+                                        <input type="checkbox" style="height:auto;" class="form-control" />
+                                    </td>
+                                    <td>
+                                        <b>Calendar</b>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>Appointment</td>
                                     <td>
-                                        <input type="checkbox" class="form-control" style="height:auto;" />
+                                        <input type="checkbox" style="height:auto;" class="form-control" />
+                                    </td>
+                                    <td>Add New Booking</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" style="height:auto;" class="form-control" />
+                                    </td>
+                                    <td>Update Bookings</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" style="height:auto;" class="form-control" />
+                                    </td>
+                                    <td>Delete Bookings</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" style="height:auto;" class="form-control" />
+                                    </td>
+                                    <td>Add Enquiry</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" style="height:auto;" class="form-control" />
+                                    </td>
+                                    <td>Update Enquiry</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" style="height:auto;" class="form-control" />
+                                    </td>
+                                    <td>Delete Enquiry</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" style="height:auto;" class="form-control" />
+                                    </td>
+                                    <td>Add Appointment</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" style="height:auto;" class="form-control" />
+                                    </td>
+                                    <td>Update Appointment</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" style="height:auto;" class="form-control" />
+                                    </td>
+                                    <td>Delete Appointment</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" style="height:auto;" class="form-control" />
+                                    </td>
+                                    <td>Drag and drop events</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" style="height:auto;" class="form-control" />
+                                    </td>
+                                    <td>Mark as holiday</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" style="height:auto;" class="form-control" />
+                                    </td>
+                                    <td>
+                                        <b>View Customers</b>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>Mark this as a Holiday</td>
                                     <td>
-                                        <input type="checkbox" class="form-control" style="height:auto;" />
+                                        <input type="checkbox" style="height:auto;" class="form-control" />
                                     </td>
+                                    <td>Add Customer</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" style="height:auto;" class="form-control" />
+                                    </td>
+                                    <td>Update Customer</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" style="height:auto;" class="form-control" />
+                                    </td>
+                                    <td>Delete Customer</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" style="height:auto;" class="form-control" />
+                                    </td>
+                                    <td>View Activity</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" style="height:auto;" class="form-control" />
+                                    </td>
+                                    <td>View Receivables</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" style="height:auto;" class="form-control" />
+                                    </td>
+                                    <td>Add Customer Payments</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" style="height:auto;" class="form-control" />
+                                    </td>
+                                    <td>Update Customer Payments</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" style="height:auto;" class="form-control" />
+                                    </td>
+                                    <td>View Paymentlog</td>
                                 </tr>
 
-                            </tbody>
-                            <tbody *ngIf="customerbody" id="customeridbody" class="">
                                 <tr>
-                                    <td>Customers</td>
                                     <td>
-                                        <input type="checkbox" class="form-control" style="height:auto;" />
+                                        <input type="checkbox" style="height:auto;" class="form-control" />
+                                    </td>
+                                    <td>
+                                        <b>View Vendors</b>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>Activity</td>
                                     <td>
-                                        <input type="checkbox" class="form-control" style="height:auto;" />
+                                        <input type="checkbox" style="height:auto;" class="form-control" />
                                     </td>
+                                    <td>Add Vendor</td>
                                 </tr>
                                 <tr>
-                                    <td>Receivables</td>
                                     <td>
-                                        <input type="checkbox" class="form-control" style="height:auto;" />
+                                        <input type="checkbox" style="height:auto;" class="form-control" />
                                     </td>
-                                </tr>
-                                <tr>
-                                    <td>Payment log</td>
-                                    <td>
-                                        <input type="checkbox" class="form-control" style="height:auto;" />
-                                    </td>
-                                </tr>
-
-                            </tbody>
-                            <tbody *ngIf="vendorbody" id="vendoridbody" class="">
-                                <tr>
-                                    <td>Vendors</td>
-                                    <td>
-                                        <input type="checkbox" class="form-control" style="height:auto;" />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Vendor Types</td>
-                                    <td>
-                                        <input type="checkbox" class="form-control" style="height:auto;" />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Payables</td>
-                                    <td>
-                                        <input type="checkbox" class="form-control" style="height:auto;" />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Paid</td>
-                                    <td>
-                                        <input type="checkbox" class="form-control" style="height:auto;" />
-                                    </td>
-                                </tr>
-
-                            </tbody>
-                            <tbody *ngIf="managebody" id="manageidbody" class="">
-                                <tr>
-                                    <td>Venues</td>
-                                    <td>
-                                        <input type="checkbox" class="form-control" style="height:auto;" />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Services &amp; Facilities</td>
-                                    <td>
-                                        <input type="checkbox" class="form-control" style="height:auto;" />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Staff Users</td>
-                                    <td>
-                                        <input type="checkbox" class="form-control" style="height:auto;" />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Food menus &amp; Decorations</td>
-                                    <td>
-                                        <input type="checkbox" class="form-control" style="height:auto;" />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Customize Screens</td>
-                                    <td>
-                                        <input type="checkbox" class="form-control" style="height:auto;" />
-                                    </td>
-                                </tr>
-                            </tbody>
-                            <tbody *ngIf="gallerybody" id="galleryidbody" class="">
-
-                                <tr>
-                                    <td>Gallery</td>
-                                    <td>
-                                        <input type="checkbox" class="form-control" style="height:auto;" />
-                                    </td>
+                                    <td>Update Vendor</td>
                                 </tr>
 
                             </tbody>
                         </table>
                     </div>
                 </div>
+                <div class="col-sm-6 nopadding margin-top-20">
+
+                    <div class="col-sm-12">
+                        <table class="table table-bordered table-hover table-responsive">
+                            <thead>
+                                <tr>
+                                    <th style="width: 10%;text-align:center;">Select</th>
+                                    <th>Permission</th>
+                                </tr>
+                            </thead>
+                            <!---List of permissions-->
+                            <tbody>
+
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" style="height:auto;" class="form-control" />
+                                    </td>
+                                    <td>Delete Vendor</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" style="height:auto;" class="form-control" />
+                                    </td>
+                                    <td>View Vendor Type</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" style="height:auto;" class="form-control" />
+                                    </td>
+                                    <td>Add Vendor Type</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" style="height:auto;" class="form-control" />
+                                    </td>
+                                    <td>Delete Vendor Type</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" style="height:auto;" class="form-control" />
+                                    </td>
+                                    <td>View Payables</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" style="height:auto;" class="form-control" />
+                                    </td>
+                                    <td>Add Vendors Payments</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" style="height:auto;" class="form-control" />
+                                    </td>
+                                    <td>Update Vendors Payments</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" style="height:auto;" class="form-control" />
+                                    </td>
+                                    <td>View Paid</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" style="height:auto;" class="form-control" />
+                                    </td>
+                                    <td>
+                                        <b>View Manage</b>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" style="height:auto;" class="form-control" />
+                                    </td>
+                                    <td>Add Venue</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" style="height:auto;" class="form-control" />
+                                    </td>
+                                    <td>Update Venue</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" style="height:auto;" class="form-control" />
+                                    </td>
+                                    <td>Delete Venue</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" style="height:auto;" class="form-control" />
+                                    </td>
+                                    <td>Add New Sevrice</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" style="height:auto;" class="form-control" />
+                                    </td>
+                                    <td>Update Sevrice</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" style="height:auto;" class="form-control" />
+                                    </td>
+                                    <td>Delete Sevrice</td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" style="height:auto;" class="form-control" />
+                                    </td>
+                                    <td>Add Staff Users</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" style="height:auto;" class="form-control" />
+                                    </td>
+                                    <td>Update Staff Users</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" style="height:auto;" class="form-control" />
+                                    </td>
+                                    <td>Delete Staff Users</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" style="height:auto;" class="form-control" />
+                                    </td>
+                                    <td>Set Permissions</td>
+                                </tr>
+
+
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" style="height:auto;" class="form-control" />
+                                    </td>
+                                    <td>Add New item in Food & Decoration</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" style="height:auto;" class="form-control" />
+                                    </td>
+                                    <td>Update item in Food & Decoration</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" style="height:auto;" class="form-control" />
+                                    </td>
+                                    <td>Delete item in Food & Decoration</td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" style="height:auto;" class="form-control" />
+                                    </td>
+                                    <td>Customize Screen Options</td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" style="height:auto;" class="form-control" />
+                                    </td>
+                                    <td>Set Permissions</td>
+                                </tr>
+
+
+
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" style="height:auto;" class="form-control" />
+                                    </td>
+                                    <td>
+                                        <b>View Gallery</b>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="col-sm-12 nopadding">
+                            <a class="btn btn-success pull-right" id="btnsubmit">Update</a>
+                            <a class="btn btn-default pull-right" style="margin-right:20px">Cancel</a>
+                        </div>
+                    </div>
+                </div>
             </div>
+            <div class="col-sm-1"></div>
         </div>
     </div>
 </div>

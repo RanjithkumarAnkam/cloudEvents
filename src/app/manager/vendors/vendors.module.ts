@@ -7,6 +7,7 @@ import { PaidListComponent } from './paid-list/paid-list.component';
 import { VendorsRoutingModule } from './vendors-routing.module';
 import { PartialViewsModule } from '../../partial-views/partial-views.module';
 import { DataTableModule } from 'angular2-datatable/lib/DataTableModule';
+import { VendorPaymentComponent } from './vendor-payment/vendor-payment.component';
 
 @NgModule({
   imports: [
@@ -15,6 +16,6 @@ import { DataTableModule } from 'angular2-datatable/lib/DataTableModule';
     PartialViewsModule,
     DataTableModule
   ],
-  declarations: [VendorsListComponent, VendorTypeComponent, PayablesComponent, PaidListComponent]
+  declarations: [VendorsListComponent, VendorTypeComponent, PayablesComponent, PaidListComponent, VendorPaymentComponent]
 })
 export class VendorsModule { }

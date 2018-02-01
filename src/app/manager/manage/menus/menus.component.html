@@ -5,28 +5,31 @@
 			<div class="col-sm-1"></div>
 			<div class="col-sm-10 nopadding">
 				<div class="col-sm-12 nopadding">
-					<div class="col-sm-8 margin-top-10 nopadding">
-						<div class="col-sm-4">
-							<label class="add-member-label">Venue&nbsp;: </label>
+					<div class="col-sm-3 nopadding">
+						<div class="col-sm-10 nopadding">
+							<input type="text" class="col-sm-5 form-control" placeholder="search keyword" />
 						</div>
-						<div class="col-sm-6 nopadding">
-							<div class="input-group col-sm-12">
-								<select class="form-control">
-									<option>All Venues</option>
-									<option>Naren Convention</option>
-									<option>Naren Gardens</option>
-									<option>Naren Platinum</option>
-									<option>Naren Community</option>
-								</select>
-							</div>
+						<div class="col-sm-2 nopadding">
+							<button class="form-control" style="background-color:#eee">
+								<i class="glyphicon glyphicon-search"></i>
+							</button>
 						</div>
 					</div>
-					<div class="col-sm-4 margin-top-10">
+					<div class="col-sm-5">
+						<div class="col-sm-2" style="padding-right:0 !important">
+							<label class="control-label ">Venue&nbsp;:</label>
+						</div>
+						<div class="col-sm-8 nopadding">
+								<p-multiSelect [options]="venuesList" [(ngModel)]="selectedVenues" defaultLabel='All Venues' (onChange)="selectMenuChange()"></p-multiSelect>
+						</div>
+					</div>
+					<div class="col-sm-4 nopadding">
 						<a class="btn btn-success pull-right" data-toggle="modal" data-target="#addfoodmenu">
 							<i class="fa fa-plus"></i>&nbsp;&nbsp;Add New
 						</a>
 					</div>
 				</div>
+
 
 				<div class="row">
 					<div class="col-md-12 nopadding">

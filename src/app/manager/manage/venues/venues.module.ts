@@ -9,6 +9,7 @@ import { VenuesRoutingModule } from './venues-routing.module';
 import { PartialViewsModule } from '../../../partial-views/partial-views.module';
 import { DataTableModule } from 'angular2-datatable/lib/DataTableModule';
 import { FormsModule } from '@angular/forms';
+import { MultiSelectModule } from 'primeng/primeng';
 
 @NgModule({
   imports: [
@@ -16,7 +17,8 @@ import { FormsModule } from '@angular/forms';
     VenuesRoutingModule,
     PartialViewsModule,
     DataTableModule,
-	FormsModule
+    FormsModule,
+    MultiSelectModule
   ],
   declarations: [VenueListComponent, BasicDetailsComponent, ContactDetailsComponent, MediaComponent, SummaryComponent]
 })

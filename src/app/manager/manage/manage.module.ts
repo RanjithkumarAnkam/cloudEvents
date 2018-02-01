@@ -7,13 +7,17 @@ import { CustomizeComponent } from './customize/customize.component';
 import { ManageRoutingModule } from './/manage-routing.module';
 import { PartialViewsModule } from '../../partial-views/partial-views.module';
 import { DataTableModule } from 'angular2-datatable/lib/DataTableModule';
+import { FormsModule } from '@angular/forms';
+import {MultiSelectModule} from 'primeng/primeng';
 
 @NgModule({
   imports: [
     CommonModule,
     ManageRoutingModule,
     PartialViewsModule,
-    DataTableModule
+    DataTableModule,
+    MultiSelectModule,
+    FormsModule
   ],
   declarations: [ServicesFacilitiesComponent, UsersComponent, MenusComponent, CustomizeComponent]
 })

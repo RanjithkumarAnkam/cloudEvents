@@ -11,6 +11,12 @@
                 <small>Your subscription details can be managed here.</small>
               </p>
             </h3>
+
+          </div>
+          <div class="col-sm-2 nopadding" style="margin-top:50px">
+            <a [routerLink]="['/manager/manage/venues']" class="btn btn-default pull-right">
+              <i class="fa fa-angle-left" style="margin-right:5px;"></i> Back
+            </a>
           </div>
         </div>
 
@@ -23,6 +29,9 @@
             </li>
             <li>
               <a data-toggle="tab" href="#paymentLogTable">Payment Log</a>
+            </li>
+            <li>
+              <a data-toggle="tab" href="#termsOfUse">Terms Of use</a>
             </li>
           </ul>
           <div class="tab-content">
@@ -40,7 +49,7 @@
                     </div>
                     <div class="col-sm-2 nopadding">
                       <label class="col-sm-12">
-                        No.of Venues&nbsp;:&nbsp;
+                        Max No.of Venues&nbsp;:&nbsp;
                       </label>
                       <p class="col-sm-12">
                         <b>1</b>
@@ -50,14 +59,14 @@
                       <label class="col-sm-12">
                         Price&nbsp; </label>
                       <p class="col-sm-12">
-                        <b>7,000 / User</b>
+                        <b>7,000 / Month</b>
                       </p>
                     </div>
                     <div class="col-sm-2 nopadding">
                       <label class="col-sm-12">Auto Renewal</label>
-                      <a class="col-sm-12 ">
-                        <label class="switch" style="border-radius: 30px !important;margin-top:10px;">
-                          <input type="checkbox">
+                      <a class="col-sm-8" style="text-align:center">
+                        <label class="switch" style="border-radius: 30px !important;margin-top:5px;">
+                          <input type="checkbox" checked disabled>
                           <span class="slider round"></span>
                         </label>
                       </a>
@@ -88,7 +97,7 @@
                       <mfDefaultSorter by="num">Package Name</mfDefaultSorter>
                     </th>
                     <th style="width: 10%">
-                      <mfDefaultSorter by="name">No.Of Venues</mfDefaultSorter>
+                      <mfDefaultSorter by="name">Max No.Of Venues</mfDefaultSorter>
                     </th>
                     <th style="width: 15%">
                       <mfDefaultSorter by="price">Price</mfDefaultSorter>
@@ -120,37 +129,96 @@
             </div>
             <div id="paymentLogTable" class="tab-pane fade">
               <h3>Payment Logs</h3>
-              <table class="table table-hover table-bordered margin-top-10" [mfData]="data2" #one="mfDataTable" [mfRowsOnPage]="5">
-                <thead>
-                  <tr class="table-headers">
-                    <th style="width: 33.33%">
-                      <mfDefaultSorter by="paymentId">Payment Id
-                      </mfDefaultSorter>
-                    </th>
-                    <th style="width: 33.33%">
-                      <mfDefaultSorter by="time">Date &amp; Time</mfDefaultSorter>
-                    </th>
-                    <th style="width: 33.33%">
-                      <mfDefaultSorter by="packagename">Package Name</mfDefaultSorter>
-                    </th>
-                    <th style="width: 33.33%">
-                      <mfDefaultSorter by="amount">Amount</mfDefaultSorter>
-                    </th>
-                    <th style="width: 33.33%">
-                      <mfDefaultSorter by="status">Status</mfDefaultSorter>
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr *ngFor="let items of one.data">
-                    <td>{{items.paymentId}}</td>
-                    <td>{{items.time}}</td>
-                    <td>{{items.packagename}}</td>
-                    <td>{{items.amount}}</td>
-                    <td>{{items.status}}</td>
-                  </tr>
-                </tbody>
-              </table>
+              <div class="col-sm-12 nopadding  margin-top-20">
+                <div class="col-sm-3 nopadding">
+                  <div class="col-sm-10 nopadding">
+                    <input type="text" class="col-sm-5 form-control" placeholder="search keyword" />
+                  </div>
+                  <div class="col-sm-2 nopadding">
+                    <button class="form-control" style="background-color:#eee">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="col-sm-3">
+
+                </div>
+                <div class="col-sm-6 nopadding">
+                  <div class="col-sm-6">
+                    <div class="col-sm-3 nopadding">
+                      <label class="control-label">From&nbsp;:</label>
+                    </div>
+                    <div class="col-sm-9 nopadding">
+                      <input class="form-control" type="date" />
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="col-sm-3 nopadding">
+                      <label class="control-label">To&nbsp;:</label>
+                    </div>
+                    <div class="col-sm-9 nopadding">
+                      <input class="form-control" type="date" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-12 nopadding  margin-top-20">
+                <table class="table table-hover table-bordered margin-top-20" [mfData]="data2" #one="mfDataTable" [mfRowsOnPage]="5">
+                  <thead>
+                    <tr class="table-headers">
+                      <th style="width: 33.33%">
+                        <mfDefaultSorter by="paymentId">Transaction Id
+                        </mfDefaultSorter>
+                      </th>
+                      <th style="width: 33.33%">
+                        <mfDefaultSorter by="time">Date &amp; Time</mfDefaultSorter>
+                      </th>
+                      <th style="width: 33.33%">
+                        <mfDefaultSorter by="packagename">Package Name</mfDefaultSorter>
+                      </th>
+                      <th style="width: 33.33%">
+                        <mfDefaultSorter by="amount">Amount</mfDefaultSorter>
+                      </th>
+                      <th style="width: 33.33%">
+                        <mfDefaultSorter by="status">Status</mfDefaultSorter>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let items of one.data">
+                      <td>{{items.paymentId}}</td>
+                      <td>{{items.time}}</td>
+                      <td>{{items.packagename}}</td>
+                      <td>{{items.amount}}</td>
+                      <td>{{items.status}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div id="termsOfUse" class="tab-pane fade">
+              <div class='col-sm-12 margin-top-20' style="border: 1px solid #dcdada;padding:40px">
+                <h4>
+                  <b>
+                    <u>Terms Of Use</u>
+                  </b>
+                </h4>
+                <p style="text-align:justify">
+                  <b>These Wix.com Terms of Use (“Terms of Use”), together with our Privacy Policy available at http://www.wix.com/about/privacy
+                    (“Privacy Policy”), and such additional terms which specifically apply to some of our services and features
+                    as presented on the Wix.com website(s) (“Wix Website”, and collectively – the “Wix Terms”), all set forth
+                    the entire terms and conditions applicable to each visitor or user (“User” our “you”) of the Wix Website,
+                    the Wix mobile application (the “Wix App”) and/or any other services, applications and features offered
+                    by us with respect thereto, except where we explicitly state otherwise (all services offered through
+                    the Wix Website or the Wix App, collectively – the “Wix Services” or “Services”). The Wix Terms constitute
+                    a binding and enforceable legal contract between Wix.com Ltd. and its affiliated companies and subsidiaries
+                    worldwide (“Wix”, “us” or “we”) and you in relation to the use of any Wix Services - so please read them
+                    carefully
+                  </b>
+                </p>
+                <input type="checkbox" checked disable/>&nbsp;&nbsp;
+                <b>I Agree</b>
+              </div>
             </div>
           </div>
         </div>
@@ -190,7 +258,7 @@
             <div class="col-sm-12  margin-top-10">
               <div class="col-sm-5">
                 <label>
-                  <b>No.Of Venues&nbsp;:</b>
+                  <b>Max No.Of Venues&nbsp;:</b>
                 </label>
               </div>
               <div class="col-sm-7">
@@ -201,11 +269,11 @@
             <div class="col-sm-12  margin-top-10">
               <div class="col-sm-5">
                 <label>
-                  <b>Price per User&nbsp;:</b>
+                  <b>Price per Month&nbsp;:</b>
                 </label>
               </div>
               <div class="col-sm-7">
-                <label>7,000</label>
+                <label>8,000</label>
               </div>
             </div>
             <div class="col-sm-12  margin-top-10">
