@@ -249,7 +249,7 @@ ul.bs-autocomplete-menu {
     right: 0;
 }
 
-@@-webkit-keyframes load3 {
+@-webkit-keyframes load3 {
     0% {
         -webkit-transform: rotate(0deg);
         transform: rotate(0deg);
@@ -261,7 +261,7 @@ ul.bs-autocomplete-menu {
     }
 }
 
-@@keyframes load3 {
+@keyframes load3 {
     0% {
         -webkit-transform: rotate(0deg);
         transform: rotate(0deg);
@@ -480,4 +480,28 @@ div[data-title]:hover:after {
 #add_enquiry_second_list::after{
     left: -45% !important;
     width:90% !important;
+}
+
+.help-balloon{
+    position:absolute;
+   /* min-height:77px;*/
+    background:#186ba0;
+    right:0;
+    z-index:999;
+    width:300px;
+    color:#fff;
+    padding:10px;
+    font-weight:bold;
+    top:-15px;
+}
+.help-balloon:after
+{
+    position: absolute;
+    left: 50px;
+    display: inline-block !important;
+    border-right: 20px solid transparent;
+    border-top: 15px solid #186ba0;
+    border-left: 0px solid transparent;
+    content: '';
+    bottom: -15px;
 }

@@ -37,6 +37,7 @@ export class ViewComponent implements OnInit {
     showBookingsModal = false;
     showEnquiryModal = false;
     showAppointmentModal = false;
+    show_help_balloon = true;
 
 
     vendorEnable: boolean = false;
@@ -388,6 +389,10 @@ export class ViewComponent implements OnInit {
         this.showEnquiryModal = false;
         this.showAppointmentModal = false;
         document.getElementById("btnClosebands").click();
+    }
+
+    hideHelpBalloon(){
+        this.show_help_balloon = false;
     }
 
 }

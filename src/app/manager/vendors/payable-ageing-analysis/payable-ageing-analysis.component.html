@@ -1,0 +1,115 @@
+<div class="page-content-wrapper">
+  <div class="page-content clearfix ">
+    <app-manager-vendors></app-manager-vendors>
+    <div class="col-sm-12 nopadding">
+      <div class="col-sm-10 col-sm-offset-1 nopadding">
+        <div class="col-sm-12" style="background:#efefef;padding:10px;">
+          <div class="col-sm-3 nopadding">
+            <div class="col-sm-10 nopadding">
+              <input type="text" class="col-sm-5 form-control" placeholder="search keyword" />
+            </div>
+            <div class="col-sm-2 nopadding">
+              <button class="form-control" style="background-color:#eee">
+                <i class="glyphicon glyphicon-search"></i>
+              </button>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="col-sm-4">
+              <label class="control-label ">Venue&nbsp;:</label>
+            </div>
+            <div class="col-sm-8">
+              <p-multiSelect [options]="venuesList" [(ngModel)]="selectedVenues" defaultLabel='All Venues' (onChange)="selectMenuChange()"></p-multiSelect>
+            </div>
+          </div>
+          <div class="col-sm-5 nopadding">
+            <div class="col-sm-6">
+              <div class="col-sm-3 nopadding">
+                <label class="control-label">From&nbsp;:</label>
+              </div>
+              <div class="col-sm-9 nopadding">
+                <input class="form-control" type="date" />
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="col-sm-3 nopadding">
+                <label class="control-label">To&nbsp;:</label>
+              </div>
+              <div class="col-sm-9 nopadding">
+                <input class="form-control" type="date" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 nopadding margin-top-10">
+          <!-- BEGIN CHART PORTLET-->
+          <chart class="col-md-6 nopadding" [options]="options" class="col-sm-6" style="margin-top: 15px; height: 400px; margin: 0 auto"></chart>
+          <!-- END CHART PORTLET-->
+          <!-- BEGIN CHART PORTLET-->
+          <chart class="col-md-6 nopadding" [options]="options_two" class="col-sm-6" style="margin-top: 15px; height: 400px; margin: 0 auto"></chart>
+          <!-- END CHART PORTLET-->
+        </div>
+        <div class="col-sm-12 nopadding margin-top-10">
+          <div class="col-sm-12 nopadding">
+            <label style="font-size: 20px;">Upcoming Receivables</label>
+            <table class="table table-hover table-bordered margin-top-10" [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="5">
+              <thead>
+                <tr class="table-headers">
+                  <th style="width: 25%">
+                    <mfDefaultSorter by="vendor">Vendor Name
+                    </mfDefaultSorter>
+                  </th>
+                  <th style="width: 25%">
+                    <mfDefaultSorter by="duedate">Due Date</mfDefaultSorter>
+                  </th>
+                  <th style="width: 25%">
+                    <mfDefaultSorter by="totalamount">Total Amount</mfDefaultSorter>
+                  </th>
+                  <th style="width: 25%">
+                    <mfDefaultSorter by="dueamount">Due Amount</mfDefaultSorter>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of mf.data">
+                  <td>{{item.vendor}}</td>
+                  <td>{{item.duedate}}</td>
+                  <td>{{item.totalamount}}</td>
+                  <td>{{item.dueamount}}</td>
+              </tbody>
+            </table>
+          </div>
+          <div class="col-sm-12 nopadding">
+            <label style="font-size: 20px;">Over Due Payments</label>
+            <table class="table table-hover table-bordered margin-top-10" [mfData]="data_one" #one="mfDataTable" [mfRowsOnPage]="5">
+              <thead>
+                <tr class="table-headers">
+                  <th style="width: 25%">
+                    <mfDefaultSorter by="vendor">Vendor Name
+                    </mfDefaultSorter>
+                  </th>
+                  <th style="width: 25%">
+                    <mfDefaultSorter by="duedate">Due Date</mfDefaultSorter>
+                  </th>
+                  <th style="width: 25%">
+                    <mfDefaultSorter by="totalamount">Total Amount</mfDefaultSorter>
+                  </th>
+                  <th style="width: 25%">
+                    <mfDefaultSorter by="dueamount">Due Amount</mfDefaultSorter>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of one.data">
+                  <td>{{item.vendor}}</td>
+                  <td>{{item.duedate}}</td>
+                  <td>{{item.totalamount}}</td>
+                  <td>{{item.dueamount}}</td>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
