@@ -2,6 +2,7 @@
 html{background-color: #666;}
 .page-content{
     margin:0 !important;
+    background: #fff !important;
 }
 .table-headers{
     background: #10699e !important;
