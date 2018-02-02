@@ -4,7 +4,7 @@
 		<div class="col-sm-12 nopadding">
 			<div class="col-sm-1"></div>
 			<div class="col-sm-10 nopadding">
-				<div class="col-sm-12 nopadding">
+				<div class="col-sm-12" style="background:#efefef;padding:10px;">
 					<div class="col-sm-3 nopadding">
 						<div class="col-sm-10 nopadding">
 							<input type="text" class="col-sm-5 form-control" placeholder="search keyword" />
@@ -39,52 +39,56 @@
 							<i class="fa fa-plus"></i>&nbsp;Add Vendor Payment</a>
 					</div>
 				</div>
-				<table class="table table-hover table-bordered" [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="5" style='margin-top:50px'>
-					<thead>
-						<tr class="table-headers">
-							<th style="width: 12.5%">
-								<mfDefaultSorter by="fname">Vendor Name</mfDefaultSorter>
-							</th>
-							<th style="width: 12.5%">
-								<mfDefaultSorter by="eventdate">Due Date</mfDefaultSorter>
-							</th>
-							<th style="width: 12.5%">
-								<mfDefaultSorter by="totalamount">Total Amount</mfDefaultSorter>
-							</th>
-							<th style="width: 12.5%">
-								<mfDefaultSorter by="pendingamount">Pending Amount
-								</mfDefaultSorter>
-							</th>
-							<th style="width: 6.5%">
-								<mfDefaultSorter by="pendingamount">View
-								</mfDefaultSorter>
-							</th>
+				<div class="col-sm-12 nopadding margin-top-10">
+					<div class="col-sm-12 nopadding">
+						<table class="table table-hover table-bordered" [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="5">
+							<thead>
+								<tr class="table-headers">
+									<th style="width: 12.5%">
+										<mfDefaultSorter by="fname">Vendor Name</mfDefaultSorter>
+									</th>
+									<th style="width: 12.5%">
+										<mfDefaultSorter by="eventdate">Due Date</mfDefaultSorter>
+									</th>
+									<th style="width: 12.5%">
+										<mfDefaultSorter by="totalamount">Total Amount</mfDefaultSorter>
+									</th>
+									<th style="width: 12.5%">
+										<mfDefaultSorter by="pendingamount">Pending Amount
+										</mfDefaultSorter>
+									</th>
+									<th style="width: 6.5%">
+										<mfDefaultSorter by="pendingamount">View
+										</mfDefaultSorter>
+									</th>
 
-						</tr>
-					</thead>
-					<tbody>
-						<tr *ngFor="let item of mf.data">
+								</tr>
+							</thead>
+							<tbody>
+								<tr *ngFor="let item of mf.data">
 
-							<td>{{item.fname}}&nbsp;{{item.lname}}</td>
-							<td>{{item.eventdate}}</td>
-							<td>{{item.totalamount}}</td>
-							<td>{{item.pendingamount}}</td>
-							<td class="text-center">
-								<a [routerLink]="['/manager/vendors/vendor-payment']">
-									<span class="glyphicon glyphicon-eye-open"></span>
-								</a>
-							</td>
-						</tr>
+									<td>{{item.fname}}&nbsp;{{item.lname}}</td>
+									<td>{{item.eventdate}}</td>
+									<td>{{item.totalamount}}</td>
+									<td>{{item.pendingamount}}</td>
+									<td class="text-center">
+										<a [routerLink]="['/manager/vendors/vendor-payment']">
+											<span class="glyphicon glyphicon-eye-open"></span>
+										</a>
+									</td>
+								</tr>
 
-					</tbody>
-					<tfoot>
-						<tr>
-							<td colspan="8">
-								<mfBootstrapPaginator></mfBootstrapPaginator>
-							</td>
-						</tr>
-					</tfoot>
-				</table>
+							</tbody>
+							<tfoot>
+								<tr>
+									<td colspan="8">
+										<mfBootstrapPaginator></mfBootstrapPaginator>
+									</td>
+								</tr>
+							</tfoot>
+						</table>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
