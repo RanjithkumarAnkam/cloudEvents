@@ -40,5 +40,8 @@ export class SubscribersListComponent implements OnInit {
   selectPackageChange() {
     console.log(this.selectedStatus);
   }
+  selectVenueChange(){
+    
+  }
 
 }
