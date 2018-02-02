@@ -9,9 +9,9 @@ import { SelectItem } from 'primeng/primeng';
 
 export class ManagerDashboardComponent implements OnInit {
     data: any[] = [
-        { fname: 'Suresh', lname: 'babu', venue: "Naren Garden", duedate: '20/12/2017', eventdate: '26/12/20117', phonenum: '9955886633', email: 'suresh@facebook.com', eventname: 'marriage', totalamount: '25000', paidamount: '5000', due: '20000' },
-        { fname: 'Ramesh', lname: 'Kumar', venue: "Naren Platinum", duedate: '19/11/2017', eventdate: '30/11/20117', phonenum: '9955886633', email: 'ramesh@facebook.com', eventname: 'birthday', totalamount: '100000', paidamount: '7000', due: '13000' },
-        { fname: 'Rajesh', lname: 'Sarma', venue: "Naren Convention", duedate: '06/12/2017', eventdate: '15/12/20117', phonenum: '9955886633', email: 'rajesh@facebook.com', eventname: 'marriage', totalamount: '78000', paidamount: '15000', due: '10000' }
+        { num: 'NG/RAN/2018/01/06', fname: 'Suresh', lname: 'babu', venue: "Naren Garden", duedate: '20/12/2017', eventdate: '26/12/20117', phonenum: '9955886633', email: 'suresh@facebook.com', eventname: 'marriage', totalamount: '25000', paidamount: '5000', due: '20000' },
+        { num: 'NG/KAl/2018/02/10', fname: 'Ramesh', lname: 'Kumar', venue: "Naren Platinum", duedate: '19/11/2017', eventdate: '30/11/20117', phonenum: '9955886633', email: 'ramesh@facebook.com', eventname: 'birthday', totalamount: '100000', paidamount: '7000', due: '13000' },
+        { num: 'NG/MAH/2018/04/12', fname: 'Rajesh', lname: 'Sarma', venue: "Naren Convention", duedate: '06/12/2017', eventdate: '15/12/20117', phonenum: '9955886633', email: 'rajesh@facebook.com', eventname: 'marriage', totalamount: '78000', paidamount: '15000', due: '10000' }
     ];
     options: Object;
     options_second: Object;

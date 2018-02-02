@@ -2,7 +2,7 @@
     <nav class="navbar navbar-inverse" role="navigation">
         <div class="navbar-header">
             <a class="navbar-brand" [routerLink]="['/manager/dashboard']">
-                <img src="/assets/images/VC_Dashboard_White_Logo.png" height=30px/>
+                <img src="/assets/images/VC_Dashboard_White_Logo.png" height=30px style="margin-top:-5px" />
             </a>
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                 <span class="icon-bar"></span>
@@ -33,36 +33,36 @@
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li tourAnchor="Settings.id" style="margin-right: 6px;">
-                    <button class="btn btn-default helpbtn" id="btnquick" data-toggle="modal" data-target="#mainmodalpop">
+                <li class="sMenu" tourAnchor="Settings.id" style="margin-right: 5px !important;">
+                    <img src="/assets/Dashboard_Assets/5_Quick_Start_icon.png" width="20px" />
+                    <button class="btn btn-default helpbtn" id="btnquick" data-toggle="modal" data-target="#mainmodalpop" style="padding:10px 0">
                         Quick Start&nbsp;
-                        <i class="fa fa-home"></i>
                     </button>
                 </li>
-                <li tourAnchor="Support.id">
-                    <button class="btn btn-default supportbutton" [routerLink]="['/manager/support/phone']">
+                <li class="sMenu" tourAnchor="Support.id">
+                    <img src="/assets/Dashboard_Assets/6_Support_icon.png" width="20px" style="margin-right: 5px !important;" />
+                    <button class="btn btn-default supportbutton" [routerLink]="['/manager/support/phone']"  style="padding:10px 0">
                         <span> Support&nbsp;
-                            <img src="/assets/images/Usersupport.PNG" height="18px" />
                         </span>
                     </button>
                 </li>
-                <li>
-                    <button class="btn btn-default mhelp helpbtn" (click)="startTour()" id="mhelp">
+                <li class="sMenu">
+                    <img src="/assets/Dashboard_Assets/7_Help_icon.png" width="20px" style="margin-right: 5px !important;" />
+                    <button class="btn btn-default mhelp helpbtn" (click)="startTour()" id="mhelp"  style="padding:10px 0">
                         Help&nbsp;
-                        <i class="fa fa-question-circle"></i>
                     </button>
                 </li>
-                <li class="dropdown dropdown-user">
-                    <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                <li class="dropdown dropdown-user" style="width:150px">
+                    <img style="height:25px" src="/assets/images/Ans-.jpg" class="imgstyle" style="height: 40px;margin: 5px 0 0 10px;border-radius: 50px !important;"
+                    />
+                    <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true" style="float:right">
                         <span class="username username-hide-on-mobile">
+
                             <b>Hi John</b>
                         </span>
                         <i class="fa fa-angle-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-default">
-                        <li style='text-align:center'>
-                            <img height="70" src="/assets/images/Ans-.jpg" class="imgstyle" />
-                        </li>
                         <li>
                             <a [routerLink]="['/manager/profile']">
 

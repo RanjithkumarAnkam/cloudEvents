@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgxGalleryOptions, NgxGalleryImage, NgxGalleryAnimation } from 'ngx-gallery';
 import { DomSanitizer } from '@angular/platform-browser';
 import { NgxCarousel } from 'ngx-carousel';
-
+import { SelectItem } from 'primeng/primeng';
 @Component({
   selector: 'app-gallery',
   templateUrl: './gallery.component.html',
@@ -10,7 +10,7 @@ import { NgxCarousel } from 'ngx-carousel';
 })
 export class GalleryComponent implements OnInit {
 
- 
+
   public carouselTileItems: Array<any>;
   public carouselTile: NgxCarousel;
 
@@ -28,8 +28,23 @@ export class GalleryComponent implements OnInit {
     prevButton: '.swiper-button-prev',
     spaceBetween: 30
   };
+
+  venuesList: SelectItem[];
+  selectedVenues: Array<any>;
+
   constructor(public sanitizer: DomSanitizer) { }
   ngOnInit(): void {
+
+    this.venuesList = [
+      { label: 'Naren Gardens', value: { id: 1, name: 'Naren Gardens', code: 'NG' } },
+      { label: 'Naren Conventions', value: { id: 2, name: 'Naren Conventions', code: 'NC' } },
+      { label: 'Naren platinum', value: { id: 3, name: 'Naren platinum', code: 'NP' } },
+      { label: 'Naren Community', value: { id: 4, name: 'Naren Community', code: 'NCO' } },
+    ];
+
+
+
+
 
     this.galleryOptions = [
       {
@@ -80,7 +95,7 @@ export class GalleryComponent implements OnInit {
         big: 'assets/images/d-5.jpg'
       },
     ];
-    this.carouselTileItems =  [
+    this.carouselTileItems = [
       {
         "videoUrl": "//www.youtube.com/embed/YE7VzlLtp-4"
       },
@@ -100,9 +115,9 @@ export class GalleryComponent implements OnInit {
         "videoUrl": "//www.youtube.com/embed/YE7VzlLtp-4"
       },
     ];
- 
+
     this.carouselTile = {
-      grid: {xs: 2, sm: 2, md: 2, lg: 3, all: 0},
+      grid: { xs: 2, sm: 2, md: 2, lg: 3, all: 0 },
       slide: 2,
       speed: 400,
       animation: 'lazy',
@@ -113,20 +128,24 @@ export class GalleryComponent implements OnInit {
       touch: true,
       easing: 'ease'
     }
-    
+
   }
   public carouselTileLoad(evt: any) {
- 
-   
-  }
 
-  onVenueChange(){
 
   }
-  searchImgs(){
-    
+
+  onVenueChange() {
+
   }
- 
+  searchImgs() {
+
+  }
+
+  selectMenuChange() {
+    console.log(this.selectedVenues);
+  }
+
 
 
 

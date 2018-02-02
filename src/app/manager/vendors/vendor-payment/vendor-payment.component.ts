@@ -11,9 +11,9 @@ export class VendorPaymentComponent implements OnInit {
 
   ngOnInit() {
     this.vendorData = [
-      { paymentdate: '16/09/17', Description: 'Nareen Gardens', paidamount: '25,000', modeofpayment: 'Cash', refnum: 'POI76YTHA43RE', status: 'Completed' },
-      { paymentdate: '12/09/17', Description: 'Nareen Gardens', paidamount: '14,000', modeofpayment: 'Cheque', refnum: 'AS987UY1009I', status: 'Completed' },
-      { paymentdate: '26/09/17', Description: 'Nareen Gardens', paidamount: '10,000', modeofpayment: 'Paytm', refnum: 'SCFG8765KJFH', status: 'Completed' }
+      { paymentdate: '16/09/17', Description: 'Nareen Gardens', paidamount: '15,000', modeofpayment: 'Cash', refnum: 'POI76YTHA43RE', status: 'Completed' },
+      { paymentdate: '12/09/17', Description: 'Nareen Gardens', paidamount: '10,000', modeofpayment: 'Cheque', refnum: 'AS987UY1009I', status: 'Completed' },
+      { paymentdate: '26/09/17', Description: 'Nareen Gardens', paidamount: '5,000', modeofpayment: 'Paytm', refnum: 'SCFG8765KJFH', status: 'Completed' }
     ];
   }
 

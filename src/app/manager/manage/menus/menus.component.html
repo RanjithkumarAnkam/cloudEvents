@@ -16,7 +16,7 @@
 						</div>
 					</div>
 					<div class="col-sm-5">
-						<div class="col-sm-2" style="padding-right:0 !important">
+						<div class="col-sm-2" style="padding-right:0 !important;margin-top:5px">
 							<label class="control-label ">Venue&nbsp;:</label>
 						</div>
 						<div class="col-sm-8 nopadding">
@@ -50,10 +50,10 @@
 								<tbody>
 									<tr *ngFor="let item of mf.data">
 										<td>
-											<a data-toggle="modal" data-target="#foodmenu" style="color:#000">{{item.menu}}</a>
+											<a title= "Click to Edit" data-toggle="modal" data-target="#foodmenu" style="color:#000">{{item.menu}}</a>
 										</td>
 										<td>
-											<a data-toggle="modal" data-target="#decorationmenu" style="color:#000">{{item.decoration}}</a>
+											<a title= "Click to Edit" data-toggle="modal" data-target="#decorationmenu" style="color:#000">{{item.decoration}}</a>
 										</td>
 									</tr>
 								</tbody>

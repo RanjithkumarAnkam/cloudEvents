@@ -5,14 +5,16 @@
     }
 }
 .helpbtn {
-    background-color: white;
-    margin-top: 8px;
-    color: black;
+    background-color: #116a9e !important;
+    margin-top: 10px;
+    color: #fff;
+    border:none;
 }
 .supportbutton {
-    background-color: yellow;
-    margin-top: 8px;
-    color: black;
+    background-color:  #116a9e !important;
+    margin-top: 10px;
+    color: #fff;
+    border:none;
     margin-right: 6px;
 }
 .tour-step-backdrop > li {

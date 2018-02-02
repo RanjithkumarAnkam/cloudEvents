@@ -14,7 +14,7 @@
 
           </div>
           <div class="col-sm-2 nopadding" style="margin-top:50px">
-            <a [routerLink]="['/manager/customers/customers-list']" class="btn btn-default pull-right">
+            <a [routerLink]="['/manager/customers/receivables']" class="btn btn-default pull-right">
               <i class="fa fa-angle-left" style="margin-right:5px;"></i> Back
             </a>
           </div>
@@ -23,43 +23,39 @@
         <div class="col-sm-12 nopadding" style="margin-top:20px">
           <div class="panel panel-default">
             <div class="panel-body cursor trstyle" style="font-size:16px;background-color: #eee;" id="btnpaytm">
-              <div class="col-sm-12 nopadding margin-top-20">
-                <div class="col-sm-4 nopadding">
+              <div class="col-sm-12 nopadding">
+                <div class="col-sm-6 nopadding">
                   <h3>
                     Total Amount&nbsp;:&nbsp;
-                    <b>56,000</b>
+                    <b>49,000</b>
                   </h3>
                 </div>
-                <div class="col-sm-4 nopadding text-right">
+                <div class="col-sm-6 nopadding text-right">
                   <h3>
                     Due Amount&nbsp;:&nbsp;
-                    <b>12,000</b>
+                    <b>0</b>
                   </h3>
                 </div>
-                <div class="col-sm-4 nopadding">
-                  <a class="btn btn-success pull-right" id="addnewpayment" data-toggle='modal' data-target='#bookingdetails'>
-                    <i class="fa fa-plus"></i> &nbsp;Add New Payment
-                  </a>
-                </div>
+
               </div>
 
             </div>
           </div>
         </div>
 
-        <div class="col-sm-12 nopadding margin-top-20">
-          <h4>Original Payment Schedule</h4>
+        <div class="col-sm-12 nopadding margin-top-10">
+          <h4><b>Original Payment Schedule</b></h4>
           <table class="table table-hover table-bordered" [mfData]="dataOriginal" #mf="mfDataTable" [mfRowsOnPage]="5">
             <thead>
               <tr class="table-headers">
                 <th style="width: 10%">
-                  <mfDefaultSorter by="num">Due Date</mfDefaultSorter>
+                  <mfDefaultSorter by="duedate">Due Date</mfDefaultSorter>
                 </th>
                 <th style="width: 10%">
-                  <mfDefaultSorter by="name">Description</mfDefaultSorter>
+                  <mfDefaultSorter by="description">Description</mfDefaultSorter>
                 </th>
                 <th style="width: 10%">
-                  <mfDefaultSorter by="price">Due Amount</mfDefaultSorter>
+                  <mfDefaultSorter by="dueamount">Due Amount</mfDefaultSorter>
                 </th>
               </tr>
             </thead>
@@ -74,27 +70,33 @@
         </div>
 
         <div class="col-sm-12 nopadding margin-top-20">
-          <h4>Actual Payment's</h4>
+          <a class="btn btn-success pull-right" id="addnewpayment" data-toggle='modal' data-target='#bookingdetails'>
+            <i class="fa fa-plus"></i> &nbsp;Add New Payment
+          </a>
+        </div>
+
+        <div class="col-sm-12 nopadding ">
+          <h4><b>Actual Payment's</b></h4>
           <table class="table table-hover table-bordered" [mfData]="dataPaid" #mf2="mfDataTable" [mfRowsOnPage]="5">
             <thead>
               <tr class="table-headers">
                 <th style="width: 20%">
-                  <mfDefaultSorter by="num">Booking Id</mfDefaultSorter>
+                  <mfDefaultSorter by="bookingid">Booking Id</mfDefaultSorter>
                 </th>
                 <th style="width: 10%">
-                  <mfDefaultSorter by="name">Pyment Date</mfDefaultSorter>
+                  <mfDefaultSorter by="paymentdate">Payment Date</mfDefaultSorter>
                 </th>
                 <th style="width: 15%">
-                  <mfDefaultSorter by="price">Description</mfDefaultSorter>
+                  <mfDefaultSorter by="Description">Description</mfDefaultSorter>
                 </th>
                 <th style="width: 15%">
-                  <mfDefaultSorter by="price">Paid Amount</mfDefaultSorter>
+                  <mfDefaultSorter by="paidamount">Paid Amount</mfDefaultSorter>
                 </th>
                 <th style="width: 15%">
-                  <mfDefaultSorter by="price">Mode of Payment</mfDefaultSorter>
+                  <mfDefaultSorter by="modeofpayment">Mode of Payment</mfDefaultSorter>
                 </th>
                 <th style="width: 15%">
-                  <mfDefaultSorter by="price">Reference Number</mfDefaultSorter>
+                  <mfDefaultSorter by="refnum">Reference Id</mfDefaultSorter>
                 </th>
                 <th style="width: 15%">
                   <mfDefaultSorter by="price">Payment Status</mfDefaultSorter>
@@ -113,7 +115,7 @@
                   <select>
                     <option>Pending</option>
                     <option>Failed</option>
-                    <option>Completed</option>
+                    <option selected>Completed</option>
                     <option>In Process</option>
                   </select>
                 </td>
@@ -151,7 +153,7 @@
                         <label class="add-member-label">Amount&nbsp;:</label>
                       </div>
                       <div class="col-sm-8">
-                        <input type="text" class="form-control"  />
+                        <input type="text" class="form-control" />
                       </div>
                     </div>
                     <div class="col-sm-12 margin-top-10">
@@ -167,7 +169,7 @@
                         <label class="add-member-label">Payment Mode&nbsp;:</label>
                       </div>
                       <div class="col-sm-8">
-                        <select class="form-control" >
+                        <select class="form-control">
                           <option value="0">Select</option>
                           <option value="1">Cash</option>
                           <option value="2">DD</option>
@@ -176,7 +178,7 @@
                         </select>
                       </div>
                     </div>
-                    
+
                     <div class="col-sm-12 margin-top-10">
                       <div class="col-sm-4">
                         <label>Description&nbsp;:</label>

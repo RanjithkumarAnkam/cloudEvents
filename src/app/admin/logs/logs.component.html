@@ -4,7 +4,7 @@
 		<div class="row nopadding">
 			<div class="col-sm-1"></div>
 			<div class="col-sm-10  nopadding">
-				<div class="col-sm-12 nopadding">
+				<div class="col-sm-12">
 					<div class="col-sm-10 nopadding">
 						<h3 class="page-title">
 							Logs
@@ -30,8 +30,8 @@
 				<div class="tab-content">
 					<div id="menuuserslog" class="tab-pane fade in active">
 						<div class="row">
-							<div class="col-md-12 nopadding">
-								<div class="col-sm-12">
+							<div class="col-md-12">
+								<div class="col-sm-12" style="background:#efefef;padding:10px;">
 									<div class="col-sm-3 nopadding">
 										<div class="col-sm-10 nopadding">
 											<input type="text" class="col-sm-5 form-control" placeholder="search keyword" />
@@ -42,12 +42,12 @@
 											</button>
 										</div>
 									</div>
-									<div class="col-sm-3">
+									<div class="col-sm-4">
 
 									</div>
-									<div class="col-sm-6 nopadding">
+									<div class="col-sm-5 nopadding">
 										<div class="col-sm-6">
-											<div class="col-sm-3 nopadding">
+											<div class="col-sm-3 nopadding" style="margin-top:5px">
 												<label class="control-label">From&nbsp;:</label>
 											</div>
 											<div class="col-sm-9 nopadding">
@@ -55,7 +55,7 @@
 											</div>
 										</div>
 										<div class="col-sm-6">
-											<div class="col-sm-3 nopadding">
+											<div class="col-sm-3 nopadding" style="margin-top:5px">
 												<label class="control-label">To&nbsp;:</label>
 											</div>
 											<div class="col-sm-9 nopadding">
@@ -65,7 +65,7 @@
 									</div>
 								</div>
 								<!-- Begin: life time stats -->
-								<div class="col-sm-12 margin-top-20">
+								<div class="col-sm-12 nopadding margin-top-20">
 
 									<!--Users log-->
 									<table class="table table-hover table-bordered" [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="5">
@@ -110,8 +110,8 @@
 					<!--Event log-->
 					<div id="menueventlog" class="tab-pane fade">
 						<div class="row">
-							<div class="col-md-12 nopadding">
-								<div class="col-sm-12">
+							<div class="col-md-12">
+								<div class="col-sm-12" style="background:#efefef;padding:10px;">
 									<div class="col-sm-3 nopadding">
 										<div class="col-sm-10 nopadding">
 											<input type="text" class="col-sm-5 form-control" placeholder="search keyword" />
@@ -122,12 +122,12 @@
 											</button>
 										</div>
 									</div>
-									<div class="col-sm-3">
+									<div class="col-sm-4">
 
 									</div>
-									<div class="col-sm-6 nopadding">
+									<div class="col-sm-5 nopadding">
 										<div class="col-sm-6">
-											<div class="col-sm-3 nopadding">
+											<div class="col-sm-3 nopadding" style="margin-top:5px">
 												<label class="control-label">From&nbsp;:</label>
 											</div>
 											<div class="col-sm-9 nopadding">
@@ -135,7 +135,7 @@
 											</div>
 										</div>
 										<div class="col-sm-6">
-											<div class="col-sm-3 nopadding">
+											<div class="col-sm-3 nopadding" style="margin-top:5px">
 												<label class="control-label">To&nbsp;:</label>
 											</div>
 											<div class="col-sm-9 nopadding">
@@ -145,7 +145,7 @@
 									</div>
 								</div>
 								<!-- Begin: life time stats -->
-								<div class="col-sm-12 margin-top-20">
+								<div class="col-sm-12 margin-top-20 nopadding">
 									<table class="table table-hover table-bordered" [mfData]="dataone" #one="mfDataTable" [mfRowsOnPage]="5">
 										<thead>
 											<tr class="table-headers">
@@ -192,8 +192,8 @@
 					<!--Error log-->
 					<div id="menuerrorlog" class="tab-pane fade">
 						<div class="row">
-							<div class="col-md-12 nopadding">
-								<div class="col-sm-12">
+							<div class="col-md-12">
+								<div class="col-sm-12" style="background:#efefef;padding:10px;">
 									<div class="col-sm-3 nopadding">
 										<div class="col-sm-10 nopadding">
 											<input type="text" class="col-sm-5 form-control" placeholder="search keyword" />
@@ -204,12 +204,12 @@
 											</button>
 										</div>
 									</div>
-									<div class="col-sm-3">
+									<div class="col-sm-4">
 
 									</div>
-									<div class="col-sm-6 nopadding">
+									<div class="col-sm-5 nopadding">
 										<div class="col-sm-6">
-											<div class="col-sm-3 nopadding">
+											<div class="col-sm-3 nopadding" style="margin-top:5px">
 												<label class="control-label">From&nbsp;:</label>
 											</div>
 											<div class="col-sm-9 nopadding">
@@ -217,7 +217,7 @@
 											</div>
 										</div>
 										<div class="col-sm-6">
-											<div class="col-sm-3 nopadding">
+											<div class="col-sm-3 nopadding" style="margin-top:5px">
 												<label class="control-label">To&nbsp;:</label>
 											</div>
 											<div class="col-sm-9 nopadding">
@@ -227,7 +227,7 @@
 									</div>
 								</div>
 								<!-- Begin: life time stats -->
-								<div class="col-sm-12 margin-top-20">
+								<div class="col-sm-12 margin-top-20 nopadding">
 									<table class="table table-hover table-bordered" [mfData]="datatwo" #two="mfDataTable" [mfRowsOnPage]="5">
 										<thead>
 											<tr class="table-headers">

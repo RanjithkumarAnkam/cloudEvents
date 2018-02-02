@@ -138,20 +138,26 @@
 					<table class="table table-hover table-bordered margin-top-10" [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="5">
 						<thead>
 							<tr class="table-headers">
-								<th style="width: 20%">
+								<th style="width: 10%">
 									<mfDefaultSorter by="name">Customer Name</mfDefaultSorter>
 								</th>
-								<th style="width: 20%">
-									<mfDefaultSorter by="phone">Phone</mfDefaultSorter>
+								<th style="width: 10%">
+									<mfDefaultSorter by="phone">Phone Number</mfDefaultSorter>
 								</th>
-								<th style="width: 20%">
+								<th style="width: 10%">
 									<mfDefaultSorter by="email">Email</mfDefaultSorter>
 								</th>
-								<th style="width: 20%">
-									<mfDefaultSorter by="amount">Amount</mfDefaultSorter>
-								</th>
-								<th style="width: 20%">
+								<th style="width: 10%">
 									<mfDefaultSorter by="duedate">Due Date</mfDefaultSorter>
+								</th>
+								<th style="width: 10%">
+									<mfDefaultSorter by="totalamount">Total Amount</mfDefaultSorter>
+								</th>
+								<th style="width: 10%">
+									<mfDefaultSorter by="paidamount">Paid Amount</mfDefaultSorter>
+								</th>
+								<th style="width: 10%">
+									<mfDefaultSorter by="due">Due Amount</mfDefaultSorter>
 								</th>
 
 
@@ -162,8 +168,11 @@
 								<td>{{item.name}}</td>
 								<td>{{item.phone}}</td>
 								<td>{{item.email}}</td>
-								<td>{{item.amount}}</td>
 								<td>{{item.duedate}}</td>
+								<td>{{item.totalamount}}</td>
+								<td>{{item.paidamount}}</td>
+								<td>{{item.due}}</td>
+								
 							</tr>
 						</tbody>
 

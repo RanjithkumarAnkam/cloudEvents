@@ -5,7 +5,7 @@
 
 			<div class="col-sm-1"></div>
 			<div class="col-sm-10 nopadding">
-				<div class="col-sm-12"  style="background:#efefef;padding:10px;">
+				<div class="col-sm-12" style="background:#efefef;padding:10px;">
 					<div class="col-sm-3 nopadding">
 						<div class="col-sm-10 nopadding">
 							<input type="text" class="col-sm-5 form-control" placeholder="search keyword" />
@@ -17,16 +17,16 @@
 						</div>
 					</div>
 					<div class="col-sm-4">
-						<div class="col-sm-4">
+						<div class="col-sm-3" style="margin-top:5px">
 							<label class="control-label ">Venue&nbsp;:</label>
 						</div>
-						<div class="col-sm-8">
+						<div class="col-sm-8 nopadding">
 							<p-multiSelect [options]="venuesList" [(ngModel)]="selectedVenues" defaultLabel='All Venues' (onChange)="selectMenuChange()"></p-multiSelect>
 						</div>
 					</div>
 					<div class="col-sm-5 nopadding">
 						<div class="col-sm-6">
-							<div class="col-sm-3 nopadding">
+							<div class="col-sm-3 nopadding" style="margin-top:5px">
 								<label class="control-label">From&nbsp;:</label>
 							</div>
 							<div class="col-sm-9 nopadding">
@@ -34,7 +34,7 @@
 							</div>
 						</div>
 						<div class="col-sm-6">
-							<div class="col-sm-3 nopadding">
+							<div class="col-sm-3 nopadding" style="margin-top:5px">
 								<label class="control-label">To&nbsp;:</label>
 							</div>
 							<div class="col-sm-9 nopadding">
@@ -57,13 +57,13 @@
 									<mfDefaultSorter by="event">Event</mfDefaultSorter>
 								</th>
 								<th style="width: 12.5%">
+									<mfDefaultSorter by="venue">Venue</mfDefaultSorter>
+								</th>
+								<th style="width: 12.5%">
 									<mfDefaultSorter by="eventdate">Event Date</mfDefaultSorter>
 								</th>
 								<th style="width: 12.5%">
-									<mfDefaultSorter by="eventdate">Due Date</mfDefaultSorter>
-								</th>
-								<th style="width: 12.5%">
-									<mfDefaultSorter by="venue">Venue</mfDefaultSorter>
+									<mfDefaultSorter by="duedate">Due Date</mfDefaultSorter>
 								</th>
 								<th style="width: 12.5%">
 									<mfDefaultSorter by="totalamount">Total Amount</mfDefaultSorter>
@@ -74,8 +74,8 @@
 								<th style="width: 12.5%">
 									<mfDefaultSorter by="dueamount">Due Amount</mfDefaultSorter>
 								</th>
-								<th style="width: 12.5%">
-									<mfDefaultSorter by="dueamount">Payments</mfDefaultSorter>
+								<th style="width: 12.5%" class="text-center">
+									<mfDefaultSorter>Payments</mfDefaultSorter>
 								</th>
 							</tr>
 						</thead>
@@ -86,14 +86,14 @@
 								</td>
 								<td>{{item.fname}} &nbsp;{{item.lname}}</td>
 								<td>{{item.event}}</td>
+								<td>{{item.venue}}</td>
 								<td>{{item.eventdate}}</td>
 								<td>{{item.duedate}}</td>
-								<td>{{item.venue}}</td>
 								<td>{{item.totalamount}}</td>
-								<td>{{item.totalamount}}</td>
+								<td>{{item.paidamount}}</td>
 								<td>{{item.dueamount}}</td>
-								<td>
-									<a [routerLink]="['/manager/customers/customer-payment']">{{item.actualpayments}}/{{item.fixedpayments}}</a>
+								<td class="text-center"  title="Click to view payment details">
+									<a  title="Click to view payment details" [routerLink]="['/manager/customers/customer-payment']">{{item.actualpayments}}/{{item.fixedpayments}}</a>
 								</td>
 
 							</tr>
