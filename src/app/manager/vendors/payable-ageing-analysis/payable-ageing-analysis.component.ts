@@ -111,7 +111,7 @@ export class PayableAgeingAnalysisComponent implements OnInit {
         }
       }, navigation: {
         buttonOptions: {
-          enabled: false
+          enabled: false 
         }
       },
       series: [{
