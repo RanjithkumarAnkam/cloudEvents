@@ -2,7 +2,7 @@
 	<nav class="navbar navbar-inverse" role="navigation">
 		<div class="navbar-header">
 			<a class="navbar-brand" [routerLink]="['/admin/dashboard']">
-				<img src="/assets/images/VC_Dashboard_White_Logo.png" height="30px" />
+				<img src="/assets/images/VC_Dashboard_White_Logo.png" height="30px" style="margin-top:-5px" />
 			</a>
 			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 				<span class="icon-bar"></span>
@@ -32,17 +32,16 @@
 				</li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-				<li class="dropdown dropdown-user">
-					<a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+				<li class="dropdown dropdown-user" style="width:180px">
+					<img style="height:25px" src="/assets/images/Ans-.jpg" class="imgstyle" style="height: 40px;margin: 5px 0 0 10px;border-radius: 50px !important;"
+					/>
+					<a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true" style="float:right">
 						<span class="username username-hide-on-mobile">
 							<b>My Account</b>
 						</span>
 						<i class="fa fa-angle-down"></i>
 					</a>
 					<ul class="dropdown-menu dropdown-menu-default">
-						<li style="text-align:center">
-							<img height="70" src="/assets/images/Ans-.jpg" class="imgstyle" />
-						</li>
 						<li>
 							<a [routerLink]="['/admin/profile']">
 								<i class="icon-user" style="margin-right:10px"></i>My Profile
@@ -99,7 +98,7 @@
 
 <div class="col-sm-12 bg-white" style="background-color: #116a9e; height: 50px;">
 	<p style="margin-left: 0px; text-align: center; color: #FFF; margin-top: 20px;">
-		&copy; {{today | date:'yyyy'}} - Option Matrix Infotech  ® All Rights Reserved</p>
+		&copy; {{today | date:'yyyy'}} - Option Matrix Infotech ® All Rights Reserved</p>
 	<p></p>
 </div>
 

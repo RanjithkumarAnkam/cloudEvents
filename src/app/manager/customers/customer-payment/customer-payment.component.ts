@@ -17,9 +17,9 @@ export class CustomerPaymentComponent implements OnInit {
       { duedate: '26/09/17', description: 'Nareen Gardens', dueamount: '10,000' }
     ];
     this.dataPaid = [
-      { bookingid: 'NG/RAN/2018/01/06', paymentdate: '16/09/17', Description: 'Nareen Gardens', paidamount: '25,000', modeofpayment: 'Cash',refnum:'POI76YTHA43RE' },
-      { bookingid: 'NG/RAN/2018/01/06', paymentdate: '12/09/17', Description: 'Nareen Gardens', paidamount: '14,000', modeofpayment: 'Cheque',refnum:'AS987UY1009I'  },
-      { bookingid: 'NG/RAN/2018/01/06', paymentdate: '26/09/17', Description: 'Nareen Gardens', paidamount: '10,000', modeofpayment: 'Paytm',refnum:'SCFG8765KJFH'  }
+      { bookingid: 'NG/RAN/2018/01/06', paymentdate: '16/09/17', Description: 'Advance Payment', paidamount: '25,000', modeofpayment: 'Cash',refnum:'POI76YTHA43RE' },
+      { bookingid: 'NG/RAN/2018/01/06', paymentdate: '12/09/17', Description: 'First Payment', paidamount: '14,000', modeofpayment: 'Cheque',refnum:'AS987UY1009I'  },
+      { bookingid: 'NG/RAN/2018/01/06', paymentdate: '26/09/17', Description: 'Final Payment', paidamount: '10,000', modeofpayment: 'Paytm',refnum:'SCFG8765KJFH'  }
     ];
   }
  

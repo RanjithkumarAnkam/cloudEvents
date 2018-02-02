@@ -19,12 +19,12 @@
               <label style="line-height: 35px;color: #116a9e;">Select Venue&nbsp;:</label>
             </div>
             <div class="col-sm-8 nopadding">
-              <p-multiSelect [options]="venuesList" class="pull-right" [(ngModel)]="selectedVenues"  defaultLabel='All Venues' (onChange)="selectMenuChange()"></p-multiSelect>
+              <p-multiSelect [options]="venuesList" class="pull-right" [(ngModel)]="selectedVenues" defaultLabel='All Venues' (onChange)="selectMenuChange()"></p-multiSelect>
             </div>
           </div>
 
           <div class="col-sm-12 nopadding margin-top-10">
-            <div class="panel panel-default">
+            <div class="panel panel-default" style="background-color:#eee">
               <div class="panel-body">
                 <div class="col-sm-12 nopadding">
                   <div class="col-sm-7 nopadding">
@@ -87,7 +87,7 @@
                   <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                     <div class="dashboard-stat blue-madison">
                       <div class="visual">
-                        <i class="fa fa-comments"></i>
+                        <img height=50px src="/assets/Dashboard_Assets/1_Booking_icon.png">
                       </div>
                       <div class="details">
                         <div class="number">45</div>
@@ -98,7 +98,7 @@
                   <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                     <div class="dashboard-stat red-intense">
                       <div class="visual">
-                        <i class="fa fa-bar-chart-o"></i>
+                        <img height=50px src="/assets/Dashboard_Assets/2_Enquiry_icon.png">
                       </div>
                       <div class="details">
                         <div class="number">25</div>
@@ -107,9 +107,9 @@
                     </div>
                   </div>
                   <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                    <div class="dashboard-stat green-haze">
+                    <div class="dashboard-stat purple-plum">
                       <div class="visual">
-                        <i class="fa fa-shopping-cart"></i>
+                        <img height=50px src="/assets/Dashboard_Assets/4_Receivable_icon.png">
                       </div>
                       <div class="details">
                         <div class="number">
@@ -120,9 +120,9 @@
                     </div>
                   </div>
                   <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                    <div class="dashboard-stat purple-plum">
+                    <div class="dashboard-stat green-haze">
                       <div class="visual">
-                        <i class="fa fa-eye"></i>
+                        <img height=50px src="/assets/Dashboard_Assets/3_Payable_icon.png">
                       </div>
                       <div class="details">
                         <div class="number">
@@ -227,33 +227,34 @@
             </div>
           </div>
           <div class="col-sm-12 nopadding margin-top-10">
-            <label style="font-size: 20px;">Over Due Payments</label>
+            <label style="font-size: 20px;color:#10699e"><b>Over Due Payments</b></label>
             <table class="table table-hover table-bordered margin-top-10" [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="5">
               <thead>
                 <tr class="table-headers">
-                  <th style="width: 10%">
+                  <th style="width: 7%">
+                    <mfDefaultSorter by="num">Booking Id
+                    </mfDefaultSorter>
+                  </th>
+                  <th style="width: 7%">
                     <mfDefaultSorter by="fname">Name
                     </mfDefaultSorter>
                   </th>
 
-                  <th style="width: 10%">
+                  <th style="width: 7%">
                     <mfDefaultSorter by="phonenum">Phone Number</mfDefaultSorter>
                   </th>
-                  <th style="width: 10%">
+                  <th style="width: 7%">
                     <mfDefaultSorter by="email">Email</mfDefaultSorter>
                   </th>
-                  <th style="width: 10%">
-                    <mfDefaultSorter by="venue">Venue</mfDefaultSorter>
-                  </th>
-                  <th style="width: 15%">
-                    <mfDefaultSorter by="eventname">Event Name</mfDefaultSorter>
+                  <th style="width: 7%">
+                    <mfDefaultSorter by="venue">Venue Name</mfDefaultSorter>
                   </th>
 
-                  <th style="width: 10%">
+                  <th style="width: 7%">
                     <mfDefaultSorter by="eventdate">Event Date
                     </mfDefaultSorter>
                   </th>
-                  <th style="width: 10%">
+                  <th style="width: 7%">
                     <mfDefaultSorter by="duedate">Due Date</mfDefaultSorter>
                   </th>
                   <th style="width: 7%">
@@ -261,11 +262,11 @@
                     </mfDefaultSorter>
                   </th>
                   <th style="width: 7%">
-                    <mfDefaultSorter by="totalamount">Paid Amount
+                    <mfDefaultSorter by="paidamount">Paid Amount
                     </mfDefaultSorter>
                   </th>
                   <th style="width: 7%">
-                    <mfDefaultSorter by="totalamount">Due Amount
+                    <mfDefaultSorter by="due">Due Amount
                     </mfDefaultSorter>
                   </th>
 
@@ -273,12 +274,13 @@
               </thead>
               <tbody>
                 <tr *ngFor="let item of mf.data">
+                  <td>{{item.num}}</td>
                   <td>{{item.fname}}&nbsp;{{item.lname}}</td>
 
                   <td>{{item.phonenum}}</td>
                   <td>{{item.email}}</td>
                   <td>{{item.venue}}</td>
-                  <td>{{item.eventname}}</td>
+
 
                   <td>{{item.eventdate}}</td>
                   <td>{{item.duedate}}</td>

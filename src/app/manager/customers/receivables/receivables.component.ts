@@ -9,7 +9,7 @@ import { SelectItem } from 'primeng/primeng';
 export class ReceivablesComponent implements OnInit {
 
   data: any[] = [
-    { num: 'NG/RAN/2018/01/06', cus: 'C0001', fname: 'Ranjith', lname: 'Kumar', event: 'Wedding', eventdate: '20/09/17', duedate: '18/09/17', venue: 'Nareen Gardens', totalamount: '1,00,000', paidamount: '20,000', dueamount: '25,000',actualpayments:'3',fixedpayments:'4' },
+    { num: 'NG/RAN/2018/01/06', cus: 'C0001', fname: 'Ranjith', lname: 'Kumar', event: 'Wedding', eventdate: '20/09/17', duedate: '18/09/17', venue: 'Nareen Gardens', totalamount: '49,000', paidamount: '49,000', dueamount: '0',actualpayments:'3',fixedpayments:'3' },
     { num: 'NG/KAl/2018/02/10', cus: 'C0002', fname: 'Kalyan', lname: 'Babu', event: 'Birthday', eventdate: '20/09/17', duedate: '18/09/17', venue: 'Nareen Gardens', totalamount: '1,00,000', paidamount: '20,000', dueamount: '25,000',actualpayments:'3',fixedpayments:'2' },
     { num: 'NG/NAG/2018/01/05', cus: 'C0003', fname: 'Nagarjuna ', lname: 'Rao', event: 'Wedding', eventdate: '20/09/17', duedate: '18/09/17', venue: 'Nareen Gardens', totalamount: '1,00,000', paidamount: '20,000', dueamount: '25,000',actualpayments:'2',fixedpayments:'5' },
     { num: 'NG/MAH/2018/04/12', cus: 'C0004', fname: 'Mahendra', lname: 'Parker', event: 'Wedding', eventdate: '20/09/17', duedate: '18/09/17', venue: 'Nareen Gardens', totalamount: '1,00,000', paidamount: '20,000', dueamount: '25,000',actualpayments:'5',fixedpayments:'2' },

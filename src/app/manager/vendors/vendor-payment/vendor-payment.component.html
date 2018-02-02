@@ -13,7 +13,7 @@
             </h3>
           </div>
           <div class="col-sm-2 nopadding" style="margin-top:50px">
-            <a [routerLink]="['/manager/vendors/vendors-list']" class="btn btn-default pull-right">
+            <a [routerLink]="['/manager/vendors/payables']" class="btn btn-default pull-right">
               <i class="fa fa-angle-left" style="margin-right:5px;"></i> Back
             </a>
           </div>
@@ -21,30 +21,39 @@
         <div class="col-sm-12 nopadding" style="margin-top:20px">
           <div class="panel panel-default">
             <div class="panel-body cursor trstyle" style="font-size:16px;background-color: #eee;" id="btnpaytm">
-              <div class="col-sm-12 nopadding margin-top-20">
-                <div class="col-sm-4 nopadding">
+              <div class="col-sm-12 nopadding">
+                <div class="col-sm-6 nopadding">
                   <h3>
                     Total Amount&nbsp;:&nbsp;
-                    <b>56,000</b>
+                    <b>50,000</b>
                   </h3>
                 </div>
-                <div class="col-sm-4 nopadding text-right">
+                <div class="col-sm-6 nopadding text-right">
                   <h3>
                     Due Amount&nbsp;:&nbsp;
-                    <b>12,000</b>
+                    <b>20,000</b>
                   </h3>
                 </div>
-                <div class="col-sm-4 nopadding">
-                  <a class="btn btn-success pull-right" id="addnewpayment" data-toggle='modal' data-target='#bookingdetails'>
-                    <i class="fa fa-plus"></i> &nbsp;Add New Payment
-                  </a>
-                </div>
+
               </div>
             </div>
           </div>
         </div>
+
+        <div class="col-sm-12 nopadding">
+          <div class="col-sm-8 nopadding">
+            <label><b>Invoice</b>&nbsp;:&nbsp;rkassociates_invoice.pdf&nbsp;&nbsp;&nbsp;
+              <a>Download</a>
+            </label>
+          </div>
+          <div class="col-sm-4 nopadding">
+            <a class="btn btn-success pull-right" id="addnewpayment" data-toggle='modal' data-target='#bookingdetails'>
+              <i class="fa fa-plus"></i> &nbsp;Add New Payment
+            </a>
+          </div>
+        </div>
         <div class="col-sm-12 nopadding margin-top-20">
-          <h4>Original Payment Schedule</h4>
+          <h4>Payment Details</h4>
           <table class="table table-hover table-bordered" [mfData]="vendorData" #mf="mfDataTable" [mfRowsOnPage]="5">
             <thead>
               <tr class="table-headers">
@@ -58,7 +67,7 @@
                   <mfDefaultSorter by="price">Payment mode</mfDefaultSorter>
                 </th>
                 <th style="width: 10%">
-                  <mfDefaultSorter by="price">Reference Number</mfDefaultSorter>
+                  <mfDefaultSorter by="price">Reference Id</mfDefaultSorter>
                 </th>
                 <th style="width: 10%">
                   <mfDefaultSorter by="price">Status</mfDefaultSorter>

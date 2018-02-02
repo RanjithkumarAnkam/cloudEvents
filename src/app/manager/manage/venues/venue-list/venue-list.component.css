@@ -476,11 +476,7 @@ div[data-title]:hover:after {
     height: 82px;
 }
 
-.btn-success {
-    color: #fff;
-    background-color: #33ae60;
-    border-color: #33ae60;
-}
+
 #add_enquiry_second_list::after{
     left: -45% !important;
     width:90% !important;

@@ -16,13 +16,7 @@
               Select Venue :
             </label>
             <div class="col-md-4 nopadding">
-              <select class="form-control" (change)="onVenueChange()">
-                <option value="0">All</option>
-                <option value="1">Naren Convention</option>
-                <option value="2">Naren Gardens</option>
-                <option value="3">Naren Platinum</option>
-                <option value="4">Naren Community</option>
-              </select>
+                <p-multiSelect [options]="venuesList" [(ngModel)]="selectedVenues" defaultLabel='All Venues' (onChange)="selectMenuChange()"></p-multiSelect>
             </div>
             <div class="col-md-2 nopadding">
               <a (click)="searchImgs()" class="btn btn-success pull-right" title="Click to Fetch Images">
