@@ -5,9 +5,30 @@
 			<div class="col-sm-1"></div>
 			<div class="col-sm-10 nopadding">
 				<div class="col-sm-12 nopadding">
-					<a class="btn btn-success pull-right" [routerLink]="['/manager/manage/venues/basic-details']">
-						<i class="fa fa-plus"></i>&nbsp;&nbsp;Add New Venue</a>
+					<div class="col-sm-3 nopadding">
+						<div class="col-sm-10 nopadding">
+							<input type="text" class="col-sm-5 form-control" placeholder="search keyword" />
+						</div>
+						<div class="col-sm-2 nopadding">
+							<button class="form-control" style="background-color:#eee">
+								<i class="glyphicon glyphicon-search"></i>
+							</button>
+						</div>
+					</div>
+					<div class="col-sm-5">
+						<div class="col-sm-2" style="padding-right:0 !important">
+							<label class="control-label ">Venue&nbsp;:</label>
+						</div>
+						<div class="col-sm-8 nopadding">
+								<p-multiSelect [options]="venuesList" [(ngModel)]="selectedVenues" defaultLabel='All Venues' (onChange)="selectMenuChange()"></p-multiSelect>
+						</div>
+					</div>
+					<div class="col-sm-4 nopadding">
+						<a class="btn btn-success pull-right" data-toggle="modal" data-target="#addVenueModal" (click)="resetEveryThing()">
+							<i class="fa fa-plus"></i>&nbsp;&nbsp;Add New Venue</a>
+					</div>
 				</div>
+
 				<div class="row">
 					<div class="col-md-12 nopadding">
 						<!-- Begin: life time stats -->
@@ -33,28 +54,28 @@
 										<th style="width: 14%">
 											<mfDefaultSorter by="phone">Phone</mfDefaultSorter>
 										</th>
-										<th class="text-center" style="width: 14%">Actions</th>
+										<th class="text-center" style="width: 14%">Delete</th>
 									</tr>
 								</thead>
 								<tbody>
 									<tr *ngFor="let item of mf.data">
 										<td>
-											<a title="Click to edit details" [routerLink]="['/manager/manage/venues/basic-details']" style="color:#000">{{item.name}}</a>
+											<a title="Click to edit details" data-toggle="modal" data-target="#addVenueModal" (click)="resetEveryThing()" style="color:#000">{{item.name}}</a>
 										</td>
 										<td>
-											<a title="Click to edit details" [routerLink]="['/manager/manage/venues/basic-details']" style="color:#000">{{item.capacity}}</a>
+											<a title="Click to edit details" data-toggle="modal" data-target="#addVenueModal" (click)="resetEveryThing()" style="color:#000">{{item.capacity}}</a>
 										</td>
 										<td>
-											<a title="Click to edit details" [routerLink]="['/manager/manage/venues/basic-details']" style="color:#000">{{item.location}}</a>
+											<a title="Click to edit details" data-toggle="modal" data-target="#addVenueModal" (click)="resetEveryThing()" style="color:#000">{{item.location}}</a>
 										</td>
 										<td>
-											<a title="Click to edit details" [routerLink]="['/manager/manage/venues/basic-details']" style="color:#000">{{item.contact}}</a>
+											<a title="Click to edit details" data-toggle="modal" data-target="#addVenueModal" (click)="resetEveryThing()" style="color:#000">{{item.contact}}</a>
 										</td>
 										<td>
-											<a title="Click to edit details" [routerLink]="['/manager/manage/venues/basic-details']" style="color:#000">{{item.email}}</a>
+											<a title="Click to edit details" data-toggle="modal" data-target="#addVenueModal" (click)="resetEveryThing()" style="color:#000">{{item.email}}</a>
 										</td>
 										<td>
-											<a title="Click to edit details" [routerLink]="['/manager/manage/venues/basic-details']" style="color:#000">{{item.phone}}</a>
+											<a title="Click to edit details" data-toggle="modal" data-target="#addVenueModal" (click)="resetEveryThing()" style="color:#000">{{item.phone}}</a>
 										</td>
 										<td class="text-center">
 											<a data-toggle="modal" data-target="#DeleteModal" title="Click to delete">
@@ -71,6 +92,363 @@
 									</tr>
 								</tfoot>
 							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-12" style="margin-top:10px;">
+			<div id="addVenueModal" class="modal fade">
+				<div class="modal-dialog modal-lg">
+					<div class="modal-content" id="mdcontent">
+						<div class="fc-title header" style="height:77px;border-bottom: 1px solid #e8e6e6;">
+							<span style="    font-size: 20px;
+								font-weight: 600;
+								line-height: 77px;
+								margin-left: 20px;">Add New Venue</span>
+							<button id="btnClosebands" type="button" class="btn btn-default Close pull-right" data-dismiss="modal" style="margin-right: 20px;margin-top: 28px;border-radius: 35px !important;">
+								<span aria-hidden="true" style="font-size:20px">×</span>
+								<span class="sr-only">close</span>
+							</button>&nbsp;
+						</div>
+						<div id="modalBody" class="modal-body" style="height:750px">
+							<div class="col-sm-12" style="margin-top:50px">
+								<div id="menubooking">
+									<div class="portlet" id="form_wizard_1">
+										<div class="portlet-body form">
+											<div class="col-sm-12 col-md-12 col-lg-12 col-xs-12">
+												<ul id="progressbar" class="prbar" style="display:flex; text-align: center;padding:0;">
+													<li [ngClass]='add_venue_first_tab'>Basic Details</li>
+													<li [ngClass]='add_venue_second_tab'>Contact Details</li>
+													<li [ngClass]='add_venue_third_tab'>Photos &amp; Videos</li>
+													<li [ngClass]='add_venue_fourth_tab'>Summary</li>
+												</ul>
+											</div>
+											<form id="msform" class="form-horizontal">
+												<fieldset *ngIf="new_venue_customer_block">
+
+													<div class="col-md-2"></div>
+													<div class="col-md-8" id="field1" style="height:320px;overflow-y:auto; overflow-x:hidden;margin-top:50px">
+														<div class="form-group">
+															<label class="control-label col-md-4 add-member-label">
+																Venue Name: </label>
+															<div class="col-md-8">
+																<input type="text" class="form-control" name="venue name" value="Nareen Convention" />
+															</div>
+														</div>
+														<div class="form-group">
+															<label class="control-label col-md-4 add-member-label">
+																Capacity: </label>
+															<div class="col-md-8">
+																<input type="text" class="form-control" name="" id="" value="20000" />
+
+															</div>
+														</div>
+														<div class="form-group">
+															<label class="control-label col-md-4 add-member-label">
+																Location: </label>
+															<div class="col-md-8">
+																<textarea class="form-control" rows="4">Miyapur,Hyderabad</textarea>
+
+															</div>
+														</div>
+														<div class="form-group">
+															<label class="control-label col-md-4 add-member-label"> Time Slots: </label>
+															<div class="col-md-8" style="margin-top: 8px;">
+																<span style="float: left;margin-right: 20px;">
+																	<input type="radio" class="form-control" (click)="setRadio(false)" name="allday" [checked]='true' id="alldayid" style="float: left;width: auto;height: auto;margin-right: 3px;margin-top:3px;"
+																	/>All Day</span>
+																<span style="float: left;">
+																	<input type="radio" class="form-control" (click)="setRadio(true)" name="allday" id="timeslots" style="float: left;width: auto;height: auto;margin-right: 3px;margin-top:3px;"
+																	/>Time Slots
+																</span>
+															</div>
+														</div>
+														<!--Select slots for the venue timings-->
+														<div *ngIf="timeSlotSel" id="Timingsdiv1" class="">
+															<div class="form-group">
+																<label class="control-label col-md-4 add-member-label">
+																	Select Slots: </label>
+																<div class="col-md-8">
+																	<div id="Picupload">
+																		<div class="col-md-12 nopadding">
+																			<div class="col-sm-5 nopadding">
+																				<div class='input-group date datetimepicker3' id="FromDiv">
+																					<input type='text' class="form-control datetimepicker3" placeholder="From" />
+																					<span class="input-group-addon">
+																						<span class="glyphicon glyphicon-time" style="color: #49494e;"></span>
+																					</span>
+																				</div>
+																			</div>
+																			<div class="col-sm-1 nopadding"></div>
+																			<div class="col-sm-5 nopadding">
+																				<div class='input-group date datetimepicker3' id="ToDiv">
+																					<input type='text' class="form-control datetimepicker3" placeholder="To" />
+																					<span class="input-group-addon">
+																						<span class="glyphicon glyphicon-time" style="color: #49494e;"></span>
+																					</span>
+																				</div>
+																			</div>
+																			<div class="col-sm-1 nopadding">
+																				<a href="javascript:;" onclick="return AddEmptyRow()" id="btnAddSlots" title="Add more slots">
+																					<i style="line-height: 2" class="fa fa-plus pull-right"></i>
+																				</a>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="col-md-2"></div>
+													<div class="col-md-12" style="border-top:1px solid #dcd9d9;height: 50px;">
+														<button type="button" (click)="addVenueContinue()" class="next btn btn-success pull-right" style="margin:10px 10px 0 0;border-radius: 4px !important;">
+															<span title="Click for next screen" aria-hidden="true">&nbsp;
+																<i class="fa fa-arrow-right"></i>Continue</span>
+															<span class="sr-only">Continue</span>
+														</button>
+														<a data-target="#cancelmodal" data-dismiss="modal" class="btn btn-default pull-right" style="margin:10px 10px 0 0;margin-right: 11px;border-radius: 4px !important;">
+															<span title="Click to cancel " aria-hidden="true">&nbsp;
+																<i class="fa fa-times"></i>Cancel</span>
+															<span class="sr-only">Cancel</span>
+														</a>
+													</div>
+												</fieldset>
+												<fieldset *ngIf="new_venue_event_block">
+
+													<div class="col-md-2"></div>
+													<div class="col-md-8" id="field2" style="height:320px;overflow-y:auto; overflow-x:hidden;padding:0px;margin-top:50px">
+														<div class="col-md-12">
+															<div class="form-group">
+																<label class="control-label col-md-5 add-member-label">
+																	Contact Person Name: </label>
+																<div class="col-md-7">
+																	<input type="text" class="form-control" name="" value="Ravi" />
+																</div>
+															</div>
+															<div class="form-group">
+																<label class="control-label col-md-5 add-member-label">
+																	Email ID: </label>
+																<div class="col-md-7">
+																	<input type="text" class="form-control" name="" value="ravi@cloud.com" />
+																</div>
+															</div>
+															<div class="form-group">
+																<label class="control-label col-md-5 add-member-label">
+																	Phone Number: </label>
+																<div class="col-md-7">
+																	<input type="text" class="form-control" name="" value="9999999999" />
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="col-md-2"></div>
+													<div class="col-md-12" style="border-top:1px solid #dcd9d9;height: 50px;">
+														<button type="button" (click)="addCpContinue()" class="next btn btn-success pull-right" style="margin: 10px 10px 0 0;border-radius: 4px !important;">
+															<span title="Click for next screen" aria-hidden="true">&nbsp;
+																<i class="fa fa-arrow-right"></i>Continue</span>
+															<span class="sr-only">Continue</span>
+														</button>
+														<button type="button" (click)="addCpBack()" class="previous btn btn-default pull-right" style="margin: 10px 10px 0 0;border-radius: 4px !important;">
+															<span title="Click to go back" aria-hidden="true">&nbsp;
+																<i class="fa fa-arrow-left"></i>Previous</span>
+															<span class="sr-only">Previous</span>
+														</button>
+														<a data-target="#cancelmodal" data-dismiss="modal" class="btn btn-default pull-right" style="margin:10px 10px 0 0;margin-right: 11px;border-radius: 4px !important;">
+															<span title="Click to cancel " aria-hidden="true">&nbsp;
+																<i class="fa fa-times"></i>Cancel</span>
+															<span class="sr-only">Cancel</span>
+														</a>
+													</div>
+												</fieldset>
+												<fieldset *ngIf="new_venue_payment_block">
+													<div class="col-md-2"></div>
+													<div class="col-md-8" id="field3" style="height:320px;overflow-y:auto;overflow-x:hidden;padding:0;margin-top:50px">
+														<div class="form-group">
+															<label class="control-label col-md-4 add-member-label">
+																Services &amp; Facilities: </label>
+															<div class="col-md-8">
+																<div class="col-sm-12 nopadding">
+																	<input type="checkbox" class="" style="float: left; width: auto; height: auto;margin-right: 4px; margin-top: 3px;" />Wifi
+																</div>
+																<div class="col-sm-12 nopadding">
+																	<input type="checkbox" class="" style="float: left; width: auto; height: auto;margin-right: 4px; margin-top: 3px;" />Catering Services
+																</div>
+																<div class="col-sm-12 nopadding">
+																	<input type="checkbox" class="" [ngModel]="" (ngModelChange)="addProp($event)" [ngModelOptions]="{standalone: true}" style="float: left; width: auto; height: auto;margin-right: 4px; margin-top: 3px;"
+																	 id="btnOtherservices" />Other
+																</div>
+																<div *ngIf="otherStatus" class="col-sm-12 margin-top-10" id="addextraservicediv">
+																	<div class="col-sm-8">
+																		<input type="text" class="form-control" placeholder="Enter Service Name" />
+																	</div>
+																	<div class="col-sm-4">
+																		<a href="javascript:;" class="" id="" title="Add more Services" style="margin-left: 40px; line-height: 30px;">
+																			<i class="fa fa-plus"></i>Add</a>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="form-group">
+															<label class="control-label col-md-4 add-member-label">
+																Photos: </label>
+															<div class="col-md-8">
+																<input type="file" class="form-control" />
+
+															</div>
+															<div class="col-sm-1"></div>
+														</div>
+														<div class="form-group">
+															<label class="control-label col-md-4 add-member-label">
+																Videos: </label>
+															<div class="col-md-8">
+																<input type="file" class="form-control" />
+
+															</div>
+															<div class="col-sm-1"></div>
+														</div>
+													</div>
+													<div class="col-md-2"></div>
+													<div class="col-md-12" style="border-top:1px solid #dcd9d9;height: 50px;">
+														<button type="button" (click)="addPaymentContinue()" class="next btn btn-success pull-right" style="margin: 10px 10px 0 0;border-radius: 4px !important;">
+															<span title="Click for venue booking" aria-hidden="true">&nbsp;
+																<i class="fa fa-arrow-right"></i>Continue</span>
+															<span class="sr-only">Continue</span>
+														</button>
+														<button type="button" (click)="addPaymentBack()" class="previous btn btn-default pull-right" style="margin: 10px 10px 0 0;border-radius: 4px !important;">
+															<span title="Click for venue booking" aria-hidden="true">&nbsp;
+																<i class="fa fa-arrow-left"></i>Previous</span>
+															<span class="sr-only">Previous</span>
+														</button>
+														<a data-target="#cancelmodal" data-dismiss="modal" class="btn btn-default pull-right" style="margin:10px 10px 0 0;margin-right: 11px;border-radius: 4px !important;">
+															<span title="Click to cancel " aria-hidden="true">&nbsp;
+																<i class="fa fa-times"></i>Cancel</span>
+															<span class="sr-only">Cancel</span>
+														</a>
+													</div>
+												</fieldset>
+												<fieldset *ngIf="new_venue_summary_block">
+													<div id="field4" style="height:320px;overflow-y:auto;overflow-x:hidden;margin-top:50px">
+														<div class="col-sm-12">
+															<div class="col-md-12 col-sm-12">
+																<h4 class="form-section">
+																	<b>Basic Details</b>
+																</h4>
+																<div class="form-group">
+																	<label class="control-label col-md-3">Venue Name:</label>
+																	<div class="col-md-4">
+																		<p class="form-control-static" data-display="username">
+																			Nareen Convention</p>
+																	</div>
+																</div>
+																<div class="form-group">
+																	<label class="control-label col-md-3">Capacity:</label>
+																	<div class="col-md-4">
+																		<p class="form-control-static" data-display="email">10,000
+																		</p>
+																	</div>
+																</div>
+																<div class="form-group">
+																	<label class="control-label col-md-3">Location:</label>
+																	<div class="col-md-4">
+																		<p class="form-control-static" data-display="email">
+																			Miyapur, Hyderabad</p>
+																	</div>
+																</div>
+																<div class="form-group">
+																	<label class="control-label col-md-3">Time Slots:</label>
+																	<div class="col-md-4">
+																		<p class="form-control-static" data-display="email">All Day
+																		</p>
+																	</div>
+																</div>
+
+																<h4 class="form-section">
+																	<b>Contact Details</b>
+																</h4>
+																<div class="form-group">
+																	<label class="control-label col-md-3">Contact Person:</label>
+																	<div class="col-md-4">
+																		<p class="form-control-static" data-display="card_name">
+																			Ravi</p>
+																	</div>
+																</div>
+																<div class="form-group">
+																	<label class="control-label col-md-3">Email ID:</label>
+																	<div class="col-md-4">
+																		<p class="form-control-static" data-display="card_number">
+																			ravi@nareen.com</p>
+																	</div>
+																</div>
+																<div class="form-group">
+																	<label class="control-label col-md-3">Phone NUmber:</label>
+																	<div class="col-md-4">
+																		<p class="form-control-static" data-display="card_cvc">
+																			999-999-9999</p>
+																	</div>
+																</div>
+																<h4 class="form-section">
+																	<b>Photos &amp; Videos:</b>
+																</h4>
+																<div class="form-group">
+																	<label class="control-label col-md-3">Services &amp; Facilities:
+																	</label>
+																	<div class="col-md-9">
+																		<p class="form-control-static" data-display="fullname">
+																			<b>Room No 1</b>
+																			<br />
+																			<span style="text-align: justify">
+																				The meeting room located at the 9th floor of the building has a seating capacity of 25 persons with board room setup. The
+																				room is ideal for small gatherings. It also has pre function area in front of it. The meeting room is
+																				available from 10 a.m to 6 p.m on weekdays and 10 a.m to 5 p.m on Saturday’s &amp; Holidays. Other facilities
+																				like lunch, tea, etc may be arranged against separate payment to the vendors enlisted with ICC</span>
+																			<br />
+																			<br />
+																			<b> Room No 2 </b>
+																			<br />
+																			<span style="text-align: justify"> The meeting room located at the 9th floor of the building has a seating capacity of 20 persons with board
+																				room style seating arrangement. The meeting room is available from 10 a.m to 6 p.m on weekdays and 10
+																				a.m to 5 p.m on Saturday’s &amp; Holidays. Other facilities like lunch, tea, etc may be arranged against
+																				separate payment to the vendors enlisted with ICC</span>
+																		</p>
+																	</div>
+																</div>
+																<div class="form-group">
+																	<label class="control-label col-md-3">Photos:</label>
+																	<div class="col-md-4">
+																		<img src="/assets/images/____9895307_orig.png" height="50" width="50" />
+																		<img src="/assets/images/____9895307_orig.png" height="50" width="50" />
+																		<img src="/assets/images/____9895307_orig.png" height="50" width="50" />
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div style="border-top:1px solid #dcd9d9;height: 50px;">
+														<button (click)="clickedBackButton()" type="button" class="submit btn btn-success pull-right" data-dismiss="modal" style="margin: 10px 10px 0 0;border-radius: 4px !important;"
+														 id="btnbookingSubmit">
+															<span title="Click for submit booking" aria-hidden="true">&nbsp;
+																<i class="fa fa-floppy-o"></i>Submit</span>
+															<span class="sr-only">Submit</span>
+														</button>
+														<button type="button" (click)="addSummaryBack()" class="previous btn btn-default pull-right" style="margin: 10px 10px 0 0;border-radius: 4px !important;">
+															<span title="Click to go back" aria-hidden="true">&nbsp;
+																<i class="fa fa-arrow-left"></i>Previous</span>
+															<span class="sr-only">Previous</span>
+														</button>
+														<a data-target="#cancelmodal" data-dismiss="modal" class="btn btn-default pull-right" style="margin:10px 10px 0 0;margin-right: 11px;border-radius: 4px !important;">
+															<span title="Click to cancel " aria-hidden="true">&nbsp;
+																<i class="fa fa-times"></i>Cancel</span>
+															<span class="sr-only">Cancel</span>
+														</a>
+													</div>
+												</fieldset>
+											</form>
+										</div>
+									</div>
+								</div>
+							</div>
+
 						</div>
 					</div>
 				</div>

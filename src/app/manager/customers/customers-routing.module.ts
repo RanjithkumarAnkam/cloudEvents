@@ -4,13 +4,15 @@ import { CustomersListComponent } from './customers-list/customers-list.componen
 import { ActivityComponent } from './activity/activity.component';
 import { PaymentLogComponent } from './payment-log/payment-log.component';
 import { ReceivablesComponent } from './receivables/receivables.component';
+import { CustomerPaymentComponent } from './customer-payment/customer-payment.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'customers-list',pathMatch: 'full'},
   { path: 'customers-list', component: CustomersListComponent},
   { path: 'activity', component: ActivityComponent},
   { path: 'payment-log', component: PaymentLogComponent},
-  { path: 'receivables', component: ReceivablesComponent}
+  { path: 'receivables', component: ReceivablesComponent},
+  { path: 'customer-payment', component: CustomerPaymentComponent},
 ]
 
 @NgModule({

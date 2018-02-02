@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { SelectItem } from 'primeng/primeng';
 @Component({
   selector: 'app-venue-list',
   templateUrl: './venue-list.component.html',
@@ -15,7 +15,89 @@ export class VenueListComponent implements OnInit {
   ];
   constructor() { }
 
+  venuesList: SelectItem[];
+  selectedVenues: Array<any>;
   ngOnInit() {
+    this.venuesList = [
+      { label: 'Naren Gardens', value: { id: 1, name: 'Naren Gardens', code: 'NG' } },
+      { label: 'Naren Conventions', value: { id: 2, name: 'Naren Conventions', code: 'NC' } },
+      { label: 'Naren platinum', value: { id: 3, name: 'Naren platinum', code: 'NP' } },
+      { label: 'Naren Community', value: { id: 4, name: 'Naren Community', code: 'NCO' } },
+    ];
+  }
+  selectMenuChange() {
+    console.log(this.selectedVenues);
   }
 
+  timeSlotSel: boolean = false;
+  add_venue_first_tab = 'active';
+  add_venue_second_tab = '';
+  add_venue_third_tab = '';
+  add_venue_fourth_tab = '';
+
+  new_venue_customer_block = true;
+  new_venue_event_block = false;
+  new_venue_payment_block = false;
+  new_venue_summary_block = false;
+
+  boDetTimEnable: boolean = false;
+
+  onTimeSlotChange(e) {
+    if (e == 2) {
+      this.boDetTimEnable = true;
+    } else {
+      this.boDetTimEnable = false;
+    }
+  }
+  resetEveryThing() {
+    this.timeSlotSel = false;
+    this.add_venue_first_tab = 'active';
+    this.add_venue_second_tab = '';
+    this.add_venue_third_tab = '';
+    this.add_venue_fourth_tab = '';
+
+    this.new_venue_customer_block = true;
+    this.new_venue_event_block = false;
+    this.new_venue_payment_block = false;
+    this.new_venue_summary_block = false;
+
+    this.timeSlotSel = false;
+
+  }
+  addVenueContinue() {
+    this.add_venue_second_tab = 'active';
+    this.new_venue_customer_block = false;
+    this.new_venue_event_block = true;
+    this.boDetTimEnable = false;
+  }
+  addCpBack() {
+    this.add_venue_second_tab = '';
+    this.new_venue_customer_block = true;
+    this.new_venue_event_block = false;
+  }
+  addCpContinue() {
+    this.add_venue_third_tab = 'active';
+    this.new_venue_event_block = false;
+    this.new_venue_payment_block = true;
+
+  }
+  addPaymentBack() {
+    this.add_venue_third_tab = '';
+    this.new_venue_event_block = true;
+    this.new_venue_payment_block = false;
+  }
+  addPaymentContinue() {
+    this.add_venue_fourth_tab = 'active';
+    this.new_venue_payment_block = false;
+    this.new_venue_summary_block = true;
+  }
+  addSummaryBack() {
+    this.add_venue_fourth_tab = '';
+    this.new_venue_payment_block = true;
+    this.new_venue_summary_block = false;
+  }
+  setRadio(e) {
+    console.log(e);
+    this.timeSlotSel = e;
+  }
 }
