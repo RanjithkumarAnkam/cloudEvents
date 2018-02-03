@@ -55,8 +55,8 @@ export class ViewComponent implements OnInit {
         this.events = [
             {
                 "title": "Two days Booking",
-                "start": "2018-01-01",
-                "end": "2018-01-03",
+                "start": "2018-02-01",
+                "end": "2018-02-03",
                 "backgroundColor": "green",
                 "type": 1
             },
@@ -68,25 +68,25 @@ export class ViewComponent implements OnInit {
             },
             {
                 "title": "Appointmnet",
-                "start": "2018-01-09T16:00:00",
+                "start": "2018-02-09T16:00:00",
                 "backgroundColor": "blue",
                 "type": 3
             },
             {
                 "title": "Enquiry2",
-                "start": "2018-01-16T16:00:00",
+                "start": "2018-02-16T16:00:00",
                 "backgroundColor": "red",
                 "type": 2
             },
             {
                 "title": "Booking 2",
-                "start": "2018-01-18",
+                "start": "2018-02-18",
                 "backgroundColor": "green",
                 "type": 1
             },
             {
                 "title": "Appointmnet 2",
-                "start": "2018-01-30T12:00:00",
+                "start": "2018-02-27T12:00:00",
                 "backgroundColor": "blue",
                 "type": 3
             }

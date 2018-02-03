@@ -9,9 +9,9 @@ import { SelectItem } from 'primeng/primeng';
 
 export class ManagerDashboardComponent implements OnInit {
     data: any[] = [
-        { num: 'NG/RAN/2018/01/06', fname: 'Suresh', lname: 'babu', venue: "Naren Garden", duedate: '20/12/2017', eventdate: '26/12/20117', phonenum: '9955886633', email: 'suresh@facebook.com', eventname: 'marriage', totalamount: '25000', paidamount: '5000', due: '20000' },
-        { num: 'NG/KAl/2018/02/10', fname: 'Ramesh', lname: 'Kumar', venue: "Naren Platinum", duedate: '19/11/2017', eventdate: '30/11/20117', phonenum: '9955886633', email: 'ramesh@facebook.com', eventname: 'birthday', totalamount: '100000', paidamount: '7000', due: '13000' },
-        { num: 'NG/MAH/2018/04/12', fname: 'Rajesh', lname: 'Sarma', venue: "Naren Convention", duedate: '06/12/2017', eventdate: '15/12/20117', phonenum: '9955886633', email: 'rajesh@facebook.com', eventname: 'marriage', totalamount: '78000', paidamount: '15000', due: '10000' }
+        { num: 'NG/RAN/2018/01/06', fname: 'Suresh', lname: 'babu', venue: "Naren Garden", eventdate: '03-Mar-2018', duedate: '10-Mar-2018', phonenum: '9955886633', email: 'suresh@facebook.com', eventname: 'marriage', totalamount: '25000', paidamount: '5000', due: '20000' },
+        { num: 'NG/KAl/2018/02/10', fname: 'Ramesh', lname: 'Kumar', venue: "Naren Platinum", eventdate: '04-Apr-2018', duedate: '10-Apr-2018', phonenum: '9955886633', email: 'ramesh@facebook.com', eventname: 'birthday', totalamount: '100000', paidamount: '7000', due: '13000' },
+        { num: 'NG/MAH/2018/04/12', fname: 'Rajesh', lname: 'Sarma', venue: "Naren Convention", eventdate: '21-Apr-2018', duedate: '24-Apr-2018', phonenum: '9955886633', email: 'rajesh@facebook.com', eventname: 'marriage', totalamount: '78000', paidamount: '15000', due: '10000' }
     ];
     options: Object;
     options_second: Object;
@@ -25,12 +25,20 @@ export class ManagerDashboardComponent implements OnInit {
 
         //first graph
         this.options = {
-            title: { text: 'Revenue Generated in the year : 2017' },
+            title: { text: 'Revenue Generated in the year : 2017',
+            style: {
+                'color': '#116a9e',
+                'font-weight': '400'
+            },
+            
+         },
+            
             xAxis: {
                 categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
             }, yAxis: {
                 title: {
-                    text: 'Generated Revenue'
+                    text: 'Generated Revenue',
+                   
                 }
             },
             navigation: {
@@ -58,7 +66,11 @@ export class ManagerDashboardComponent implements OnInit {
                 type: 'column'
             },
             title: {
-                text: 'New Vs Repeated Customers'
+                text: 'New Vs Repeated Customers',
+                style: {
+                    'color': '#116a9e',
+                    'font-weight': '400'
+                }
             },
             xAxis: {
                 categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
@@ -111,7 +123,11 @@ export class ManagerDashboardComponent implements OnInit {
                 type: 'pie'
             },
             title: {
-                text: 'Revenue distribution across venues 2017'
+                text: 'Revenue distribution across venues 2017',
+                style: {
+                    'color': '#116a9e',
+                    'font-weight': '400'
+                }
             },
             tooltip: {
                 pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
@@ -166,7 +182,11 @@ export class ManagerDashboardComponent implements OnInit {
                 type: 'line'
             },
             title: {
-                text: 'Occupancy Rate Of Venues : 2017'
+                text: 'Occupancy Rate Of Venues : 2017',
+                style: {
+                    'color': '#116a9e',
+                    'font-weight': '400'
+                }
             },
             xAxis: {
                 categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']

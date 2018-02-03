@@ -33,50 +33,46 @@
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li class="sMenu" tourAnchor="Settings.id" style="margin-right: 5px !important;">
-                    <img src="/assets/Dashboard_Assets/5_Quick_Start_icon.png" width="20px" />
+                <li class="sMenu" tourAnchor="Settings.id" style="margin-right: 10px !important;">
                     <button class="btn btn-default helpbtn" id="btnquick" data-toggle="modal" data-target="#mainmodalpop" style="padding:10px 0">
-                        Quick Start&nbsp;
+                        <img src="/assets/Dashboard_Assets/5_Quick_Start_icon.png" width="15px" style="margin: -3px 5px 0px 5px !important;" /> Quick Start&nbsp;
                     </button>
                 </li>
-                <li class="sMenu" tourAnchor="Support.id">
-                    <img src="/assets/Dashboard_Assets/6_Support_icon.png" width="20px" style="margin-right: 5px !important;" />
-                    <button class="btn btn-default supportbutton" [routerLink]="['/manager/support/phone']"  style="padding:10px 0">
+                <li class="sMenu" tourAnchor="Support.id" style="margin-right: 10px;">
+                    <button class="btn btn-default supportbutton" [routerLink]="['/manager/support/phone']" style="padding:10px 0">
+                        <img src="/assets/Dashboard_Assets/6_Support_icon.png" width="15px" style="margin: -3px 5px 0px 5px !important;" />
                         <span> Support&nbsp;
                         </span>
                     </button>
                 </li>
-                <li class="sMenu">
-                    <img src="/assets/Dashboard_Assets/7_Help_icon.png" width="20px" style="margin-right: 5px !important;" />
-                    <button class="btn btn-default mhelp helpbtn" (click)="startTour()" id="mhelp"  style="padding:10px 0">
-                        Help&nbsp;
+                <li class="sMenu" style="margin-right: 10px;">
+                    <button class="btn btn-default mhelp helpbtn" (click)="startTour()" id="mhelp" style="padding:10px 0">
+                        <img src="/assets/Dashboard_Assets/7_Help_icon.png" width="15px" style="margin: -3px 5px 0px 5px !important;" /> Help&nbsp;
                     </button>
                 </li>
-                <li class="dropdown dropdown-user" style="width:150px">
-                    <img style="height:25px" src="/assets/images/Ans-.jpg" class="imgstyle" style="height: 40px;margin: 5px 0 0 10px;border-radius: 50px !important;"
-                    />
-                    <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true" style="float:right">
-                        <span class="username username-hide-on-mobile">
-
+                <li class="dropdown dropdown-user" style="width:160px">
+                    <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true" style="float:right;width: 100%;padding:0">
+                        <img style="height:25px" src="/assets/images/Ans-.jpg" class="imgstyle" style="height: 40px;margin: 5px 0 0 10px;border-radius: 50px !important;" />
+                        <span class="username username-hide-on-mobile" style="margin-left:10px;position:absolute;margin:15px 0 0 10px;">
                             <b>Hi John</b>
                         </span>
-                        <i class="fa fa-angle-down"></i>
+                        <i class="fa fa-angle-down" style="float:right;margin:18px 15px 0 0 !important"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-default">
                         <li>
                             <a [routerLink]="['/manager/profile']">
-
-                                <i class="icon-user" style="margin-right:3px"></i>My Profile
+                                <img src="/assets/Dashboard_Assets/8_UserProfile_icon.png" width="20px" style="margin-right:10px;margin-top: -3px;" />My Profile
                             </a>
                         </li>
                         <li>
                             <a data-toggle="modal" data-target="#myModal-change-pswd" class="curspointer">
-                                <i class="icon-lock" style="margin-right:3px"></i>Change Password
+                                <img src="/assets/Dashboard_Assets/10_Password_Change_icon.png" width="20px" style="margin-right:10px;margin-top: -3px;"
+                                />Change Password
                             </a>
                         </li>
                         <li>
                             <a [routerLink]="['/login']">
-                                <i class="icon-key" style="margin-right:3px"></i>Log Out
+                                <img src="/assets/Dashboard_Assets/11_Logout_icon.png" width="20px" style="margin-right:10px;margin-top: -3px;" />Log Out
                             </a>
                         </li>
                     </ul>

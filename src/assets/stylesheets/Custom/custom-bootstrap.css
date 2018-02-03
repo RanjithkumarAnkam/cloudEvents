@@ -178,9 +178,8 @@
     height:30px;
     padding:3px;
 }
-.highcharts-title{
-    color:#116A91 !important;
-    font-weight:400 !important;
+.ui-multiselect-panel .ui-multiselect-item label{
+    margin:5px;
 }
 .nav-tabs > li > a{
     color:#333333 !important;
@@ -193,7 +192,10 @@
     background-color: #116A91 !important;
 }
 .highcharts-container {
-    box-shadow: 17px 10px 70px 30px #eee;
+    box-shadow:0 20px 22px 0 rgba(0, 0, 0, 0.16), 0 -8px 30px 0 rgba(0, 0, 0, 0.12);
+}
+text.highcharts-credits{
+    display: none;
 }
 input[type=date]{
     padding:5px 0px 5px 6px  !important;
@@ -222,4 +224,42 @@ input[type=date]{
 }
 .sMenu{
     margin-left:10px !important;
+}
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:focus, .navbar-inverse .navbar-nav > .active > a:hover{
+    color: #116a9e !important;
+    font-weight: 600 !important;
+}
+.dropdown-menu > li >a:hover{
+    background-color: #eee !important;
+}
+.table{
+    box-shadow: 0 6px 4px 0 rgba(0, 0, 0, 0.16), 0 -13px 30px 0 rgba(0, 0, 0, 0.12); 
+}
+.navbar-inverse .navbar-nav > li > a{
+    font-size:14px !important;
+    color:#fff !important;
+}
+.ui-widget-header .ui-button, .ui-widget-content .ui-button, .ui-widget.ui-button, .ui-button{
+    border: 1px solid #578ebe !important;
+    color: #3e3737 !important;
+    background: #ffffff !important;
+    transition: background-color .2s !important;
+    margin-right: 10px !important;
+    border-radius: 13px !important;
+    box-shadow: 3px 3px 19px 0px #272727;
+}
+.fc .fc-button-group .ui-state-active{
+    background: #186ba0 !important;
+    color: #ffffff !important;
+    border: 1px solid #186ba0 !important;
+}
+.fc-view{
+    box-shadow: 4px 4px 24px 2px #232323;
+}
+.ui-datepicker.ui-datepicker-inline
+{
+    box-shadow: 4px 9px 26px 1px #0c0c0c;
+}
+.panel{
+   box-shadow: 1px 3px 8px 0px #000 !important
 }
