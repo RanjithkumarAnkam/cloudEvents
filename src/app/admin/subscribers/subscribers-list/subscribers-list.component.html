@@ -19,7 +19,7 @@
 				<!---Subscriber table and list of subscripbers -->
 				<div class="col-sm-12 nopadding margin-top-10">
 					<div class="col-sm-12 nopadding">
-						<div class="col-sm-12" style="background:#efefef;padding:5px;">
+						<div class="col-sm-12" style="background:#fff;padding:5px;">
 
 							<div class="col-sm-3 nopadding" style="margin-top:5px">
 								<div class="col-sm-10 nopadding">
@@ -33,7 +33,7 @@
 							</div>
 							<div class="col-sm-4" style="margin-top:5px">
 								<div class="col-sm-4 text-right" style="margin-top:5px">
-									<label class="control-label ">Status&nbsp;:</label>
+									<label class="control-label "><b>Status&nbsp;:</b></label>
 								</div>
 								<div class="col-sm-8 nopadding">
 									<p-multiSelect [options]="statusList" [(ngModel)]="selectedStatus" defaultLabel='All' (onChange)="selectStatusChange()"></p-multiSelect>
@@ -41,7 +41,7 @@
 							</div>
 							<div class="col-sm-4" style="margin-top:5px">
 								<div class="col-sm-4 text-right" style="margin-top:5px">
-									<label class="control-label ">Pacakge&nbsp;:</label>
+									<label class="control-label "><b>Pacakge&nbsp;:</b></label>
 								</div>
 								<div class="col-sm-8 nopadding">
 									<p-multiSelect [options]="packageList" [(ngModel)]="selectedPackage" defaultLabel='All' (onChange)="selectVenueChange()"></p-multiSelect>
@@ -56,6 +56,7 @@
 
 						</div>
 						<div class="col-sm-12 margin-top-20 nopadding">
+								<div class="table-responsive kv-grid-container" style="overflow: auto">
 							<table class="table table-hover table-bordered margin-top-0" [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="5">
 								<thead>
 									<tr class="table-headers">
@@ -122,6 +123,7 @@
 									</tr>
 								</tfoot>
 							</table>
+							</div>
 						</div>
 					</div>
 				</div>

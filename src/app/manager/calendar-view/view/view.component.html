@@ -22,12 +22,9 @@
           </div>
           <div class="col-sm-12 nopadding " style="background: #116a9e; color:#fff;padding-left: 10px; padding-bottom: 10px;box-shadow:0 20px 22px 0 rgba(0, 0, 0, 0.16), 0 -8px 30px 0 rgba(0, 0, 0, 0.12) !important;border-radius: 25px !important;">
             <div class="col-lg-3 nopadding btm  ">
-
               <div style="text-align: center;padding-top:10px;" id="loaderdiv">
                 <p-calendar formControlName="date11" [inline]="true" class="col-xs-12 padding-0"></p-calendar>
               </div>
-
-
               <div class="col-sm-12" style="padding: 28px;">
                 <div>
                   <h4>
@@ -167,56 +164,56 @@
 <button id="openFutureModalButton" [hidden]="true" data-toggle="modal" data-target="#fullCalModal">Open Modal</button>
 <div id="fullCalModal" class="modal fade">
   <div class="modal-dialog modal-lg">
-    <div class="modal-content" id="mdcontent">
-      <div class="fc-title header">
+    <div class="modal-content" id="mdcontent"  style="height:600px !important;">
+      <div class="fc-title header" style="height:65px;">
         <button (click)="resetEverything()" id="btnClosebands" type="button" class="btn btn-default Close pull-right" data-dismiss="modal"
-          style="margin-right: 20px;margin-top: 28px;border-radius: 35px !important;">
+          style="margin-right: 20px;margin-top: 10px;border-radius: 35px !important;">
           <span aria-hidden="true" style="font-size:20px">×</span>
           <span class="sr-only">close</span>
         </button>&nbsp;
-        <button type="button" *ngIf="new_creation" (click)="clickedBackButton()" class="btn btn-primary btnback pull-right" style="margin-right: 20px;margin-top: 28px;border-radius: 4px !important;">
+        <button type="button" *ngIf="new_creation" (click)="clickedBackButton()" class="btn btn-primary btnback pull-right" style="margin-right: 20px;margin-top: 15px;border-radius: 4px !important;">
           <span title="Click to go back" aria-hidden="true">
             <i class="fa fa-arrow-circle-o-left"></i>&nbsp;Back</span>
           <span class="sr-only">Back</span>
         </button>
-        <button type="button" class="btn btn-primary pull-right hide" id="addbtnbooking" style="margin-right: 11px;margin-top: 28px;border-radius: 4px !important;">
+        <button type="button" class="btn btn-primary pull-right hide" id="addbtnbooking" style="margin-right: 11px;margin-top: 20px;border-radius: 4px !important;">
           <span title="Click for venue booking" aria-hidden="true">&nbsp;Add New Booking</span>
           <span class="sr-only">Add New Booking</span>
         </button>
-        <button type="button" class="btn btn-primary pull-right hide" id="addbtnenquiry" style="margin-right: 11px;margin-top: 28px;border-radius: 4px !important;">
+        <button type="button" class="btn btn-primary pull-right hide" id="addbtnenquiry" style="margin-right: 11px;margin-top: 20px;border-radius: 4px !important;">
           <span title="Click for venue enquiry" aria-hidden="true">&nbsp;Add New Enquiry</span>
           <span class="sr-only">Add New Enquiry</span>
         </button>
-        <button type="button" class="btn btn-primary pull-right hide" id="addbtnappointment" style="margin-right: 11px;margin-top: 28px;border-radius: 4px !important;">
+        <button type="button" class="btn btn-primary pull-right hide" id="addbtnappointment" style="margin-right: 11px;margin-top: 20px;border-radius: 4px !important;">
           <span title="Click for venue appointment" aria-hidden="true">&nbsp;Add New Appointment</span>
           <span class="sr-only">Add New Appointment</span>
         </button>
-        <h4 id="modalTitle" class="modal-Title" style="padding: 10px;font-weight: bold;padding-left: 15px;">
+        <h4 id="modalTitle" class="modal-Title" style="padding: 10px;font-weight: bold;padding-left: 15px;margin:0 !important;">
         </h4>
       </div>
 
       <div id="modalBody" class="modal-body">
-        <div *ngIf="no_new_creation_holiday" class="col-sm-12" style="margin-top:0px;background-color:#eee;padding:5px;" id="divcheckbox">
+        <div *ngIf="no_new_creation_holiday" class="col-sm-12" style="margin-top:15px;background-color:#eee;padding:5px;" id="divcheckbox">
           <span style="padding-left:9px;font-size: 18px;">
             <input type="checkbox" class="" id="Holidaychckbox" (change)="clickedHoliday($event)" /> Mark this as a Holiday
           </span>
         </div>
         <div *ngIf='no_new_creation' class="col-sm-12 nopadding" style="margin-top:30px;" id="Firstbands">
-          <div class="col-sm-12" style="margin-top:0px;margin-bottom: 12px;">
-            <label class="" style="font-size: 18px;">
+          <div class="col-sm-12 text-center" style="margin-top:0px;margin-bottom: 12px;color:#116a9e">
+            <label class="" style="font-size:22px;">
               <span id="txtpanel">
                 <b>Please select an Event type</b>
               </span>
             </label>
           </div>
-          <div id="BEA" [ngClass]='event_type_class'>
+          <div id="BEA" [ngClass]='event_type_class' style="margin-top:80px;height:300px">
             <div class="col-sm-4 text-center">
               <div class="firstbandpanels" id="bookingpanel" style="display:inline-block;">
                 <div class="panel-body text-center" style="color:white;" id="btnbooking" (click)="createBooking()">
                   <i style="padding-top: 3px;" class="fa fa-book fa-3x"></i>
                 </div>
               </div>
-              <span style="padding-left:4px;font-size: 18px;display:block;" id="txtbookingpanel">Booking</span>
+              <span style="padding-left:4px;font-size: 18px;display:block;" id="txtbookingpanel"><b>Booking</b></span>
             </div>
             <div class="col-sm-4 text-center">
               <div class="firstbandpanels" id="enquirypanel" style="display:inline-block;">
@@ -224,7 +221,7 @@
                   <i style="padding-top: 3px;" class="fa fa-info-circle fa-3x"></i>
                 </div>
               </div>
-              <span style="padding-left:4px;font-size: 18px;display:block;" id="txtenquirypanel">Enquiry</span>
+              <span style="padding-left:4px;font-size: 18px;display:block;" id="txtenquirypanel"><b>Enquiry</b></span>
             </div>
             <div class="col-sm-4 text-center">
               <div class="firstbandpanels" id="appointmentpanel" style="display:inline-block;">
@@ -232,7 +229,7 @@
                   <i style="padding-top: 3px;" class="glyphicon glyphicon-calendar fa-2x "></i>
                 </div>
               </div>
-              <span style="padding-left:4px;font-size: 18px;display:block;" id="txtappointmentpanel">Appointment</span>
+              <span style="padding-left:4px;font-size: 18px;display:block;" id="txtappointmentpanel"><b>Appointment</b></span>
             </div>
 
           </div>
@@ -262,7 +259,7 @@
                           <u>Customer Information</u>
                         </b>
                       </h4>
-                      <div id="field1" style="height:320px;overflow-y:auto; overflow-x:hidden;padding: 27px;padding-top:0px;padding-bottom:0px;">
+                      <div id="field1" style="height:320px;overflow-y:auto; overflow-x:hidden;padding: 27px;padding-top:10px;padding-bottom:0px;    background-color: #e8e8e8 !important;">
                         <div class="form-group">
                           <label class="control-label col-md-4  add-member-label" style="line-height:1px;">
                             Exisiting Customer
@@ -384,7 +381,7 @@
                           <u>Booking Details</u>
                         </b>
                       </h4>
-                      <div id="field2" style="height:320px;overflow-y:auto; overflow-x:hidden;padding:0px;">
+                      <div id="field2" style="height:320px;overflow-y:auto; overflow-x:hidden;padding-top:10px;background-color: #e8e8e8 !important;">
                         <div class="col-md-6">
                           <div class="form-group nopadding">
                             <label class="control-label col-md-4  add-member-label">
@@ -610,12 +607,12 @@
                           <u>Payment details</u>
                         </b>
                       </h4>
-                      <div id="field3" style="height:320px;overflow-y:auto;overflow-x:hidden;padding:0;">
+                      <div id="field3" style="height:320px;overflow-y:auto;overflow-x:hidden;padding:27px;padding-top:10px;background-color: #e8e8e8 !important;">
                         <div *ngIf="!payDivEnable " class="col-sm-12 nopadding" id="payments">
                           <div class="col-lg-4 col-md-6 nopadding text-center">
                             <div class="col-sm-12">
                               <div style="background-color: #337ab7;height: 10px;"></div>
-                              <div style="border:ridge;height:280px;">
+                              <div style="background-color:#fff;height:280px;box-shadow:0px 1px 2px 1px #d6d3d3 !important">
                                 <div class="col-sm-12 headband">
                                   <h3>Advance</h3>
                                 </div>
@@ -642,7 +639,7 @@
                           <div class="col-lg-4 col-md-6 nopadding text-center">
                             <div class="col-sm-12">
                               <div style="background-color: #337ab7;height: 10px;"></div>
-                              <div style="border:ridge;height:280px;">
+                              <div style="background-color:#fff;height:280px;box-shadow:0px 1px 2px 1px #d6d3d3 !important">
                                 <div class="col-sm-12 headband">
                                   <h3>First Payment</h3>
                                 </div>
@@ -669,7 +666,7 @@
                           <div class="col-lg-4 col-md-6 nopadding text-center">
                             <div class="col-sm-12">
                               <div style="background-color: #337ab7;height: 10px;"></div>
-                              <div style="border:ridge;height:280px;">
+                              <div style="background-color:#fff;height:280px;box-shadow:0px 1px 2px 1px #d6d3d3 !important">
                                 <div class="col-sm-12 headband">
                                   <h3>Add Payment</h3>
                                 </div>
@@ -854,7 +851,7 @@
                           <i class="fa fa-download"></i>&nbsp;Download
                         </a>
                       </div>
-                      <div id="field4" style="height:320px;overflow-y:auto;overflow-x:hidden;padding:27px;padding-bottom:0px;">
+                      <div id="field4" style="height:320px;overflow-y:auto;overflow-x:hidden;padding:27px;padding-top:10px;background-color: #e8e8e8 !important;">
                         <div class="col-sm-12">
                           <div class="col-md-12 col-sm-12">
                             <div class="portlet  blue-hoki box">
@@ -1087,7 +1084,7 @@
                           <u>Customer Information</u>
                         </b>
                       </h4>
-                      <div id="field1" style="height:320px;overflow-y:auto; overflow-x:hidden;padding: 27px;padding-top:0px;padding-bottom:0px;">
+                      <div id="field1" style="height:320px;overflow-y:auto; overflow-x:hidden;padding: 27px;padding-top:10px;padding-bottom:0px;background-color: #e8e8e8 !important;">
                         <div id="newcustomerdiv" style="margin-top:10px;">
 
                           <div class="form-group">
@@ -1201,7 +1198,7 @@
                           <u>Venue Information</u>
                         </b>
                       </h4>
-                      <div id="field2" style="height:320px;overflow-y:auto; overflow-x:hidden;">
+                      <div id="field2" style="height:320px;overflow-y:auto;padding: 27px;padding-top:10px;overflow-x:hidden;background-color: #e8e8e8 !important;">
                         <div class="form-group">
                           <label class="control-label col-md-4 add-member-label">
                             Venue
@@ -1318,7 +1315,7 @@
             </div>
           </div>
 
-          <div id="menuappointment" *ngIf="new_appointment" style="padding-left: 23px;height:440px;overflow-y:auto;">
+          <div id="menuappointment" *ngIf="new_appointment" style="padding-left: 23px;height:440px;overflow-y:auto;background-color: #e8e8e8 !important;">
             <div class="col-sm-12 nopadding" style="margin-top:20px;">
               <div class="col-sm-3">
                 <label class="control-label add-member-label">Meeting With :</label>

@@ -16,15 +16,15 @@
           </div>
           <div class="col-sm-4 nopadding" style="margin-top: 10px;">
             <div class="col-sm-4 nopadding">
-              <label style="line-height: 35px;color: #116a9e;">Select Venue&nbsp;:</label>
+              <label style="line-height: 35px;color: #116a9e;"><b>Select Venue&nbsp;</b>:</label>
             </div>
             <div class="col-sm-8 nopadding">
-              <p-multiSelect [options]="venuesList" class="pull-right" [(ngModel)]="selectedVenues" defaultLabel='All Venues' (onChange)="selectMenuChange()"></p-multiSelect>
+              <p-multiSelect [options]="venuesList" class="" [(ngModel)]="selectedVenues" defaultLabel='All Venues' (onChange)="selectMenuChange()"></p-multiSelect>
             </div>
           </div>
 
           <div class="col-sm-12 nopadding margin-top-10">
-            <div class="panel panel-default" style="background-color:#eee">
+            <div class="panel panel-default" style="background-color: #fff;">
               <div class="panel-body">
                 <div class="col-sm-12 nopadding">
                   <div class="col-sm-7 nopadding">
@@ -39,7 +39,7 @@
                     <div class="col-sm-12 nopadding">
                       <div class="col-sm-6 margin-top-20">
                         <div class="col-sm-3 nopadding">
-                          <label style="line-height: 34px;">Year&nbsp;:</label>
+                          <label style="line-height: 34px;"><b>Year&nbsp;:</b></label>
                         </div>
                         <div class="col-sm-9 nopadding">
                           <select class="form-control">
@@ -85,7 +85,7 @@
               <div class="col-sm-12 nopadding  margin-top-20">
                 <div class="row">
                   <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                    <div class="dashboard-stat blue-madison" style=" box-shadow: 0 20px 22px 0 rgba(0, 0, 0, 0.16), 0 -8px 30px 0 rgba(0, 0, 0, 0.12); ">
+                    <div class="dashboard-stat blue-madison" style=" box-shadow: 0px 1px 2px 1px #d6d3d3 !important; ">
                       <div class="visual">
                         <img height=50px src="/assets/Dashboard_Assets/1_Booking_icon.png">
                       </div>
@@ -96,7 +96,7 @@
                     </div>
                   </div>
                   <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                    <div class="dashboard-stat red-intense" style=" box-shadow: 0 20px 22px 0 rgba(0, 0, 0, 0.16), 0 -8px 30px 0 rgba(0, 0, 0, 0.12); ">
+                    <div class="dashboard-stat red-intense" style=" box-shadow: 0px 1px 2px 1px #d6d3d3 !important; ">
                       <div class="visual">
                         <img height=50px src="/assets/Dashboard_Assets/2_Enquiry_icon.png">
                       </div>
@@ -107,7 +107,7 @@
                     </div>
                   </div>
                   <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                    <div class="dashboard-stat purple-plum" style=" box-shadow: 0 20px 22px 0 rgba(0, 0, 0, 0.16), 0 -8px 30px 0 rgba(0, 0, 0, 0.12); ">
+                    <div class="dashboard-stat purple-plum" style=" box-shadow: 0px 1px 2px 1px #d6d3d3 !important; ">
                       <div class="visual">
                         <img height=50px src="/assets/Dashboard_Assets/4_Receivable_icon.png">
                       </div>
@@ -120,7 +120,7 @@
                     </div>
                   </div>
                   <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                    <div class="dashboard-stat green-haze" style=" box-shadow: 0 20px 22px 0 rgba(0, 0, 0, 0.16), 0 -8px 30px 0 rgba(0, 0, 0, 0.12); ">
+                    <div class="dashboard-stat green-haze" style=" box-shadow: 0px 1px 2px 1px #d6d3d3 !important; ">
                       <div class="visual">
                         <img height=50px src="/assets/Dashboard_Assets/3_Payable_icon.png">
                       </div>
@@ -227,69 +227,73 @@
             </div>
           </div>
           <div class="col-sm-12 nopadding margin-top-10">
-            <label style="font-size: 20px;color:#10699e"><b>Over Due Payments</b></label>
-            <table class="table table-hover table-bordered margin-top-10" [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="5">
-              <thead>
-                <tr class="table-headers">
-                  <th style="width: 7%">
-                    <mfDefaultSorter by="num">Booking Id
-                    </mfDefaultSorter>
-                  </th>
-                  <th style="width: 7%">
-                    <mfDefaultSorter by="fname">Name
-                    </mfDefaultSorter>
-                  </th>
+            <label style="font-size: 20px;color:#10699e">
+              <b>Over Due Payments</b>
+            </label>
+            <div class="table-responsive kv-grid-container" style="overflow: auto">
+              <table class="table table-hover table-bordered margin-top-10" [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="5">
+                <thead>
+                  <tr class="table-headers">
+                    <th style="width: 7%">
+                      <mfDefaultSorter by="num">Booking Id
+                      </mfDefaultSorter>
+                    </th>
+                    <th style="width: 7%">
+                      <mfDefaultSorter by="fname">Name
+                      </mfDefaultSorter>
+                    </th>
 
-                  <th style="width: 7%">
-                    <mfDefaultSorter by="phonenum">Phone Number</mfDefaultSorter>
-                  </th>
-                  <th style="width: 7%">
-                    <mfDefaultSorter by="email">Email</mfDefaultSorter>
-                  </th>
-                  <th style="width: 7%">
-                    <mfDefaultSorter by="venue">Venue Name</mfDefaultSorter>
-                  </th>
+                    <th style="width: 7%">
+                      <mfDefaultSorter by="phonenum">Phone Number</mfDefaultSorter>
+                    </th>
+                    <th style="width: 7%">
+                      <mfDefaultSorter by="email">Email</mfDefaultSorter>
+                    </th>
+                    <th style="width: 7%">
+                      <mfDefaultSorter by="venue">Venue Name</mfDefaultSorter>
+                    </th>
 
-                  <th style="width: 7%">
-                    <mfDefaultSorter by="eventdate">Event Date
-                    </mfDefaultSorter>
-                  </th>
-                  <th style="width: 7%">
-                    <mfDefaultSorter by="duedate">Due Date</mfDefaultSorter>
-                  </th>
-                  <th style="width: 7%">
-                    <mfDefaultSorter by="totalamount">Total Amount
-                    </mfDefaultSorter>
-                  </th>
-                  <th style="width: 7%">
-                    <mfDefaultSorter by="paidamount">Paid Amount
-                    </mfDefaultSorter>
-                  </th>
-                  <th style="width: 7%">
-                    <mfDefaultSorter by="due">Due Amount
-                    </mfDefaultSorter>
-                  </th>
+                    <th style="width: 7%">
+                      <mfDefaultSorter by="eventdate">Event Date
+                      </mfDefaultSorter>
+                    </th>
+                    <th style="width: 7%">
+                      <mfDefaultSorter by="duedate">Due Date</mfDefaultSorter>
+                    </th>
+                    <th style="width: 7%">
+                      <mfDefaultSorter by="totalamount">Total Amount
+                      </mfDefaultSorter>
+                    </th>
+                    <th style="width: 7%">
+                      <mfDefaultSorter by="paidamount">Paid Amount
+                      </mfDefaultSorter>
+                    </th>
+                    <th style="width: 7%">
+                      <mfDefaultSorter by="due">Due Amount
+                      </mfDefaultSorter>
+                    </th>
 
-                </tr>
-              </thead>
-              <tbody>
-                <tr *ngFor="let item of mf.data">
-                  <td>{{item.num}}</td>
-                  <td>{{item.fname}}&nbsp;{{item.lname}}</td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of mf.data">
+                    <td>{{item.num}}</td>
+                    <td>{{item.fname}}&nbsp;{{item.lname}}</td>
 
-                  <td>{{item.phonenum}}</td>
-                  <td>{{item.email}}</td>
-                  <td>{{item.venue}}</td>
+                    <td>{{item.phonenum}}</td>
+                    <td>{{item.email}}</td>
+                    <td>{{item.venue}}</td>
 
 
-                  <td>{{item.eventdate}}</td>
-                  <td>{{item.duedate}}</td>
-                  <td>{{item.totalamount}}</td>
-                  <td>{{item.paidamount}}</td>
-                  <td>{{item.due}}</td>
+                    <td>{{item.eventdate}}</td>
+                    <td>{{item.duedate}}</td>
+                    <td>{{item.totalamount}}</td>
+                    <td>{{item.paidamount}}</td>
+                    <td>{{item.due}}</td>
 
-              </tbody>
-            </table>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>

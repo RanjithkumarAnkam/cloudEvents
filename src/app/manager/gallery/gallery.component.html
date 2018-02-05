@@ -9,29 +9,30 @@
             <small> Venues related gallery of images along with videos are shown in this page.</small>
           </p>
         </h3>
-        <div class="col-sm-12 nopadding" style="border: 1px solid #e2e2e2 !important; padding: 20px;    background-color: #eee;">
+        <div class="col-sm-12 nopadding" style="border: 1px solid #e2e2e2 !important; padding: 20px;    background-color: #fff;">
           <div class="form-group nopadding">
-            <div class="col-md-2"></div>
-            <label class="control-label col-md-2  nopadding" style="margin-top: 5px;">
-              Select Venue :
+            
+            <label class="control-label col-md-2  nopadding" style="margin-top: 5px;width: 11%;">
+             <p> <b>Select Venue :</b></p>
             </label>
             <div class="col-md-4 nopadding">
                 <p-multiSelect [options]="venuesList" [(ngModel)]="selectedVenues" defaultLabel='All Venues' (onChange)="selectMenuChange()"></p-multiSelect>
             </div>
-            <div class="col-md-2 nopadding">
+            <div class="col-md-4"></div>
+            <div class="col-md-2 nopadding" style="width: 21%;">
               <a (click)="searchImgs()" class="btn btn-success pull-right" title="Click to Fetch Images">
                 Filter</a>
             </div>
-            <div class="col-md-2"></div>
+           
           </div>
         </div>
-        <div class="col-sm-12 nopadding" style="margin-top:40px;border: 1px solid #e2e2e2 !important;">
+        <div class="col-sm-12 nopadding" style="margin-top:40px;border: 1px solid #e2e2e2 !important;background-color:#fff">
           <h3 style="text-align: center;font-weight: 600;">Images</h3>
           <div class="col-sm-12" style="text-align: center !important">
             <ngx-gallery [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
           </div>
         </div>
-        <div class="col-sm-12" style="margin-top:40px;border: 1px solid #e2e2e2 !important;">
+        <div class="col-sm-12" style="margin-top:40px;border: 1px solid #e2e2e2 !important;background-color:#fff">
           <h3 style="text-align: center;font-weight: 600;">Videos</h3>
           <ngx-carousel
           [inputs]="carouselTile"

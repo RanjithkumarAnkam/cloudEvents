@@ -28,7 +28,7 @@ export class ManagerDashboardComponent implements OnInit {
             title: { text: 'Revenue Generated in the year : 2017',
             style: {
                 'color': '#116a9e',
-                'font-weight': '400'
+                'font-weight': '800'
             },
             
          },
@@ -69,7 +69,7 @@ export class ManagerDashboardComponent implements OnInit {
                 text: 'New Vs Repeated Customers',
                 style: {
                     'color': '#116a9e',
-                    'font-weight': '400'
+                    'font-weight': '800'
                 }
             },
             xAxis: {
@@ -126,7 +126,7 @@ export class ManagerDashboardComponent implements OnInit {
                 text: 'Revenue distribution across venues 2017',
                 style: {
                     'color': '#116a9e',
-                    'font-weight': '400'
+                    'font-weight': '800'
                 }
             },
             tooltip: {
@@ -185,7 +185,7 @@ export class ManagerDashboardComponent implements OnInit {
                 text: 'Occupancy Rate Of Venues : 2017',
                 style: {
                     'color': '#116a9e',
-                    'font-weight': '400'
+                    'font-weight': '800'
                 }
             },
             xAxis: {

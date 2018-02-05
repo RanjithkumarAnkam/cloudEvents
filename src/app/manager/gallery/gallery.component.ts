@@ -55,14 +55,14 @@ export class GalleryComponent implements OnInit {
     ]
     this.galleryImages = [
       {
-        small: 'assets/images/d-1.jpg',
-        medium: 'assets/images/d-1.jpg',
-        big: 'assets/images/d-1.jpg'
-      },
-      {
         small: 'assets/images/d-2.jpg',
         medium: 'assets/images/d-2.jpg',
         big: 'assets/images/d-2.jpg'
+      },
+      {
+        small: 'assets/images/d-1.jpg',
+        medium: 'assets/images/d-1.jpg',
+        big: 'assets/images/d-1.jpg'
       },
       {
         small: 'assets/images/d-3.jpg',

@@ -38,7 +38,7 @@
             <div id="packageTable" class="tab-pane fade in active">
               <div class="col-sm-12 nopadding  margin-top-10">
                 <div class="panel panel-default" style="margin-bottom:0;">
-                  <div class="panel-body cursor trstyle" style="font-size:16px;background:#efefef;" id="btnpaytm">
+                  <div class="panel-body cursor trstyle" style="font-size:16px;background:#fff;" id="btnpaytm">
                     <div class="col-sm-2 nopadding">
                       <label class="col-sm-12">
                         Current Package&nbsp;</label>
@@ -90,6 +90,7 @@
                 </div>
               </div>
               <h3 class="pull-left">Packages</h3>
+              <div class="table-responsive kv-grid-container" style="overflow: auto">
               <table class="table table-hover table-bordered" [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="5">
                 <thead>
                   <tr class="table-headers">
@@ -126,9 +127,10 @@
                   </tr>
                 </tfoot>
               </table>
+              </div>
             </div>
             <div id="paymentLogTable" class="tab-pane fade">
-              <div class="col-sm-12 nopadding  margin-top-10"  style="background:#efefef;padding:10px;">
+              <div class="col-sm-12 nopadding  margin-top-10"  style="background:#fff;padding:10px;">
                 <div class="col-sm-3 nopadding">
                   <div class="col-sm-10 nopadding">
                     <input type="text" class="col-sm-5 form-control" placeholder="search keyword" />
@@ -162,6 +164,7 @@
                 </div>
               </div>
               <div class="col-sm-12 nopadding  margin-top-10">
+                  <div class="table-responsive kv-grid-container" style="overflow: auto">
                 <table class="table table-hover table-bordered" [mfData]="data2" #one="mfDataTable" [mfRowsOnPage]="5">
                   <thead>
                     <tr class="table-headers">
@@ -193,10 +196,11 @@
                     </tr>
                   </tbody>
                 </table>
+                </div>
               </div>
             </div>
             <div id="termsOfUse" class="tab-pane fade">
-              <div class='col-sm-12 margin-top-20' style="border: 1px solid #dcdada;padding:40px">
+              <div class='col-sm-12 margin-top-20' style="border: 1px solid #dcdada;background-color:#fff;padding:40px">
                 <h4>
                   <b>
                     <u>Terms Of Use</u>
