@@ -178,12 +178,15 @@
     height:30px;
     padding:3px;
 }
-.highcharts-title{
-    color:#116A91 !important;
-    font-weight:400 !important;
+.ui-multiselect-panel .ui-multiselect-item label{
+    margin:5px;
 }
 .nav-tabs > li > a{
     color:#333333 !important;
+}
+.nav-tabs{
+    background-color: #fff !important;
+    box-shadow:0px 1px 2px 1px #d6d3d3 !important;
 }
 .nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover{
     color: #fff!important;
@@ -193,7 +196,10 @@
     background-color: #116A91 !important;
 }
 .highcharts-container {
-    box-shadow: 17px 10px 70px 30px #eee;
+    box-shadow:0px 1px 2px 1px #d6d3d3 !important;
+}
+text.highcharts-credits{
+    display: none;
 }
 input[type=date]{
     padding:5px 0px 5px 6px  !important;
@@ -222,4 +228,90 @@ input[type=date]{
 }
 .sMenu{
     margin-left:10px !important;
+}
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:focus, .navbar-inverse .navbar-nav > .active > a:hover{
+    color: #116a9e !important;
+    font-weight: 600 !important;
+}
+
+.dropdown-menu > li >a:hover{
+    background-color: #eee !important;
+}
+.table{
+    background-color: #fff !important;
+    border-color: #cecece !important;
+    box-shadow:0px 1px 2px 1px #d6d3d3 !important; 
+}
+.navbar-inverse .navbar-nav > li > a{
+    font-size:14px !important;
+    color:#fff !important;
+}
+.ui-widget-header .ui-button, .ui-widget-content .ui-button, .ui-widget.ui-button, .ui-button{
+    border: 1px solid #578ebe !important;
+    color: #3e3737 !important;
+    background: #ffffff !important;
+    transition: background-color .2s !important;
+    margin-right: 10px !important;
+    border-radius: 13px !important;
+    box-shadow: 0px 1px 2px 1px #222 !important;
+}
+.fc .fc-button-group .ui-state-active{
+    background: #186ba0 !important;
+    color: #ffffff !important;
+    border: 1px solid #186ba0 !important;
+}
+.fc-view{
+    box-shadow: 0px 1px 2px 1px #222 !important;
+}
+.ui-datepicker.ui-datepicker-inline
+{
+    box-shadow: 0px 1px 2px 1px #222 !important;
+}
+.panel{
+   box-shadow: 0px 1px 2px 1px #d6d3d3 !important;
+}
+.panel-default{
+    border-color: #cecece !important;
+}
+.fc-title.header{
+background-color: #116a9e !important;
+color:#fff !important;
+text-align: center !important
+}
+#progressbar li{
+    font-size:13px !important;
+}
+#progressbar li.active:before, #progressbar li.active:after{
+    background: #116a9e !important;
+    color: white !important;
+}
+#progressbar li:before{
+    font-size: 14px !important;
+    width: 25px !important;
+    line-height: 25px !important;
+}
+.firstbandpanels{
+    background-color: #1169ae !important;
+    padding: 25px 0px 0px 0px !important;
+    width: 100px !important;
+    height: 100px !important;
+    margin-bottom: 5px !important;
+    box-shadow: 6px 3px 16px 0px #8a8a8a !important;
+}
+.page-content.clearfix{
+    background-color:#eee !important
+}
+.page-title{
+    font-weight: 800;
+    color: #333;
+}
+.ui-multiselect.ui-widget.ui-state-default.ui-corner-all{
+    width:100% !important;
+}
+.card{
+    background-color: #fff !important;
+}
+
+.nav-tabs > li{
+border: 1px solid #ffeaea;
 }

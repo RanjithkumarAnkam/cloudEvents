@@ -20,7 +20,7 @@
         </div>
         <div class="col-sm-12 nopadding" style="margin-top:20px">
           <div class="panel panel-default">
-            <div class="panel-body cursor trstyle" style="font-size:16px;background-color: #eee;" id="btnpaytm">
+            <div class="panel-body cursor trstyle" style="font-size:16px;background-color: #fff;padding: 0 15px;">
               <div class="col-sm-12 nopadding">
                 <div class="col-sm-6 nopadding">
                   <h3>
@@ -54,6 +54,7 @@
         </div>
         <div class="col-sm-12 nopadding margin-top-20">
           <h4>Payment Details</h4>
+          <div class="table-responsive kv-grid-container" style="overflow: auto">
           <table class="table table-hover table-bordered" [mfData]="vendorData" #mf="mfDataTable" [mfRowsOnPage]="5">
             <thead>
               <tr class="table-headers">
@@ -84,6 +85,8 @@
               </tr>
             </tbody>
           </table>
+          </div>
+          
         </div>
 
       </div>

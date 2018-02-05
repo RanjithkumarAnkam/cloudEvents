@@ -4,7 +4,7 @@
 		<div class="col-sm-12 nopadding">
 			<div class="col-sm-1"></div>
 			<div class="col-sm-10 nopadding">
-				<div class="col-sm-12"  style="background:#efefef;padding:10px;">
+				<div class="col-sm-12" style="background:#fff;padding:10px;">
 					<div class="col-sm-3 nopadding">
 						<div class="col-sm-10 nopadding">
 							<input type="text" class="col-sm-5 form-control" placeholder="search keyword" />
@@ -23,70 +23,71 @@
 				</div>
 				<!--Table forCustomers-->
 				<div class="col-sm-12 nopadding margin-top-10">
-					<table class="table table-hover table-bordered" [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="5">
-						<thead>
-							<tr class="table-headers">
-								<th style="width: 30%">
-									<mfDefaultSorter by="fname"> Name</mfDefaultSorter>
-								</th>
+					<div class="table-responsive kv-grid-container" style="overflow: auto">
+						<table class="table table-hover table-bordered" [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="5">
+							<thead>
+								<tr class="table-headers">
+									<th style="width: 30%">
+										<mfDefaultSorter by="fname"> Name</mfDefaultSorter>
+									</th>
 
-								<th style="width: 30%">
-									<mfDefaultSorter by="email">Email</mfDefaultSorter>
-								</th>
-								<th style="width: 15%">
-									<mfDefaultSorter by="phone">Phone Number</mfDefaultSorter>
-								</th>
-								<th class="text-center" style="width: 15%">
-									<mfDefaultSorter by="bookings">Bookings</mfDefaultSorter>
-								</th>
-								<th class="text-center" style="width: 15%">
-									<mfDefaultSorter by="enquiries">Enquiries</mfDefaultSorter>
-								</th>
-								<th class="text-center" style="width: 15%">
-									<mfDefaultSorter>Appointments</mfDefaultSorter>
-								</th>
-								<th class="text-center" style="width: 15%">
-									<mfDefaultSorter by="appointments">Delete</mfDefaultSorter>
-								</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr *ngFor="let item of mf.data">
-								<td title="click to edit customer details">
-									<a data-toggle="modal" data-target="#EditCustomerModal" style="color:#000">
-										{{item.fname}} &nbsp;{{item.lname}}</a>
-								</td>
-								<td title="click to edit customer details">
-									<a data-toggle="modal" data-target="#EditCustomerModal" style="color:#000">{{item.email}}</a>
-								</td>
-								<td title="click to edit customer details">
-									<a data-toggle="modal" data-target="#EditCustomerModal" style="color:#000">{{item.phone}}</a>
-								</td>
-								<td title="click to view booking details" class="text-center">
-									<a data-toggle="modal" data-target="#ModalMultipleBookingsView" style="color:#000">{{item.bookings}}</a>
-								</td>
-								<td title="click to view enquiry details" class="text-center">
-									<a data-toggle="modal" data-target="#ModalMultipleEnquiryView" style="color:#000">{{item.enquiries}}</a>
-								</td>
-								<td title="click to view appointment details" class="text-center">
-									<a data-toggle="modal" data-target="#ModalMultipleAppointmentView" style="color:#000">{{item.appointments}}</a>
-								</td>
-								<td class="text-center">
-									<a title="Click to delete">
-										<i class="fa fa-trash red"></i>
-									</a>
-								</td>
-							</tr>
-						</tbody>
-						<tfoot>
-							<tr>
-								<td colspan="8">
-									<mfBootstrapPaginator></mfBootstrapPaginator>
-								</td>
-							</tr>
-						</tfoot>
-					</table>
-
+									<th style="width: 30%">
+										<mfDefaultSorter by="email">Email</mfDefaultSorter>
+									</th>
+									<th style="width: 15%">
+										<mfDefaultSorter by="phone">Phone Number</mfDefaultSorter>
+									</th>
+									<th class="text-center" style="width: 15%">
+										<mfDefaultSorter by="bookings">Bookings</mfDefaultSorter>
+									</th>
+									<th class="text-center" style="width: 15%">
+										<mfDefaultSorter by="enquiries">Enquiries</mfDefaultSorter>
+									</th>
+									<th class="text-center" style="width: 15%">
+										<mfDefaultSorter>Appointments</mfDefaultSorter>
+									</th>
+									<th class="text-center" style="width: 15%">
+										<mfDefaultSorter by="appointments">Delete</mfDefaultSorter>
+									</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr *ngFor="let item of mf.data">
+									<td title="click to edit customer details">
+										<a data-toggle="modal" data-target="#EditCustomerModal" style="color:#000">
+											{{item.fname}} &nbsp;{{item.lname}}</a>
+									</td>
+									<td title="click to edit customer details">
+										<a data-toggle="modal" data-target="#EditCustomerModal" style="color:#000">{{item.email}}</a>
+									</td>
+									<td title="click to edit customer details">
+										<a data-toggle="modal" data-target="#EditCustomerModal" style="color:#000">{{item.phone}}</a>
+									</td>
+									<td title="click to view booking details" class="text-center">
+										<a data-toggle="modal" data-target="#ModalMultipleBookingsView" style="color:#000">{{item.bookings}}</a>
+									</td>
+									<td title="click to view enquiry details" class="text-center">
+										<a data-toggle="modal" data-target="#ModalMultipleEnquiryView" style="color:#000">{{item.enquiries}}</a>
+									</td>
+									<td title="click to view appointment details" class="text-center">
+										<a data-toggle="modal" data-target="#ModalMultipleAppointmentView" style="color:#000">{{item.appointments}}</a>
+									</td>
+									<td class="text-center">
+										<a title="Click to delete">
+											<i class="fa fa-trash red"></i>
+										</a>
+									</td>
+								</tr>
+							</tbody>
+							<tfoot>
+								<tr>
+									<td colspan="8">
+										<mfBootstrapPaginator></mfBootstrapPaginator>
+									</td>
+								</tr>
+							</tfoot>
+						</table>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -104,6 +105,7 @@
 					</div>
 					<div class="modal-body">
 						<div class="col-sm-12 margin-top-10">
+								<div class="table-responsive kv-grid-container" style="overflow: auto">
 							<table class="table table-responsive table-bordered">
 								<thead>
 									<tr>
@@ -145,6 +147,7 @@
 									</tr>
 								</tbody>
 							</table>
+							</div>
 						</div>
 					</div>
 					<div class="modal-footer mFooter padding20px">
@@ -165,6 +168,7 @@
 					</div>
 					<div class="modal-body">
 						<div class="col-sm-12 margin-top-10">
+								<div class="table-responsive kv-grid-container" style="overflow: auto">
 							<table class="table table-responsive table-bordered">
 								<thead>
 									<tr>
@@ -204,6 +208,7 @@
 									</tr>
 								</tbody>
 							</table>
+							</div>
 						</div>
 					</div>
 					<div class="modal-footer mFooter padding20px">
@@ -224,6 +229,7 @@
 					</div>
 					<div class="modal-body">
 						<div class="col-sm-12 margin-top-10">
+								<div class="table-responsive kv-grid-container" style="overflow: auto">
 							<table class="table table-responsive table-bordered">
 								<thead>
 									<tr>
@@ -262,6 +268,7 @@
 									</tr>
 								</tbody>
 							</table>
+								</div>
 						</div>
 					</div>
 					<div class="modal-footer mFooter padding20px">

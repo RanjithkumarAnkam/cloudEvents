@@ -33,50 +33,47 @@
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li class="sMenu" tourAnchor="Settings.id" style="margin-right: 5px !important;">
-                    <img src="/assets/Dashboard_Assets/5_Quick_Start_icon.png" width="20px" />
+                <li class="sMenu" tourAnchor="Settings.id" style="margin-right: 10px !important;">
                     <button class="btn btn-default helpbtn" id="btnquick" data-toggle="modal" data-target="#mainmodalpop" style="padding:10px 0">
-                        Quick Start&nbsp;
+                        <img src="/assets/Dashboard_Assets/5_Quick_Start_icon.png" width="15px" style="margin: -3px 5px 0px 5px !important;" /> Quick Start&nbsp;
                     </button>
                 </li>
-                <li class="sMenu" tourAnchor="Support.id">
-                    <img src="/assets/Dashboard_Assets/6_Support_icon.png" width="20px" style="margin-right: 5px !important;" />
-                    <button class="btn btn-default supportbutton" [routerLink]="['/manager/support/phone']"  style="padding:10px 0">
+                <li class="sMenu" tourAnchor="Support.id" style="margin-right: 10px;">
+                    <button class="btn btn-default supportbutton" [routerLink]="['/manager/support/phone']" style="padding:10px 0">
+                        <img src="/assets/Dashboard_Assets/6_Support_icon.png" width="15px" style="margin: -3px 5px 0px 5px !important;" />
                         <span> Support&nbsp;
                         </span>
                     </button>
                 </li>
-                <li class="sMenu">
-                    <img src="/assets/Dashboard_Assets/7_Help_icon.png" width="20px" style="margin-right: 5px !important;" />
-                    <button class="btn btn-default mhelp helpbtn" (click)="startTour()" id="mhelp"  style="padding:10px 0">
-                        Help&nbsp;
+                <li class="sMenu" style="margin-right: 10px;">
+                    <button class="btn btn-default mhelp helpbtn" (click)="startTour()" id="mhelp" style="padding:10px 0">
+                        <img src="/assets/Dashboard_Assets/7_Help_icon.png" width="15px" style="margin: -3px 5px 0px 5px !important;" /> Help&nbsp;
                     </button>
                 </li>
-                <li class="dropdown dropdown-user" style="width:150px">
-                    <img style="height:25px" src="/assets/images/Ans-.jpg" class="imgstyle" style="height: 40px;margin: 5px 0 0 10px;border-radius: 50px !important;"
-                    />
-                    <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true" style="float:right">
-                        <span class="username username-hide-on-mobile">
-
+                <li class="dropdown dropdown-user" style="width:160px">
+                    <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true" style="float:right;width: 100%;padding:0">
+                        <img style="height:25px" src="/assets/images/Ans-.jpg" class="imgstyle" style="height: 40px;margin: 5px 0 0 10px;border-radius: 50px !important;"
+                        />
+                        <span class="username username-hide-on-mobile" style="margin-left:10px;position:absolute;margin:15px 0 0 10px;">
                             <b>Hi John</b>
                         </span>
-                        <i class="fa fa-angle-down"></i>
+                        <i class="fa fa-angle-down" style="float:right;margin:18px 15px 0 0 !important"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-default">
                         <li>
                             <a [routerLink]="['/manager/profile']">
-
-                                <i class="icon-user" style="margin-right:3px"></i>My Profile
+                                <img src="/assets/Dashboard_Assets/8_UserProfile_icon.png" width="20px" style="margin-right:10px;margin-top: -3px;" />My Profile
                             </a>
                         </li>
                         <li>
                             <a data-toggle="modal" data-target="#myModal-change-pswd" class="curspointer">
-                                <i class="icon-lock" style="margin-right:3px"></i>Change Password
+                                <img src="/assets/Dashboard_Assets/10_Password_Change_icon.png" width="20px" style="margin-right:10px;margin-top: -3px;"
+                                />Change Password
                             </a>
                         </li>
                         <li>
                             <a [routerLink]="['/login']">
-                                <i class="icon-key" style="margin-right:3px"></i>Log Out
+                                <img src="/assets/Dashboard_Assets/11_Logout_icon.png" width="20px" style="margin-right:10px;margin-top: -3px;" />Log Out
                             </a>
                         </li>
                     </ul>
@@ -123,19 +120,19 @@
 
 <div id="addVenueModal" class="modal fade">
     <div class="modal-dialog modal-lg">
-        <div class="modal-content" id="mdcontent">
+        <div class="modal-content" id="mdcontent" style="height:600px !important;">
             <div class="fc-title header" style="height:77px;border-bottom: 1px solid #e8e6e6;">
                 <span style="    font-size: 20px;
                             font-weight: 600;
                             line-height: 77px;
                             margin-left: 20px;">Add New Venue</span>
-                <button id="btnClosebands" type="button" class="btn btn-default Close pull-right" data-dismiss="modal" style="margin-right: 20px;margin-top: 28px;border-radius: 35px !important;">
+                <button id="btnClosebands" type="button" class="btn btn-default Close pull-right" data-dismiss="modal" style="margin-right: 20px;margin-top: 20px;border-radius: 35px !important;">
                     <span aria-hidden="true" style="font-size:20px">×</span>
                     <span class="sr-only">close</span>
                 </button>&nbsp;
             </div>
             <div id="modalBody" class="modal-body" style="height:750px">
-                <div class="col-sm-12" style="margin-top:50px">
+                <div class="col-sm-12" style="margin-top:30px">
                     <div id="menubooking">
                         <div class="portlet" id="form_wizard_1">
                             <div class="portlet-body form">
@@ -147,83 +144,84 @@
                                         <li [ngClass]='add_venue_fourth_tab'>Summary</li>
                                     </ul>
                                 </div>
-                                <form id="msform" class="form-horizontal">
+                                <form id="msform" class="form-horizontal">              
                                     <fieldset *ngIf="new_venue_customer_block">
-
-                                        <div class="col-md-2"></div>
-                                        <div class="col-md-8" id="field1" style="height:320px;overflow-y:auto; overflow-x:hidden;margin-top:50px">
-                                            <div class="form-group">
-                                                <label class="control-label col-md-4 add-member-label">
-                                                    Venue Name: </label>
-                                                <div class="col-md-8">
-                                                    <input type="text" class="form-control" name="venue name" value="Nareen Convention" />
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="control-label col-md-4 add-member-label">
-                                                    Capacity: </label>
-                                                <div class="col-md-8">
-                                                    <input type="text" class="form-control" name="" id="" value="20000" />
-
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="control-label col-md-4 add-member-label">
-                                                    Location: </label>
-                                                <div class="col-md-8">
-                                                    <textarea class="form-control" rows="4">Miyapur,Hyderabad</textarea>
-
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="control-label col-md-4 add-member-label"> Time Slots: </label>
-                                                <div class="col-md-8" style="margin-top: 8px;">
-                                                    <span style="float: left;margin-right: 20px;">
-                                                        <input type="radio" class="form-control" (click)="setRadio(false)" name="allday" [checked]='true' id="alldayid" style="float: left;width: auto;height: auto;margin-right: 3px;margin-top:3px;"
-                                                        />All Day</span>
-                                                    <span style="float: left;">
-                                                        <input type="radio" class="form-control" (click)="setRadio(true)" name="allday" id="timeslots" style="float: left;width: auto;height: auto;margin-right: 3px;margin-top:3px;"
-                                                        />Time Slots
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <!--Select slots for the venue timings-->
-                                            <div *ngIf="timeSlotSel" id="Timingsdiv1" class="">
+                                        <div class="col-md-12" style="background-color: #e8e8e8;box-shadow: 0 7px 15px 0 rgba(0, 0, 0, 0.16), 0 5px 30px 0 rgba(0, 0, 0, 0.12)">
+                                            <div class="col-md-2"></div>
+                                            <div class="col-md-8" id="field1" style="height:320px;overflow-y:auto; overflow-x:hidden;margin-top:50px">
                                                 <div class="form-group">
                                                     <label class="control-label col-md-4 add-member-label">
-                                                        Select Slots: </label>
+                                                        Venue Name: </label>
                                                     <div class="col-md-8">
-                                                        <div id="Picupload">
-                                                            <div class="col-md-12 nopadding">
-                                                                <div class="col-sm-5 nopadding">
-                                                                    <div class='input-group date datetimepicker3' id="FromDiv">
-                                                                        <input type='text' class="form-control datetimepicker3" placeholder="From" />
-                                                                        <span class="input-group-addon">
-                                                                            <span class="glyphicon glyphicon-time" style="color: #49494e;"></span>
-                                                                        </span>
+                                                        <input type="text" class="form-control" name="venue name" value="Nareen Convention" />
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-4 add-member-label">
+                                                        Capacity: </label>
+                                                    <div class="col-md-8">
+                                                        <input type="text" class="form-control" name="" id="" value="20000" />
+
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-4 add-member-label">
+                                                        Location: </label>
+                                                    <div class="col-md-8">
+                                                        <textarea class="form-control" rows="4">Miyapur,Hyderabad</textarea>
+
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-4 add-member-label"> Time Slots: </label>
+                                                    <div class="col-md-8" style="margin-top: 8px;">
+                                                        <span style="float: left;margin-right: 20px;">
+                                                            <input type="radio" class="form-control" (click)="setRadio(false)" name="allday" [checked]='true' id="alldayid" style="float: left;width: auto;height: auto;margin-right: 3px;margin-top:3px;"
+                                                            />All Day</span>
+                                                        <span style="float: left;">
+                                                            <input type="radio" class="form-control" (click)="setRadio(true)" name="allday" id="timeslots" style="float: left;width: auto;height: auto;margin-right: 3px;margin-top:3px;"
+                                                            />Time Slots
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <!--Select slots for the venue timings-->
+                                                <div *ngIf="timeSlotSel" id="Timingsdiv1" class="">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4 add-member-label">
+                                                            Select Slots: </label>
+                                                        <div class="col-md-8">
+                                                            <div id="Picupload">
+                                                                <div class="col-md-12 nopadding">
+                                                                    <div class="col-sm-5 nopadding">
+                                                                        <div class='input-group date datetimepicker3' id="FromDiv">
+                                                                            <input type='text' class="form-control datetimepicker3" placeholder="From" />
+                                                                            <span class="input-group-addon">
+                                                                                <span class="glyphicon glyphicon-time" style="color: #49494e;"></span>
+                                                                            </span>
+                                                                        </div>
                                                                     </div>
-                                                                </div>
-                                                                <div class="col-sm-1 nopadding"></div>
-                                                                <div class="col-sm-5 nopadding">
-                                                                    <div class='input-group date datetimepicker3' id="ToDiv">
-                                                                        <input type='text' class="form-control datetimepicker3" placeholder="To" />
-                                                                        <span class="input-group-addon">
-                                                                            <span class="glyphicon glyphicon-time" style="color: #49494e;"></span>
-                                                                        </span>
+                                                                    <div class="col-sm-1 nopadding"></div>
+                                                                    <div class="col-sm-5 nopadding">
+                                                                        <div class='input-group date datetimepicker3' id="ToDiv">
+                                                                            <input type='text' class="form-control datetimepicker3" placeholder="To" />
+                                                                            <span class="input-group-addon">
+                                                                                <span class="glyphicon glyphicon-time" style="color: #49494e;"></span>
+                                                                            </span>
+                                                                        </div>
                                                                     </div>
-                                                                </div>
-                                                                <div class="col-sm-1 nopadding">
-                                                                    <a href="javascript:;" onclick="return AddEmptyRow()" id="btnAddSlots" title="Add more slots">
-                                                                        <i style="line-height: 2" class="fa fa-plus pull-right"></i>
-                                                                    </a>
+                                                                    <div class="col-sm-1 nopadding">
+                                                                        <a href="javascript:;" onclick="return AddEmptyRow()" id="btnAddSlots" title="Add more slots">
+                                                                            <i style="line-height: 2" class="fa fa-plus pull-right"></i>
+                                                                        </a>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
+                                            <div class="col-md-2"></div>
                                         </div>
-                                        <div class="col-md-2"></div>
                                         <div class="col-md-12" style="border-top:1px solid #dcd9d9;height: 50px;">
                                             <button type="button" (click)="addVenueContinue()" class="next btn btn-success pull-right" style="margin:10px 10px 0 0;border-radius: 4px !important;">
                                                 <span title="Click for next screen" aria-hidden="true">&nbsp;
@@ -238,34 +236,35 @@
                                         </div>
                                     </fieldset>
                                     <fieldset *ngIf="new_venue_event_block">
-
-                                        <div class="col-md-2"></div>
-                                        <div class="col-md-8" id="field2" style="height:320px;overflow-y:auto; overflow-x:hidden;padding:0px;margin-top:50px">
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <label class="control-label col-md-5 add-member-label">
-                                                        Contact Person Name: </label>
-                                                    <div class="col-md-7">
-                                                        <input type="text" class="form-control" name="" value="Ravi" />
+                                        <div class="col-sm-12" style="background-color: #e8e8e8;box-shadow: 0 7px 15px 0 rgba(0, 0, 0, 0.16), 0 5px 30px 0 rgba(0, 0, 0, 0.12)">
+                                            <div class="col-md-2"></div>
+                                            <div class="col-md-8" id="field2" style="height:320px;overflow-y:auto; overflow-x:hidden;padding:0px;margin-top:50px">
+                                                <div class="col-md-12">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-5 add-member-label">
+                                                            Contact Person Name: </label>
+                                                        <div class="col-md-7">
+                                                            <input type="text" class="form-control" name="" value="Ravi" />
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="control-label col-md-5 add-member-label">
-                                                        Email ID: </label>
-                                                    <div class="col-md-7">
-                                                        <input type="text" class="form-control" name="" value="ravi@cloud.com" />
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-5 add-member-label">
+                                                            Email ID: </label>
+                                                        <div class="col-md-7">
+                                                            <input type="text" class="form-control" name="" value="ravi@cloud.com" />
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="control-label col-md-5 add-member-label">
-                                                        Phone Number: </label>
-                                                    <div class="col-md-7">
-                                                        <input type="text" class="form-control" name="" value="9999999999" />
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-5 add-member-label">
+                                                            Phone Number: </label>
+                                                        <div class="col-md-7">
+                                                            <input type="text" class="form-control" name="" value="9999999999" />
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
+                                            <div class="col-md-2"></div>
                                         </div>
-                                        <div class="col-md-2"></div>
                                         <div class="col-md-12" style="border-top:1px solid #dcd9d9;height: 50px;">
                                             <button type="button" (click)="addCpContinue()" class="next btn btn-success pull-right" style="margin: 10px 10px 0 0;border-radius: 4px !important;">
                                                 <span title="Click for next screen" aria-hidden="true">&nbsp;
@@ -285,53 +284,55 @@
                                         </div>
                                     </fieldset>
                                     <fieldset *ngIf="new_venue_payment_block">
-                                        <div class="col-md-2"></div>
-                                        <div class="col-md-8" id="field3" style="height:320px;overflow-y:auto;overflow-x:hidden;padding:0;margin-top:50px">
-                                            <div class="form-group">
-                                                <label class="control-label col-md-4 add-member-label">
-                                                    Services &amp; Facilities: </label>
-                                                <div class="col-md-8">
-                                                    <div class="col-sm-12 nopadding">
-                                                        <input type="checkbox" class="" style="float: left; width: auto; height: auto;margin-right: 4px; margin-top: 3px;" />Wifi
-                                                    </div>
-                                                    <div class="col-sm-12 nopadding">
-                                                        <input type="checkbox" class="" style="float: left; width: auto; height: auto;margin-right: 4px; margin-top: 3px;" />Catering Services
-                                                    </div>
-                                                    <div class="col-sm-12 nopadding">
-                                                        <input type="checkbox" class="" [ngModel]="" (ngModelChange)="addProp($event)" [ngModelOptions]="{standalone: true}" style="float: left; width: auto; height: auto;margin-right: 4px; margin-top: 3px;"
-                                                            id="btnOtherservices" />Other
-                                                    </div>
-                                                    <div *ngIf="otherStatus" class="col-sm-12 margin-top-10" id="addextraservicediv">
-                                                        <div class="col-sm-8">
-                                                            <input type="text" class="form-control" placeholder="Enter Service Name" />
+                                        <div class="col-sm-12" style="background-color: #e8e8e8;box-shadow: 0 7px 15px 0 rgba(0, 0, 0, 0.16), 0 5px 30px 0 rgba(0, 0, 0, 0.12)">
+                                            <div class="col-md-2"></div>
+                                            <div class="col-md-8" id="field3" style="height:320px;overflow-y:auto;overflow-x:hidden;padding:0;margin-top:50px">
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-4 add-member-label">
+                                                        Services &amp; Facilities: </label>
+                                                    <div class="col-md-8">
+                                                        <div class="col-sm-12 nopadding">
+                                                            <input type="checkbox" class="" style="float: left; width: auto; height: auto;margin-right: 4px; margin-top: 3px;" />Wifi
                                                         </div>
-                                                        <div class="col-sm-4">
-                                                            <a href="javascript:;" class="" id="" title="Add more Services" style="margin-left: 40px; line-height: 30px;">
-                                                                <i class="fa fa-plus"></i>Add</a>
+                                                        <div class="col-sm-12 nopadding">
+                                                            <input type="checkbox" class="" style="float: left; width: auto; height: auto;margin-right: 4px; margin-top: 3px;" />Catering Services
+                                                        </div>
+                                                        <div class="col-sm-12 nopadding">
+                                                            <input type="checkbox" class="" [ngModel]="" (ngModelChange)="addProp($event)" [ngModelOptions]="{standalone: true}" style="float: left; width: auto; height: auto;margin-right: 4px; margin-top: 3px;"
+                                                                id="btnOtherservices" />Other
+                                                        </div>
+                                                        <div *ngIf="otherStatus" class="col-sm-12 margin-top-10" id="addextraservicediv">
+                                                            <div class="col-sm-8">
+                                                                <input type="text" class="form-control" placeholder="Enter Service Name" />
+                                                            </div>
+                                                            <div class="col-sm-4">
+                                                                <a href="javascript:;" class="" id="" title="Add more Services" style="margin-left: 40px; line-height: 30px;">
+                                                                    <i class="fa fa-plus"></i>Add</a>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="control-label col-md-4 add-member-label">
-                                                    Photos: </label>
-                                                <div class="col-md-8">
-                                                    <input type="file" class="form-control" />
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-4 add-member-label">
+                                                        Photos: </label>
+                                                    <div class="col-md-8">
+                                                        <input type="file" class="form-control" />
 
+                                                    </div>
+                                                    <div class="col-sm-1"></div>
                                                 </div>
-                                                <div class="col-sm-1"></div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="control-label col-md-4 add-member-label">
-                                                    Videos: </label>
-                                                <div class="col-md-8">
-                                                    <input type="file" class="form-control" />
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-4 add-member-label">
+                                                        Videos: </label>
+                                                    <div class="col-md-8">
+                                                        <input type="file" class="form-control" />
 
+                                                    </div>
+                                                    <div class="col-sm-1"></div>
                                                 </div>
-                                                <div class="col-sm-1"></div>
                                             </div>
+                                            <div class="col-md-2"></div>
                                         </div>
-                                        <div class="col-md-2"></div>
                                         <div class="col-md-12" style="border-top:1px solid #dcd9d9;height: 50px;">
                                             <button type="button" (click)="addPaymentContinue()" class="next btn btn-success pull-right" style="margin: 10px 10px 0 0;border-radius: 4px !important;">
                                                 <span title="Click for venue booking" aria-hidden="true">&nbsp;
@@ -351,7 +352,7 @@
                                         </div>
                                     </fieldset>
                                     <fieldset *ngIf="new_venue_summary_block">
-                                        <div id="field4" style="height:320px;overflow-y:auto;overflow-x:hidden;margin-top:50px">
+                                        <div id="field4" style="height:370px;overflow-y:auto;overflow-x:hidden;background-color: #e8e8e8;box-shadow: 0 7px 15px 0 rgba(0, 0, 0, 0.16), 0 5px 30px 0 rgba(0, 0, 0, 0.12)">
                                             <div class="col-sm-12">
                                                 <div class="col-md-12 col-sm-12">
                                                     <h4 class="form-section">
