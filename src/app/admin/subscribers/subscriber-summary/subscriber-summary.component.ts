@@ -18,10 +18,10 @@ export class SubscriberSummaryComponent implements OnInit {
     { name: 'N Convention', email: 'Samaya@gmail.com', phone: '999-954-9520' }
   ];
   datatwo: any[] = [
-    { paidby: 'Samaya', amount: '25000', paid: '20000', datetime: '20/10/2017 10.00AM' },
-    { paidby: 'Kushala', amount: '13000', paid: '3000', datetime: '12/01/2018 11.00AM' },
-    { paidby: 'Achala', amount: '12500', paid: '10000', datetime: '02/01/2018 10.30PM' },
-    { paidby: 'Nataasha', amount: '50000', paid: '30000', datetime: '20/10/2017 07.00AM' },
+    { paidby: 'John', amount: '7000', paid: '7000', datetime: '20/10/2017 10.00AM' },
+    { paidby: 'John', amount: '7000', paid: '7000', datetime: '12/01/2018 11.00AM' },
+    { paidby: 'John', amount: '7000', paid: '7000', datetime: '02/01/2018 10.30PM' },
+    { paidby: 'John', amount: '7000', paid: '7000', datetime: '20/10/2017 07.00AM' },
   ];
   constructor() { }
 

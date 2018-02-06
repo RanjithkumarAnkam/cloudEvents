@@ -20,7 +20,13 @@ export class ReceivableAgeingAnalysisComponent implements OnInit {
     { bookingid: 'PR/SAT/2018/01/13', customer: 'Satish Chaman', venue: 'Pragya Events', eventdate: '16-Jan-2018', duedate: '15-Jan-2018', dueamount: '18000' }
   ];
 
-
+  data_ageing: any[] = [
+    { venue: 'Naren Garden',current:'0', week: '20,000', secondweek: '22,500', thirdweek: '21,000', fourthweek: '11,000',morethanmonth:'67,500' ,totalamount:'1,42,000'},
+    { venue: 'Naren Convention',current:'10,000', week: '12,000', secondweek: '34,500', thirdweek: '14,0000', fourthweek: '10,000',morethanmonth:'67,000',totalamount:'1,47,500' },
+    { venue: 'Hyat Place',current:'25,000', week: '19,000', secondweek: '31,000', thirdweek: '71,000', fourthweek: '5,000',morethanmonth:'67,000',totalamount:'2,18,000' },
+    { venue: 'Naren Platinum',current:'0', week: '33,000', secondweek: '32,700', thirdweek: '21,0000', fourthweek: '2,000',morethanmonth:'67,000',totalamount:'1,55,700' },
+   
+  ];
   options: Object;
   options_two: Object;
   constructor() {
@@ -34,7 +40,7 @@ export class ReceivableAgeingAnalysisComponent implements OnInit {
         type: 'pie'
       },
       title: {
-        text: 'Upcoming Receivable Distribution'
+        text: 'Upcoming Receivable (Rs 1,20,000)'
       },
       tooltip: {
         pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
@@ -93,7 +99,7 @@ export class ReceivableAgeingAnalysisComponent implements OnInit {
         type: 'pie'
       },
       title: {
-        text: 'Over Due Receivable Distribution'
+        text: 'Over Due Receivable (Rs 80,000)'
       },
       tooltip: {
         pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'

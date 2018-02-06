@@ -57,67 +57,117 @@
         </div>
         <div class="col-sm-12 nopadding margin-top-10">
           <div class="col-sm-12 nopadding">
-            <label style="font-size: 20px;">Upcoming Receivables</label>
+            <label style="font-size: 20px;">Upcoming Payables</label>
             <div class="table-responsive kv-grid-container" style="overflow: auto">
-            <table class="table table-hover table-bordered margin-top-10" [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="5">
-              <thead>
-                <tr class="table-headers">
-                  <th style="width: 25%">
-                    <mfDefaultSorter by="vendor">Vendor Name
-                    </mfDefaultSorter>
-                  </th>
-                  <th style="width: 25%">
-                    <mfDefaultSorter by="duedate">Due Date</mfDefaultSorter>
-                  </th>
-                  <th style="width: 25%">
-                    <mfDefaultSorter by="totalamount">Total Amount</mfDefaultSorter>
-                  </th>
-                  <th style="width: 25%">
-                    <mfDefaultSorter by="dueamount">Due Amount</mfDefaultSorter>
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr *ngFor="let item of mf.data">
-                  <td>{{item.vendor}}</td>
-                  <td>{{item.duedate}}</td>
-                  <td>{{item.totalamount}}</td>
-                  <td>{{item.dueamount}}</td>
-              </tbody>
-            </table>
+              <table class="table table-hover table-bordered margin-top-10" [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="5">
+                <thead>
+                  <tr class="table-headers">
+                    <th style="width: 25%">
+                      <mfDefaultSorter by="vendor">Vendor Name
+                      </mfDefaultSorter>
+                    </th>
+                    <th style="width: 25%">
+                      <mfDefaultSorter by="duedate">Due Date</mfDefaultSorter>
+                    </th>
+                    <th style="width: 25%">
+                      <mfDefaultSorter by="totalamount">Total Amount</mfDefaultSorter>
+                    </th>
+                    <th style="width: 25%">
+                      <mfDefaultSorter by="dueamount">Due Amount</mfDefaultSorter>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of mf.data">
+                    <td>{{item.vendor}}</td>
+                    <td>{{item.duedate}}</td>
+                    <td>{{item.totalamount}}</td>
+                    <td>{{item.dueamount}}</td>
+                </tbody>
+              </table>
             </div>
           </div>
           <div class="col-sm-12 nopadding">
             <label style="font-size: 20px;">Over Due Payments</label>
             <div class="table-responsive kv-grid-container" style="overflow: auto">
-            <table class="table table-hover table-bordered margin-top-10" [mfData]="data_one" #one="mfDataTable" [mfRowsOnPage]="5">
-              <thead>
-                <tr class="table-headers">
-                  <th style="width: 25%">
-                    <mfDefaultSorter by="vendor">Vendor Name
-                    </mfDefaultSorter>
-                  </th>
-                  <th style="width: 25%">
-                    <mfDefaultSorter by="duedate">Due Date</mfDefaultSorter>
-                  </th>
-                  <th style="width: 25%">
-                    <mfDefaultSorter by="totalamount">Total Amount</mfDefaultSorter>
-                  </th>
-                  <th style="width: 25%">
-                    <mfDefaultSorter by="dueamount">Due Amount</mfDefaultSorter>
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr *ngFor="let item of one.data">
-                  <td>{{item.vendor}}</td>
-                  <td>{{item.duedate}}</td>
-                  <td>{{item.totalamount}}</td>
-                  <td>{{item.dueamount}}</td>
-              </tbody>
-            </table>
+              <table class="table table-hover table-bordered margin-top-10" [mfData]="data_one" #one="mfDataTable" [mfRowsOnPage]="5">
+                <thead>
+                  <tr class="table-headers">
+                    <th style="width: 25%">
+                      <mfDefaultSorter by="vendor">Vendor Name
+                      </mfDefaultSorter>
+                    </th>
+                    <th style="width: 25%">
+                      <mfDefaultSorter by="duedate">Due Date</mfDefaultSorter>
+                    </th>
+                    <th style="width: 25%">
+                      <mfDefaultSorter by="totalamount">Total Amount</mfDefaultSorter>
+                    </th>
+                    <th style="width: 25%">
+                      <mfDefaultSorter by="dueamount">Due Amount</mfDefaultSorter>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of one.data">
+                    <td>{{item.vendor}}</td>
+                    <td>{{item.duedate}}</td>
+                    <td>{{item.totalamount}}</td>
+                    <td>{{item.dueamount}}</td>
+                </tbody>
+              </table>
             </div>
           </div>
+
+          <div class="col-sm-12 nopadding margin-top-20">
+            <label style="font-size: 20px;">Ageing Analysis</label>
+            <div class="table-responsive kv-grid-container" style="overflow: auto">
+              <table class="table table-hover table-bordered margin-top-10" [mfData]="data_ageing" #two="mfDataTable" [mfRowsOnPage]="5">
+                <thead>
+                  <tr class="table-headers">
+                    <th style="width: 10%">
+                      <mfDefaultSorter by="venue">Venue Name
+                      </mfDefaultSorter>
+                    </th>
+                    <th style="width: 10%">
+                        <mfDefaultSorter by="current">Current
+                        </mfDefaultSorter>
+                      </th>
+                    <th style="width: 10%">
+                      <mfDefaultSorter by="week">1-7 days</mfDefaultSorter>
+                    </th>
+                    <th style="width: 10%">
+                      <mfDefaultSorter by="secondweek">8-14 days</mfDefaultSorter>
+                    </th>
+                    <th style="width: 10%">
+                      <mfDefaultSorter by="thirdweek">15-21 days</mfDefaultSorter>
+                    </th>
+                    <th style="width: 10%">
+                      <mfDefaultSorter by="fourthweek">21-28 days</mfDefaultSorter>
+                    </th>
+                    <th style="width: 10%">
+                      <mfDefaultSorter by="morethanmonth">28 days<</mfDefaultSorter>
+                    </th>
+                    <th style="width: 10%">
+                      <mfDefaultSorter by="totalamount">Total Amount</mfDefaultSorter>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of two.data">
+                    <td>{{item.venue}}</td>
+                    <td>{{item.current}}</td>
+                    <td>{{item.week}}</td>
+                    <td>{{item.secondweek}}</td>
+                    <td>{{item.thirdweek}}</td>
+                    <td>{{item.fourthweek}}</td>
+                    <td>{{item.morethanmonth}}</td>
+                    <td>{{item.totalamount}}</td>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>

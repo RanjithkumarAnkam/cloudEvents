@@ -144,21 +144,21 @@
                                         <li [ngClass]='add_venue_fourth_tab'>Summary</li>
                                     </ul>
                                 </div>
-                                <form id="msform" class="form-horizontal">              
+                                <form id="msform" class="form-horizontal">
                                     <fieldset *ngIf="new_venue_customer_block">
-                                        <div class="col-md-12" style="background-color: #e8e8e8;box-shadow: 0 7px 15px 0 rgba(0, 0, 0, 0.16), 0 5px 30px 0 rgba(0, 0, 0, 0.12)">
+                                        <div class="col-md-12" style="background-color: #cecece;box-shadow: 0 7px 15px 0 rgba(0, 0, 0, 0.16), 0 5px 30px 0 rgba(0, 0, 0, 0.12)">
                                             <div class="col-md-2"></div>
                                             <div class="col-md-8" id="field1" style="height:320px;overflow-y:auto; overflow-x:hidden;margin-top:50px">
                                                 <div class="form-group">
                                                     <label class="control-label col-md-4 add-member-label">
-                                                        Venue Name: </label>
+                                                        Venue Name </label>
                                                     <div class="col-md-8">
                                                         <input type="text" class="form-control" name="venue name" value="Nareen Convention" />
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <label class="control-label col-md-4 add-member-label">
-                                                        Capacity: </label>
+                                                        Capacity </label>
                                                     <div class="col-md-8">
                                                         <input type="text" class="form-control" name="" id="" value="20000" />
 
@@ -166,7 +166,7 @@
                                                 </div>
                                                 <div class="form-group">
                                                     <label class="control-label col-md-4 add-member-label">
-                                                        Location: </label>
+                                                        Location </label>
                                                     <div class="col-md-8">
                                                         <textarea class="form-control" rows="4">Miyapur,Hyderabad</textarea>
 
@@ -236,29 +236,38 @@
                                         </div>
                                     </fieldset>
                                     <fieldset *ngIf="new_venue_event_block">
-                                        <div class="col-sm-12" style="background-color: #e8e8e8;box-shadow: 0 7px 15px 0 rgba(0, 0, 0, 0.16), 0 5px 30px 0 rgba(0, 0, 0, 0.12)">
+                                        <div class="col-sm-12" style="background-color: #cecece;box-shadow: 0 7px 15px 0 rgba(0, 0, 0, 0.16), 0 5px 30px 0 rgba(0, 0, 0, 0.12)">
                                             <div class="col-md-2"></div>
                                             <div class="col-md-8" id="field2" style="height:320px;overflow-y:auto; overflow-x:hidden;padding:0px;margin-top:50px">
                                                 <div class="col-md-12">
                                                     <div class="form-group">
                                                         <label class="control-label col-md-5 add-member-label">
-                                                            Contact Person Name: </label>
-                                                        <div class="col-md-7">
-                                                            <input type="text" class="form-control" name="" value="Ravi" />
+                                                            Contact Person Name </label>
+                                                        <div class="col-sm-7 input-group nopadding">
+                                                            <input type="text" class="form-control" value="John" />
+                                                            <span class="input-group-addon">
+                                                                <i class="glyphicon glyphicon-user"></i>
+                                                            </span>
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
                                                         <label class="control-label col-md-5 add-member-label">
-                                                            Email ID: </label>
-                                                        <div class="col-md-7">
-                                                            <input type="text" class="form-control" name="" value="ravi@cloud.com" />
+                                                            Email ID</label>
+                                                        <div class="col-sm-7 input-group nopadding">
+                                                            <input type="text" class="form-control" value="ravi@cloud.com" />
+                                                            <span class="input-group-addon">
+                                                                <i class="glyphicon glyphicon-envelope"></i>
+                                                            </span>
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
                                                         <label class="control-label col-md-5 add-member-label">
-                                                            Phone Number: </label>
-                                                        <div class="col-md-7">
-                                                            <input type="text" class="form-control" name="" value="9999999999" />
+                                                            Phone Number </label>
+                                                        <div class="col-sm-7 input-group nopadding">
+                                                            <input type="text" class="form-control" value="999999999" />
+                                                            <span class="input-group-addon">
+                                                                <i class="glyphicon glyphicon-phone"></i>
+                                                            </span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -284,12 +293,12 @@
                                         </div>
                                     </fieldset>
                                     <fieldset *ngIf="new_venue_payment_block">
-                                        <div class="col-sm-12" style="background-color: #e8e8e8;box-shadow: 0 7px 15px 0 rgba(0, 0, 0, 0.16), 0 5px 30px 0 rgba(0, 0, 0, 0.12)">
+                                        <div class="col-sm-12" style="background-color: #cecece;box-shadow: 0 7px 15px 0 rgba(0, 0, 0, 0.16), 0 5px 30px 0 rgba(0, 0, 0, 0.12)">
                                             <div class="col-md-2"></div>
                                             <div class="col-md-8" id="field3" style="height:320px;overflow-y:auto;overflow-x:hidden;padding:0;margin-top:50px">
                                                 <div class="form-group">
                                                     <label class="control-label col-md-4 add-member-label">
-                                                        Services &amp; Facilities: </label>
+                                                        Services &amp; Facilities </label>
                                                     <div class="col-md-8">
                                                         <div class="col-sm-12 nopadding">
                                                             <input type="checkbox" class="" style="float: left; width: auto; height: auto;margin-right: 4px; margin-top: 3px;" />Wifi
@@ -314,7 +323,7 @@
                                                 </div>
                                                 <div class="form-group">
                                                     <label class="control-label col-md-4 add-member-label">
-                                                        Photos: </label>
+                                                        Photos </label>
                                                     <div class="col-md-8">
                                                         <input type="file" class="form-control" />
 
@@ -323,7 +332,7 @@
                                                 </div>
                                                 <div class="form-group">
                                                     <label class="control-label col-md-4 add-member-label">
-                                                        Videos: </label>
+                                                        Videos </label>
                                                     <div class="col-md-8">
                                                         <input type="file" class="form-control" />
 
@@ -352,8 +361,8 @@
                                         </div>
                                     </fieldset>
                                     <fieldset *ngIf="new_venue_summary_block">
-                                        <div id="field4" style="height:370px;overflow-y:auto;overflow-x:hidden;background-color: #e8e8e8;box-shadow: 0 7px 15px 0 rgba(0, 0, 0, 0.16), 0 5px 30px 0 rgba(0, 0, 0, 0.12)">
-                                            <div class="col-sm-12">
+                                        <div id="field4" style="height:370px;overflow-y:auto;overflow-x:hidden;background-color: #cecece;box-shadow: 0 7px 15px 0 rgba(0, 0, 0, 0.16), 0 5px 30px 0 rgba(0, 0, 0, 0.12)">
+                                            <div class="col-sm-12" style="margin-top: 20px;">
                                                 <div class="col-md-12 col-sm-12">
                                                     <h4 class="form-section">
                                                         <b>Basic Details</b>
@@ -455,8 +464,8 @@
                                             </div>
                                         </div>
                                         <div style="border-top:1px solid #dcd9d9;height: 50px;">
-                                            <button (click)="clickedBackButton()" type="button" class="submit btn btn-success pull-right" data-dismiss="modal" style="margin: 10px 10px 0 0;border-radius: 4px !important;"
-                                                id="btnbookingSubmit">
+                                            <button [routerLink]="['/manager/manage/venues']" type="button" class="submit btn btn-success pull-right" data-dismiss="modal"
+                                                style="margin: 10px 10px 0 0;border-radius: 4px !important;" id="btnbookingSubmit">
                                                 <span title="Click for submit booking" aria-hidden="true">&nbsp;
                                                     <i class="fa fa-floppy-o"></i>Submit</span>
                                                 <span class="sr-only">Submit</span>
@@ -736,6 +745,6 @@
 
 <div class="col-sm-12 bg-white" style="background-color: #116a9e; height: 50px;">
     <p style="margin-left: 0px; text-align: center; color: #FFF; margin-top: 20px;">
-        {{today | date:'yyyy'}} - Option Matrix Infotech ® All Rights Reserved</p>
-    <p></p>
+        {{today | date:'yyyy'}} - Option Matrix Infotech ® All Rights Reserved </p>
+    
 </div>

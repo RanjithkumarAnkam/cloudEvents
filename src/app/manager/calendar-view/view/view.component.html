@@ -14,15 +14,18 @@
             </h3>
             <div *ngIf="show_help_balloon" class="help-balloon hidden-sm">
               <p>Please click on any date to add Bookings, Enquiries or Appointments</p>
+              <div class="pull-left">
+                <input type='checkbox' />
+                <p style="margin: 1px 0 0 5px !important;float: right;">Don't show again</p>
+              </div>
               <div class="pull-right">
-                <button class="btn btn-sm btn-info" (click)="hideHelpBalloon()">Got it!</button>
-                <button class="btn btn-sm btn-warning" (click)="hideHelpBalloon()">Don't show again</button>
+                <button class="btn btn-sm btn-success" (click)="hideHelpBalloon()">Got it!</button>
               </div>
             </div>
           </div>
           <div class="col-sm-12 nopadding " style="background: #116a9e; color:#fff;padding-left: 10px; padding-bottom: 10px;box-shadow:0 20px 22px 0 rgba(0, 0, 0, 0.16), 0 -8px 30px 0 rgba(0, 0, 0, 0.12) !important;border-radius: 25px !important;">
             <div class="col-lg-3 nopadding btm  ">
-              <div style="text-align: center;padding-top:10px;" id="loaderdiv">
+              <div style="text-align: center;padding-top: 15px;" id="loaderdiv">
                 <p-calendar formControlName="date11" [inline]="true" class="col-xs-12 padding-0"></p-calendar>
               </div>
               <div class="col-sm-12" style="padding: 28px;">
@@ -32,25 +35,25 @@
                   </h4>
                   <ul id="example" class="myclass" style="list-style-type: none; padding-left: 0px; padding-bottom: 1px;">
                     <li style="margin-top: 20px;">
-                      <input type="radio" class="radioclcik" name="venue1" checked="checked">
-                      <span style="font-size: 15px;">Naren Convention (34)</span>
+                      <input type="radio" class="radioclcik" name="venue1" checked="checked" style="float:left">
+                      <p style="font-size: 15px;float:left;margin-left:5px">Naren Convention (34)</p><br/>
                       <ul id="activities" class="myclass" style="list-style-type: none; padding-left: 0px; padding-bottom: 1px; margin-left: 25px;">
                         <li style="margin-top: 20px; position: relative;">
-                          <div style="width: 25px; height: 11px; box-shadow: #000 1px 0px 3px 0px; background: green; display: inline-table; color: #fff; text-align: center;">
+                          <div style="width: 25px; height: 11px; box-shadow: #000 1px 0px 3px 0px; background: green;float:left; display: inline-table; color: #fff; text-align: center;">
                             10</div>
-                          <input type="radio" class="radioclcik" name="venue">
-                          <span style="font-size: 15px;"> </span>
-                          Bookings &nbsp;
+                          <input type="radio" class="radioclcik" name="venue" style="float:left;margin-left:10px !important">
+                          <p style="font-size: 15px;float:left;margin-left:5px"> 
+                          Bookings &nbsp;</p>
                           <span title="Click to download bookings" class="curspointer" style="color: #10acd0;">
                             <i class="fa fa-download"></i>
 
                           </span>
                         </li>
                         <li style="margin-top: 20px; position: relative;">
-                          <div style="width: 25px; height: 11px; box-shadow: #000 1px 0px 3px 0px; background: red; display: inline-table; color: #fff; text-align: center;">
+                          <div style="width: 25px; height: 11px; box-shadow: #000 1px 0px 3px 0px; background: red;float:left; display: inline-table; color: #fff; text-align: center;">
                             10</div>
-                          <input type="radio" class="radioclcik" name="venue">
-                          <span style="font-size: 15px;"> Enquiries</span>
+                          <input type="radio" class="radioclcik" name="venue" style="float:left;margin-left:10px !important">
+                          <p style="font-size: 15px;float:left;margin-left:5px">Enquiries</p>
                           &nbsp;
                           <span title="Click to download enquiries" class="curspointer" style="color: #10acd0;">
                             <i class="fa fa-download"></i>
@@ -58,10 +61,10 @@
                           </span>
                         </li>
                         <li style="margin-top: 20px; position: relative;">
-                          <div style="width: 25px; height: 11px; box-shadow: #000 1px 0px 3px 0px; background: blue; display: inline-table; color: #fff; text-align: center;">
+                          <div style="width: 25px; height: 11px; box-shadow: #000 1px 0px 3px 0px; background: blue;float:left; display: inline-table; color: #fff; text-align: center;">
                             14</div>
-                          <input type="radio" class="radioclcik" name="venue">
-                          <span style="font-size: 15px;"> Appointments </span>
+                          <input type="radio" class="radioclcik" name="venue" style="float:left;margin-left:10px !important">
+                          <p style="font-size: 15px;float:left;margin-left:5px">Appointments</p>
                           &nbsp;
                           <span title="Click to download meetings" class="curspointer" style="color: #10acd0;">
                             <i class="fa fa-download"></i>
@@ -70,16 +73,16 @@
                       </ul>
                     </li>
                     <li style="margin-top: 20px;">
-                      <input type="radio" class="radioclcik" name="venue1">
-                      <span style="font-size: 15px;"> Naren Gardens (45)</span>
-                    </li>
+                      <input type="radio" class="radioclcik" name="venue1" style="float:left">
+                      <p style="font-size: 15px;float:left;margin-left:5px"> Naren Gardens (45)</p>
+                    </li><br/>
                     <li style="margin-top: 20px;">
-                      <input type="radio" class="radioclcik" name="venue1">
-                      <span style="font-size: 15px;"> Naren Platinum (57)</span>
-                    </li>
+                      <input type="radio" class="radioclcik" name="venue1" style="float:left">
+                      <p style="font-size: 15px;float:left;margin-left:5px"> Naren Platinum (57)</p>
+                    </li><br/>
                     <li style="margin-top: 20px;">
-                      <input type="radio" class="radioclcik" name="venue1">
-                      <span style="font-size: 15px;"> Naren Community (20)</span>
+                      <input type="radio" class="radioclcik" name="venue1" style="float:left">
+                      <p style="font-size: 15px;float:left;margin-left:5px"> Naren Community (20)</p>
                     </li>
                   </ul>
                 </div>
@@ -98,7 +101,7 @@
               <!-- END CALENDAR PORTLET-->
             </div>
             <div class="col-lg-12">
-              <div class="margin-top-10"style="height: 25px;background-color: #fff !important;line-height: 25px;border-radius: 15px !important; box-shadow: 10px 7px 24px 0px #000;">
+              <div class="margin-top-10" style="height: 25px;background-color: #fff !important;line-height: 25px;border-radius: 15px !important; box-shadow: 10px 7px 24px 0px #000;">
                 <div class="col-lg-3" style="color:#333">
                   <b>
                     <strong>Statistics</strong>
@@ -106,20 +109,23 @@
                 </div>
                 <div class="col-lg-3">
                   <li style="margin-bottom: 5px;">
-                    <span style="font-size: 15px;color:#116a9e"><b>Utilisation (84%)</b>
+                    <span style="font-size: 15px;color:#116a9e">
+                      <b>Utilisation (84%)</b>
                     </span>
                   </li>
                 </div>
                 <div class="col-lg-3">
                   <li style="margin-bottom: 5px;">
-                    <span style="font-size: 15px;color:#116a9e"><b>YoY (+15)</b>&nbsp;
+                    <span style="font-size: 15px;color:#116a9e">
+                      <b>YoY (+15)</b>&nbsp;
                       <i class="fa fa-arrow-up" style="color: green;"></i>
                     </span>
                   </li>
                 </div>
                 <div class="col-lg-3">
                   <li style="margin-bottom: 5px;">
-                    <span style="font-size: 15px;color:#116a9e"><b>MoM (-10)</b>&nbsp;
+                    <span style="font-size: 15px;color:#116a9e">
+                      <b>MoM (-10)</b>&nbsp;
                       <i class="fa fa-arrow-down red"></i>
                     </span>
                   </li>
@@ -140,7 +146,7 @@
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title">
-          <b>Confirmation</b>
+          <b>Note</b>
         </h4>
       </div>
       <div class="modal-body">
@@ -164,14 +170,14 @@
 <button id="openFutureModalButton" [hidden]="true" data-toggle="modal" data-target="#fullCalModal">Open Modal</button>
 <div id="fullCalModal" class="modal fade">
   <div class="modal-dialog modal-lg">
-    <div class="modal-content" id="mdcontent"  style="height:600px !important;">
+    <div class="modal-content" id="mdcontent" style="height:600px !important;">
       <div class="fc-title header" style="height:65px;">
         <button (click)="resetEverything()" id="btnClosebands" type="button" class="btn btn-default Close pull-right" data-dismiss="modal"
           style="margin-right: 20px;margin-top: 10px;border-radius: 35px !important;">
           <span aria-hidden="true" style="font-size:20px">×</span>
           <span class="sr-only">close</span>
         </button>&nbsp;
-        <button type="button" *ngIf="new_creation" (click)="clickedBackButton()" class="btn btn-primary btnback pull-right" style="margin-right: 20px;margin-top: 15px;border-radius: 4px !important;">
+        <button type="button" *ngIf="new_creation" (click)="clickedBackButton(2)" class="btn btn-primary btnback pull-right" style="margin-right: 20px;margin-top: 15px;border-radius: 4px !important;">
           <span title="Click to go back" aria-hidden="true">
             <i class="fa fa-arrow-circle-o-left"></i>&nbsp;Back</span>
           <span class="sr-only">Back</span>
@@ -213,7 +219,9 @@
                   <i style="padding-top: 3px;" class="fa fa-book fa-3x"></i>
                 </div>
               </div>
-              <span style="padding-left:4px;font-size: 18px;display:block;" id="txtbookingpanel"><b>Booking</b></span>
+              <span style="padding-left:4px;font-size: 18px;display:block;" id="txtbookingpanel">
+                <b>Booking</b>
+              </span>
             </div>
             <div class="col-sm-4 text-center">
               <div class="firstbandpanels" id="enquirypanel" style="display:inline-block;">
@@ -221,7 +229,9 @@
                   <i style="padding-top: 3px;" class="fa fa-info-circle fa-3x"></i>
                 </div>
               </div>
-              <span style="padding-left:4px;font-size: 18px;display:block;" id="txtenquirypanel"><b>Enquiry</b></span>
+              <span style="padding-left:4px;font-size: 18px;display:block;" id="txtenquirypanel">
+                <b>Enquiry</b>
+              </span>
             </div>
             <div class="col-sm-4 text-center">
               <div class="firstbandpanels" id="appointmentpanel" style="display:inline-block;">
@@ -229,7 +239,9 @@
                   <i style="padding-top: 3px;" class="glyphicon glyphicon-calendar fa-2x "></i>
                 </div>
               </div>
-              <span style="padding-left:4px;font-size: 18px;display:block;" id="txtappointmentpanel"><b>Appointment</b></span>
+              <span style="padding-left:4px;font-size: 18px;display:block;" id="txtappointmentpanel">
+                <b>Appointment</b>
+              </span>
             </div>
 
           </div>
@@ -259,7 +271,7 @@
                           <u>Customer Information</u>
                         </b>
                       </h4>
-                      <div id="field1" style="height:320px;overflow-y:auto; overflow-x:hidden;padding: 27px;padding-top:10px;padding-bottom:0px;    background-color: #e8e8e8 !important;">
+                      <div id="field1" style="height:320px;overflow-y:auto; overflow-x:hidden;padding: 27px;padding-top: 15px;padding-bottom:0px;    background-color: #cecece !important;">
                         <div class="form-group">
                           <label class="control-label col-md-4  add-member-label" style="line-height:1px;">
                             Exisiting Customer
@@ -381,7 +393,7 @@
                           <u>Booking Details</u>
                         </b>
                       </h4>
-                      <div id="field2" style="height:320px;overflow-y:auto; overflow-x:hidden;padding-top:10px;background-color: #e8e8e8 !important;">
+                      <div id="field2" style="height:320px;overflow-y:auto; overflow-x:hidden;padding-top: 15px;background-color: #cecece !important;">
                         <div class="col-md-6">
                           <div class="form-group nopadding">
                             <label class="control-label col-md-4  add-member-label">
@@ -607,7 +619,7 @@
                           <u>Payment details</u>
                         </b>
                       </h4>
-                      <div id="field3" style="height:320px;overflow-y:auto;overflow-x:hidden;padding:27px;padding-top:10px;background-color: #e8e8e8 !important;">
+                      <div id="field3" style="height:320px;overflow-y:auto;overflow-x:hidden;padding:27px;padding-top: 15px;background-color: #cecece !important;">
                         <div *ngIf="!payDivEnable " class="col-sm-12 nopadding" id="payments">
                           <div class="col-lg-4 col-md-6 nopadding text-center">
                             <div class="col-sm-12">
@@ -851,7 +863,7 @@
                           <i class="fa fa-download"></i>&nbsp;Download
                         </a>
                       </div>
-                      <div id="field4" style="height:320px;overflow-y:auto;overflow-x:hidden;padding:27px;padding-top:10px;background-color: #e8e8e8 !important;">
+                      <div id="field4" style="height:320px;overflow-y:auto;overflow-x:hidden;padding:27px;padding-top: 15px;background-color: #cecece !important;">
                         <div class="col-sm-12">
                           <div class="col-md-12 col-sm-12">
                             <div class="portlet  blue-hoki box">
@@ -1044,7 +1056,7 @@
                         </div>
                       </div>
                       <div style="border-top:1px solid #dcd9d9;height: 50px;">
-                        <button (click)="clickedBackButton()" type="button" class="submit btn btn-success pull-right" data-dismiss="modal" style="margin: 10px 10px 0 0;border-radius: 4px !important;"
+                        <button (click)="clickedBackButton(1)" type="button" class="submit btn btn-success pull-right" data-dismiss="modal" style="margin: 10px 10px 0 0;border-radius: 4px !important;"
                           id="btnbookingSubmit">
                           <span title="Click for submit booking" aria-hidden="true">&nbsp;
                             <i class="fa fa-floppy-o"></i>Submit</span>
@@ -1084,7 +1096,7 @@
                           <u>Customer Information</u>
                         </b>
                       </h4>
-                      <div id="field1" style="height:320px;overflow-y:auto; overflow-x:hidden;padding: 27px;padding-top:10px;padding-bottom:0px;background-color: #e8e8e8 !important;">
+                      <div id="field1" style="height:320px;overflow-y:auto; overflow-x:hidden;padding: 27px;padding-top: 15px;padding-bottom:0px;background-color: #cecece !important;">
                         <div id="newcustomerdiv" style="margin-top:10px;">
 
                           <div class="form-group">
@@ -1198,7 +1210,7 @@
                           <u>Venue Information</u>
                         </b>
                       </h4>
-                      <div id="field2" style="height:320px;overflow-y:auto;padding: 27px;padding-top:10px;overflow-x:hidden;background-color: #e8e8e8 !important;">
+                      <div id="field2" style="height:320px;overflow-y:auto;padding: 27px;padding-top: 15px;overflow-x:hidden;background-color: #cecece !important;">
                         <div class="form-group">
                           <label class="control-label col-md-4 add-member-label">
                             Venue
@@ -1292,7 +1304,7 @@
                         </div>
                       </div>
                       <div style="border-top:1px solid #dcd9d9;height: 50px;">
-                        <button (click)="clickedBackButton()" type="button" class="submit btn btn-success pull-right" data-dismiss="modal" style="margin:10px 10px 0 0;border-radius: 4px !important;">
+                        <button (click)="clickedBackButton(1)" type="button" class="submit btn btn-success pull-right" data-dismiss="modal" style="margin:10px 10px 0 0;border-radius: 4px !important;">
                           <span title="Click for submit booking" aria-hidden="true" id="btnEnquirysubmit">&nbsp;
                             <i class="fa fa-floppy-o"></i>Submit</span>
                           <span class="sr-only">Submit</span>
@@ -1315,10 +1327,10 @@
             </div>
           </div>
 
-          <div id="menuappointment" *ngIf="new_appointment" style="padding-left: 23px;height:440px;overflow-y:auto;background-color: #e8e8e8 !important;">
+          <div id="menuappointment" *ngIf="new_appointment" style="padding-left: 23px;height:440px;overflow-y:auto;background-color: #cecece !important;padding-bottom: 10px;">
             <div class="col-sm-12 nopadding" style="margin-top:20px;">
               <div class="col-sm-3">
-                <label class="control-label add-member-label">Meeting With :</label>
+                <label class="control-label add-member-label">Meeting With</label>
               </div>
               <div class="col-sm-8 nopadding">
                 <div class="col-sm-3">
@@ -1340,7 +1352,7 @@
             </div>
             <div *ngIf="meetWithEnable" class="col-sm-12 nopadding" style="margin-top:20px;" id="existingappointmentdiv">
               <div _ngcontent-c2="" class="col-sm-3">
-                <label _ngcontent-c2="" class="control-label add-member-label">Existing:</label>
+                <label _ngcontent-c2="" class="control-label add-member-label">Existing</label>
               </div>
 
               <div class="col-md-8 nopadding">
@@ -1358,7 +1370,7 @@
             </div>
             <div *ngIf="existPerEnable" class="col-sm-12 nopadding" style="margin-top:20px;" id="Email_11">
               <div class="col-sm-3">
-                <label class="control-label add-member-label">Email ID:</label>
+                <label class="control-label add-member-label">Email ID</label>
               </div>
               <div class="col-sm-6">
                 <div class="input-group">
@@ -1371,7 +1383,7 @@
             </div>
             <div class="col-sm-12 nopadding" style="margin-top:20px;">
               <div class="col-sm-3">
-                <label class="control-label add-member-label">First Name :</label>
+                <label class="control-label add-member-label">First Name</label>
               </div>
               <div class="col-sm-6">
                 <div class="input-group">
@@ -1384,7 +1396,7 @@
             </div>
             <div class="col-sm-12 nopadding" style="margin-top:20px;">
               <div class="col-sm-3">
-                <label class="control-label add-member-label">Last Name :</label>
+                <label class="control-label add-member-label">Last Name</label>
               </div>
               <div class="col-sm-6">
                 <div class="input-group">
@@ -1397,7 +1409,7 @@
             </div>
             <div *ngIf="!existPerEnable" class="col-sm-12 nopadding" style="margin-top:20px;" id="Email_22">
               <div class="col-sm-3">
-                <label class="control-label add-member-label">Email ID:</label>
+                <label class="control-label add-member-label">Email ID</label>
               </div>
               <div class="col-sm-6">
                 <div class="input-group">
@@ -1410,7 +1422,7 @@
             </div>
             <div class="col-sm-12 nopadding" style="margin-top:20px;">
               <div class="col-sm-3">
-                <label class="control-label add-member-label">Phone:</label>
+                <label class="control-label add-member-label">Phone</label>
               </div>
               <div class="col-sm-6">
                 <div class="input-group">
@@ -1423,7 +1435,7 @@
             </div>
             <div class="col-sm-12 nopadding" style="margin-top:20px;">
               <div class="col-sm-3">
-                <label class="control-label add-member-label">Subject :</label>
+                <label class="control-label add-member-label">Subject</label>
               </div>
               <div class="col-sm-6">
                 <input type="text" class="form-control" id="subject" />
@@ -1431,7 +1443,7 @@
             </div>
             <div class="col-sm-12 nopadding" style="margin-top:20px;">
               <div class="col-sm-3">
-                <label class="control-label add-member-label">Location :</label>
+                <label class="control-label add-member-label">Location</label>
               </div>
               <div class="col-sm-6">
                 <textarea class="form-control textareas" rows="1" id="loc"></textarea>
@@ -1439,21 +1451,28 @@
             </div>
             <div class="col-sm-12 nopadding" style="margin-top:20px;">
               <div class="col-sm-3">
-                <label class="control-label add-member-label">Date &amp; Time&nbsp;: </label>
+                <label class="control-label add-member-label">Date &amp; Time&nbsp; </label>
               </div>
-              <div class="col-sm-6">
+              <div class="col-sm-3">
                 <div class="input-group">
                   <input class="form-control" type="date" />
                   <span class="input-group-addon">
                     <i class="fa fa-calendar"></i>
                   </span>
                 </div>
-
               </div>
+              <div class="col-sm-3">
+                  <div class="input-group">
+                    <input class="form-control" type="time" />
+                    <span class="input-group-addon">
+                      <i class="glyphicon glyphicon-time"></i>
+                    </span>
+                  </div>
+                </div>
             </div>
             <div class="col-sm-12 nopadding" style="margin-top:20px;">
               <div class="col-sm-3">
-                <label class="control-label add-member-label">Notes : </label>
+                <label class="control-label add-member-label">Notes</label>
               </div>
               <div class="col-sm-6">
                 <textarea class="form-control textareas" rows="1"></textarea>
@@ -1463,7 +1482,7 @@
           </div>
           <div *ngIf="new_appointment" class="col-sm-12 nopadding" style="margin-top:10px;">
             <div class="col-sm-12" style="border-top:1px solid #dcd9d9;padding-top: 5px;">
-              <a (click)="clickedBackButton()" class="btn btn-success pull-right" data-dismiss="modal" style="border-radius: 4px !important;margin-right:9px !important;"
+              <a (click)="clickedBackButton(1)" class="btn btn-success pull-right" data-dismiss="modal" style="border-radius: 4px !important;margin-right:9px !important;"
                 id="btnappointmentsubmit">
                 <i class="fa fa-floppy-o"></i>Submit</a>
               <a data-target="#cancelmodal" data-toggle="modal" class="btn btn-default pull-right" style="border-radius: 4px !important;margin-right:11px;">
