@@ -315,3 +315,24 @@ text-align: center !important
 .nav-tabs > li{
 border: 1px solid #ffeaea;
 }
+
+.editPfPic{
+    padding-top: 7px;
+    padding-right: 7px;
+    position: absolute;
+    left: 0%;
+    bottom: 0;
+    display: none;
+    width: 150px;
+    height: 40px;
+    text-align: center !important;
+    background-color: #00000057;
+    border-radius: 0 0 40px 40px!important;
+}
+.editPfPic i{
+    color:#fff;
+}
+
+.adpfImg:hover .editPfPic {
+	display: block;
+}

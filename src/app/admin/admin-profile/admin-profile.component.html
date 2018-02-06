@@ -1,64 +1,85 @@
 <div class="page-content-wrapper">
-        <div class="page-content clearfix ">
-            <!---Page content-->
-            <div class="col-sm-12">
-                <h2 class="page-title">Profile</h2>
-                <!--User Image-->
-                <div class="col-sm-3">
-                    <img src="/assets/images/Ans-.jpg"
-                        style="height: 200px; width: 200px;" /> <br />
-                    <br />
+    <div class="page-content clearfix ">
+        <!--Page content starts here-->
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4" style="background-color:#fff;padding: 15px;box-shadow:0px 1px 2px 1px #d6d3d3 !important">
+            <h2 _ngcontent-c2="" class="page-title" style="text-align: center;color: #1169ae;">Admin Profile</h2>
+
+            <!--List of details-->
+
+            <div class="col-sm-12" style="margin-top:10px;text-align: center;">
+                <div class="col-sm-12 margin-top-10">
+                    <div class="col-sm-4 nopadding"></div>
+                    <div class="col-sm-4 nopadding adpfImg">
+                        <img src="/assets/images/Ans-.jpg" style="height: 150px; width: 150px;border-radius:25% !important;box-shadow: 0px 1px 2px 1px #d6d3d3 !important;"
+                        />
+                        <div class="editPfPic">
+                            <i class="fa fa-pencil fa-lg"></i>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 nopadding"></div>
                 </div>
-                <!--Profile data-->
-                <div class="col-sm-7">
-                    <div class="col-sm-12 margin-top-10">
-                        <div class="col-sm-4">
-                            <label>First Name&nbsp;:</label>
-                        </div>
-                        <div class="col-sm-6">
-                            <input type="text" class="form-control" value="John" />
-                        </div>
+                <div class="col-sm-12" style="margin-top:30px">
+                    <div class="col-sm-4 nopadding text-left">
+                        <label class="control-label ">First Name&nbsp;:</label>
                     </div>
-                    <div class="col-sm-12 margin-top-10">
-                        <div class="col-sm-4">
-                            <label>Last Name&nbsp;:</label>
-                        </div>
-                        <div class="col-sm-6">
-                            <input type="text" class="form-control" value="Doe" />
-                        </div>
+                    <div class="col-sm-8 input-group nopadding">
+                        <input type="text" class="form-control" value="John" />
+                        <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-user"></i>
+                        </span>
                     </div>
-                    <div class="col-sm-12 margin-top-10">
-                        <div class="col-sm-4">
-                            <label>Mobile Number&nbsp;:</label>
-                        </div>
-                        <div class="col-sm-6">
-                            <input type="text" class="form-control" value="9999999999" />
-                        </div>
+                </div>
+                <div class="col-sm-12 margin-top-10">
+                    <div class="col-sm-4 nopadding text-left">
+                        <label class="control-label ">Last Name&nbsp;:</label>
                     </div>
-                    <div class="col-sm-12 margin-top-10">
-                        <div class="col-sm-4">
-                            <label>Email&nbsp;:</label>
-                        </div>
-                        <div class="col-sm-6">
-                            <input type="text" class="form-control" value="admin@cloud.com" />
-                        </div>
+                    <div class="col-sm-8 input-group nopadding">
+                        <input type="text" class="form-control" value="Doe" />
+                        <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-user"></i>
+                        </span>
                     </div>
-                    <div class="col-sm-12 margin-top-10">
-                        <div class="col-sm-4">
-                            <label>Profile Picture&nbsp;:</label>
-                        </div>
-                        <div class="col-sm-6">
-                            <input type="file" class="form-control" value="user1.jpg" />
-                        </div>
+                </div>
+
+                <div class="col-sm-12 margin-top-10">
+                    <div class="col-sm-4 nopadding text-left">
+                        <label class="control-label ">Email&nbsp;:</label>
                     </div>
-                    <div class="col-sm-12 margin-top-10">
-                        <div class="col-sm-4"></div>
-                        <div class="col-sm-6">
-                            <a class="btn btn-success">Update</a> <a class="btn btn-default">Cancel</a>
-                        </div>
+                    <div class="col-sm-8 input-group nopadding">
+                        <input type="text" class="form-control" value="admin@venueclod.com" />
+                        <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-envelope"></i>
+                        </span>
                     </div>
+                </div>
+                <div class="col-sm-12 margin-top-10">
+                    <div class="col-sm-4 nopadding text-left">
+                        <label class="control-label ">Phone Number&nbsp;:</label>
+                    </div>
+                    <div class="col-sm-8 input-group nopadding">
+                        <input type="text" class="form-control" value="9999999999" />
+                        <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-phone"></i>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="col-sm-12 margin-top-10">
+                    <div class="col-sm-4 nopadding text-left">
+                        <label class="control-label ">Profile Picture&nbsp;:</label>
+                    </div>
+                    <div class="col-sm-8 nopadding">
+                        <input type="file" class="form-control" value="user1.jpg" />
+                    </div>
+                </div>
+                <div class="col-sm-12" style="margin-top:50px">
+                    <a class="btn btn-success pull-right" onclick="toastr.success('Profile updated successfully');">Update</a>
+                    <a class="btn btn-default pull-right" style="margin-right:20px">Cancel</a>
                 </div>
             </div>
         </div>
+        <div class="col-sm-4"></div>
+
     </div>
-    
+</div>

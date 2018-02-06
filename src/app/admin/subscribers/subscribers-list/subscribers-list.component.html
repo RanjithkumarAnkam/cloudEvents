@@ -33,7 +33,9 @@
 							</div>
 							<div class="col-sm-4" style="margin-top:5px">
 								<div class="col-sm-4 text-right" style="margin-top:5px">
-									<label class="control-label "><b>Status&nbsp;:</b></label>
+									<label class="control-label ">
+										<b>Status&nbsp;:</b>
+									</label>
 								</div>
 								<div class="col-sm-8 nopadding">
 									<p-multiSelect [options]="statusList" [(ngModel)]="selectedStatus" defaultLabel='All' (onChange)="selectStatusChange()"></p-multiSelect>
@@ -41,7 +43,9 @@
 							</div>
 							<div class="col-sm-4" style="margin-top:5px">
 								<div class="col-sm-4 text-right" style="margin-top:5px">
-									<label class="control-label "><b>Pacakge&nbsp;:</b></label>
+									<label class="control-label ">
+										<b>Pacakge&nbsp;:</b>
+									</label>
 								</div>
 								<div class="col-sm-8 nopadding">
 									<p-multiSelect [options]="packageList" [(ngModel)]="selectedPackage" defaultLabel='All' (onChange)="selectVenueChange()"></p-multiSelect>
@@ -56,73 +60,79 @@
 
 						</div>
 						<div class="col-sm-12 margin-top-20 nopadding">
-								<div class="table-responsive kv-grid-container" style="overflow: auto">
-							<table class="table table-hover table-bordered margin-top-0" [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="5">
-								<thead>
-									<tr class="table-headers">
-										<th style="width: 14%">
-											<mfDefaultSorter by="name">Property Name</mfDefaultSorter>
-										</th>
-										<th style="width: 14%">
-											<mfDefaultSorter by="packagename">Package Name</mfDefaultSorter>
-										</th>
-										<th style="width: 14%">
-											<mfDefaultSorter by="contact">Contact Name</mfDefaultSorter>
-										</th>
-										<th style="width: 16%">
-											<mfDefaultSorter by="email">Email</mfDefaultSorter>
-										</th>
-										<th style="width: 14%">
-											<mfDefaultSorter by="phone">Phone</mfDefaultSorter>
-										</th>
-										<th class="text-center" style="width: 14%">
-											<mfDefaultSorter by="status">Status</mfDefaultSorter>
-										</th>
-										<th class="text-center" style="width: 14%">Shadow login</th>
-										<th class="text-center" style="width: 14%">Delete</th>
+							<div class="table-responsive kv-grid-container" style="overflow: auto">
+								<table class="table table-hover table-bordered margin-top-0" [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="5">
+									<thead>
+										<tr class="table-headers">
+											<th style="width: 10%">
+												<mfDefaultSorter by="name">Customer Name</mfDefaultSorter>
+											</th>
+											<th style="width: 10%" class="text-center">
+												<mfDefaultSorter>Details</mfDefaultSorter>
+											</th>
+											<th style="width: 10%">
+												<mfDefaultSorter by="packagename">Package Name</mfDefaultSorter>
+											</th>
+											<th style="width: 10%">
+												<mfDefaultSorter by="contact">Contact Name</mfDefaultSorter>
+											</th>
+											<th style="width: 10%">
+												<mfDefaultSorter by="email">Email</mfDefaultSorter>
+											</th>
+											<th style="width: 10%">
+												<mfDefaultSorter by="phone">Phone</mfDefaultSorter>
+											</th>
+											<th class="text-center" style="width: 10%">
+												<mfDefaultSorter by="status">Status</mfDefaultSorter>
+											</th>
+											<th class="text-center" style="width: 10%">Shadow login</th>
+											<th class="text-center" style="width: 10%">Delete</th>
 
-									</tr>
-								</thead>
+										</tr>
+									</thead>
 
-								<tbody>
-									<tr *ngFor="let item of mf.data">
-										<td class="cursor">
-											<a title="Click to view subscriber summary" [routerLink]="['/admin/subscribers/summary']">{{item.name}}</a>
-										</td>
-										<td class="cursor">
-											<a title="Click to update subscriber" data-toggle="modal" data-target="#UpdateSubscriber" style="color:#000">{{item.packagename}}</a>
-										</td>
-										<td class="cursor">
-											<a title="Click to update subscriber" data-toggle="modal" data-target="#UpdateSubscriber" style="color:#000">{{item.contact}}</a>
-										</td>
-										<td class="cursor">
-											<a title="Click to update subscriber" data-toggle="modal" data-target="#UpdateSubscriber" style="color:#000">{{item.email}}</a>
-										</td>
-										<td class="cursor">
-											<a title="Click to update subscriber" data-toggle="modal" data-target="#UpdateSubscriber" style="color:#000">{{item.phone}}</a>
-										</td>
-										<td class="text-center cursor">
-											<a>{{item.status}}</a>
-										</td>
-										<td class="text-center">
-											<a data-toggle="modal" data-target="#ShowOtp" title="Click to Shadow login">
-												<i class="fa fa-user-secret"></i>
-											</a>&nbsp;&nbsp;</td>
-										<td class="text-center cursor">
-											<a title="Click to delete subscriber">
-												<i class="fa fa-trash red"></i>
-											</a>&nbsp;</td>
-									</tr>
+									<tbody>
+										<tr *ngFor="let item of mf.data">
+											<td >
+												{{item.name}}
+											</td>
+											<td class="text-center">
+												<a title="Click to view subscriber summary" [routerLink]="['/admin/subscribers/summary']"><span class="glyphicon glyphicon-eye-open"></span></a>
+											</td>
+											<td class="cursor">
+												<a title="Click to update subscriber" data-toggle="modal" data-target="#UpdateSubscriber" style="color:#000">{{item.packagename}}</a>
+											</td>
+											<td class="cursor">
+												<a title="Click to update subscriber" data-toggle="modal" data-target="#UpdateSubscriber" style="color:#000">{{item.contact}}</a>
+											</td>
+											<td class="cursor">
+												<a title="Click to update subscriber" data-toggle="modal" data-target="#UpdateSubscriber" style="color:#000">{{item.email}}</a>
+											</td>
+											<td class="cursor">
+												<a title="Click to update subscriber" data-toggle="modal" data-target="#UpdateSubscriber" style="color:#000">{{item.phone}}</a>
+											</td>
+											<td class="text-center cursor">
+												<a>{{item.status}}</a>
+											</td>
+											<td class="text-center">
+												<a data-toggle="modal" data-target="#ShowOtp" title="Click to Shadow login">
+													<i class="fa fa-user-secret"></i>
+												</a>&nbsp;&nbsp;</td>
+											<td class="text-center cursor">
+												<a title="Click to delete subscriber">
+													<i class="fa fa-trash red"></i>
+												</a>&nbsp;</td>
+										</tr>
 
-								</tbody>
-								<tfoot>
-									<tr>
-										<td colspan="8">
-											<mfBootstrapPaginator></mfBootstrapPaginator>
-										</td>
-									</tr>
-								</tfoot>
-							</table>
+									</tbody>
+									<tfoot>
+										<tr>
+											<td colspan="8">
+												<mfBootstrapPaginator></mfBootstrapPaginator>
+											</td>
+										</tr>
+									</tfoot>
+								</table>
 							</div>
 						</div>
 					</div>
@@ -378,16 +388,18 @@
 			</div>
 			<div class="modal-body">
 				<div class="row">
-					<div class="col-md-12">
-						<p class="col-md-12">OTP has been sent to user's registered mobile number.</p>
-						<div class="col-sm-12 nopadding margin-top-10">
-							<div class="col-sm-3">
-								<label class="control-label">Enter OTP&nbsp;:</label>
+					<div class="col-md-12" style="margin: 25px 0;">
+						<div class="col-md-2"></div>
+						<div class="col-sm-8 nopadding margin-top-10">
+							<p class="col-md-12">OTP has been sent to user's registered mobile number.</p>
+							<div class="col-sm-5" style="margin: 25px 0;">
+								<label class="control-label add-member-label">Enter OTP&nbsp;:</label>
 							</div>
-							<div class="col-sm-7">
+							<div class="col-sm-7" style="margin: 25px 0;">
 								<input type="text" class="form-control" />
 							</div>
 						</div>
+						<div class="col-md-2"></div>
 					</div>
 				</div>
 			</div>

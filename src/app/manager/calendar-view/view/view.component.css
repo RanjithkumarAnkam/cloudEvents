@@ -483,16 +483,16 @@ div[data-title]:hover:after {
 }
 
 .help-balloon{
-    position:absolute;
-   /* min-height:77px;*/
-    background:#186ba0;
-    right:0;
-    z-index:999;
-    width:300px;
-    color:#fff;
-    padding:10px;
-    font-weight:bold;
-    top:-15px;
+    position: absolute;
+    background: #5d5d5d;
+    right: 0;
+    z-index: 999;
+    width: 300px;
+    color: #f8f8fb;
+    padding: 15px;
+    font-weight: bold;
+    top: -23px;
+    border-radius: 26px !important;
 }
 .help-balloon:after
 {
@@ -500,7 +500,7 @@ div[data-title]:hover:after {
     left: 50px;
     display: inline-block !important;
     border-right: 20px solid transparent;
-    border-top: 15px solid #186ba0;
+    border-top: 15px solid #5d5d5d;
     border-left: 0px solid transparent;
     content: '';
     bottom: -15px;

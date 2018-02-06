@@ -25,17 +25,18 @@
 
           <ul class="nav nav-tabs" style="margin:0;">
             <li class="active">
+              <a data-toggle="tab" href="#termsOfUse">Terms Of use</a>
+            </li>
+            <li>
               <a data-toggle="tab" href="#packageTable">Renewals/Upgrades</a>
             </li>
             <li>
               <a data-toggle="tab" href="#paymentLogTable">Payment Log</a>
             </li>
-            <li>
-              <a data-toggle="tab" href="#termsOfUse">Terms Of use</a>
-            </li>
+
           </ul>
           <div class="tab-content">
-            <div id="packageTable" class="tab-pane fade in active">
+            <div id="packageTable" class="tab-pane fade in">
               <div class="col-sm-12 nopadding  margin-top-10">
                 <div class="panel panel-default" style="margin-bottom:0;">
                   <div class="panel-body cursor trstyle" style="font-size:16px;background:#fff;" id="btnpaytm">
@@ -90,47 +91,47 @@
                 </div>
               </div>
               <h3 class="pull-left">Packages</h3>
-              <div class="table-responsive kv-grid-container" style="overflow: auto">
-              <table class="table table-hover table-bordered" [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="5">
-                <thead>
-                  <tr class="table-headers">
-                    <th style="width: 20%">
-                      <mfDefaultSorter by="num">Package Name</mfDefaultSorter>
-                    </th>
-                    <th style="width: 10%">
-                      <mfDefaultSorter by="name">Max No.Of Venues</mfDefaultSorter>
-                    </th>
-                    <th style="width: 15%">
-                      <mfDefaultSorter by="price">Price</mfDefaultSorter>
-                    </th>
+              <div class="table-responsive kv-grid-container" style="overflow: auto;float:left !important">
+                <table class="table table-hover table-bordered" [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="5">
+                  <thead>
+                    <tr class="table-headers">
+                      <th style="width: 20%">
+                        <mfDefaultSorter by="num">Package Name</mfDefaultSorter>
+                      </th>
+                      <th style="width: 10%">
+                        <mfDefaultSorter by="name">Max No.Of Venues</mfDefaultSorter>
+                      </th>
+                      <th style="width: 15%">
+                        <mfDefaultSorter by="price">Price</mfDefaultSorter>
+                      </th>
 
-                    <th class="text-center" style="width: 20%">
-                      Purchase Package
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr *ngFor="let item of mf.data">
-                    <td>{{item.name}}</td>
-                    <td>{{item.numven}}</td>
-                    <td>{{item.price}}</td>
-                    <td class="text-center">
-                      <a class="btn btn-primary" data-toggle="modal" data-target="#purchasemodal">Upgrade</a>
-                    </td>
-                  </tr>
-                </tbody>
-                <tfoot>
-                  <tr>
-                    <td colspan="5">
-                      <mfBootstrapPaginator [rowsOnPageSet]="[5,10,25]"></mfBootstrapPaginator>
-                    </td>
-                  </tr>
-                </tfoot>
-              </table>
+                      <th class="text-center" style="width: 20%">
+                        Purchase Package
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let item of mf.data">
+                      <td>{{item.name}}</td>
+                      <td>{{item.numven}}</td>
+                      <td>{{item.price}}</td>
+                      <td class="text-center">
+                        <a class="btn btn-primary" data-toggle="modal" data-target="#purchasemodal">Upgrade</a>
+                      </td>
+                    </tr>
+                  </tbody>
+                  <tfoot>
+                    <tr>
+                      <td colspan="5">
+                        <mfBootstrapPaginator [rowsOnPageSet]="[5,10,25]"></mfBootstrapPaginator>
+                      </td>
+                    </tr>
+                  </tfoot>
+                </table>
               </div>
             </div>
             <div id="paymentLogTable" class="tab-pane fade">
-              <div class="col-sm-12 nopadding  margin-top-10"  style="background:#fff;padding:10px;">
+              <div class="col-sm-12 nopadding  margin-top-10" style="background:#fff;padding:10px;">
                 <div class="col-sm-3 nopadding">
                   <div class="col-sm-10 nopadding">
                     <input type="text" class="col-sm-5 form-control" placeholder="search keyword" />
@@ -154,7 +155,7 @@
                     </div>
                   </div>
                   <div class="col-sm-6">
-                    <div class="col-sm-3 nopadding"  style="margin-top:5px">
+                    <div class="col-sm-3 nopadding" style="margin-top:5px">
                       <label class="control-label">To&nbsp;:</label>
                     </div>
                     <div class="col-sm-9 nopadding">
@@ -164,42 +165,42 @@
                 </div>
               </div>
               <div class="col-sm-12 nopadding  margin-top-10">
-                  <div class="table-responsive col-sm-12 nopadding kv-grid-container" style="overflow: auto">
-                <table class="table table-hover table-bordered" [mfData]="data2" #one="mfDataTable" [mfRowsOnPage]="5">
-                  <thead>
-                    <tr class="table-headers">
-                      <th style="width: 33.33%">
-                        <mfDefaultSorter by="paymentId">Transaction Id
-                        </mfDefaultSorter>
-                      </th>
-                      <th style="width: 33.33%">
-                        <mfDefaultSorter by="time">Date &amp; Time</mfDefaultSorter>
-                      </th>
-                      <th style="width: 33.33%">
-                        <mfDefaultSorter by="packagename">Package Name</mfDefaultSorter>
-                      </th>
-                      <th style="width: 33.33%">
-                        <mfDefaultSorter by="amount">Amount</mfDefaultSorter>
-                      </th>
-                      <th style="width: 33.33%">
-                        <mfDefaultSorter by="status">Status</mfDefaultSorter>
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr *ngFor="let items of one.data">
-                      <td>{{items.paymentId}}</td>
-                      <td>{{items.time}}</td>
-                      <td>{{items.packagename}}</td>
-                      <td>{{items.amount}}</td>
-                      <td>{{items.status}}</td>
-                    </tr>
-                  </tbody>
-                </table>
+                <div class="table-responsive col-sm-12 nopadding kv-grid-container" style="overflow: auto;float:left !important">
+                  <table class="table table-hover table-bordered" [mfData]="data2" #one="mfDataTable" [mfRowsOnPage]="5">
+                    <thead>
+                      <tr class="table-headers">
+                        <th style="width: 33.33%">
+                          <mfDefaultSorter by="paymentId">Transaction Id
+                          </mfDefaultSorter>
+                        </th>
+                        <th style="width: 33.33%">
+                          <mfDefaultSorter by="time">Date &amp; Time</mfDefaultSorter>
+                        </th>
+                        <th style="width: 33.33%">
+                          <mfDefaultSorter by="packagename">Package Name</mfDefaultSorter>
+                        </th>
+                        <th style="width: 33.33%">
+                          <mfDefaultSorter by="amount">Amount</mfDefaultSorter>
+                        </th>
+                        <th style="width: 33.33%">
+                          <mfDefaultSorter by="status">Status</mfDefaultSorter>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let items of one.data">
+                        <td>{{items.paymentId}}</td>
+                        <td>{{items.time}}</td>
+                        <td>{{items.packagename}}</td>
+                        <td>{{items.amount}}</td>
+                        <td>{{items.status}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
               </div>
             </div>
-            <div id="termsOfUse" class="tab-pane fade">
+            <div id="termsOfUse" class="tab-pane fade in active">
               <div class='col-sm-12 margin-top-20' style="border: 1px solid #dcdada;background-color:#fff;padding:40px">
                 <h4>
                   <b>
@@ -207,20 +208,20 @@
                   </b>
                 </h4>
                 <p style="text-align:justify">
-                  <b>These Wix.com Terms of Use (“Terms of Use”), together with our Privacy Policy available at http://www.wix.com/about/privacy
+                  <b>These optionmatrix.com Terms of Use (“Terms of Use”), together with our Privacy Policy available at http://www.optionmatrix.com/about/privacy
                     (“Privacy Policy”), and such additional terms which specifically apply to some of our services and features
-                    as presented on the Wix.com website(s) (“Wix Website”, and collectively – the “Wix Terms”), all set forth
-                    the entire terms and conditions applicable to each visitor or user (“User” our “you”) of the Wix Website,
-                    the Wix mobile application (the “Wix App”) and/or any other services, applications and features offered
+                    as presented on the optionmatrix.com website(s) (“optionmatrix Website”, and collectively – the “optionmatrix Terms”), all set forth
+                    the entire terms and conditions applicable to each visitor or user (“User” our “you”) of the optionmatrix Website,
+                    the optionmatrix mobile application (the “optionmatrix App”) and/or any other services, applications and features offered
                     by us with respect thereto, except where we explicitly state otherwise (all services offered through
-                    the Wix Website or the Wix App, collectively – the “Wix Services” or “Services”). The Wix Terms constitute
-                    a binding and enforceable legal contract between Wix.com Ltd. and its affiliated companies and subsidiaries
-                    worldwide (“Wix”, “us” or “we”) and you in relation to the use of any Wix Services - so please read them
+                    the optionmatrix Website or the optionmatrix App, collectively – the “optionmatrix Services” or “Services”). The optionmatrix Terms constitute
+                    a binding and enforceable legal contract between optionmatrix.com Ltd. and its affiliated companies and subsidiaries
+                    worldwide (“optionmatrix”, “us” or “we”) and you in relation to the use of any optionmatrix Services - so please read them
                     carefully
                   </b>
                 </p>
-                <input type="checkbox" checked disable/>&nbsp;&nbsp;
-                <b>I Agree</b>
+                <input type="checkbox" checked disable style="float:left"/>&nbsp;&nbsp;
+                <p  style="float:left;margin-left:20px"><b>I Agree</b></p>
               </div>
             </div>
           </div>

@@ -50,6 +50,7 @@ export class ViewComponent implements OnInit {
     singleEvent: boolean = true;
     longEvent: boolean = false;
     date3: Date;
+    custDate="";
 
     ngOnInit() {
         this.events = [
@@ -158,7 +159,8 @@ export class ViewComponent implements OnInit {
         if (today_date < clicked_date || (today_date - clicked_date) < 86400001) {
             // u can add
             document.getElementById("openFutureModalButton").click();
-            document.getElementById("modalTitle").innerHTML = 'Naren Gardens - Add an Event: ' + e.date.format('DD-MM-YYYY') + '';
+            this.custDate=e.date.format('DD-MMM-YYYY') + '';
+            document.getElementById("modalTitle").innerHTML = 'Naren Gardens - Add an Event: ' + e.date.format('DD-MMM-YYYY') + '';
 
             this.event_type_class = 'col-xs-12';
             this.add_booking_first_tab = 'active';
@@ -221,7 +223,7 @@ export class ViewComponent implements OnInit {
     createBooking() {
         this.no_new_creation = false;
         this.event_type_class = "hide";
-        document.getElementById("modalTitle").innerHTML = 'Naren Gardens - Add New Booking';
+        document.getElementById("modalTitle").innerHTML = 'Naren Gardens - Add New Booking -'+this.custDate;
         this.new_booking = true;
         this.new_creation = true;
         this.new_booking_customer_block = true;
@@ -238,7 +240,7 @@ export class ViewComponent implements OnInit {
     createEnquiry() {
         this.no_new_creation = false;
         this.event_type_class = "hide";
-        document.getElementById("modalTitle").innerHTML = 'Naren Gardens - Add New Enquiry';
+        document.getElementById("modalTitle").innerHTML = 'Naren Gardens - Add New Enquiry -'+this.custDate;
         this.new_enquiry = true;
         this.new_creation = true;
         this.add_enquiry_first_tab = 'active';
@@ -253,7 +255,7 @@ export class ViewComponent implements OnInit {
     createAppointment() {
         this.no_new_creation = false;
         this.event_type_class = "hide";
-        document.getElementById("modalTitle").innerHTML = 'Naren Gardens - Add New Appointment';
+        document.getElementById("modalTitle").innerHTML = 'Naren Gardens - Add New Appointment -'+this.custDate;
         this.new_appointment = true;
         this.new_creation = true;
         this.meetWithEnable = false;
@@ -261,15 +263,18 @@ export class ViewComponent implements OnInit {
         this.no_new_creation_holiday = false;
     }
 
-    clickedBackButton() {
+    clickedBackButton(e) {
         this.no_new_creation = true;
         this.event_type_class = "col-xs-12";
-        document.getElementById("modalTitle").innerHTML = 'Naren Gardens - Add an Event';
+        document.getElementById("modalTitle").innerHTML = 'Naren Gardens - Add an Event -'+this.custDate;
         this.new_appointment = false;
         this.new_enquiry = false;
         this.new_booking = false;
         this.new_creation = false;
         this.no_new_creation_holiday = true;
+        if (e === 1) {
+            this.CloseAllModals();
+        }
     }
 
     resetEverything() {
@@ -391,7 +396,7 @@ export class ViewComponent implements OnInit {
         document.getElementById("btnClosebands").click();
     }
 
-    hideHelpBalloon(){
+    hideHelpBalloon() {
         this.show_help_balloon = false;
     }
 
